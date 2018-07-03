@@ -11,4 +11,4 @@ version 2.0
 
 
 
-![Image text](https://raw.githubusercontent.com/Tesla2fox/ComplexSystemIntelligentControl/master/png/0-0.png)
+![Image text](https://raw.githubusercontent.com/Tesla2fox/ComplexSystemIntelligentControl/master/png/0-0.jpg)
