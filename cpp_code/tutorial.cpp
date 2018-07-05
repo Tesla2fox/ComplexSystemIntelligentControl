@@ -6,13 +6,13 @@ int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	str_conDir += "5_50_50_80_Outdoor_Cfg.txt";
+	str_conDir += "5_19_19_80_Outdoor_Cfg.txt";
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);
 
 	if (argc > 1) {
 		cout << argv[1] << endl;
-		conFileName = argv[1];
+		conFileName = argv[1];	
 	}
 	cfg::ReadConfig readCfg(conFileName);
 	readCfg.read();
@@ -24,7 +24,9 @@ int main(int argc, char * argv[])
 
 	pl::Obmap obmap(readCfg);
 	obmap.map2tGrid();
-	obmap.writeEgdes();
+	obmap.map2sGrid();
+	obmap.writeEdges(pl::graphType::span);
+	obmap.writeEdgesInPnt(pl::graphType::span);
 
 	pl::STCPlan stcPlan(obmap);
 

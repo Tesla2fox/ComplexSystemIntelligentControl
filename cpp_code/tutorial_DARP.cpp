@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
 
 	pl::Obmap obmap(readCfg);
 	obmap.map2tGrid();
-	obmap.writeEgdes();
+	//obmap.writeEgdes();
 
 	pl::STCPlan stcPlan(obmap);
 

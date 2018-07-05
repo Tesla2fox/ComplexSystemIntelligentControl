@@ -38,6 +38,7 @@ namespace cfg
 		shared_ptr<bex::DRing> _RangePtr = nullptr;
 		shared_ptr<vector<bex::DPoint>> _vStartPntPtr = nullptr;
 		shared_ptr<vector<bex::DPoint>> _vObPntPtr = nullptr;
+		shared_ptr<vector<MatPnt>> _vObGridInd = nullptr;
 		double _gridStep;
 
 		shared_ptr<vector<size_t>> _vGridPtr = nullptr;

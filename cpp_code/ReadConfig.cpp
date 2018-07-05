@@ -28,6 +28,17 @@ namespace cfg
 			_vStartMatPntPtr->push_back(MatPnt(vRow[i], vCol[i]));
 		}
 
+		vRow.clear();
+		vCol.clear();
+
+		_vObGridInd = make_shared<vector<MatPnt>>();
+		co_list.get("obRow", vRow);
+		co_list.get("obCol", vCol);
+		for (size_t i = 0; i < vRow.size(); i++)
+		{
+			_vObGridInd->push_back(MatPnt(vRow[i], vCol[i]));
+		}
+		cout << "Grid Size = " << _vGridPtr->size() << endl;
 		cout << "read successs" << endl;
 	}
 }

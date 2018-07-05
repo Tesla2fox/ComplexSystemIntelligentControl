@@ -99,8 +99,8 @@ class MultiCPPcfg:
 
 if __name__ =='__main__':
     
-    row = 20
-    col = 20
+    row = 19
+    col = 19
     
     mat = zeros((row,col))
     

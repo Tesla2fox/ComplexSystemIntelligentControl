@@ -11,13 +11,12 @@ import env
 #import env
 
 if __name__ == '__main__':
-    org_exe_name = 'D:\\py_code\\ComplexSystemIntelligentControl\\bin\\exc\\Release\\MultiCover.exe'
+    org_exe_name = 'D:\\py_code\\ComplexSystemIntelligentControl\\bin\\exc\\Debug\\MultiCover.exe'
     
     conFileDir = './/data//'
     fileCfgName =  '5_20_20_80_Outdoor_Cfg.txt'
     degNameCfg = conFileDir + fileCfgName
     proOrgStatic = subprocess.Popen([org_exe_name,degNameCfg],stdin =subprocess.PIPE,stdout = subprocess.PIPE)
     for line in proOrgStatic.stdout:
-        print(line)
-        
-    env.drawPic(fileCfgName,1,'testNothing',True)
+        print(line)        
+    env.drawPic(fileCfgName,3,'testNothing',True)

@@ -123,7 +123,7 @@ class Env:
             lst[0][i] = lst[0][i] + 0.5
             lst[1][i] = lst[1][i] + 0.5
             startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),name = 'Robot_'+ str(i+1))
-            self.drawData.append(startTrace)
+            self.drawData.append(startTrace)    
     def addEdges(self,lst= []):
         mark_x = []
         mark_y = []     
@@ -146,6 +146,27 @@ class Env:
                                    marker =dict(size =3),
                                    name = 'Spanning-Tree')
         self.drawData.append(markTrace)
+    def addEdgeInPnt(self, lst = []):
+        mark_x = []
+        mark_y = []
+        for  p in range(len(lst[0])):
+            pnt0 = Pnt(lst[0][p],lst[1][p])
+            pnt1 = Pnt(lst[2][p],lst[3][p])
+            mark_x.append(pnt0.x)
+            mark_x.append(pnt1.x)
+            mark_y.append(pnt0.y)
+            mark_y.append(pnt1.y)
+            line = Line(pnt0,pnt1)
+            lineDic = line.line2dict()
+            lineDic['line']['color'] = 'red'
+            lineDic['line']['width'] = 5
+            self.shapeLst.append(copy.deepcopy(lineDic))
+        markTrace = go.Scatter(mode ='markers',
+                                   x= mark_x,
+                                   y= mark_y,
+                                   marker =dict(size =10),
+                                   name = 'Spanning-Tree')
+        self.drawData.append(markTrace)    
     def drawPic(self,name ='env',fileType = True):
         layout = dict()
         layout['shapes'] = self.shapeLst
@@ -252,12 +273,33 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addEdges(edgeData)
         env.addTest()
         env.drawPic('./png/edges',fileType = False)
+    #case 2 draw Envirionment with edges in pnt 
+    if(drawType  == 3):
+        env  = Env(mat)
+        edgeNameCfg = conFileDir +'obmapDeg.txt'
+        edgeCfg = Read_Cfg(edgeNameCfg)
+        edgeData = []
+        edgeUnit = []
+        edgeCfg.get('sPntx',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        edgeCfg.get('sPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
 
+        edgeUnit = []
+        edgeCfg.get('tPntx',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        edgeCfg.get('tPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        
+        env.addgrid()
+        env.addEdgeInPnt(edgeData)
+        env.addTest()
+        env.drawPic('./png/edgesInPnt',fileType = False)
     
     
-
-
-
+    
 
 if __name__ == '__main__':
 
