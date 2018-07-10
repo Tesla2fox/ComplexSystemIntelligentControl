@@ -1,4 +1,4 @@
-#include "MultiAuction.h"
+#include "MultiAuctionSTC.h"
 
 //void pl::MultiAuction::setStartPnt(vector<size_t> const & vStartPntRow, vector<size_t> const & vStartPntCol)
 //{
@@ -11,16 +11,16 @@
 
 namespace pl
 {
-	void pl::MultiAuction::process()
+	void pl::MultiAuctionSTC::process()
 	{
 		_GridMap.clear();
-		size_t gridNum = boost::num_vertices(_ob_sGraph);
+		size_t gridNum = boost::num_vertices(_ob_tGraph);
 		for (size_t i = 0; i < gridNum; i++)
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
 		auction();
 	}
 
-	void MultiAuction::writeRobGraph()
+	void MultiAuctionSTC::writeRobGraph()
 	{
 		writeDebug(c_deg, "robNum", _robNum);
 		for (size_t i = 0; i < _robNum; i++)
@@ -56,7 +56,7 @@ namespace pl
 			writeDebug(c_deg, str_col, vCol);
 		}
 	}
-	void pl::MultiAuction::auction()
+	void pl::MultiAuctionSTC::auction()
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
 		_vRobGridPtr = make_shared<vector<vector<GridIndex>>>(_robNum);
@@ -80,8 +80,10 @@ namespace pl
 		for (size_t i = 0; i < _robNum; i++)
 		{
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
-			_vRobSetPtr->at(i).insert(_ob_tmap2graph[_vStartPnt[i]]);
-			_GridMap[_ob_tmap2graph[_vStartPnt[i]]] = i;
+			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
+			_vRobSetPtr->at(i).insert(_ob_smap2graph[ind]);	
+			_GridMap[_ob_smap2graph[ind]] = i;
+		
 			updateNeiGraph(i);
 		}
 		do
@@ -161,7 +163,7 @@ namespace pl
 	}
 
 
-	bool MultiAuction::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
+	bool MultiAuctionSTC::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
 	{
 
 		double UnCoverMinFit = 99999;
@@ -246,7 +248,7 @@ namespace pl
 		return allCovered;
 	}
 
-	size_t MultiAuction::maxBiddingRob(size_t const & aucVertID)
+	size_t MultiAuctionSTC::maxBiddingRob(size_t const & aucVertID)
 	{
 		size_t maxBidding = -1;
 		vector<double> vBidding;
@@ -278,13 +280,13 @@ namespace pl
 		return robWinner;
 	}
 
-	double MultiAuction::calBidding(size_t const & bidding)
+	double MultiAuctionSTC::calBidding(size_t const & bidding)
 	{
 		return 0.0;
 	}
 
 
-	double MultiAuction::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
+	double MultiAuctionSTC::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
 	{
 		double fitNess = 0;
 		auto &graph = _ob_tGraph;
@@ -301,7 +303,7 @@ namespace pl
 		return fitNess;
 	}
 
-	double MultiAuction::calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd)
+	double MultiAuctionSTC::calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd)
 	{
 		auto &robNeiSet = _vRobSetPtr->at(OpRobId);
 		vector<bex::VertexDescriptor> v_vd;
@@ -318,7 +320,7 @@ namespace pl
 		return std::numeric_limits<double>::max();
 	}
 
-	bool MultiAuction::updateNeiGraph(size_t const & robID)
+	bool MultiAuctionSTC::updateNeiGraph(size_t const & robID)
 	{
 		auto &robNghSet = _vRobNeiPtr->at(robID);
 		auto &robSet = _vRobSetPtr->at(robID);
@@ -326,7 +328,7 @@ namespace pl
 		for (auto it = robSet.begin(); it != robSet.end(); it++)
 		{
 			auto &cenInd = *it;
-			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_tGraph);
+			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_sGraph);
 			for (auto ni = neighborsIter.first; ni != neighborsIter.second; ++ni)
 			{
 				if (robSet.count(*ni) == 0)
@@ -338,7 +340,7 @@ namespace pl
 		return false;
 	}
 
-	bool MultiAuction::updateNeiGraph(size_t const & succBidID, bex::VertexDescriptor const & vd)
+	bool MultiAuctionSTC::updateNeiGraph(size_t const & succBidID, bex::VertexDescriptor const & vd)
 	{
 		auto &robSet = _vRobSetPtr->at(succBidID);
 		auto &robNghSet = _vRobNeiPtr->at(succBidID);
@@ -358,7 +360,7 @@ namespace pl
 		}
 		return false;
 	}
-	bool MultiAuction::updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd)
+	bool MultiAuctionSTC::updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd)
 	{
 		auto &robSet = _vRobSetPtr->at(loseID);
 		auto &robNghSet = _vRobNeiPtr->at(loseID);

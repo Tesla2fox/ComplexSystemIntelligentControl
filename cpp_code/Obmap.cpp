@@ -274,6 +274,13 @@ namespace pl
 
 	}
 
+	GridIndex Obmap::tGridInd2SGridInd(GridIndex const & ind)
+	{
+		size_t first = floor(double(ind.first) / 2);
+		size_t second = floor(double(ind.second) / 2);
+		return GridIndex(first,second);
+	}
+
 	bool Obmap::allConnected(vector<bex::VertexDescriptor> const & v_vd)
 	{
 		if (v_vd.size() == 1)

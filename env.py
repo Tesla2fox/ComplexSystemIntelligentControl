@@ -127,7 +127,8 @@ class Env:
         for i in range(len(lst[0])):
             lst[0][i] = lst[0][i] + 0.5
             lst[1][i] = lst[1][i] + 0.5
-            startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),name = 'Robot_'+ str(i+1))
+            startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),
+                                    name = 'Robot_'+ str(i))
             self.drawData.append(startTrace)    
     def addEdges(self,lst= []):
         mark_x = []
@@ -172,7 +173,7 @@ class Env:
                                    marker =dict(size =10),
                                    name = 'Spanning-Tree')
         self.drawData.append(markTrace)
-    def addGraph(self,robNum  = 0, lst = []):
+    def addGraph(self,robNum  = 0, lst = [], txtType = False):
         g_color = 'blue'
         bupu = cl.scales[str(robNum)]['seq']['BuPu']
         print(bupu)
@@ -185,9 +186,14 @@ class Env:
                 rectDic['line']['width'] = 0.5
                 rectDic['fillcolor'] = bupu[i]
                 rectDic['opacity'] = 0.6
-                self.annotations.append(dict(showarrow = False,
+                if(txtType):
+                    self.annotations.append(dict(showarrow = False,
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
-                                             text = str(i)))                
+                                             text = str(i)))
+                else:
+                    self.annotations.append(dict(showarrow = False,
+                                             x = pnt.x + 0.5 ,y = pnt.y + 0.5,
+                                             text = str(pnt.x)+'-'+str(pnt.y)))
                 self.shapeLst.append(copy.deepcopy(rectDic))
     def addNeiGraph(self,robNum  = 0, lst = []):
         g_color = 'blue'
@@ -355,9 +361,10 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst = []
         robLst.append(robRowLst)
         robLst.append(robColLst)
-        env.addGraph(robNum,graphData)        
+        env.addGraph(robNum,graphData,True)        
         env.addRobotStartPnt(robLst)
         env.drawPic('./png/robGraph',fileType = fileType)
+#   case 5 
     if(drawType == 5):   
         env = Env(mat)        
         robLst = []
@@ -392,6 +399,31 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addNeiGraph(robNum,graphData)                    
         env.addTest()        
         env.drawPic('./png/robNei&Graph',fileType = fileType)
+
+# case 4 draw Envirionment with graph
+    if(drawType == 6):
+        env = Env(mat)
+        graphNameCfg = conFileDir +'auctionDeg.txt'
+        graphCfg = Read_Cfg(graphNameCfg)
+        robNum = int(graphCfg.getSingleVal('robNum'))
+        graphData = []
+        print('row',row)
+        print('col',col)
+        for i in range(robNum):
+            graphUnit = []
+            graphCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            graphCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addgrid()
+        env.addTest()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addGraph(robNum,graphData,False)        
+        env.addRobotStartPnt(robLst)
+        env.drawPic('./png/robGraph&RC',fileType = fileType)
 
     
 

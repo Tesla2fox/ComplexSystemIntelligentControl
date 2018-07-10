@@ -7,7 +7,7 @@ int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	str_conDir += "5_19_19_80_Outdoor_Cfg.txt";
+	str_conDir += "5_20_20_80_Outdoor_Cfg.txt";
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);
 
@@ -36,9 +36,16 @@ int main(int argc, char * argv[])
 		startPnt.push_back(pl::GridIndex(readCfg._vStartMatPntPtr->at(i).row, readCfg._vStartMatPntPtr->at(i).col));
 	}
 	pl::MultiAuction multi_auc(obmap, startPnt);
-
+	
+	multi_auc.setRandomSeed(1);
 	multi_auc.process();
 	multi_auc.writeRobGraph();
+	
+	pl::MultiAuction multi_aucSTC(obmap, startPnt);
+	multi_aucSTC.setRandomSeed(1);
+	multi_aucSTC.process();
+	multi_aucSTC.writeRobGraph();
+
 	cout << "ggq' code" << endl;
 	if (argc <= 1) {
 		size_t input_val;

@@ -32,6 +32,9 @@ set(file_list
 	GroupVert.cpp
 	MultiAuction.h
 	MultiAuction.cpp
+	#
+	MultiAuctionSTC.h
+	MultiAuctionSTC.cpp
 )
 
 set(DARP_file_list tutorial_DARP.cpp

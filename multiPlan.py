@@ -20,3 +20,4 @@ if __name__ == '__main__':
     for line in proOrgStatic.stdout:
         print(line)        
     drawPic(fileCfgName,4,'testNothing',True)
+#    drawPic(fileCfgName,6,'testNothing',True)
