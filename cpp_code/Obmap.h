@@ -37,6 +37,9 @@ namespace pl
 	using  GridMap = std::map<std::pair<int, int>,size_t>;
 	using STCGridMap = std::map<std::pair<int, int>, STCVert>;
 	
+	
+	// used for judge connectness.
+	using CGraph = boost::adjacency_list<bt::vecS, bt::vecS, bt::undirectedS>;
 
 	
 	class Obmap {
@@ -73,6 +76,16 @@ namespace pl
 		//void writeEgdes(size_t const & type = graphType::base);
 
 		
+		bex::Graph &getGraph(const size_t &type) { if (type == graphType::base) { return _tGraph; } return _sGraph; }
+		GridMap &getGridMap(const size_t &type) { if (type == graphType::base) { return _tGrid; } return _sGrid; }
+		//
+		bool allConnected(vector<bex::VertexDescriptor> const &vvd);
+
+		bool allConnectedBase(vector<bex::VertexDescriptor> const &vvd);
+
+		size_t getReachableVertNum()const { return _reachableVertNum; };
+
+
 	private:
 
 		//write txt
@@ -90,6 +103,8 @@ namespace pl
 		bex::Graph _sGraph;
 		STCGridMap _STCGrid;
 
+		size_t _reachableVertNum;
+		size_t _obVertNum;
 
 		//×î´óÐÐ
 		size_t m_MaxRow;
@@ -110,5 +125,7 @@ namespace pl
 		int gridObNum(vector<GridIndex> const &vindex);
 		bool obstacleOccupy(GridIndex const & cenInd, int const &dir);
 		bool adjacent(GridIndex const &sInd, GridIndex const &tInd, int const &dir);
+
+		bool isConnected(bex::VertexDescriptor const &vd1, bex::VertexDescriptor const &vd2,int const &gridType);
 	};
 }

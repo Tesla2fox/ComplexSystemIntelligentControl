@@ -35,7 +35,7 @@ class Read_Cfg:
                        continue
         return getBoolean
 
-    def getSingleVal(self, str_val ='val' ,val = 0.0):
+    def getSingleVal(self, str_val ='val'):
 #        ListVal.clear()
         getBoolean = False
         with open(self.fileName)  as txtData:
@@ -52,7 +52,7 @@ class Read_Cfg:
                    else:
                        continue
 #        print('val = ',val)
-        return getBoolean
+        return val
 
 if __name__ == '__main__':
     

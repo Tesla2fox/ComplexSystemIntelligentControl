@@ -30,6 +30,8 @@ set(file_list
 	STCPlan.cpp
 	GroupVert.h
 	GroupVert.cpp
+	MultiAuction.h
+	MultiAuction.cpp
 )
 
 set(DARP_file_list tutorial_DARP.cpp

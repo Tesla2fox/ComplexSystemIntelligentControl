@@ -2,6 +2,7 @@
 #include "ReadConfig.h"
 #include "Obmap.h"
 #include "STCplan.h"
+#include "MultiAuction.h"
 int main(int argc, char * argv[])
 {
 	
@@ -29,7 +30,15 @@ int main(int argc, char * argv[])
 	obmap.writeEdgesInPnt(pl::graphType::span);
 
 	pl::STCPlan stcPlan(obmap);
+	vector<pl::GridIndex> startPnt;
+	for (size_t i = 0; i < readCfg._vStartMatPntPtr->size(); i++)
+	{
+		startPnt.push_back(pl::GridIndex(readCfg._vStartMatPntPtr->at(i).row, readCfg._vStartMatPntPtr->at(i).col));
+	}
+	pl::MultiAuction multi_auc(obmap, startPnt);
 
+	multi_auc.process();
+	multi_auc.writeRobGraph();
 	cout << "ggq' code" << endl;
 	if (argc <= 1) {
 		size_t input_val;

@@ -13,6 +13,9 @@ from numpy import *
 from copy import *
 import copy
 from read_cfg import Read_Cfg
+from IPython.display import HTML,display 
+import colorlover as cl
+
 #import read_cfg 
 
 
@@ -91,6 +94,7 @@ class Env:
         self.mat = mat
         self.shapeLst = []
         self.drawData = []
+        self.annotations = []
     def addTest(self):
         
         pathTrace = go.Scatter(x = [5],
@@ -118,6 +122,7 @@ class Env:
 #                    rectDic['fillcolor'] = colorLst[int(self.mat[i][j])]
 #                getLevelColor(mat[i][j])
                 self.shapeLst.append(copy.deepcopy(rectDic))
+        print(len(self.shapeLst))
     def addRobotStartPnt(self,lst= []):
         for i in range(len(lst[0])):
             lst[0][i] = lst[0][i] + 0.5
@@ -166,7 +171,38 @@ class Env:
                                    y= mark_y,
                                    marker =dict(size =10),
                                    name = 'Spanning-Tree')
-        self.drawData.append(markTrace)    
+        self.drawData.append(markTrace)
+    def addGraph(self,robNum  = 0, lst = []):
+        g_color = 'blue'
+        bupu = cl.scales[str(robNum)]['seq']['BuPu']
+        print(bupu)
+        for i in range(robNum):
+            for j in range(len(lst[2*i])):
+                pnt = Pnt(int(lst[2*i][j]),int(lst[2*i +1][j]))
+                rect = Rect(pnt,1,1)
+                rectDic = rect.rect2dict()
+                rectDic['line']['color'] = g_color
+                rectDic['line']['width'] = 0.5
+                rectDic['fillcolor'] = bupu[i]
+                rectDic['opacity'] = 0.6
+                self.annotations.append(dict(showarrow = False,
+                                             x = pnt.x + 0.5 ,y = pnt.y + 0.5,
+                                             text = str(i)))                
+                self.shapeLst.append(copy.deepcopy(rectDic))
+    def addNeiGraph(self,robNum  = 0, lst = []):
+        g_color = 'blue'
+        bupu = cl.scales[str(robNum)]['seq']['BuPu']
+        print(bupu)
+        for i in range(robNum):
+            for j in range(len(lst[2*i])):
+                pnt = Pnt(int(lst[2*i][j]),int(lst[2*i +1][j]))
+                rect = Rect(pnt,1,1)
+                rectDic = rect.rect2dict()
+                rectDic['line']['color'] = g_color
+                rectDic['line']['width'] = 0.5
+                rectDic['fillcolor'] = bupu[i]
+                rectDic['opacity'] = 1
+                self.shapeLst.append(copy.deepcopy(rectDic))                
     def drawPic(self,name ='env',fileType = True):
         layout = dict()
         layout['shapes'] = self.shapeLst
@@ -191,16 +227,17 @@ class Env:
         showticklabels = False)
         layout['font'] = dict(
             family='sans-serif',
-            size=25,
+            sie=25,
             color='#000'
         )
         layout['autosize'] = False
         layout['height'] = 1000
-        layout['width']= 1000   
+        layout['width']= 1000
+        layout['annotations'] = self.annotations
 #        print(layout)
         fig = dict(data = self.drawData ,layout = layout)
         if(fileType):
-            plotly.offline.plot(fig,filename = name)
+            plotly.offline.plot(fig,filename = name + '.html',validate=False)
         else:
             py.image.save_as(fig,filename = name+'.jpeg')
     
@@ -249,7 +286,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst.append(robColLst)
         env.addRobotStartPnt(robLst)
         env.drawPic('./png/env_'+cfgFileName,fileType)
-    #case 2 draw Environment
+    #case 2 draw Environment with edges
     if(drawType == 2):
         env = Env(mat)
         edgeNameCfg = conFileDir +'obmapDeg.txt'
@@ -273,7 +310,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addEdges(edgeData)
         env.addTest()
         env.drawPic('./png/edges',fileType = False)
-    #case 2 draw Envirionment with edges in pnt 
+    #case 3 draw Envirionment with edges in pnt 
     if(drawType  == 3):
         env  = Env(mat)
         edgeNameCfg = conFileDir +'obmapDeg.txt'
@@ -296,80 +333,136 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addgrid()
         env.addEdgeInPnt(edgeData)
         env.addTest()
-        env.drawPic('./png/edgesInPnt',fileType = False)
-    
-    
+        env.drawPic('./png/edgesInPnt',fileType = fileType)
+# case 4 draw Envirionment with graph
+    if(drawType == 4):
+        env = Env(mat)
+        graphNameCfg = conFileDir +'auctionDeg.txt'
+        graphCfg = Read_Cfg(graphNameCfg)
+        robNum = int(graphCfg.getSingleVal('robNum'))
+        graphData = []
+        print('row',row)
+        print('col',col)
+        for i in range(robNum):
+            graphUnit = []
+            graphCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            graphCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addgrid()
+        env.addTest()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addGraph(robNum,graphData)        
+        env.addRobotStartPnt(robLst)
+        env.drawPic('./png/robGraph',fileType = fileType)
+    if(drawType == 5):   
+        env = Env(mat)        
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)
+        env.addgrid()
+
+
+        graphNameCfg = conFileDir +'auctionDeg.txt'
+        graphCfg = Read_Cfg(graphNameCfg)
+        robNum = int(graphCfg.getSingleVal('robNum'))
+        graphData = []
+        for i in range(robNum):
+            graphUnit = []
+            graphCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            graphCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addGraph(robNum,graphData)        
+        graphData = []
+        
+        for i in range(robNum):
+            graphUnit = []
+            graphCfg.get('neiRow'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            graphCfg.get('neiCol'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        print(graphData)
+        env.addNeiGraph(robNum,graphData)                    
+        env.addTest()        
+        env.drawPic('./png/robNei&Graph',fileType = fileType)
+
     
 
 if __name__ == '__main__':
 
     
     conFileDir = './/data//'
-    cfgFileName  = '5_20_20_80_Outdoor_Cfg.txt'
-    degNameCfg = conFileDir + cfgFileName
-    
-    readCfg = Read_Cfg(degNameCfg)
-    
-    
-    data = []
-    readCfg.get('row',data)
-    row = int(data.pop())
-
-    readCfg.get('col',data)
-    col = int(data.pop())
-        
-    mat = zeros((row,col))
-    
-    obRowLst = []
-    obColLst = []
-    readCfg.get('obRow',obRowLst)
-    readCfg.get('obCol',obColLst)
-    
-    for i in range(len(obRowLst)):
-        obRow = int(obRowLst[i])
-        obCol = int(obColLst[i])
-        mat[obRow][obCol] = 1 
-
-
-    robRowLst = []
-    robCowLst = []
-    readCfg.get('robRow',robRowLst)
-    readCfg.get('robCol',robColLst)
-    
-    
-    
-    drawType = 1
-    #case 1 draw Environment
-    if(drawType == 1):
-        env = Env(mat)
-        env.addgrid()
-        robLst = []
-        robLst.append(robRowLst)
-        robLst.append(robColLst)
-        env.addRobotStartPnt(robLst)
-        env.drawPic('./png/env_'+cfgFileName,fileType = False)
-    #case 2 draw Environment
-    if(drawType == 2):
-        env = Env(mat)
-        edgeNameCfg = conFileDir +'obmapDeg.txt'
-        edgeCfg = Read_Cfg(edgeNameCfg)
-        edgeData = []
-        edgeUnit = []
-        edgeCfg.get('sRow',edgeUnit)
-        edgeData.append(copy.deepcopy(edgeUnit))
-        edgeUnit =[]
-        edgeCfg.get('sCol',edgeUnit)
-        edgeData.append(copy.deepcopy(edgeUnit))
-
-        edgeUnit = []
-        edgeCfg.get('tRow',edgeUnit)
-        edgeData.append(copy.deepcopy(edgeUnit))
-        edgeUnit =[]
-        edgeCfg.get('tCol',edgeUnit)
-        edgeData.append(copy.deepcopy(edgeUnit))
-        
-        env.addgrid()
-        env.addEdges(edgeData)
-        env.addTest()
-        env.drawPic('./png/edges',fileType = False)
-        
+#    cfgFileName  = '5_20_20_80_Outdoor_Cfg.txt'
+#    degNameCfg = conFileDir + cfgFileName
+#    
+#    readCfg = Read_Cfg(degNameCfg)
+#    
+#    
+#    data = []
+#    readCfg.get('row',data)
+#    row = int(data.pop())
+#
+#    readCfg.get('col',data)
+#    col = int(data.pop())
+#        
+#    mat = zeros((row,col))
+#    
+#    obRowLst = []
+#    obColLst = []
+#    readCfg.get('obRow',obRowLst)
+#    readCfg.get('obCol',obColLst)
+#    
+#    for i in range(len(obRowLst)):
+#        obRow = int(obRowLst[i])
+#        obCol = int(obColLst[i])
+#        mat[obRow][obCol] = 1 
+#
+#
+#    robRowLst = []
+#    robCowLst = []
+#    readCfg.get('robRow',robRowLst)
+#    readCfg.get('robCol',robColLst)
+#    
+#    
+#    
+#    drawType = 1
+#    #case 1 draw Environment
+#    if(drawType == 1):
+#        env = Env(mat)
+#        env.addgrid()
+#        robLst = []
+#        robLst.append(robRowLst)
+#        robLst.append(robColLst)
+#        env.addRobotStartPnt(robLst)
+#        env.drawPic('./png/env_'+cfgFileName,fileType = False)
+#    #case 2 draw Environment
+#    if(drawType == 2):
+#        env = Env(mat)
+#        edgeNameCfg = conFileDir +'obmapDeg.txt'
+#        edgeCfg = Read_Cfg(edgeNameCfg)
+#        edgeData = []
+#        edgeUnit = []
+#        edgeCfg.get('sRow',edgeUnit)
+#        edgeData.append(copy.deepcopy(edgeUnit))
+#        edgeUnit =[]
+#        edgeCfg.get('sCol',edgeUnit)
+#        edgeData.append(copy.deepcopy(edgeUnit))
+#
+#        edgeUnit = []
+#        edgeCfg.get('tRow',edgeUnit)
+#        edgeData.append(copy.deepcopy(edgeUnit))
+#        edgeUnit =[]
+#        edgeCfg.get('tCol',edgeUnit)
+#        edgeData.append(copy.deepcopy(edgeUnit))
+#        
+#        env.addgrid()
+#        env.addEdges(edgeData)
+#        env.addTest()
+#        env.drawPic('./png/edges',fileType = False)

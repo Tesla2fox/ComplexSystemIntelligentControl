@@ -1428,7 +1428,6 @@ namespace pl {
 
 	void MultiPlan::updateSet(size_t const & succBidID, bex::VertexDescriptor const & megaBoxVd)
 	{
-
 			auto &robSet = _vRobSetPtr->at(succBidID);
 			auto &robNghSet = _vRobNghSetPtr->at(succBidID);
 			//robSet.insert(TreeEdge(megaBoxVd, robNeiSet[megaBoxVd]));

@@ -6,16 +6,16 @@ namespace pl
 	bool pl::Obmap::map2tGrid()
 	{
 		this->_tGrid.clear();
-		auto &vGrid = *_vGridPtr;
-		size_t p = 0;
-		for (size_t i = 0; i < m_MaxRow; i++)
-		{
-			for (size_t j = 0; j < m_MaxCol; j++)
-			{
-				GridIndex ind(i, j);
-				this->_tGrid.insert(pair<GridIndex, size_t>(ind, vGrid[p++]));
-			}
-		}
+		//auto &vGrid = *_vGridPtr;
+		//size_t p = 0;
+		//for (size_t i = 0; i < m_MaxRow; i++)
+		//{
+		//	for (size_t j = 0; j < m_MaxCol; j++)
+		//	{
+		//		GridIndex ind(i, j);
+		//		this->_tGrid.insert(pair<GridIndex, size_t>(ind, vGrid[p++]));
+		//	}
+		//}
 		bool rowChange = false;
 		bool colChange = false;
 		if (m_MaxRow % 2)
@@ -39,11 +39,14 @@ namespace pl
 
 		for (auto &it : (*_vObGridInd)) 
 			_tGrid[GridIndex(it.row,it.col)] = bex::vertType::ObVert;
+		
+		_obVertNum = _vObGridInd->size();
 		if (rowChange)
 		{
 			for (size_t i = 0; i < m_MaxCol; i++)
 			{
 				_tGrid[GridIndex(m_MaxRow - 1, i)] = bex::vertType::ObVert;
+				_obVertNum++;
 			}
 		}
 		if (colChange)
@@ -51,9 +54,11 @@ namespace pl
 			for (size_t i = 0; i < m_MaxRow; i++)
 			{
 				_tGrid[GridIndex(i , m_MaxCol -1)] = bex::vertType::ObVert;
+				_obVertNum++;
 			}
 		}
 		
+		_reachableVertNum = m_MaxRow * m_MaxCol - _obVertNum;
 		//create graph
 		int i = 0;
 		for (auto & it : this->_tGrid)
@@ -63,6 +68,8 @@ namespace pl
 			vp.PntIndex = ind;
 			vp.Type = it.second;
 			vp.EdgeState = false;
+			vp.pnt.x(it.first.first + 0.5);
+			vp.pnt.y(it.first.second + 0.5);
 			boost::add_vertex(vp, this->_tGraph);
 			std::pair<int, int> localIndex;
 			localIndex = it.first;
@@ -265,6 +272,60 @@ namespace pl
 		writeDebug(c_deg, "tPntx", tPntx);
 		writeDebug(c_deg, "tPnty", tPnty);
 
+	}
+
+	bool Obmap::allConnected(vector<bex::VertexDescriptor> const & v_vd)
+	{
+		if (v_vd.size() == 1)
+			return true;
+		using CGraph = boost::adjacency_list<bt::vecS, bt::vecS, bt::undirectedS>;
+		CGraph cg;
+		for (size_t i = 0; i < v_vd.size(); i++)
+		{
+			for (size_t j = i; j < v_vd.size(); j++)
+			{
+				
+				if (isConnected(v_vd[i], v_vd[j], pl::graphType::span))
+				{
+					bt::add_edge(i, j, cg);
+					//cout << "t = " << i << " s = " << j << endl;
+				}
+			}
+		}
+		vector<int> component(bt::num_vertices(cg));
+		if (component.size() < v_vd.size())
+			return false;
+		int num = bt::connected_components(cg, &component[0]);
+		if (num == 1) 
+			return true;
+		return false;
+	}
+
+	bool Obmap::allConnectedBase(vector<bex::VertexDescriptor> const & v_vd)
+	{
+		if (v_vd.size() == 1)
+			return true;
+		using CGraph = boost::adjacency_list<bt::vecS, bt::vecS, bt::undirectedS>;
+		CGraph cg;
+		for (size_t i = 0; i < v_vd.size(); i++)
+		{
+			for (size_t j = i; j < v_vd.size(); j++)
+			{
+
+				if (isConnected(v_vd[i], v_vd[j], pl::graphType::base))
+				{
+					bt::add_edge(i, j, cg);
+					//cout << "t = " << i << " s = " << j << endl;
+				}
+			}
+		}
+		vector<int> component(bt::num_vertices(cg));
+		if (component.size() < v_vd.size())
+			return false;
+		int num = bt::connected_components(cg, &component[0]);
+		if (num == 1)
+			return true;
+		return false;
 	}
 
 	std::vector<GridIndex> Obmap::getSearchVerticalNeighbor(GridIndex const & cen_index, size_t const & gridType)
@@ -499,6 +560,25 @@ namespace pl
 			break;
 		}
 		return false;
+	}
+
+	bool Obmap::isConnected(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2, int const &gridType)
+	{
+		bex::Graph *graphPtr;
+		
+		if (gridType == graphType::base)
+			graphPtr = &this->_tGraph;
+		else
+			graphPtr = &this->_sGraph;
+		auto &graph = *graphPtr;		
+		auto neighborIter = boost::adjacent_vertices(vd1, graph);		
+		std::vector<size_t> vVd;
+		for (auto ni = neighborIter.first; ni != neighborIter.second; ++ni)
+			vVd.push_back(*ni);
+		 auto iter = std::find(vVd.begin(), vVd.end(), vd2);
+		 if(iter == vVd.end())
+			 return false;
+		 return true;
 	}
 	
 }
