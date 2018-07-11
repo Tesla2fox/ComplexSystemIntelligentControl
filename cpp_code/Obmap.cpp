@@ -117,6 +117,8 @@ namespace pl
 	bool Obmap::map2sGrid()
 	{
 		this->_sGrid.clear();
+		this->_STCGrid.clear();
+		this->_STCVirtualGrid.clear();
 		for (size_t i = 0; i < m_sMaxRow; i++)
 		{
 			for (size_t j = 0; j < m_sMaxCol; j++)
@@ -135,8 +137,29 @@ namespace pl
 				vert.RT.second = 2 * j + 1;
 				auto tGridIndex = getTgraphGridInd(ind);
 				vert._vGridIndex = tGridIndex;
+				auto obNum = gridObNum(tGridIndex);
+				vert.virtualType = NOVIR;
+				pair<pair<int, int>, int> indAndType;
+				indAndType.second = STCVertType::Normal;
+				indAndType.first = ind;
+				if (obNum == 2) {
+					if (_tGrid[vert.LT]== bex::ObVert &&_tGrid[vert.RB] == bex::ObVert)
+					{
+						auto vertVir = vert;
+						vertVir.virtualType = VRT;
+						
+						this->_STCVirtualGrid.insert(pair<GridIndex, STCVert>(ind, vertVir));
+						vert.virtualType = VLB;						
+					}
+					if (_tGrid[vert.RT] == bex::ObVert && _tGrid[vert.LB] == bex::ObVert)
+					{
+						auto vertVir = vert;
+						vertVir.virtualType = VLT;
+						this->_STCVirtualGrid.insert(pair<GridIndex, STCVert>(ind, vertVir));
+						vert.virtualType = VRB;
+					}					
+				}
 				this->_STCGrid.insert(pair<GridIndex, STCVert>(ind, vert));
-				//this->_tGrid.insert(pair<GridIndex, size_t>(ind, vGrid[p++]));
 			}
 		}
 
@@ -146,9 +169,6 @@ namespace pl
 		{
 			bex::VertexProperty vp;
 			std::pair<size_t, size_t> ind(it.first.first, it.first.second);
-
-			if (it.first.first == 9 && it.first.second == 0)
-				cout << "bug" << endl;
 			vp.PntIndex = ind;
 			//auto tGridIndex = getTgraphGridInd(ind);
 			vp.pnt.x(it.second.x);
@@ -165,6 +185,9 @@ namespace pl
 			sgraph2map.insert(std::pair<int, std::pair<int, int>>(i, localIndex));
 			i++;
 		}
+
+		//add virtualType
+
 		//add edges of the graph 
 
 		size_t vertNum = 0;
@@ -588,4 +611,9 @@ namespace pl
 		 return true;
 	}
 	
+	bool STCVert::_virtualVertExist()
+	{
+		return false;
+	}
+
 }

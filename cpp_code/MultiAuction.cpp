@@ -14,7 +14,7 @@ namespace pl
 	void pl::MultiAuction::process()
 	{
 		_GridMap.clear();
-		size_t gridNum = boost::num_vertices(_ob_sGraph);
+		size_t gridNum = boost::num_vertices(_ob_tGraph);
 		for (size_t i = 0; i < gridNum; i++)
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
 		auction();

@@ -15,6 +15,10 @@ namespace pl
 	using GridIndex = pair<int, int>;
 	enum graphType { span, base, tree };
 	enum DirType { left, bottom, right, top, center };
+	//VLB means  this vert can connect the left and the bottom vertex
+	//NOVIR means this vert is normal vertex.
+	enum VirtualVertType { NOVIR ,VLB, VRT, VLT, VRB };
+	enum STCVertType { Normal, Left, Right };
 	class STCVert
 	{
 	public:
@@ -29,13 +33,16 @@ namespace pl
 		double x;
 		double y;
 		vector<GridIndex> _vGridIndex;
+		size_t virtualType;
+		//
+		bool _virtualVertExist();
 	private:
 
 	};
 	using  DRingPtr = shared_ptr<bex::DRing>;
 	//using GridMap = std::map
 	using  GridMap = std::map<std::pair<int, int>,size_t>;
-	using STCGridMap = std::map<std::pair<int, int>, STCVert>;
+	using STCGridMap = std::map<pair<pair<int, int>, int>, STCVert>;
 	
 	
 	// used for judge connectness.
@@ -65,8 +72,17 @@ namespace pl
 		///
 		std::map<std::pair<int, int>, int> smap2graph;
 		std::map<int, std::pair<int, int>> sgraph2map;
+		map<pair<pair<int, int>, int>, int> gridInd2GraphVd;
+		map<int, pair<pair<int, int>, int>> graphVd2GridInd;
+		//map<pair<pair<int, int>, int>, int> gridInd2GraphVd;
+
+
 
 		//
+
+		GridIndex &graphVd2GridInd();
+		bex::VertexDescriptor &GridInd;
+		
 
 		bex::Graph& gettGraph() { return _tGraph; }
 		size_t getGridNum() const { return _tGrid.size(); }
@@ -85,6 +101,7 @@ namespace pl
 
 		size_t getReachableVertNum()const { return _reachableVertNum; };
 
+		//size_t getReachableVertNumSTC() const {return }
 
 	private:
 
@@ -95,13 +112,14 @@ namespace pl
 		const shared_ptr<vector<size_t>>_vGridPtr;
 		const shared_ptr<vector<cfg::MatPnt>> _vObGridInd;
 
-		
+		set<GridIndex> _vVitualVertInd;
 		GridMap _tGrid;
 		bex::Graph _tGraph;
 
 		GridMap _sGrid;
 		bex::Graph _sGraph;
 		STCGridMap _STCGrid;
+		STCGridMap _STCVirtualGrid;
 
 		size_t _reachableVertNum;
 		size_t _obVertNum;

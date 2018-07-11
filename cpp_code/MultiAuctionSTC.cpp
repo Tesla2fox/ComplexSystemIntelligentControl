@@ -14,7 +14,7 @@ namespace pl
 	void pl::MultiAuctionSTC::process()
 	{
 		_GridMap.clear();
-		size_t gridNum = boost::num_vertices(_ob_tGraph);
+		size_t gridNum = boost::num_vertices(_ob_sGraph);
 		for (size_t i = 0; i < gridNum; i++)
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
 		auction();
@@ -33,8 +33,8 @@ namespace pl
 
 			for (auto &it : (_vRobSetPtr->at(i)))
 			{
-				vRow.push_back(_ob_tgraph2map[it].first);
-				vCol.push_back(_ob_tgraph2map[it].second);
+				vRow.push_back(_ob_sgraph2map[it].first);
+				vCol.push_back(_ob_sgraph2map[it].second);
 			}
 			writeDebug(c_deg, str_row, vRow);
 			writeDebug(c_deg, str_col, vCol);
@@ -49,8 +49,8 @@ namespace pl
 			vector<size_t> vRow, vCol;
 			for (auto &it : (_vRobNeiPtr->at(i)))
 			{				
-				vRow.push_back(_ob_tgraph2map[it].first);
-				vCol.push_back(_ob_tgraph2map[it].second);
+				vRow.push_back(_ob_sgraph2map[it].first);
+				vCol.push_back(_ob_sgraph2map[it].second);
 			}
 			writeDebug(c_deg, str_row, vRow);
 			writeDebug(c_deg, str_col, vCol);
@@ -82,8 +82,7 @@ namespace pl
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
 			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
 			_vRobSetPtr->at(i).insert(_ob_smap2graph[ind]);	
-			_GridMap[_ob_smap2graph[ind]] = i;
-		
+			_GridMap[_ob_smap2graph[ind]] = i;		
 			updateNeiGraph(i);
 		}
 		do
@@ -97,15 +96,15 @@ namespace pl
 			c_deg << "circleTime = " << circleTime << endl;
 			c_deg << "aucNeer = " << aucNeer << endl;
 			c_deg << "aucVertID = " << aucVertID << endl;
-			c_deg << "aucVertGridInd.first =  " << this->_ob_tgraph2map[aucVertID].first <<
-				"aucVertGrid.second  = " << this->_ob_tgraph2map[aucVertID].second << endl;
-			if (_ob_tgraph2map[aucVertID].first == 9 && _ob_tgraph2map[aucVertID].second == 9)
+			c_deg << "aucVertGridInd.first =  " << this->_ob_sgraph2map[aucVertID].first <<
+				"aucVertGrid.second  = " << this->_ob_sgraph2map[aucVertID].second << endl;
+			if (_ob_sgraph2map[aucVertID].first == 9 && _ob_sgraph2map[aucVertID].second == 9)
 			{
 				cout << "bug" << endl;
 			}
 			if (aucVertID == 155)
 				c_deg << "";
-			if (aucNeer == 0 && _ob_tgraph2map[aucVertID].first == 19 && _ob_tgraph2map[aucVertID].second == 6)
+			if (aucNeer == 0 && _ob_sgraph2map[aucVertID].first == 19 && _ob_sgraph2map[aucVertID].second == 6)
 			{
 				c_deg << " " << endl;
 			}
@@ -136,10 +135,10 @@ namespace pl
 				
 			}
 #ifdef _DEBUG
-			_vRobGridPtr->at(robWinner).push_back(_ob_tgraph2map[aucVertID]);
+			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= maxcircleTime)
+			if ( ++circleTime >= 3/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -172,7 +171,7 @@ namespace pl
 		int UnCoverResVd = -1;
 		int coverResVd = -1;
 		bool allCovered = true;
-		auto &graph = _ob_tGraph;
+		auto &graph = _ob_sGraph;
 		auto &robSet = (*_vRobSetPtr)[aucNeer];
 		auto &robNeiSet = (*_vRobNeiPtr)[aucNeer];
 		//auto &robNghSet = (*_vRobNghSetPtr)[robID];
@@ -289,7 +288,7 @@ namespace pl
 	double MultiAuctionSTC::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
 	{
 		double fitNess = 0;
-		auto &graph = _ob_tGraph;
+		auto &graph = _ob_sGraph;
 		for (size_t i = 0; i < _robNum; i++)
 		{
 			auto &robSet = (*_vRobSetPtr)[i];
@@ -349,7 +348,7 @@ namespace pl
 		for (auto it = robSet.begin(); it != robSet.end(); it++)
 		{
 			auto &cenInd = *it;
-			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_tGraph);
+			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_sGraph);
 			for (auto ni = neighborsIter.first; ni != neighborsIter.second; ++ni)
 			{
 				if (robSet.count(*ni) == 0)
@@ -369,7 +368,7 @@ namespace pl
 		for (auto it = robSet.begin(); it != robSet.end(); it++)
 		{
 			auto &cenInd = *it;
-			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_tGraph);
+			auto neighborsIter = bt::adjacent_vertices(cenInd, _ob_sGraph);
 			for (auto ni = neighborsIter.first; ni != neighborsIter.second; ++ni)
 			{
 				if (robSet.count(*ni) == 0)

@@ -3,6 +3,7 @@
 #include "Obmap.h"
 #include "STCplan.h"
 #include "MultiAuction.h"
+#include "MultiAuctionSTC.h"
 int main(int argc, char * argv[])
 {
 	
@@ -35,13 +36,12 @@ int main(int argc, char * argv[])
 	{
 		startPnt.push_back(pl::GridIndex(readCfg._vStartMatPntPtr->at(i).row, readCfg._vStartMatPntPtr->at(i).col));
 	}
-	pl::MultiAuction multi_auc(obmap, startPnt);
+	//pl::MultiAuction multi_auc(obmap, startPnt);	
+	//multi_auc.setRandomSeed(1);
+	//multi_auc.process();
+	//multi_auc.writeRobGraph();
 	
-	multi_auc.setRandomSeed(1);
-	multi_auc.process();
-	multi_auc.writeRobGraph();
-	
-	pl::MultiAuction multi_aucSTC(obmap, startPnt);
+	pl::MultiAuctionSTC multi_aucSTC(obmap,startPnt);
 	multi_aucSTC.setRandomSeed(1);
 	multi_aucSTC.process();
 	multi_aucSTC.writeRobGraph();

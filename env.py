@@ -195,6 +195,30 @@ class Env:
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
                                              text = str(pnt.x)+'-'+str(pnt.y)))
                 self.shapeLst.append(copy.deepcopy(rectDic))
+    def addSTCGraph(self,robNum  = 0, lst = [], txtType = False):
+        g_color = 'blue'
+        bupu = cl.scales[str(robNum)]['seq']['BuPu']
+        print(bupu)
+        for i in range(robNum):
+            for j in range(len(lst[2*i])):
+                pnt = Pnt(int(lst[2*i][j])*2,int(lst[2*i +1][j])*2)
+                rect = Rect(pnt,2,2)
+                rectDic = rect.rect2dict()
+                rectDic['line']['color'] = g_color
+                rectDic['line']['width'] = 1
+                rectDic['fillcolor'] = bupu[i]
+                rectDic['opacity'] = 0.6
+                if(txtType):
+                    self.annotations.append(dict(showarrow = False,
+                                             x = pnt.x + 1 ,y = pnt.y + 1,
+                                             text = str(i)))
+                else:
+                    self.annotations.append(dict(showarrow = False,
+                                             x = pnt.x + 1 ,y = pnt.y + 1,
+                                             text = str(int(lst[2*i][j]))+'-'+
+                                             str(int(lst[2*i +1][j]))))
+                    
+                self.shapeLst.append(copy.deepcopy(rectDic))
     def addNeiGraph(self,robNum  = 0, lst = []):
         g_color = 'blue'
         bupu = cl.scales[str(robNum)]['seq']['BuPu']
@@ -372,8 +396,6 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst.append(robColLst)
         env.addRobotStartPnt(robLst)
         env.addgrid()
-
-
         graphNameCfg = conFileDir +'auctionDeg.txt'
         graphCfg = Read_Cfg(graphNameCfg)
         robNum = int(graphCfg.getSingleVal('robNum'))
@@ -399,7 +421,6 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addNeiGraph(robNum,graphData)                    
         env.addTest()        
         env.drawPic('./png/robNei&Graph',fileType = fileType)
-
 # case 4 draw Envirionment with graph
     if(drawType == 6):
         env = Env(mat)
@@ -424,6 +445,40 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addGraph(robNum,graphData,False)        
         env.addRobotStartPnt(robLst)
         env.drawPic('./png/robGraph&RC',fileType = fileType)
+
+#   case 5 draw graph with STC
+    if(drawType == 7):   
+        env = Env(mat)        
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        graphNameCfg = conFileDir +'auctionSTCDeg.txt'
+        graphCfg = Read_Cfg(graphNameCfg)
+        robNum = int(graphCfg.getSingleVal('robNum'))
+        graphData = []
+        for i in range(robNum):
+            graphUnit = []
+            graphCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            graphCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addSTCGraph(robNum,graphData)        
+        graphData = []
+        
+#        for i in range(robNum):
+#            graphUnit = []
+#            graphCfg.get('neiRow'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#            graphUnit = []
+#            graphCfg.get('neiCol'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#        print(graphData)
+#        env.addNeiGraph(robNum,graphData)                    
+        env.addTest()
+        env.addRobotStartPnt(robLst)
+        env.addgrid()        
+        env.drawPic('./png/robNei&Graph',fileType = fileType)
 
     
 
