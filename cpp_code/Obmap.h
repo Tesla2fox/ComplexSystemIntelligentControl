@@ -43,7 +43,7 @@ namespace pl
 	//using GridMap = std::map
 	using  GridMap = std::map<std::pair<int, int>,size_t>;
 	using STCGridMap = std::map<pair<pair<int, int>, int>, STCVert>;
-	
+	using STCGridInd = pair<pair<int, int>, int>;
 	
 	// used for judge connectness.
 	using CGraph = boost::adjacency_list<bt::vecS, bt::vecS, bt::undirectedS>;
@@ -53,12 +53,13 @@ namespace pl
 	public:
 		Obmap(cfg::ReadConfig const& readCfg):
 			m_MaxRow(readCfg._row), m_MaxCol(readCfg._col),_vGridPtr(readCfg._vGridPtr),
-			m_sMaxRow(ceil(double(readCfg._row)/2)), m_sMaxCol(ceil(double(readCfg._col) / 2)), _vObGridInd(readCfg._vObGridInd)
+			m_sMaxRow(ceil(double(readCfg._row)/2)),m_sMaxCol(ceil(double(readCfg._col) / 2)),_vObGridInd(readCfg._vObGridInd)
 		{			
 			string  str_deg = conDir;
 			str_deg += "obmapDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);
 		}
+
 		template<typename T>
 		friend  bool ::writeDebug(std::ofstream &deg, string const &str, vector<T> const &v_val);
 
@@ -74,14 +75,17 @@ namespace pl
 		std::map<int, std::pair<int, int>> sgraph2map;
 		map<pair<pair<int, int>, int>, int> gridInd2GraphVd;
 		map<int, pair<pair<int, int>, int>> graphVd2GridInd;
+
+		set<pair<int, int>> realVertSet;
+		set<pair<int, int>> vitualVertSet;
 		//map<pair<pair<int, int>, int>, int> gridInd2GraphVd;
 
 
 
 		//
 
-		GridIndex &graphVd2GridInd();
-		bex::VertexDescriptor &GridInd;
+		//GridIndex &graphVd2GridInd();
+		//bex::VertexDescriptor GridInd;
 		
 
 		bex::Graph& gettGraph() { return _tGraph; }

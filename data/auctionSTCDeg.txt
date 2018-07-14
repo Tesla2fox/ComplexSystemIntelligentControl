@@ -1,0 +1,40 @@
+circleTime = 0
+aucNeer = 0
+aucVertID = 40
+aucVertGridInd.first =  4aucVertGrid.second  = 0
+circleTime = 1
+aucNeer = 4
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 2
+aucNeer = 4
+aucVertID = 8
+aucVertGridInd.first =  0aucVertGrid.second  = 8
+rob0	set size = 2
+rob1	set size = 1
+rob2	set size = 1
+rob3	set size = 1
+rob4	set size = 3
+max  = 3 min = 1
+allNumSize = 8
+robNum 5
+row0 4 4
+col0 0 1
+row1 3
+col1 7
+row2 8
+col2 5
+row3 1
+col3 1
+row4 0 0 1
+col4 7 8 7
+neiRow0 3 3 4 5
+neiCol0 0 1 2 0
+neiRow1 2 3 3 4
+neiCol1 7 6 8 7
+neiRow2 7 8 8 9
+neiCol2 5 4 6 5
+neiRow3 0 1 1 2
+neiCol3 1 0 2 1
+neiRow4 0 0 1 2
+neiCol4 6 9 6 7

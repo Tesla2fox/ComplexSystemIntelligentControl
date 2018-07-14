@@ -1,0 +1,760 @@
+circleTime = 0
+aucNeer = 0
+aucVertID = 14757395258967641292
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 1
+aucNeer = 4
+aucVertID = 34
+aucVertGridInd.first =  1aucVertGrid.second  = 14
+circleTime = 2
+aucNeer = 4
+aucVertID = 14
+aucVertGridInd.first =  0aucVertGrid.second  = 14
+circleTime = 3
+aucNeer = 3
+aucVertID = 41
+aucVertGridInd.first =  2aucVertGrid.second  = 1
+circleTime = 4
+aucNeer = 3
+aucVertID = 40
+aucVertGridInd.first =  2aucVertGrid.second  = 0
+circleTime = 5
+aucNeer = 3
+aucVertID = 20
+aucVertGridInd.first =  1aucVertGrid.second  = 0
+circleTime = 6
+aucNeer = 1
+aucVertID = 20
+aucVertGridInd.first =  1aucVertGrid.second  = 0
+circleTime = 7
+aucNeer = 1
+aucVertID = 20
+aucVertGridInd.first =  1aucVertGrid.second  = 0
+circleTime = 8
+aucNeer = 4
+aucVertID = 35
+aucVertGridInd.first =  1aucVertGrid.second  = 15
+circleTime = 9
+aucNeer = 2
+aucVertID = 35
+aucVertGridInd.first =  1aucVertGrid.second  = 15
+circleTime = 10
+aucNeer = 3
+aucVertID = 0
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 11
+aucNeer = 4
+aucVertID = 36
+aucVertGridInd.first =  1aucVertGrid.second  = 16
+circleTime = 12
+aucNeer = 1
+aucVertID = 36
+aucVertGridInd.first =  1aucVertGrid.second  = 16
+circleTime = 13
+aucNeer = 3
+aucVertID = 60
+aucVertGridInd.first =  3aucVertGrid.second  = 0
+circleTime = 14
+aucNeer = 3
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 15
+aucNeer = 0
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 16
+aucNeer = 2
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 17
+aucNeer = 1
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 18
+aucNeer = 2
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 19
+aucNeer = 1
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 20
+aucNeer = 0
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
+circleTime = 21
+aucNeer = 3
+aucVertID = 80
+aucVertGridInd.first =  4aucVertGrid.second  = 0
+circleTime = 22
+aucNeer = 1
+aucVertID = 80
+aucVertGridInd.first =  4aucVertGrid.second  = 0
+circleTime = 23
+aucNeer = 4
+aucVertID = 37
+aucVertGridInd.first =  1aucVertGrid.second  = 17
+circleTime = 24
+aucNeer = 3
+aucVertID = 21
+aucVertGridInd.first =  1aucVertGrid.second  = 1
+circleTime = 25
+aucNeer = 1
+aucVertID = 21
+aucVertGridInd.first =  1aucVertGrid.second  = 1
+circleTime = 26
+aucNeer = 4
+aucVertID = 38
+aucVertGridInd.first =  1aucVertGrid.second  = 18
+circleTime = 27
+aucNeer = 2
+aucVertID = 38
+aucVertGridInd.first =  1aucVertGrid.second  = 18
+circleTime = 28
+aucNeer = 4
+aucVertID = 39
+aucVertGridInd.first =  1aucVertGrid.second  = 19
+circleTime = 29
+aucNeer = 4
+aucVertID = 19
+aucVertGridInd.first =  0aucVertGrid.second  = 19
+circleTime = 30
+aucNeer = 3
+aucVertID = 61
+aucVertGridInd.first =  3aucVertGrid.second  = 1
+circleTime = 31
+aucNeer = 1
+aucVertID = 61
+aucVertGridInd.first =  3aucVertGrid.second  = 1
+circleTime = 32
+aucNeer = 2
+aucVertID = 61
+aucVertGridInd.first =  3aucVertGrid.second  = 1
+circleTime = 33
+aucNeer = 3
+aucVertID = 2
+aucVertGridInd.first =  0aucVertGrid.second  = 2
+circleTime = 34
+aucNeer = 2
+aucVertID = 2
+aucVertGridInd.first =  0aucVertGrid.second  = 2
+circleTime = 35
+aucNeer = 3
+aucVertID = 22
+aucVertGridInd.first =  1aucVertGrid.second  = 2
+circleTime = 36
+aucNeer = 3
+aucVertID = 62
+aucVertGridInd.first =  3aucVertGrid.second  = 2
+circleTime = 37
+aucNeer = 1
+aucVertID = 62
+aucVertGridInd.first =  3aucVertGrid.second  = 2
+circleTime = 38
+aucNeer = 2
+aucVertID = 62
+aucVertGridInd.first =  3aucVertGrid.second  = 2
+circleTime = 39
+aucNeer = 0
+aucVertID = 62
+aucVertGridInd.first =  3aucVertGrid.second  = 2
+circleTime = 40
+aucNeer = 0
+aucVertID = 62
+aucVertGridInd.first =  3aucVertGrid.second  = 2
+circleTime = 41
+aucNeer = 4
+aucVertID = 59
+aucVertGridInd.first =  2aucVertGrid.second  = 19
+circleTime = 42
+aucNeer = 0
+aucVertID = 59
+aucVertGridInd.first =  2aucVertGrid.second  = 19
+circleTime = 43
+aucNeer = 3
+aucVertID = 82
+aucVertGridInd.first =  4aucVertGrid.second  = 2
+circleTime = 44
+aucNeer = 3
+aucVertID = 3
+aucVertGridInd.first =  0aucVertGrid.second  = 3
+circleTime = 45
+aucNeer = 0
+aucVertID = 3
+aucVertGridInd.first =  0aucVertGrid.second  = 3
+circleTime = 46
+aucNeer = 3
+aucVertID = 23
+aucVertGridInd.first =  1aucVertGrid.second  = 3
+circleTime = 47
+aucNeer = 4
+aucVertID = 79
+aucVertGridInd.first =  3aucVertGrid.second  = 19
+circleTime = 48
+aucNeer = 1
+aucVertID = 79
+aucVertGridInd.first =  3aucVertGrid.second  = 19
+circleTime = 49
+aucNeer = 4
+aucVertID = 99
+aucVertGridInd.first =  4aucVertGrid.second  = 19
+circleTime = 50
+aucNeer = 4
+aucVertID = 18
+aucVertGridInd.first =  0aucVertGrid.second  = 18
+circleTime = 51
+aucNeer = 0
+aucVertID = 18
+aucVertGridInd.first =  0aucVertGrid.second  = 18
+circleTime = 52
+aucNeer = 3
+aucVertID = 63
+aucVertGridInd.first =  3aucVertGrid.second  = 3
+circleTime = 53
+aucNeer = 0
+aucVertID = 63
+aucVertGridInd.first =  3aucVertGrid.second  = 3
+circleTime = 54
+aucNeer = 1
+aucVertID = 63
+aucVertGridInd.first =  3aucVertGrid.second  = 3
+circleTime = 55
+aucNeer = 3
+aucVertID = 4
+aucVertGridInd.first =  0aucVertGrid.second  = 4
+circleTime = 56
+aucNeer = 1
+aucVertID = 4
+aucVertGridInd.first =  0aucVertGrid.second  = 4
+circleTime = 57
+aucNeer = 4
+aucVertID = 58
+aucVertGridInd.first =  2aucVertGrid.second  = 18
+circleTime = 58
+aucNeer = 2
+aucVertID = 58
+aucVertGridInd.first =  2aucVertGrid.second  = 18
+circleTime = 59
+aucNeer = 3
+aucVertID = 24
+aucVertGridInd.first =  1aucVertGrid.second  = 4
+circleTime = 60
+aucNeer = 1
+aucVertID = 24
+aucVertGridInd.first =  1aucVertGrid.second  = 4
+circleTime = 61
+aucNeer = 4
+aucVertID = 98
+aucVertGridInd.first =  4aucVertGrid.second  = 18
+circleTime = 62
+aucNeer = 4
+aucVertID = 78
+aucVertGridInd.first =  3aucVertGrid.second  = 18
+circleTime = 63
+aucNeer = 3
+aucVertID = 64
+aucVertGridInd.first =  3aucVertGrid.second  = 4
+circleTime = 64
+aucNeer = 3
+aucVertID = 84
+aucVertGridInd.first =  4aucVertGrid.second  = 4
+circleTime = 65
+aucNeer = 3
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 5
+circleTime = 66
+aucNeer = 1
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 5
+circleTime = 67
+aucNeer = 2
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 5
+circleTime = 68
+aucNeer = 2
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 5
+circleTime = 69
+aucNeer = 3
+aucVertID = 25
+aucVertGridInd.first =  1aucVertGrid.second  = 5
+circleTime = 70
+aucNeer = 4
+aucVertID = 17
+aucVertGridInd.first =  0aucVertGrid.second  = 17
+circleTime = 71
+aucNeer = 3
+aucVertID = 45
+aucVertGridInd.first =  2aucVertGrid.second  = 5
+circleTime = 72
+aucNeer = 0
+aucVertID = 45
+aucVertGridInd.first =  2aucVertGrid.second  = 5
+circleTime = 73
+aucNeer = 2
+aucVertID = 45
+aucVertGridInd.first =  2aucVertGrid.second  = 5
+circleTime = 74
+aucNeer = 2
+aucVertID = 45
+aucVertGridInd.first =  2aucVertGrid.second  = 5
+circleTime = 75
+aucNeer = 3
+aucVertID = 85
+aucVertGridInd.first =  4aucVertGrid.second  = 5
+circleTime = 76
+aucNeer = 0
+aucVertID = 85
+aucVertGridInd.first =  4aucVertGrid.second  = 5
+circleTime = 77
+aucNeer = 4
+aucVertID = 97
+aucVertGridInd.first =  4aucVertGrid.second  = 17
+circleTime = 78
+aucNeer = 4
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 79
+aucNeer = 0
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 80
+aucNeer = 1
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 81
+aucNeer = 2
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 82
+aucNeer = 2
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 83
+aucNeer = 0
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 84
+aucNeer = 0
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 85
+aucNeer = 0
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 86
+aucNeer = 4
+aucVertID = 96
+aucVertGridInd.first =  4aucVertGrid.second  = 16
+circleTime = 87
+aucNeer = 1
+aucVertID = 96
+aucVertGridInd.first =  4aucVertGrid.second  = 16
+circleTime = 88
+aucNeer = 1
+aucVertID = 96
+aucVertGridInd.first =  4aucVertGrid.second  = 16
+circleTime = 89
+aucNeer = 4
+aucVertID = 95
+aucVertGridInd.first =  4aucVertGrid.second  = 15
+circleTime = 90
+aucNeer = 0
+aucVertID = 95
+aucVertGridInd.first =  4aucVertGrid.second  = 15
+circleTime = 91
+aucNeer = 3
+aucVertID = 65
+aucVertGridInd.first =  3aucVertGrid.second  = 5
+circleTime = 92
+aucNeer = 2
+aucVertID = 65
+aucVertGridInd.first =  3aucVertGrid.second  = 5
+circleTime = 93
+aucNeer = 2
+aucVertID = 65
+aucVertGridInd.first =  3aucVertGrid.second  = 5
+circleTime = 94
+aucNeer = 3
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 95
+aucNeer = 2
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 96
+aucNeer = 2
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 97
+aucNeer = 2
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 98
+aucNeer = 2
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 99
+aucNeer = 2
+aucVertID = 86
+aucVertGridInd.first =  4aucVertGrid.second  = 6
+circleTime = 100
+aucNeer = 3
+aucVertID = 46
+aucVertGridInd.first =  2aucVertGrid.second  = 6
+circleTime = 101
+aucNeer = 3
+aucVertID = 66
+aucVertGridInd.first =  3aucVertGrid.second  = 6
+circleTime = 102
+aucNeer = 3
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 103
+aucNeer = 1
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 104
+aucNeer = 1
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 105
+aucNeer = 1
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 106
+aucNeer = 0
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 107
+aucNeer = 0
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 108
+aucNeer = 2
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 109
+aucNeer = 0
+aucVertID = 47
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 110
+aucNeer = 3
+aucVertID = 27
+aucVertGridInd.first =  1aucVertGrid.second  = 7
+circleTime = 111
+aucNeer = 0
+aucVertID = 27
+aucVertGridInd.first =  1aucVertGrid.second  = 7
+circleTime = 112
+aucNeer = 0
+aucVertID = 27
+aucVertGridInd.first =  1aucVertGrid.second  = 7
+circleTime = 113
+aucNeer = 4
+aucVertID = 55
+aucVertGridInd.first =  2aucVertGrid.second  = 15
+circleTime = 114
+aucNeer = 4
+aucVertID = 75
+aucVertGridInd.first =  3aucVertGrid.second  = 15
+circleTime = 115
+aucNeer = 2
+aucVertID = 75
+aucVertGridInd.first =  3aucVertGrid.second  = 15
+circleTime = 116
+aucNeer = 0
+aucVertID = 75
+aucVertGridInd.first =  3aucVertGrid.second  = 15
+circleTime = 117
+aucNeer = 0
+aucVertID = 75
+aucVertGridInd.first =  3aucVertGrid.second  = 15
+circleTime = 118
+aucNeer = 3
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 119
+aucNeer = 0
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 120
+aucNeer = 2
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 121
+aucNeer = 1
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 122
+aucNeer = 4
+aucVertID = 94
+aucVertGridInd.first =  4aucVertGrid.second  = 14
+circleTime = 123
+aucNeer = 2
+aucVertID = 94
+aucVertGridInd.first =  4aucVertGrid.second  = 14
+circleTime = 124
+aucNeer = 4
+aucVertID = 13
+aucVertGridInd.first =  0aucVertGrid.second  = 13
+circleTime = 125
+aucNeer = 4
+aucVertID = 33
+aucVertGridInd.first =  1aucVertGrid.second  = 13
+circleTime = 126
+aucNeer = 3
+aucVertID = 67
+aucVertGridInd.first =  3aucVertGrid.second  = 7
+circleTime = 127
+aucNeer = 4
+aucVertID = 93
+aucVertGridInd.first =  4aucVertGrid.second  = 13
+circleTime = 128
+aucNeer = 2
+aucVertID = 93
+aucVertGridInd.first =  4aucVertGrid.second  = 13
+circleTime = 129
+aucNeer = 1
+aucVertID = 93
+aucVertGridInd.first =  4aucVertGrid.second  = 13
+circleTime = 130
+aucNeer = 4
+aucVertID = 53
+aucVertGridInd.first =  2aucVertGrid.second  = 13
+circleTime = 131
+aucNeer = 1
+aucVertID = 53
+aucVertGridInd.first =  2aucVertGrid.second  = 13
+circleTime = 132
+aucNeer = 3
+aucVertID = 8
+aucVertGridInd.first =  0aucVertGrid.second  = 8
+circleTime = 133
+aucNeer = 4
+aucVertID = 73
+aucVertGridInd.first =  3aucVertGrid.second  = 13
+circleTime = 134
+aucNeer = 3
+aucVertID = 28
+aucVertGridInd.first =  1aucVertGrid.second  = 8
+circleTime = 135
+aucNeer = 3
+aucVertID = 48
+aucVertGridInd.first =  2aucVertGrid.second  = 8
+circleTime = 136
+aucNeer = 1
+aucVertID = 48
+aucVertGridInd.first =  2aucVertGrid.second  = 8
+circleTime = 137
+aucNeer = 2
+aucVertID = 48
+aucVertGridInd.first =  2aucVertGrid.second  = 8
+circleTime = 138
+aucNeer = 4
+aucVertID = 12
+aucVertGridInd.first =  0aucVertGrid.second  = 12
+circleTime = 139
+aucNeer = 4
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 140
+aucNeer = 1
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 141
+aucNeer = 2
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 142
+aucNeer = 2
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 143
+aucNeer = 0
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 144
+aucNeer = 0
+aucVertID = 92
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 145
+aucNeer = 4
+aucVertID = 32
+aucVertGridInd.first =  1aucVertGrid.second  = 12
+circleTime = 146
+aucNeer = 3
+aucVertID = 68
+aucVertGridInd.first =  3aucVertGrid.second  = 8
+circleTime = 147
+aucNeer = 4
+aucVertID = 72
+aucVertGridInd.first =  3aucVertGrid.second  = 12
+circleTime = 148
+aucNeer = 1
+aucVertID = 72
+aucVertGridInd.first =  3aucVertGrid.second  = 12
+circleTime = 149
+aucNeer = 0
+aucVertID = 72
+aucVertGridInd.first =  3aucVertGrid.second  = 12
+circleTime = 150
+aucNeer = 0
+aucVertID = 72
+aucVertGridInd.first =  3aucVertGrid.second  = 12
+circleTime = 151
+aucNeer = 4
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 152
+aucNeer = 2
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 153
+aucNeer = 1
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 154
+aucNeer = 2
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 155
+aucNeer = 0
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 156
+aucNeer = 1
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 157
+aucNeer = 1
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 158
+aucNeer = 3
+aucVertID = 88
+aucVertGridInd.first =  4aucVertGrid.second  = 8
+circleTime = 159
+aucNeer = 2
+aucVertID = 88
+aucVertGridInd.first =  4aucVertGrid.second  = 8
+circleTime = 160
+aucNeer = 0
+aucVertID = 88
+aucVertGridInd.first =  4aucVertGrid.second  = 8
+circleTime = 161
+aucNeer = 0
+aucVertID = 88
+aucVertGridInd.first =  4aucVertGrid.second  = 8
+circleTime = 162
+aucNeer = 4
+aucVertID = 31
+aucVertGridInd.first =  1aucVertGrid.second  = 11
+circleTime = 163
+aucNeer = 1
+aucVertID = 31
+aucVertGridInd.first =  1aucVertGrid.second  = 11
+circleTime = 164
+aucNeer = 4
+aucVertID = 71
+aucVertGridInd.first =  3aucVertGrid.second  = 11
+circleTime = 165
+aucNeer = 4
+aucVertID = 51
+aucVertGridInd.first =  2aucVertGrid.second  = 11
+circleTime = 166
+aucNeer = 4
+aucVertID = 10
+aucVertGridInd.first =  0aucVertGrid.second  = 10
+circleTime = 167
+aucNeer = 0
+aucVertID = 10
+aucVertGridInd.first =  0aucVertGrid.second  = 10
+circleTime = 168
+aucNeer = 1
+aucVertID = 10
+aucVertGridInd.first =  0aucVertGrid.second  = 10
+circleTime = 169
+aucNeer = 4
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 170
+aucNeer = 1
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 171
+aucNeer = 0
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 172
+aucNeer = 2
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 173
+aucNeer = 2
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 174
+aucNeer = 2
+aucVertID = 30
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 175
+aucNeer = 3
+aucVertID = 9
+aucVertGridInd.first =  0aucVertGrid.second  = 9
+circleTime = 176
+aucNeer = 3
+aucVertID = 29
+aucVertGridInd.first =  1aucVertGrid.second  = 9
+circleTime = 177
+aucNeer = 3
+aucVertID = 49
+aucVertGridInd.first =  2aucVertGrid.second  = 9
+circleTime = 178
+aucNeer = 0
+aucVertID = 49
+aucVertGridInd.first =  2aucVertGrid.second  = 9
+circleTime = 179
+aucNeer = 4
+aucVertID = 29
+aucVertGridInd.first =  1aucVertGrid.second  = 9
+circleTime = 180
+aucNeer = 3
+aucVertID = 29
+aucVertGridInd.first =  1aucVertGrid.second  = 9
+circleTime = 181
+aucNeer = 4
+aucVertID = 29
+aucVertGridInd.first =  1aucVertGrid.second  = 9
+circleTime = 182
+aucNeer = 4
+aucVertID = 29
+aucVertGridInd.first =  1aucVertGrid.second  = 9
+rob0	set size = 1
+rob1	set size = 1
+rob2	set size = 1
+rob3	set size = 41
+rob4	set size = 39
+max  = 41 min = 1
+allNumSize = 83
+robNum 5
+row0 8
+col0 3
+row1 7
+col1 15
+row2 16
+col2 10
+row3 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4
+col3 0 1 2 3 4 5 7 8 9 0 1 2 3 4 5 7 8 9 0 1 2 5 6 7 8 9 0 1 2 3 4 5 6 7 8 0 2 4 5 6 8
+row4 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4
+col4 10 11 12 13 14 16 17 18 19 10 11 12 13 14 15 16 17 18 19 11 13 14 15 18 19 11 12 13 15 18 19 12 13 14 15 16 17 18 19
+neiRow0 7 8 8 9
+neiCol0 3 2 4 3
+neiRow1 6 7 7 8
+neiCol1 15 14 16 15
+neiRow2 16 17
+neiCol2 11 10
+neiRow3 0 1 5 5 5 5 5
+neiCol3 10 10 0 4 5 6 8
+neiRow4 0 1 5 5 5 5 5 5
+neiCol4 9 9 12 14 15 16 17 19

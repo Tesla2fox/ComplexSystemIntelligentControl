@@ -139,27 +139,40 @@ namespace pl
 				vert._vGridIndex = tGridIndex;
 				auto obNum = gridObNum(tGridIndex);
 				vert.virtualType = NOVIR;
-				pair<pair<int, int>, int> indAndType;
+				STCGridInd indAndType;
 				indAndType.second = STCVertType::Normal;
 				indAndType.first = ind;
+				bool existVir = false;
 				if (obNum == 2) {
 					if (_tGrid[vert.LT]== bex::ObVert &&_tGrid[vert.RB] == bex::ObVert)
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VRT;
-						
-						this->_STCVirtualGrid.insert(pair<GridIndex, STCVert>(ind, vertVir));
-						vert.virtualType = VLB;						
+						indAndType.second = STCVertType::Left;
+						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
+						vert.virtualType = VLB;
+						indAndType.second = STCVertType::Right;
+						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
+						existVir = true;
+						vitualVertSet.insert(ind);
 					}
 					if (_tGrid[vert.RT] == bex::ObVert && _tGrid[vert.LB] == bex::ObVert)
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VLT;
-						this->_STCVirtualGrid.insert(pair<GridIndex, STCVert>(ind, vertVir));
+						indAndType.second = STCVertType::Left;
+						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
 						vert.virtualType = VRB;
+						indAndType.second = STCVertType::Right;
+						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
+						existVir = true;
+						vitualVertSet.insert(ind);
 					}					
 				}
-				this->_STCGrid.insert(pair<GridIndex, STCVert>(ind, vert));
+				if (!existVir) {
+					this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
+					realVertSet.insert(ind);
+				}
 			}
 		}
 
@@ -168,7 +181,7 @@ namespace pl
 		for (auto & it : this->_STCGrid)
 		{
 			bex::VertexProperty vp;
-			std::pair<size_t, size_t> ind(it.first.first, it.first.second);
+			std::pair<size_t, size_t> ind(it.first.first.first, it.first.first.second);
 			vp.PntIndex = ind;
 			//auto tGridIndex = getTgraphGridInd(ind);
 			vp.pnt.x(it.second.x);
@@ -179,10 +192,10 @@ namespace pl
 				vp.Type = bex::vertType::WayVert;
 			vp.EdgeState = false;
 			boost::add_vertex(vp, this->_sGraph);
-			std::pair<int, int> localIndex;
-			localIndex = it.first;
-			smap2graph.insert(std::pair<std::pair<int, int>, int>(localIndex, i));
-			sgraph2map.insert(std::pair<int, std::pair<int, int>>(i, localIndex));
+			//std::pair<int, int> localIndex;			
+			//localIndex = it.first;
+			gridInd2GraphVd.insert(pair<STCGridInd, int>(it.first, i));
+			graphVd2GridInd.insert(pair<int, STCGridInd>(i, it.first));
 			i++;
 		}
 
