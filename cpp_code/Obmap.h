@@ -18,6 +18,8 @@ namespace pl
 	//VLB means  this vert can connect the left and the bottom vertex
 	//NOVIR means this vert is normal vertex.
 	enum VirtualVertType { NOVIR ,VLB, VRT, VLT, VRB };
+
+
 	enum STCVertType { Normal, Left, Right };
 	class STCVert
 	{
@@ -139,6 +141,8 @@ namespace pl
 
 		std::vector<GridIndex> getSearchVerticalNeighbor(GridIndex const &cen_index, size_t const &gridType);
 		std::vector<GridIndex> getSTCVerticalNeighbor(GridIndex const& cen_index);
+		std::vector<STCGridInd> getSTCNeighbor(STCGridInd const& cen_index);
+
 
 		vector<GridIndex> getTgraphGridInd(GridIndex const & cenInd);
 		bool allObstacle(vector<GridIndex> const &vindex);
@@ -146,8 +150,11 @@ namespace pl
 		bool gridObstacle(GridIndex const & cenInd);
 		int gridObNum(vector<GridIndex> const &vindex);
 		bool obstacleOccupy(GridIndex const & cenInd, int const &dir);
+		bool obstacleOccupy(STCGridInd const & cenInd, int const &dir);
 		bool adjacent(GridIndex const &sInd, GridIndex const &tInd, int const &dir);
+		bool adjacent(STCGridInd const &sInd, STCGridInd const & tInd, int const &dir);
 
+	public:
 		bool isConnected(bex::VertexDescriptor const &vd1, bex::VertexDescriptor const &vd2,int const &gridType);
 	};
 }

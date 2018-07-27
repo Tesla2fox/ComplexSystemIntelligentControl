@@ -17,7 +17,9 @@ namespace pl
 		size_t gridNum = boost::num_vertices(_ob_sGraph);
 		for (size_t i = 0; i < gridNum; i++)
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
-		auction();
+
+		formSpanningTree();
+		//auction();
 	}
 
 	void MultiAuctionSTC::writeRobGraph()
@@ -55,6 +57,70 @@ namespace pl
 			writeDebug(c_deg, str_row, vRow);
 			writeDebug(c_deg, str_col, vCol);
 		}
+	}
+	void MultiAuctionSTC::formSpanningTree()
+	{
+
+		typedef bt::adjacency_list < bt::vecS, bt::vecS, bt::undirectedS,
+			bt::property<bt::vertex_distance_t, int>, bt::property < bt::edge_weight_t, int > > SGraph;
+		typedef std::pair < int, int >SE;
+		auto &graph = _ob_sGraph;
+		const int num_nodes = bt::num_vertices(graph);
+		vector<size_t> vSvd, vTvd;
+		vector<bex::VertexDescriptor> vvd;
+		for (size_t i = 0; i < num_nodes; i++)
+			vvd.push_back(i);
+
+		for (size_t i = 0; i < vvd.size(); i++)
+		{
+			for (size_t j = i; j < vvd.size(); j++)
+			{
+				if (_mainMap.isConnected(vvd[i], vvd[j], pl::graphType::span))
+				{
+					vSvd.push_back(i);
+					vTvd.push_back(j);
+				}
+			}
+		}
+		const int edgeNum = vSvd.size();
+		SE * edgesPtr = new SE[edgeNum];
+		int * weightPtr = new int[edgeNum];
+		for (size_t i = 0; i < vSvd.size(); i++)
+		{
+			//cout << "index = " << i << endl;
+			edgesPtr[i] = SE(vSvd[i], vTvd[i]);
+			weightPtr[i] = 1;
+		}
+
+
+		SGraph g(edgesPtr, edgesPtr + edgeNum, weightPtr, num_nodes);
+
+		std::vector < bt::graph_traits < SGraph >::vertex_descriptor >
+			p(num_vertices(g));
+		bt::prim_minimum_spanning_tree(g, &p[0]);
+
+		vector<double> sPntx, sPnty, tPntx, tPnty;
+		for (std::size_t i = 0; i < p.size(); ++i)
+		{
+			cout << i << endl;
+			cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
+			//auto sg = bex::DSegment(_ob_sGraph[vvd[i]].pnt, _ob_sGraph[vvd[p[i]]].pnt);
+			//_vTreeSgs[robID].push_back(sg);
+
+			bex::VertexProperty &sVert = graph[vvd[i]];
+			bex::VertexProperty &tVert = graph[vvd[p[i]]];
+
+			sPntx.push_back(sVert.pnt.x());
+			sPnty.push_back(sVert.pnt.y());
+
+			//cout << "pnt.x " << tVert.pnt.x() << "	pnt.y" << tVert.pnt.y() << endl;
+			tPntx.push_back(tVert.pnt.x());
+			tPnty.push_back(tVert.pnt.y());
+		}
+		writeDebug(c_deg, "sPntx", sPntx);
+		writeDebug(c_deg, "sPnty", sPnty);
+		writeDebug(c_deg, "tPntx", tPntx);
+		writeDebug(c_deg, "tPnty", tPnty);
 	}
 	void pl::MultiAuctionSTC::auction()
 	{

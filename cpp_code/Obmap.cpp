@@ -140,7 +140,8 @@ namespace pl
 				auto obNum = gridObNum(tGridIndex);
 				vert.virtualType = NOVIR;
 				STCGridInd indAndType;
-				indAndType.second = STCVertType::Normal;
+				//indAndType.second = STCVertType::Normal;
+				indAndType.second = NOVIR;
 				indAndType.first = ind;
 				bool existVir = false;
 				if (obNum == 2) {
@@ -148,10 +149,12 @@ namespace pl
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VRT;
-						indAndType.second = STCVertType::Left;
+//						indAndType.second = STCVertType::Left;
+						indAndType.second = VRT;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
 						vert.virtualType = VLB;
-						indAndType.second = STCVertType::Right;
+//						indAndType.second = STCVertType::Right;
+						indAndType.second = VLB;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
 						existVir = true;
 						vitualVertSet.insert(ind);
@@ -160,10 +163,12 @@ namespace pl
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VLT;
-						indAndType.second = STCVertType::Left;
+						//indAndType.second = STCVertType::Left;
+						indAndType.second = VLT;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
 						vert.virtualType = VRB;
-						indAndType.second = STCVertType::Right;
+//						indAndType.second = STCVertType::Right;
+						indAndType.second = VRB;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
 						existVir = true;
 						vitualVertSet.insert(ind);
@@ -175,10 +180,9 @@ namespace pl
 				}
 			}
 		}
-
 		//create graph
 		int i = 0;
-		for (auto & it : this->_STCGrid)
+		for (auto & it : this->_STCVirtualGrid)
 		{
 			bex::VertexProperty vp;
 			std::pair<size_t, size_t> ind(it.first.first.first, it.first.first.second);
@@ -211,14 +215,15 @@ namespace pl
 			if (this->_sGraph[vd].Type != bex::vertType::ObVert)
 			{
 				auto localIndex = sgraph2map[vd];
+				auto gridInd = graphVd2GridInd[vd];
 				if (localIndex.first == 3 && localIndex.second == 0)
 					cout << "bug" << endl;
-				auto vlocalIndex = getSTCVerticalNeighbor(localIndex);
-				std::vector<int> vvd;
-				for (auto &it : vlocalIndex)
-				{
-					vvd.push_back(smap2graph[it]);
-				}
+				
+				auto vNeiInd = getSTCNeighbor(gridInd);
+				//auto vlocalIndex = getSTCVerticalNeighbor(localIndex);
+				std::vector<int> vvd;				
+				for (auto &it : vNeiInd)
+					vvd.push_back(gridInd2GraphVd[it]);
 
 				for (auto &it : vvd)
 				{
@@ -412,29 +417,140 @@ namespace pl
 		return vIndex;
 	}
 
-	std::vector<GridIndex> Obmap::getSTCVerticalNeighbor(GridIndex const & cen_index)
+	//std::vector<GridIndex> Obmap::getSTCVerticalNeighbor(GridIndex const & cen_index)
+	//{
+	//	auto &vert = this->_STCGrid[cen_index];
+
+
+	//	vector<GridIndex> vIndex;
+
+	//	auto &i = cen_index.first;
+	//	auto &j = cen_index.second;
+
+	//	//left 
+	//	if (adjacent(cen_index,GridIndex(i - 1,j),left))
+	//		vIndex.push_back(GridIndex(i - 1, j));
+	//	//right
+	//	if (adjacent(cen_index, GridIndex(i + 1, j), right))
+	//		vIndex.push_back(GridIndex(i + 1, j));
+	//	//top
+	//	if (adjacent(cen_index, GridIndex(i, j + 1), top))
+	//		vIndex.push_back(GridIndex(i, j + 1));
+	//	//bottom
+	//	if (adjacent(cen_index, GridIndex(i, j - 1), bottom))
+	//		vIndex.push_back(GridIndex(i, j - 1));
+	//	return vIndex;
+	//}
+
+	std::vector<STCGridInd> Obmap::getSTCNeighbor(STCGridInd const & cen_index)
 	{
-		auto &vert = this->_STCGrid[cen_index];
 
+		std::vector<STCGridInd>  res;
+		bool ad_left = false;
+		bool ad_right = false;
+		bool ad_top = false;
+		bool ad_bottom = false;
 
-		vector<GridIndex> vIndex;
+		switch (cen_index.second)
+		{
+		case NOVIR:
+		{
+			ad_left = true;
+			ad_right = true;
+			ad_top = true;
+			ad_bottom = true;
+			break;
+		}
+		case VLB:
+		{
+			ad_left = true;			ad_bottom = true;			break;
+		}
+		case VRT:
+		{
+			ad_right = true;			ad_top = true;			break;
+		}
+		case VLT:
+		{
+			ad_left = true;				ad_top = true;			break;
+		}
+		case VRB:
+		{
+			ad_right = true;			ad_bottom = true;		break;
+		}
+		default:
+			break;
+		}
 
-		auto &i = cen_index.first;
-		auto &j = cen_index.second;
+		GridIndex cInd = cen_index.first;
+		// this index is without vritual type;
+		auto &i = cInd.first;
+		auto &j = cInd.second;
 
 		//left 
-		if (adjacent(cen_index,GridIndex(i - 1,j),left))
-			vIndex.push_back(GridIndex(i - 1, j));
-		//right
-		if (adjacent(cen_index, GridIndex(i + 1, j), right))
-			vIndex.push_back(GridIndex(i + 1, j));
-		//top
-		if (adjacent(cen_index, GridIndex(i, j + 1), top))
-			vIndex.push_back(GridIndex(i, j + 1));
-		//bottom
-		if (adjacent(cen_index, GridIndex(i, j - 1), bottom))
-			vIndex.push_back(GridIndex(i, j - 1));
-		return vIndex;
+		if (ad_left)
+		{
+			STCGridInd neiInd;
+			neiInd.first = GridIndex(i - 1, j);
+			neiInd.second = NOVIR;
+			if (vitualVertSet.count(neiInd.first) == 1)
+			{
+				if (_STCVirtualGrid.count(STCGridInd(neiInd.first, VRT)) == 1)
+					neiInd.second = VRT;
+				else
+					neiInd.second = VRB;
+			}
+			if (adjacent(cen_index, neiInd, left));
+				res.push_back(neiInd);
+		}
+		//right 
+		if (ad_right)
+		{
+			STCGridInd neiInd;
+			neiInd.first = GridIndex(i + 1, j);
+			neiInd.second = NOVIR;
+			if (vitualVertSet.count(neiInd.first) == 1)
+			{
+				if (_STCVirtualGrid.count(STCGridInd(neiInd.first, VLT)) == 1)
+					neiInd.second = VLT;
+				else
+					neiInd.second = VLB;
+			}
+			if (adjacent(cen_index, neiInd, right));
+				res.push_back(neiInd);
+		}
+		//top 
+		if (ad_top)
+		{
+			STCGridInd neiInd;
+			neiInd.first = GridIndex(i, j + 1);
+			neiInd.second = NOVIR;
+			if (vitualVertSet.count(neiInd.first) == 1)
+			{
+				if (_STCVirtualGrid.count(STCGridInd(neiInd.first, VRB)) == 1)
+					neiInd.second = VRB;
+				else
+					neiInd.second = VLB;
+			}
+			if (adjacent(cen_index, neiInd, top));
+			res.push_back(neiInd);
+		}
+		//bottom 
+		if (ad_bottom)
+		{
+			STCGridInd neiInd;
+			neiInd.first = GridIndex(i, j - 1);
+			neiInd.second = NOVIR;
+			if (vitualVertSet.count(neiInd.first) == 1)
+			{
+				if (_STCVirtualGrid.count(STCGridInd(neiInd.first, VRT)) == 1)
+					neiInd.second = VRT;
+				else
+					neiInd.second = VLT;
+			}
+			if (adjacent(cen_index, neiInd, bottom));
+			res.push_back(neiInd);
+		}
+		return res;
 	}
 
 	vector<GridIndex> Obmap::getTgraphGridInd(GridIndex const & cenInd)
@@ -502,6 +618,47 @@ namespace pl
 
 	bool Obmap::obstacleOccupy(GridIndex const & cenInd, int const & dir)
 	{
+		//if (_STCGrid.count(cenInd) == 0)
+		//	return true;
+		//auto &vert = this->_STCGrid[cenInd];
+		//switch (dir)
+		//{
+		//case left:
+		//{
+		//	if (gridObstacle(vert.LB)&& gridObstacle(vert.LT))
+		//		return true;
+		//	else
+		//		return false;
+		//}
+		//case right:
+		//{
+		//	if (gridObstacle(vert.RB) && gridObstacle(vert.RT))
+		//		return true;
+		//	else
+		//		return false;
+		//}
+		//case top:
+		//{
+		//	if (gridObstacle(vert.RT) && gridObstacle(vert.LT))
+		//		return true;
+		//	else
+		//		return false;
+		//}
+		//case bottom:
+		//{
+		//	if (gridObstacle(vert.LB) && gridObstacle(vert.RB))
+		//		return true;
+		//	else
+		//		return false;
+		//}
+		//default:
+		//	break;
+		//}
+		return false;
+	}
+
+	bool Obmap::obstacleOccupy(STCGridInd const & cenInd, int const & dir)
+	{
 		if (_STCGrid.count(cenInd) == 0)
 			return true;
 		auto &vert = this->_STCGrid[cenInd];
@@ -542,6 +699,70 @@ namespace pl
 	}
 
 	bool Obmap::adjacent(GridIndex const & sInd, GridIndex const & tInd, int const & dir)
+	{
+		//if (_STCGrid.count(sInd) == 0)
+		//	return false;
+		//if (_STCGrid.count(tInd) == 0)
+		//	return false;
+		//auto &sVert = this->_STCGrid[sInd];
+		//auto &tVert = this->_STCGrid[tInd];
+		//switch (dir)
+		//{
+		//case left:
+		//{
+		//	if (!obstacleOccupy(sInd, left) && !obstacleOccupy(tInd, right))
+		//	{
+		//		if (gridObstacle(sVert.LT) && gridObstacle(tVert.RB))
+		//			return false;
+		//		if (gridObstacle(sVert.LB) && gridObstacle(tVert.RT))
+		//			return false;
+		//		return true;
+		//	}
+		//	return false;
+		//}
+		//case right:
+		//{
+		//	if (!obstacleOccupy(sInd, right) && !obstacleOccupy(tInd, left))
+		//	{
+		//		if (gridObstacle(sVert.RT) && gridObstacle(tVert.LB))
+		//			return false;
+		//		if (gridObstacle(sVert.RB) && gridObstacle(tVert.LT))
+		//			return false;
+		//		return true;
+		//	}
+		//	return false;
+		//}
+		//case top:
+		//{
+		//	if (!obstacleOccupy(sInd, top) && !obstacleOccupy(tInd, bottom))
+		//	{
+		//		if (gridObstacle(sVert.RT) && gridObstacle(tVert.LB))
+		//			return false;
+		//		if (gridObstacle(sVert.LT) && gridObstacle(tVert.RB))
+		//			return false;
+		//		return true;
+		//	}
+		//	return false;
+		//}
+		//case bottom:
+		//{
+		//	if (!obstacleOccupy(sInd, bottom) && !obstacleOccupy(tInd, top))
+		//	{
+		//		if (gridObstacle(sVert.RB) && gridObstacle(tVert.LT))
+		//			return false;
+		//		if (gridObstacle(sVert.LB) && gridObstacle(tVert.RT))
+		//			return false;
+		//		return true;
+		//	}
+		//	return false;
+		//}
+		//default:
+		//	break;
+		//}
+		return false;
+	}
+
+	bool Obmap::adjacent(STCGridInd const & sInd, STCGridInd const & tInd, int const & dir)
 	{
 		if (_STCGrid.count(sInd) == 0)
 			return false;

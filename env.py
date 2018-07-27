@@ -195,6 +195,21 @@ class Env:
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
                                              text = str(pnt.x)+'-'+str(pnt.y)))
                 self.shapeLst.append(copy.deepcopy(rectDic))
+    def addPath(self,robNum = 0, lst  = [],txtType = True):
+        for i in range(robNum):
+            x = lst[2*i]
+            y = lst[2*i+1]
+            markTrace = go.Scatter(mode ='markers+lines',
+                                   x= x,
+                                   y= y,
+                                   marker =dict(size =10),
+                                   name = 'Path_' + str(i+1))
+            if(txtType):
+                for i in range(len(x)):
+                    self.annotations.append(dict(showarrow = False,
+                                             x = x[i] ,y = y[i],
+                                             text = str(i)))                    
+            self.drawData.append(markTrace)
     def addSTCGraph(self,robNum  = 0, lst = [], txtType = False):
         g_color = 'blue'
         bupu = cl.scales[str(robNum)]['seq']['BuPu']
@@ -275,7 +290,7 @@ class Env:
 def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             fileName = 'nothing',
             fileType = False ):
-    py.sign_in('tesla_fox', 'HOTRQ3nIOdYUUszDIfgN')
+#    py.sign_in('tesla_fox', 'HOTRQ3nIOdYUUszDIfgN')
     conFileDir = './/data//'
     degNameCfg = conFileDir + cfgFileName
     
@@ -343,7 +358,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
     #case 3 draw Envirionment with edges in pnt 
     if(drawType  == 3):
         env  = Env(mat)
-        edgeNameCfg = conFileDir +'obmapDeg.txt'
+        edgeNameCfg = conFileDir +'auctionSTCDeg.txt'
         edgeCfg = Read_Cfg(edgeNameCfg)
         edgeData = []
         edgeUnit = []
@@ -479,7 +494,56 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addRobotStartPnt(robLst)
         env.addgrid()        
         env.drawPic('./png/robNei&Graph',fileType = fileType)
+    
+    
+#  case 8  draw environment and the GA_pattern path    
+    if(drawType == 8):
+        env = Env(mat)
+        env.addgrid()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)
+        pathNameCfg = conFileDir +'_decode_Cfg.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        pathData = []
+        for i in range(robNum):
+            path_x = []
+            pathCfg.get('path_x'+str(i),path_x)
+            pathData.append(copy.deepcopy(path_x))
+            path_y = []
+            pathCfg.get('path_y'+str(i),path_y)
+            pathData.append(copy.deepcopy(path_y))
+        env.addPath(robNum = robNum, lst = pathData)
+#            graphData.append(copy.deepcopy(graphUnit))
+        env.drawPic('./png/env_'+cfgFileName,fileType)
+        
+# case 9 draw environment and test the python graph function
+    if(drawType == 9):
+        env  = Env(mat)
+        edgeNameCfg = conFileDir +'5_20_20_80_Outdoor_Cfg.txt'
+        edgeCfg = Read_Cfg(edgeNameCfg)
+        edgeData = []
+        edgeUnit = []
+        edgeCfg.get('sPntx',edgeUnit)
+        print('edgeLength',len(edgeUnit))
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        edgeCfg.get('sPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
 
+        edgeUnit = []
+        edgeCfg.get('tPntx',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        edgeCfg.get('tPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))        
+        env.addgrid()
+        env.addEdgeInPnt(edgeData)
+        env.addTest()
+        env.drawPic('./png/edgesInPntTestGraph',fileType = fileType)
+    
     
 
 if __name__ == '__main__':

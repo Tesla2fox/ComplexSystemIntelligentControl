@@ -42,6 +42,8 @@ namespace pl
 		//write txt
 		std::ofstream c_deg;
 
+		void formSpanningTree();
+		//
 
 
 		//tgrid and the tgraph means the based grid
