@@ -15,7 +15,8 @@ namespace pl
 	class MultiAuctionSTC {
 	public:
 		MultiAuctionSTC(Obmap  & ob_map, vector<GridIndex> const &vStartPnt) :
-			_mainMap(ob_map),_ob_sgraph2map(ob_map.sgraph2map), _ob_smap2graph(ob_map.smap2graph), _ob_tgraph2map(ob_map.tgraph2map),
+			_mainMap(ob_map), _ob_sgraph2map(ob_map.sgraph2map), _ob_smap2graph(ob_map.smap2graph), _ob_tgraph2map(ob_map.tgraph2map),
+			_ob_gridInd2GraphVd(ob_map.gridInd2GraphVd), _ob_graphVd2GridInd(ob_map.graphVd2GridInd), _ob_STCGrid(ob_map._STCVirtualGrid),
 			_ob_tmap2graph(ob_map.tmap2graph),_vStartPnt(vStartPnt),_robNum(vStartPnt.size()),
 			_ob_tGraph(ob_map.getGraph(graphType::base)), _ob_sGraph(ob_map.getGraph(graphType::span))
 			, _ob_tGrid(ob_map.getGridMap(graphType::base)), _ob_sGrid(ob_map.getGridMap(graphType::span))
@@ -54,13 +55,17 @@ namespace pl
 
 		bex::Graph &_ob_sGraph;
 		GridMap &_ob_sGrid;
-		
+		STCGridMap &_ob_STCGrid;
 
 		std::map<std::pair<int, int>, int> &_ob_tmap2graph;
 		std::map<int, std::pair<int, int>> &_ob_tgraph2map;
 
 		std::map<std::pair<int, int>, int> &_ob_smap2graph;
 		std::map<int, std::pair<int, int>> &_ob_sgraph2map;
+
+		map<pair<pair<int, int>, int>, int> &_ob_gridInd2GraphVd;
+		map<int, pair<pair<int, int>, int>> &_ob_graphVd2GridInd;
+
 
 		
 		void auction();

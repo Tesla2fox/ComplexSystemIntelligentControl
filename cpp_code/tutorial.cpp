@@ -44,7 +44,7 @@ int main(int argc, char * argv[])
 	pl::MultiAuctionSTC multi_aucSTC(obmap,startPnt);
 	multi_aucSTC.setRandomSeed(1);
 	multi_aucSTC.process();
-	//multi_aucSTC.writeRobGraph();
+	multi_aucSTC.writeRobGraph();
 
 	cout << "ggq' code" << endl;
 	if (argc <= 1) {

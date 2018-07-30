@@ -97,7 +97,7 @@ namespace pl
 		void writeEdgesInPnt(size_t const & type = graphType::base);
 		//void writeEgdes(size_t const & type = graphType::base);
 
-		GridIndex tGridInd2SGridInd(GridIndex const & ind);
+		STCGridInd tGridInd2SGridInd(GridIndex const & ind);
 		bex::Graph &getGraph(const size_t &type) { if (type == graphType::base) { return _tGraph; } return _sGraph; }
 		GridMap &getGridMap(const size_t &type) { if (type == graphType::base) { return _tGrid; } return _sGrid; }
 		//
@@ -125,8 +125,9 @@ namespace pl
 		GridMap _sGrid;
 		bex::Graph _sGraph;
 		STCGridMap _STCGrid;
+	public:
 		STCGridMap _STCVirtualGrid;
-
+	private:
 		size_t _reachableVertNum;
 		size_t _obVertNum;
 

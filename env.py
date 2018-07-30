@@ -358,6 +358,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
     #case 3 draw Envirionment with edges in pnt 
     if(drawType  == 3):
         env  = Env(mat)
+#        edgeNameCfg = conFileDir +'obmapDeg.txt'        
         edgeNameCfg = conFileDir +'auctionSTCDeg.txt'
         edgeCfg = Read_Cfg(edgeNameCfg)
         edgeData = []

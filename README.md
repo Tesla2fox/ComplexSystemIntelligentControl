@@ -25,6 +25,9 @@ version 2.0
 >- 完成STC节点关系生成之后，写在通过生成树获取路径。
 
 
+7-30：
+仍然需要把STC拍卖的框架写出来。
+
 
 core paper:
 Competitive on-line coverage of grid environments

@@ -19,7 +19,7 @@ namespace pl
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
 
 		formSpanningTree();
-		//auction();
+		auction();
 	}
 
 	void MultiAuctionSTC::writeRobGraph()
@@ -35,6 +35,39 @@ namespace pl
 
 			for (auto &it : (_vRobSetPtr->at(i)))
 			{
+				auto &ind = _ob_graphVd2GridInd[it];
+				bool ad_VLB = false;
+				bool ad_VRT = false;
+				bool ad_VLT = false;
+				bool ad_VRB = false;
+				switch (ind.second)
+				{
+				case NOVIR:{
+					ad_VLB = true;
+					ad_VRT = true;
+					ad_VLT = true;
+					ad_VRB = true;
+					break;
+				}
+				case VLB:
+				{
+					ad_VLB = true;	break;
+				}
+				case VRT:
+				{
+					ad_VRT = true; break;
+				}
+				case VLT:
+				{
+					ad_VLT = true; break;
+				}
+				case VRB:
+				{
+					ad_VRB = true; break;
+				}
+				default:
+					break;
+				}				
 				vRow.push_back(_ob_sgraph2map[it].first);
 				vCol.push_back(_ob_sgraph2map[it].second);
 			}
@@ -100,6 +133,7 @@ namespace pl
 		bt::prim_minimum_spanning_tree(g, &p[0]);
 
 		vector<double> sPntx, sPnty, tPntx, tPnty;
+		cout << "p size = " << p.size() << endl;
 		for (std::size_t i = 0; i < p.size(); ++i)
 		{
 			cout << i << endl;
@@ -122,6 +156,8 @@ namespace pl
 		writeDebug(c_deg, "tPntx", tPntx);
 		writeDebug(c_deg, "tPnty", tPnty);
 	}
+
+
 	void pl::MultiAuctionSTC::auction()
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
@@ -139,7 +175,7 @@ namespace pl
 		};
 
 		size_t circleTime = 0;
-		size_t maxcircleTime = _mainMap.getReachableVertNum() * 3;
+		size_t maxcircleTime = _mainMap.getReachableVertNum() * 1.2;
 		std::default_random_engine eng;
 		eng.seed(randomSeed);
 		std::uniform_int_distribution<int> dis(0, _robNum - 1);
@@ -147,8 +183,8 @@ namespace pl
 		{
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
 			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
-			_vRobSetPtr->at(i).insert(_ob_smap2graph[ind]);	
-			_GridMap[_ob_smap2graph[ind]] = i;		
+			_vRobSetPtr->at(i).insert(_ob_gridInd2GraphVd[ind]);	
+			_GridMap[_ob_gridInd2GraphVd[ind]] = i;
 			updateNeiGraph(i);
 		}
 		do
@@ -224,7 +260,7 @@ namespace pl
 
 		c_deg << "max  = " << maxSize << " min = " << minSize << endl;
 		c_deg << "allNumSize = " << allNumSize << endl;
-
+		cout << "safe" << endl;
 	}
 
 
