@@ -384,6 +384,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
     if(drawType == 4):
         env = Env(mat)
         graphNameCfg = conFileDir +'auctionDeg.txt'
+        graphNameCfg = conFileDir +'auctionSTCDeg.txt'
         graphCfg = Read_Cfg(graphNameCfg)
         robNum = int(graphCfg.getSingleVal('robNum'))
         graphData = []
@@ -441,6 +442,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
     if(drawType == 6):
         env = Env(mat)
         graphNameCfg = conFileDir +'auctionDeg.txt'
+        graphNameCfg = conFileDir +'auctionSTCDeg.txt'
         graphCfg = Read_Cfg(graphNameCfg)
         robNum = int(graphCfg.getSingleVal('robNum'))
         graphData = []
@@ -544,7 +546,62 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addEdgeInPnt(edgeData)
         env.addTest()
         env.drawPic('./png/edgesInPntTestGraph',fileType = fileType)
-    
+#case 10 draw multi path
+    if(drawType == 10):
+        env = Env(mat)
+        env.addgrid()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)
+        pathNameCfg = conFileDir +'auctionSTCDeg.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        
+        graphData = []
+        print('row',row)
+        print('col',col)
+        for i in range(robNum):
+            graphUnit = []
+            pathCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            pathCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addGraph(robNum,graphData,True)        
+        
+        edgeData = []
+        edgeUnit = []
+        pathCfg.get('sPntx',edgeUnit)
+        print('edgeLength',len(edgeUnit))
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        pathCfg.get('sPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+
+        edgeUnit = []
+        pathCfg.get('tPntx',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        pathCfg.get('tPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))        
+        env.addgrid()
+        env.addEdgeInPnt(edgeData)
+        
+        
+        pathData = []
+        for i in range(robNum):
+            path_x = []
+            pathCfg.get('path_x'+str(i),path_x)
+            pathData.append(copy.deepcopy(path_x))
+            path_y = []
+            pathCfg.get('path_y'+str(i),path_y)
+            pathData.append(copy.deepcopy(path_y))
+        env.addPath(robNum = robNum, lst = pathData)
+#            graphData.append(copy.deepcopy(graphUnit))
+        
+        env.drawPic('./png/env_'+cfgFileName+'path',fileType)
+#        print('wtf')
     
 
 if __name__ == '__main__':

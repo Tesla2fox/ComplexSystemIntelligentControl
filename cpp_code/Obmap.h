@@ -97,7 +97,9 @@ namespace pl
 		void writeEdgesInPnt(size_t const & type = graphType::base);
 		//void writeEgdes(size_t const & type = graphType::base);
 
+		// the base vertex index change  to the STC vertex ind
 		STCGridInd tGridInd2SGridInd(GridIndex const & ind);
+
 		bex::Graph &getGraph(const size_t &type) { if (type == graphType::base) { return _tGraph; } return _sGraph; }
 		GridMap &getGridMap(const size_t &type) { if (type == graphType::base) { return _tGrid; } return _sGrid; }
 		//
@@ -108,7 +110,8 @@ namespace pl
 		size_t getReachableVertNum()const { return _reachableVertNum; };
 
 		//size_t getReachableVertNumSTC() const {return }
-
+		
+		vector<bex::VertexDescriptor> STCGraphVd2TGraphVd(bex::VertexDescriptor const & svd);
 	private:
 
 		//write txt
@@ -118,7 +121,7 @@ namespace pl
 		const shared_ptr<vector<size_t>>_vGridPtr;
 		const shared_ptr<vector<cfg::MatPnt>> _vObGridInd;
 
-		set<GridIndex> _vVitualVertInd;
+		//set<GridIndex> _vVitualVertInd;
 		GridMap _tGrid;
 		bex::Graph _tGraph;
 
@@ -141,6 +144,12 @@ namespace pl
 		const size_t m_sMaxCol;
 
 		std::vector<GridIndex> getSearchVerticalNeighbor(GridIndex const &cen_index, size_t const &gridType);
+	public:
+		std::vector<bex::VertexDescriptor> getSearchVerticalNeighbor(bex::VertexDescriptor const & cvd, size_t const & gridType);
+		//include the obstacle vertex and the way vertex
+		std::vector<bex::VertexDescriptor> getSearchAllNeighbor(bex::VertexDescriptor const & cvd);
+		bool inSameSTCMegaBox(bex::VertexDescriptor const & vd0, bex::VertexDescriptor const & vd1);
+	private:
 		std::vector<GridIndex> getSTCVerticalNeighbor(GridIndex const& cen_index);
 		std::vector<STCGridInd> getSTCNeighbor(STCGridInd const& cen_index);
 

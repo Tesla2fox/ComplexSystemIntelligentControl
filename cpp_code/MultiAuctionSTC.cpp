@@ -20,6 +20,13 @@ namespace pl
 
 		formSpanningTree();
 		auction();
+		this->_vTreeSgs.clear();
+		this->_vTreeSgs.resize(this->_robNum);
+		getSpanningTreeSgs();
+		getNewGraph();
+		searchVitualPath();
+		writeMultiPath();
+		wirteMultiGraphSeg();
 	}
 
 	void MultiAuctionSTC::writeRobGraph()
@@ -67,29 +74,51 @@ namespace pl
 				}
 				default:
 					break;
-				}				
-				vRow.push_back(_ob_sgraph2map[it].first);
-				vCol.push_back(_ob_sgraph2map[it].second);
+				}
+				if(ad_VLB)
+					if (_ob_tGrid[_ob_STCGrid[ind].LB] == bex::WayVert)
+					{
+						vRow.push_back(_ob_STCGrid[ind].LB.first);
+						vCol.push_back(_ob_STCGrid[ind].LB.second);
+					}
+				if (ad_VRT)
+					if (_ob_tGrid[_ob_STCGrid[ind].RT] == bex::WayVert)
+					{
+						vRow.push_back(_ob_STCGrid[ind].RT.first);
+						vCol.push_back(_ob_STCGrid[ind].RT.second);
+					}
+				if (ad_VLT)
+					if (_ob_tGrid[_ob_STCGrid[ind].LT] == bex::WayVert)
+					{
+						vRow.push_back(_ob_STCGrid[ind].LT.first);
+						vCol.push_back(_ob_STCGrid[ind].LT.second);
+					}
+				if (ad_VRB)
+					if (_ob_tGrid[_ob_STCGrid[ind].RB] == bex::WayVert)
+					{
+						vRow.push_back(_ob_STCGrid[ind].RB.first);
+						vCol.push_back(_ob_STCGrid[ind].RB.second);
+					}
 			}
 			writeDebug(c_deg, str_row, vRow);
 			writeDebug(c_deg, str_col, vCol);
 		}
 
-		for (size_t i = 0; i < _robNum; i++)
-		{
-			string str_row = "neiRow";
-			string str_col = "neiCol";
-			str_row += std::to_string(i);
-			str_col += std::to_string(i);
-			vector<size_t> vRow, vCol;
-			for (auto &it : (_vRobNeiPtr->at(i)))
-			{				
-				vRow.push_back(_ob_sgraph2map[it].first);
-				vCol.push_back(_ob_sgraph2map[it].second);
-			}
-			writeDebug(c_deg, str_row, vRow);
-			writeDebug(c_deg, str_col, vCol);
-		}
+		//for (size_t i = 0; i < _robNum; i++)
+		//{
+		//	string str_row = "neiRow";
+		//	string str_col = "neiCol";
+		//	str_row += std::to_string(i);
+		//	str_col += std::to_string(i);
+		//	vector<size_t> vRow, vCol;
+		//	for (auto &it : (_vRobNeiPtr->at(i)))
+		//	{				
+		//		vRow.push_back(_ob_sgraph2map[it].first);
+		//		vCol.push_back(_ob_sgraph2map[it].second);
+		//	}
+		//	writeDebug(c_deg, str_row, vRow);
+		//	writeDebug(c_deg, str_col, vCol);
+		//}
 	}
 	void MultiAuctionSTC::formSpanningTree()
 	{
@@ -151,10 +180,96 @@ namespace pl
 			tPntx.push_back(tVert.pnt.x());
 			tPnty.push_back(tVert.pnt.y());
 		}
+		writeDebug(c_deg, "g_sPntx", sPntx);
+		writeDebug(c_deg, "g_sPnty", sPnty);
+		writeDebug(c_deg, "g_tPntx", tPntx);
+		writeDebug(c_deg, "g_tPnty", tPnty);
+	}
+
+	void MultiAuctionSTC::writeMultiGraph()
+	{
+		vector<double> sPntx, sPnty, tPntx, tPnty;
+		for (size_t i = 0; i < _robNum; i++)
+		{
+			auto &graph = this->_m_vGraph[i];
+			std::pair<bex::EdgeIterator, bex::EdgeIterator> _b2e_ei = boost::edges(graph);
+			//string str_sPntx = "sPntx";
+			//string str_sPnty = "sPnty";
+			//string str_tPntx = "tPntx";
+			//string str_tPnty = "tPnty";
+			//str_sPntx += std::to_string(i);
+			//str_sPnty += std::to_string(i);
+			//str_tPntx += std::to_string(i);
+			//str_tPnty += std::to_string(i);
+			for (auto eit = _b2e_ei.first; eit != _b2e_ei.second; eit++)
+			{
+				bex::EdgeDescriptor ed = *eit;
+				bex::EdgeProperty &ep = graph[ed];
+				bex::VertexDescriptor sVertd = boost::source(ed, graph);
+				bex::VertexDescriptor tVertd = boost::target(ed, graph);
+
+				bex::VertexProperty &sVert = graph[sVertd];
+				bex::VertexProperty &tVert = graph[tVertd];
+
+				sPntx.push_back(sVert.pnt.x());
+				sPnty.push_back(sVert.pnt.y());
+
+				//cout << "pnt.x " << tVert.pnt.x() << "	pnt.y" << tVert.pnt.y() << endl;
+				tPntx.push_back(tVert.pnt.x());
+				tPnty.push_back(tVert.pnt.y());
+			}
+		}
+		writeDebug(c_deg, "m_sPntx", sPntx);
+		writeDebug(c_deg, "m_sPnty", sPnty);
+		writeDebug(c_deg, "m_tPntx", tPntx);
+		writeDebug(c_deg, "m_tPnty", tPnty);
+
+	}
+	
+
+	void MultiAuctionSTC::writeMultiPath()
+	{
+		for (size_t i = 0; i < _robNum; i++)
+		{
+			string str_x = "path_x";
+			string str_y = "path_y";
+			str_x += std::to_string(i);
+			str_y += std::to_string(i);
+			vector<double> path_x, path_y;
+
+			for (auto &it:this->_vpath[i])
+			{
+				path_x.push_back(it.x());
+				path_y.push_back(it.y());
+			}
+			writeDebug(c_deg, str_x, path_x);
+			writeDebug(c_deg, str_y, path_y);
+		}
+	}
+
+	void MultiAuctionSTC::wirteMultiGraphSeg()
+	{
+		vector<double> sPntx, sPnty, tPntx, tPnty;
+		for (size_t i = 0; i < _robNum; i++)
+		{
+			auto &treeSgs = _vTreeSgs[i];
+			for (auto &it:treeSgs)
+			{
+				sPntx.push_back(it.first.x());
+				sPnty.push_back(it.first.y());
+				tPntx.push_back(it.second.x());
+				tPnty.push_back(it.second.y());
+			}
+		}
 		writeDebug(c_deg, "sPntx", sPntx);
 		writeDebug(c_deg, "sPnty", sPnty);
 		writeDebug(c_deg, "tPntx", tPntx);
 		writeDebug(c_deg, "tPnty", tPnty);
+	}
+
+	void MultiAuctionSTC::writeMultiGraphEdge()
+	{
+
 	}
 
 
@@ -240,7 +355,7 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 3/*maxcircleTime*/)
+			if ( ++circleTime >= 200/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -263,6 +378,326 @@ namespace pl
 		cout << "safe" << endl;
 	}
 
+	void MultiAuctionSTC::getSpanningTreeSgs()
+	{
+
+		typedef bt::adjacency_list < bt::vecS, bt::vecS, bt::undirectedS,
+			bt::property<bt::vertex_distance_t, int>, bt::property < bt::edge_weight_t, int > > SGraph;
+		typedef std::pair < int, int >SE;
+		auto &graph = _ob_sGraph;
+		for (size_t robID = 0; robID < _robNum; robID++)
+		{
+			cout << "rob is = " << robID << endl;
+			//auto &graph = _mainMap.getGraph(graphType::span);
+			//const int num_nodes = bt::num_vertices(graph);
+			const int num_nodes = this->_vRobSetPtr->at(robID).size();
+
+			vector<size_t> vSvd, vTvd;
+			vector<bex::VertexDescriptor> vvd;
+			for (auto &it : this->_vRobSetPtr->at(robID))
+				vvd.push_back(it);
+			vector<bool> vBoolTree(vvd.size(),true);
+			// 等于true时，正常计算
+			// 等于false时，非正常计算
+			for (auto iter = vvd.begin(); iter != vvd.end();iter++)
+			{
+				if (_mainMap.vitualVertSet.count(_ob_graphVd2GridInd[*iter].first) == 1)
+				{
+					auto c_vvd = vvd;
+					c_vvd.erase(iter - vvd.begin() + c_vvd.begin());
+					if (_mainMap.allConnected(c_vvd))
+					{
+						cout << " +" << vvd[iter - vvd.begin()] << endl;
+						vBoolTree[iter - vvd.begin()] = false;
+					}
+					else
+					{
+						cout << " -" << vvd[iter - vvd.begin()] << endl;
+					}
+				}
+			}
+			for (size_t i = 0; i < vvd.size(); i++)
+			{
+				for (size_t j = i; j < vvd.size(); j++)
+				{
+					//assume the virtual vertex dosen't connected
+					if (vBoolTree[i] && vBoolTree[j])
+					{
+						if (isAdjacent(vvd[i], vvd[j]))
+						{
+							vSvd.push_back(i);
+							vTvd.push_back(j);
+						}
+					}
+				}
+			}
+			const int edgeNum = vSvd.size();
+			SE * edgesPtr = new SE[edgeNum];
+			int * weightPtr = new int[edgeNum];
+			for (size_t i = 0; i < vSvd.size(); i++)
+			{
+				//cout << "index = " << i << endl;
+				edgesPtr[i] = SE(vSvd[i], vTvd[i]);
+				weightPtr[i] = 1;
+			}
+
+
+			SGraph g(edgesPtr, edgesPtr + edgeNum, weightPtr, num_nodes);
+
+			std::vector < bt::graph_traits < SGraph >::vertex_descriptor >
+				p(num_vertices(g));
+			bt::prim_minimum_spanning_tree(g, &p[0]);
+			for (std::size_t i = 0; i != p.size(); ++i)
+			{
+				//cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
+				auto sg = bex::DSegment(_ob_sGraph[vvd[i]].pnt, _ob_sGraph[vvd[p[i]]].pnt);
+				_vTreeSgs[robID].push_back(sg);
+			}
+		}
+#ifdef _DEBUG
+		cout << "get spanning tree sgs success" << endl;
+#endif // _DEBUG		
+	}
+
+	void MultiAuctionSTC::getNewGraph()
+	{
+		auto &graph = _ob_tGraph;
+		set<bex::VertexDescriptor> robBaseSet;
+		_vT2local.clear();
+		_vlocal2T.clear();
+		for (size_t p = 0; p < _robNum; p++)
+		{
+			bex::Graph new_graph;
+			auto &robSet = _vRobSetPtr->at(p);
+			map<size_t, size_t> T2local;
+			map<size_t, size_t> local2T;
+			bex::VertexDescriptor localVd = 0;
+			for (auto &it : robSet)
+			{
+				bex::VertexDescriptor svd = it;
+				auto vvd = _mainMap.STCGraphVd2TGraphVd(svd);
+				for (auto &vd : vvd)
+				{
+					robBaseSet.insert(vd);
+					bex::VertexProperty vp = graph[vd];
+					vp.EdgeState = false;
+					vp.NeighbourState = false;
+					vp.QueueState = false;
+					bt::add_vertex(vp, new_graph);
+					T2local.insert(pair<size_t, size_t>(vd, localVd));
+					local2T.insert(pair<size_t, size_t>(localVd, vd));
+					localVd++;
+				}
+			}
+			_vT2local.push_back(T2local);
+			_vlocal2T.push_back(local2T);
+			//add edge 
+			std::pair<bex::VertexIterator, bex::VertexIterator> vi = boost::vertices(new_graph);
+			for (bex::VertexIterator vit = vi.first; vit != vi.second; vit++)
+			{
+				bex::VertexDescriptor vd = *vit;
+				if (true)
+				{
+					/*			cout << "___" << endl;
+					cout << " new_graph[vd].pnt x = " << new_graph[vd].pnt.x()
+					<< " new_graph[vd].pnt y = " << new_graph[vd].pnt.y() << endl;
+					*/
+					auto tvd = local2T[vd];
+					auto nei_vvd = _mainMap.getSearchAllNeighbor(tvd);
+					//auto vlocalIndex = getVerticalNeighbour(localIndex);
+					//getSearchNeighbor(localIndex, graphType::span);
+					std::vector<int> vvd;
+					for (auto &it : nei_vvd)
+					{
+						if (robBaseSet.count(it) == 1)
+						{
+							//						cout << "nei__it " << it << endl;
+							vvd.push_back(T2local[it]);
+						}
+					}
+					for (auto &it : vvd)
+					{
+						//					cout << "vvd_it  = " << it << endl;
+
+						if (new_graph[it].EdgeState == false)
+						{
+							bex::DSegment sg(new_graph[it].pnt, new_graph[vd].pnt);
+							//cout << " new_graph[it].pnt x = " << new_graph[it].pnt.x()
+							//	<< " new_graph[it].pnt y = " << new_graph[it].pnt.y() << endl;
+
+
+							if (this->treeIntersection(sg, p))
+								//判断是否相交
+							{
+								//								std::cout << "inter" << endl;
+							}
+							else
+							{
+								bex::EdgeProperty ep;
+								//ep.weight = bg::distance(sGraph[vd].pnt, sGraph[it].pnt);
+								boost::add_edge(it, vd, ep, new_graph);
+							}
+						}
+					}
+				}
+				new_graph[vd].EdgeState = true;
+				//size_t num_edges = bt::num_edges(new_graph);
+				//cout << "num_edges = " << num_edges << endl;
+			}
+
+			this->_m_vGraph.push_back(new_graph);
+		}
+	}
+
+	void MultiAuctionSTC::searchVitualPath()
+	{
+		_vpathIndex.clear();
+		_vpath.clear();
+		_vpath.resize(_robNum);
+		_vpathIndex.resize(_robNum);
+		for (size_t p = 0; p < _robNum; p++)
+		{
+			auto _startPnt = this->_vStartPnt[p];
+			GridIndex  cenGridIndex = _startPnt;
+			bex::VertexDescriptor totalCenVd = this->_ob_tmap2graph[cenGridIndex];
+
+			bex::VertexDescriptor cenVd = _vT2local[p][totalCenVd];
+			bex::VertexDescriptor canVd(cenVd);
+			size_t cenDir = DirType::center;
+			size_t canDir = DirType::center;
+
+			auto &_pathIndex = _vpathIndex[p];
+			auto &_path = _vpath[p];
+			auto &localGraph = _m_vGraph[p];
+			size_t i = 0;
+			do
+			{
+#ifdef _DEBUG
+				//cout << "i = " << i++ << endl;
+#endif // _DEBUG
+				cenVd = canVd;
+				cenDir = canDir;
+				//canDir = cenDir;
+				_pathIndex.push_back(cenVd);
+				auto neighborsIter = boost::adjacent_vertices(cenVd, localGraph);
+				bex::VertexProperty &cenVp = localGraph[cenVd];
+				cenVp.NeighbourState = true;
+				_path.push_back(cenVp.pnt);
+				vector<bex::VertexDescriptor> vNeighbors;
+				for (auto ni = neighborsIter.first; ni != neighborsIter.second; ++ni)
+				{
+					if (!localGraph[*ni].NeighbourState)
+					{
+						vNeighbors.push_back(*ni);
+					}
+				}
+				canVd = cenVd;
+				vector<size_t> vCanVd;
+				bool chsSameMega = false;
+				//
+				for (auto &it : vNeighbors)
+				{
+					auto &vp = localGraph[it];
+					//has not been covered
+					if (vp.NeighbourState == false)
+					{
+						auto g_it = _vlocal2T[p][it];
+						auto g_cenVd = _vlocal2T[p][cenVd];
+						if (_mainMap.inSameSTCMegaBox(g_it,g_cenVd))
+						{
+							canVd = it;
+							chsSameMega = true;
+							break;
+						}
+						else
+						{
+							vCanVd.push_back(it);
+						}
+					}
+				}
+				//no vertex in the same mega box
+				if (!chsSameMega)
+				{
+					if (!vCanVd.empty())
+					{
+						if ((vCanVd.size() == 1) || (cenDir == DirType::center))
+						{
+							canVd = vCanVd.back();
+						}
+						else
+						{
+							vector<size_t> vDir;
+							for (auto &it : vCanVd)
+							{
+								if (cenDir == getDir(cenVd, it, p))
+									canVd = it;
+							}
+						}
+					}
+				}
+				canDir = getDir(cenVd, canVd, p);
+			} while (canVd != cenVd);
+		}
+		cout << "path___success" << endl;
+	}
+
+
+	bool MultiAuctionSTC::treeIntersection(bex::DSegment const sg, size_t const robID) const
+	{
+		auto &vTreeSg = this->_vTreeSgs[robID];
+		for (auto &it : vTreeSg)
+		{
+			if (bg::intersects(it, sg))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	size_t MultiAuctionSTC::getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID)
+	{
+		auto &local2T = _vlocal2T[robID];
+		bex::VertexDescriptor cen_index = local2T[lcen_index];
+		bex::VertexDescriptor n_index = local2T[ln_index];
+
+		GridIndex cenGridInd = _ob_tgraph2map[cen_index];
+		GridIndex nGridInd = _ob_tgraph2map[n_index];
+		// x equal 
+		if (cenGridInd.first == nGridInd.first)
+		{
+			if (cenGridInd.second == (nGridInd.second - 1)) {
+				return DirType::bottom;
+			}
+			if (cenGridInd.second == (nGridInd.second + 1)) {
+				return DirType::top;
+			}
+		}
+		if (cenGridInd.second == nGridInd.second)
+		{
+			if (cenGridInd.first == (nGridInd.first - 1)) {
+				return DirType::left;
+			}
+			if (cenGridInd.first == (nGridInd.first + 1)) {
+				return DirType::right;
+			}
+		}
+		return DirType::center;
+		//return size_t();
+	}
+
+	bool MultiAuctionSTC::isAdjacent(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2)
+	{
+		auto &graph = _ob_sGraph;
+		auto neighborIter = boost::adjacent_vertices(vd1, graph);
+		std::vector<size_t> vVd;
+		for (auto ni = neighborIter.first; ni != neighborIter.second; ++ni)
+			vVd.push_back(*ni);
+		auto iter = std::find(vVd.begin(), vVd.end(), vd2);
+		if (iter == vVd.end())
+			return false;
+		return true;
+	}
 
 	bool MultiAuctionSTC::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
 	{

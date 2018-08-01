@@ -319,7 +319,7 @@ namespace pl
 		size_t first = floor(double(ind.first) / 2);
 		size_t second = floor(double(ind.second) / 2);
 		auto stc_ind = GridIndex(first, second);
-		if (_vVitualVertInd.count(stc_ind) == 1) {
+		if (vitualVertSet.count(stc_ind) == 1) {
 			if (ind.first == 2*first && ind.second == 2*second)
 				return STCGridInd(stc_ind, VLB);
 			if (ind.first == 2*first && ind.second == 2*second +1)
@@ -386,6 +386,54 @@ namespace pl
 		return false;
 	}
 
+	vector<bex::VertexDescriptor> Obmap::STCGraphVd2TGraphVd(bex::VertexDescriptor const & svd)
+	{
+		vector<bex::VertexDescriptor> res;
+		STCGridInd sgridInd = graphVd2GridInd[svd];
+		
+		bool ad_VLB = false;
+		bool ad_VRT = false;
+		bool ad_VLT = false;
+		bool ad_VRB = false;
+		switch (sgridInd.second)
+		{
+		case NOVIR: {
+			ad_VLB = true;
+			ad_VRT = true;
+			ad_VLT = true;
+			ad_VRB = true;
+			break;
+		}
+		case VLB:
+		{
+			ad_VLB = true;	break;
+		}
+		case VRT:
+		{
+			ad_VRT = true; break;
+		}
+		case VLT:
+		{
+			ad_VLT = true; break;
+		}
+		case VRB:
+		{
+			ad_VRB = true; break;
+		}
+		default:
+			break;
+		}
+		if (ad_VLB)
+			res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].LB]);
+		if (ad_VRT)
+			res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].RT]);
+		if (ad_VLT)
+			res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].LT]);
+		if (ad_VRB)
+			res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].RB]);
+		return res;
+	}
+
 	std::vector<GridIndex> Obmap::getSearchVerticalNeighbor(GridIndex const & cen_index, size_t const & gridType)
 	{
 		GridMap *gridPtr;
@@ -425,6 +473,131 @@ namespace pl
 		neighbour(GridIndex(i, j - 1), vIndex);
 
 		return vIndex;
+	}
+
+	std::vector<bex::VertexDescriptor> Obmap::getSearchVerticalNeighbor(bex::VertexDescriptor const & cvd, size_t const & gridType)
+	{
+		GridMap *gridPtr;
+		GridIndex cen_index;
+		if (gridType == graphType::base)
+		{
+			gridPtr = &this->_tGrid;
+			cen_index = this->tgraph2map[cvd];
+		}
+		else
+		{
+			gridPtr = &this->_sGrid;
+			cen_index = this->sgraph2map[cvd];
+		}
+		auto &grid = (*gridPtr);
+
+		//vector<pair<GridIndex, size_t>> res;
+		vector<GridIndex> vIndex;
+
+		auto &i = cen_index.first;
+		auto &j = cen_index.second;
+		auto neighbour = [=](GridIndex &ind, vector<GridIndex>  &vInd) {
+			if (grid.count(ind))
+			{
+				if (grid.at(ind) == bex::vertType::WayVert)
+				{
+					vInd.push_back(ind);
+					return true;
+				}
+			}
+			return false;
+		};
+
+		//left
+		neighbour(GridIndex(i - 1, j), vIndex);
+		//top 
+		neighbour(GridIndex(i, j + 1), vIndex);
+		//right
+		neighbour(GridIndex(i + 1, j), vIndex);
+		//botton
+		neighbour(GridIndex(i, j - 1), vIndex);
+
+		vector<bex::VertexDescriptor> res;
+		for (auto &it : vIndex) {
+			if (gridType == graphType::base)
+			{
+				res.push_back(tmap2graph[it]);
+			}
+			else
+			{
+				res.push_back(smap2graph[it]);
+			}
+		}
+		return res;
+	}
+
+	std::vector<bex::VertexDescriptor> Obmap::getSearchAllNeighbor(bex::VertexDescriptor const & cvd)
+	{
+
+		GridMap *gridPtr;
+		GridIndex cen_index;
+		size_t gridType = graphType::base;
+		if (gridType == graphType::base)
+		{
+			gridPtr = &this->_tGrid;
+			cen_index = this->tgraph2map[cvd];
+		}
+		else
+		{
+			gridPtr = &this->_sGrid;
+			cen_index = this->sgraph2map[cvd];
+		}
+		auto &grid = (*gridPtr);
+
+		//vector<pair<GridIndex, size_t>> res;
+		vector<GridIndex> vIndex;
+
+		auto &i = cen_index.first;
+		auto &j = cen_index.second;
+		auto neighbour = [=](GridIndex &ind, vector<GridIndex>  &vInd) {
+			if (grid.count(ind))
+			{
+				//if (grid.at(ind) == bex::vertType::WayVert)
+				//{
+					vInd.push_back(ind);
+					return true;
+				//				}
+			}
+			return false;
+		};
+
+		//left
+		neighbour(GridIndex(i - 1, j), vIndex);
+		//top 
+		neighbour(GridIndex(i, j + 1), vIndex);
+		//right
+		neighbour(GridIndex(i + 1, j), vIndex);
+		//botton
+		neighbour(GridIndex(i, j - 1), vIndex);
+
+		vector<bex::VertexDescriptor> res;
+		for (auto &it : vIndex) {
+			if (gridType == graphType::base)
+			{
+				res.push_back(tmap2graph[it]);
+			}
+			else
+			{
+				res.push_back(smap2graph[it]);
+			}
+		}
+		return res;
+	}
+
+	bool Obmap::inSameSTCMegaBox(bex::VertexDescriptor const & vd0, bex::VertexDescriptor const & vd1)
+	{
+		auto ind0 = tGridInd2SGridInd(tgraph2map[vd0]);
+		auto ind1 = tGridInd2SGridInd(tgraph2map[vd1]);
+		if (ind0.first.first == ind1.first.first && ind0.first.second == ind1.first.second)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	//std::vector<GridIndex> Obmap::getSTCVerticalNeighbor(GridIndex const & cen_index)
@@ -844,6 +1017,13 @@ namespace pl
 			graphPtr = &this->_tGraph;
 		else
 			graphPtr = &this->_sGraph;
+		//auto ind1 = graphVd2GridInd[vd1];
+		//if (vitualVertSet.count(ind1.first) == 1)
+		//	return false;
+		//auto ind2 = graphVd2GridInd[vd2];
+		//if (vitualVertSet.count(ind2.first) == 1)
+		//	return false;
+
 		auto &graph = *graphPtr;		
 		auto neighborIter = boost::adjacent_vertices(vd1, graph);		
 		std::vector<size_t> vVd;

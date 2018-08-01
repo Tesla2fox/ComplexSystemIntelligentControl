@@ -44,6 +44,10 @@ namespace pl
 		std::ofstream c_deg;
 
 		void formSpanningTree();
+		void writeMultiGraph();
+		void writeMultiPath();
+		void wirteMultiGraphSeg();
+		void writeMultiGraphEdge();
 		//
 
 
@@ -69,6 +73,9 @@ namespace pl
 
 		
 		void auction();
+		void getSpanningTreeSgs();
+		void getNewGraph();
+		void searchVitualPath();
 		void auctioneer(const size_t & robID);
 		void bidding(const size_t &robID);
 
@@ -91,8 +98,29 @@ namespace pl
 		//shared_ptr<vector<set<size_t>>> _vRob
 
 		const vector<GridIndex> _vStartPnt;
+		vector<vector<bex::DSegment>> _vTreeSgs;
+		vector<bex::Graph> _m_vGraph;
+		vector<map<size_t, size_t>> _vT2local;
+		vector<map<size_t, size_t>> _vlocal2T;
+
+		vector<bex::DLineString> _vpath;
+		vector<vector<bex::VertexDescriptor>> _vpathIndex;
+
+		/// function for the STC
 		//const vector<bex::DPoint> _vStartPnt;
+
+
+		bool treeIntersection(bex::DSegment const sg, size_t const robID) const;
+
+		size_t getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID);
+
+		bool isAdjacent(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2);
+		//end the STC function
+
+		///
+		///
 		const size_t _robNum;
+		// auction function begin
 		bool calAucVertID(size_t const & aucNeer, size_t &aucVertID);
 		size_t maxBiddingRob(size_t const & aucVertID);
 		double calBidding(size_t const &bidding);
@@ -104,6 +132,7 @@ namespace pl
 		bool updateNeiGraph(size_t const &robID);
 		bool updateNeiGraph(size_t const &succBidID, bex::VertexDescriptor const & vd);
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
+		// auction function end
 	};
 	
 }
