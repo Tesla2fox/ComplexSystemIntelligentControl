@@ -25,6 +25,7 @@ namespace pl
 		getSpanningTreeSgs();
 		getNewGraph();
 		searchVitualPath();
+		generateRealPath();
 		writeMultiPath();
 		wirteMultiGraphSeg();
 	}
@@ -184,6 +185,11 @@ namespace pl
 		writeDebug(c_deg, "g_sPnty", sPnty);
 		writeDebug(c_deg, "g_tPntx", tPntx);
 		writeDebug(c_deg, "g_tPnty", tPnty);
+	}
+
+	void MultiAuctionSTC::testAstar()
+	{
+		
 	}
 
 	void MultiAuctionSTC::writeMultiGraph()
@@ -396,7 +402,7 @@ namespace pl
 			vector<bex::VertexDescriptor> vvd;
 			for (auto &it : this->_vRobSetPtr->at(robID))
 				vvd.push_back(it);
-			vector<bool> vBoolTree(vvd.size(),true);
+			vector<bool> vBoolTree(vvd.size(),true);		
 			// 等于true时，正常计算
 			// 等于false时，非正常计算
 			for (auto iter = vvd.begin(); iter != vvd.end();iter++)
@@ -475,6 +481,7 @@ namespace pl
 			for (auto &it : robSet)
 			{
 				bex::VertexDescriptor svd = it;
+				// 此处添加..
 				auto vvd = _mainMap.STCGraphVd2TGraphVd(svd);
 				for (auto &vd : vvd)
 				{
@@ -639,6 +646,61 @@ namespace pl
 			} while (canVd != cenVd);
 		}
 		cout << "path___success" << endl;
+	}
+
+	void MultiAuctionSTC::generateRealPath()
+	{
+		auto vVitualPathIndex = _vpathIndex;
+		//auto vVitualPath = _vpath;
+		_vpathIndex.clear();
+		_vpath.clear();
+		_vpath.resize(_robNum);
+		_vpathIndex.resize(_robNum);
+		for (size_t p = 0; p < _robNum; p++)
+		{
+			//auto _startPnt = this->_vStartPnt[]
+			auto _startPnt = this->_vStartPnt[p];
+			auto &_pathIndex = _vpathIndex[p];
+			auto &_path = _vpath[p];
+			auto &localGraph = _m_vGraph[p];
+			auto &_vitualPathIndex = vVitualPathIndex[p];
+			_pathIndex.push_back(_vitualPathIndex.front());
+			_path.push_back(bex::DPoint(_startPnt.first + 0.5, _startPnt.second + 0.5));
+			bool nei_bool = true;
+			for (size_t i = 1; i < _vitualPathIndex.size(); i++)
+			{
+				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
+				//auto  &t_ind = _vT2local[p][ind];
+				cout << " i		= " << i << endl;
+				if (_ob_tGrid[ind] == bex::vertType::WayVert)
+				{
+					if (nei_bool)
+					{
+//						_pathIndex.push_back(_vitualPathIndex[i]);
+						_path.push_back(localGraph[_vitualPathIndex[i]].pnt);
+					}
+					else
+					{
+						//astar
+						auto lastInd = _ob_tgraph2map[_vlocal2T[p][_pathIndex.back()]];
+						aplan.init(lastInd, ind);
+						aplan.plan();
+						for (auto &it :aplan.m_path)
+						{
+							_path.push_back(it);
+						}
+						//_path.emplace(aplan.m_path.begin(), aplan.m_path.end());
+					}
+					_pathIndex.push_back(_vitualPathIndex[i]);
+					nei_bool = true;
+				}
+				else
+				{
+					nei_bool = false;
+				}
+			}
+		}
+		cout << "generate real path" << endl;
 	}
 
 

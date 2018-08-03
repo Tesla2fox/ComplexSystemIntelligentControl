@@ -2,7 +2,7 @@
 #include "Obmap.h"
 #include "Gwrite.hpp"
 #include "bgraph.h"
-
+#include "AstarPlan.h"
 template<typename T>
 bool writeDebug(std::ofstream &deg, string const &str, vector<T> const &v_val);
 
@@ -19,11 +19,12 @@ namespace pl
 			_ob_gridInd2GraphVd(ob_map.gridInd2GraphVd), _ob_graphVd2GridInd(ob_map.graphVd2GridInd), _ob_STCGrid(ob_map._STCVirtualGrid),
 			_ob_tmap2graph(ob_map.tmap2graph),_vStartPnt(vStartPnt),_robNum(vStartPnt.size()),
 			_ob_tGraph(ob_map.getGraph(graphType::base)), _ob_sGraph(ob_map.getGraph(graphType::span))
-			, _ob_tGrid(ob_map.getGridMap(graphType::base)), _ob_sGrid(ob_map.getGridMap(graphType::span))
+			, _ob_tGrid(ob_map.getGridMap(graphType::base)), _ob_sGrid(ob_map.getGridMap(graphType::span)),aplan(ob_map)
 		{
 			string  str_deg = conDir;
 			str_deg += "auctionSTCDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);
+			
 		};
 
 		template<typename T>
@@ -44,12 +45,13 @@ namespace pl
 		std::ofstream c_deg;
 
 		void formSpanningTree();
+		void testAstar();
 		void writeMultiGraph();
 		void writeMultiPath();
 		void wirteMultiGraphSeg();
 		void writeMultiGraphEdge();
 		//
-
+		AstarPlan aplan;
 
 		//tgrid and the tgraph means the based grid
 		//sgrid and sgraph means the spanning grid
@@ -76,6 +78,7 @@ namespace pl
 		void getSpanningTreeSgs();
 		void getNewGraph();
 		void searchVitualPath();
+		void generateRealPath();
 		void auctioneer(const size_t & robID);
 		void bidding(const size_t &robID);
 

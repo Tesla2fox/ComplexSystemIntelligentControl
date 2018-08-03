@@ -561,14 +561,14 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         graphData = []
         print('row',row)
         print('col',col)
-        for i in range(robNum):
-            graphUnit = []
-            pathCfg.get('row'+str(i),graphUnit)
-            graphData.append(copy.deepcopy(graphUnit))
-            graphUnit = []
-            pathCfg.get('col'+str(i),graphUnit)
-            graphData.append(copy.deepcopy(graphUnit))
-        env.addGraph(robNum,graphData,True)        
+#        for i in range(robNum):
+#            graphUnit = []
+#            pathCfg.get('row'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#            graphUnit = []
+#            pathCfg.get('col'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#        env.addGraph(robNum,graphData,True)        
         
         edgeData = []
         edgeUnit = []

@@ -142,9 +142,8 @@ namespace pl
 		const size_t m_sMaxRow;
 		//×î´ósÁÐ
 		const size_t m_sMaxCol;
-
-		std::vector<GridIndex> getSearchVerticalNeighbor(GridIndex const &cen_index, size_t const &gridType);
 	public:
+		std::vector<GridIndex> getSearchVerticalNeighbor(GridIndex const &cen_index, size_t const &gridType);
 		std::vector<bex::VertexDescriptor> getSearchVerticalNeighbor(bex::VertexDescriptor const & cvd, size_t const & gridType);
 		//include the obstacle vertex and the way vertex
 		std::vector<bex::VertexDescriptor> getSearchAllNeighbor(bex::VertexDescriptor const & cvd);
