@@ -128,8 +128,13 @@ class Env:
             lst[0][i] = lst[0][i] + 0.5
             lst[1][i] = lst[1][i] + 0.5
             startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),
-                                    name = 'Robot_'+ str(i))
-            self.drawData.append(startTrace)    
+                                    name = 'start')
+#                                    'Robot_'+ str(i))
+            self.drawData.append(startTrace)
+    def addRobotTerminalPnt(self,lst= []):
+        terminalTrace = go.Scatter(x =[lst[0]], y = [lst[1]],mode ='markers',marker = dict(symbol = 'circle-open-dot',size = 20),
+                                    name = 'terminal')
+        self.drawData.append(terminalTrace)
     def addEdges(self,lst= []):
         mark_x = []
         mark_y = []     
@@ -170,12 +175,12 @@ class Env:
         markTrace = go.Scatter(mode ='markers',
                                    x= mark_x,
                                    y= mark_y,
-                                   marker =dict(size =10),
+                                   marker =dict(size =12),
                                    name = 'Spanning-Tree')
         self.drawData.append(markTrace)
     def addGraph(self,robNum  = 0, lst = [], txtType = False):
         g_color = 'blue'
-        bupu = cl.scales[str(robNum)]['seq']['BuPu']
+        bupu = cl.scales[str(5)]['seq']['BuPu']
         print(bupu)
         for i in range(robNum):
             for j in range(len(lst[2*i])):
@@ -186,12 +191,13 @@ class Env:
                 rectDic['line']['width'] = 0.5
                 rectDic['fillcolor'] = bupu[i]
                 rectDic['opacity'] = 0.6
-                if(txtType):
-                    self.annotations.append(dict(showarrow = False,
+                if(False):
+                    if(txtType):
+                        self.annotations.append(dict(showarrow = False,
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
                                              text = str(i)))
-                else:
-                    self.annotations.append(dict(showarrow = False,
+                    else:
+                        self.annotations.append(dict(showarrow = False,
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
                                              text = str(pnt.x)+'-'+str(pnt.y)))
                 self.shapeLst.append(copy.deepcopy(rectDic))
@@ -199,10 +205,12 @@ class Env:
         for i in range(robNum):
             x = lst[2*i]
             y = lst[2*i+1]
-            markTrace = go.Scatter(mode ='markers+lines',
+            markTrace = go.Scatter(mode ='lines',
                                    x= x,
                                    y= y,
-                                   marker =dict(size =10),
+#                                   marker =dict(size =8),
+#                                   line = dict(shape = 'spline'),
+#                                   ,
                                    name = 'Path_' + str(i+1))
             if(txtType):
                 for i in range(len(x)):
@@ -275,6 +283,11 @@ class Env:
             sie=25,
             color='#000'
         )
+        layout['legend'] =   dict(font=dict(
+            family='sans-serif',
+            size=25,
+            color='#000'
+        ))
         layout['autosize'] = False
         layout['height'] = 1000
         layout['width']= 1000
@@ -290,7 +303,7 @@ class Env:
 def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             fileName = 'nothing',
             fileType = False ):
-#    py.sign_in('tesla_fox', 'HOTRQ3nIOdYUUszDIfgN')
+    py.sign_in('tesla_fox', 'HOTRQ3nIOdYUUszDIfgN')
     conFileDir = './/data//'
     degNameCfg = conFileDir + cfgFileName
     
@@ -561,14 +574,14 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         graphData = []
         print('row',row)
         print('col',col)
-#        for i in range(robNum):
-#            graphUnit = []
-#            pathCfg.get('row'+str(i),graphUnit)
-#            graphData.append(copy.deepcopy(graphUnit))
-#            graphUnit = []
-#            pathCfg.get('col'+str(i),graphUnit)
-#            graphData.append(copy.deepcopy(graphUnit))
-#        env.addGraph(robNum,graphData,True)        
+        for i in range(robNum):
+            graphUnit = []
+            pathCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            pathCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addGraph(robNum,graphData,False)        
         
         edgeData = []
         edgeUnit = []
@@ -600,6 +613,66 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addPath(robNum = robNum, lst = pathData)
 #            graphData.append(copy.deepcopy(graphUnit))
         
+        env.drawPic('./png/env_'+cfgFileName+'path',fileType)
+#   for the single stc
+    if(drawType == 11):
+        env = Env(mat)
+        env.addgrid()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        
+        pathNameCfg = conFileDir +'singleSTC.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        
+#        graphData = []
+#        print('row',row)
+#        print('col',col)
+#        for i in range(robNum):
+#            graphUnit = []
+#            pathCfg.get('row'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#            graphUnit = []
+#            pathCfg.get('col'+str(i),graphUnit)
+#            graphData.append(copy.deepcopy(graphUnit))
+#        env.addGraph(robNum,graphData,False)        
+        terminalPnt = []
+        pathData = []
+        for i in range(robNum):
+            path_x = []
+            pathCfg.get('path_x'+str(i),path_x)
+            pathData.append(copy.deepcopy(path_x))
+            terminalPnt.append(path_x[len(path_x)- 1])
+            path_y = []
+            pathCfg.get('path_y'+str(i),path_y)
+            pathData.append(copy.deepcopy(path_y))
+            terminalPnt.append(path_y[len(path_y)- 1])
+        env.addPath(robNum = robNum, lst = pathData,txtType = False)
+
+        env.addRobotStartPnt(robLst)
+        env.addRobotTerminalPnt(terminalPnt)
+        
+        edgeData = []
+        edgeUnit = []
+        pathCfg.get('sPntx',edgeUnit)
+        print('edgeLength',len(edgeUnit))
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        pathCfg.get('sPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+
+        edgeUnit = []
+        pathCfg.get('tPntx',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))
+        edgeUnit =[]
+        pathCfg.get('tPnty',edgeUnit)
+        edgeData.append(copy.deepcopy(edgeUnit))        
+        env.addgrid()
+        env.addEdgeInPnt(edgeData)
+        
+
+#            graphData.append(copy.deepcopy(graphUnit))        
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)
 #        print('wtf')
     

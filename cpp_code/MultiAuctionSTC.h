@@ -108,7 +108,11 @@ namespace pl
 
 		vector<bex::DLineString> _vpath;
 		vector<vector<bex::VertexDescriptor>> _vpathIndex;
-
+		vector<vector<size_t>> _vLeafSet;
+		vector<set<size_t>> _vLeafSTCSet;
+		vector<set<size_t>> _vNoLeafSTCSet;
+		vector<set<size_t>> _vNoPathInd;
+		vector<vector<bool>> _vvBoolTree;
 		/// function for the STC
 		//const vector<bex::DPoint> _vStartPnt;
 

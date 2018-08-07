@@ -112,6 +112,8 @@ namespace pl
 		//size_t getReachableVertNumSTC() const {return }
 		
 		vector<bex::VertexDescriptor> STCGraphVd2TGraphVd(bex::VertexDescriptor const & svd);
+		// special case  
+		vector<bex::VertexDescriptor> STCGraphVd2TGraphVdSp(bex::VertexDescriptor const & svd);
 	private:
 
 		//write txt

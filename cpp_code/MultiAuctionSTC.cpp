@@ -386,7 +386,16 @@ namespace pl
 
 	void MultiAuctionSTC::getSpanningTreeSgs()
 	{
-
+		_vLeafSet.clear();
+		_vLeafSet.resize(_robNum);
+		_vLeafSTCSet.clear();
+		_vLeafSTCSet.resize(_robNum);
+		_vNoLeafSTCSet.clear();
+		_vNoLeafSTCSet.resize(_robNum);
+		_vNoPathInd.clear();
+		_vNoPathInd.resize(_robNum);
+		//_vvBoolTree.clear();
+		//_vvBoolTree.resize(_robNum);
 		typedef bt::adjacency_list < bt::vecS, bt::vecS, bt::undirectedS,
 			bt::property<bt::vertex_distance_t, int>, bt::property < bt::edge_weight_t, int > > SGraph;
 		typedef std::pair < int, int >SE;
@@ -402,6 +411,8 @@ namespace pl
 			vector<bex::VertexDescriptor> vvd;
 			for (auto &it : this->_vRobSetPtr->at(robID))
 				vvd.push_back(it);
+			//auto &vBoolTree = _vvBoolTree[robID];
+			//vBoolTree.assign(vvd.size(), true);
 			vector<bool> vBoolTree(vvd.size(),true);		
 			// 等于true时，正常计算
 			// 等于false时，非正常计算
@@ -413,12 +424,17 @@ namespace pl
 					c_vvd.erase(iter - vvd.begin() + c_vvd.begin());
 					if (_mainMap.allConnected(c_vvd))
 					{
-						cout << " +" << vvd[iter - vvd.begin()] << endl;
+						//cout << " +" << vvd[iter - vvd.begin()] << endl;
 						vBoolTree[iter - vvd.begin()] = false;
+						//_vLeafSTCSet[robID].push_back(*iter);
+						_vLeafSTCSet[robID].insert(*iter);
+						//auto wtfff = iter - vvd.begin();
+						//_vLeafSet[robID].push_back(iter - vvd.begin());
 					}
 					else
 					{
-						cout << " -" << vvd[iter - vvd.begin()] << endl;
+						_vNoLeafSTCSet[robID].insert(*iter);
+	//					cout << " -" << vvd[iter - vvd.begin()] << endl;
 					}
 				}
 			}
@@ -478,22 +494,54 @@ namespace pl
 			map<size_t, size_t> T2local;
 			map<size_t, size_t> local2T;
 			bex::VertexDescriptor localVd = 0;
+			size_t gSTCInd = 0;
 			for (auto &it : robSet)
 			{
+				
+				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
 				// 此处添加..
-				auto vvd = _mainMap.STCGraphVd2TGraphVd(svd);
-				for (auto &vd : vvd)
+				vector<bex::VertexDescriptor> vvd;
+				if (_vNoLeafSTCSet[p].count(svd) == 0)
 				{
-					robBaseSet.insert(vd);
-					bex::VertexProperty vp = graph[vd];
-					vp.EdgeState = false;
-					vp.NeighbourState = false;
-					vp.QueueState = false;
-					bt::add_vertex(vp, new_graph);
-					T2local.insert(pair<size_t, size_t>(vd, localVd));
-					local2T.insert(pair<size_t, size_t>(localVd, vd));
-					localVd++;
+					vvd = _mainMap.STCGraphVd2TGraphVd(svd);
+					if (_vLeafSTCSet[p].count(svd) == 1)
+					{
+						_vLeafSet[p].push_back(localVd);
+					}
+					for (auto &vd : vvd)
+					{
+						robBaseSet.insert(vd);
+						bex::VertexProperty vp = graph[vd];
+						vp.EdgeState = false;
+						vp.NeighbourState = false;
+						vp.QueueState = false;
+						bt::add_vertex(vp, new_graph);
+						T2local.insert(pair<size_t, size_t>(vd, localVd));
+						local2T.insert(pair<size_t, size_t>(localVd, vd));
+						localVd++;
+					}
+				}
+				else
+				{
+					auto realVd = _mainMap.STCGraphVd2TGraphVd(svd);
+					vvd = _mainMap.STCGraphVd2TGraphVdSp(svd);
+					for (auto &vd : vvd)
+					{
+						robBaseSet.insert(vd);
+						if (vd != realVd.back())
+						{
+							_vNoPathInd[p].insert(localVd);
+						}
+						bex::VertexProperty vp = graph[vd];
+						vp.EdgeState = false;
+						vp.NeighbourState = false;
+						vp.QueueState = false;
+						bt::add_vertex(vp, new_graph);
+						T2local.insert(pair<size_t, size_t>(vd, localVd));
+						local2T.insert(pair<size_t, size_t>(localVd, vd));
+						localVd++;
+					}
 				}
 			}
 			_vT2local.push_back(T2local);
@@ -576,6 +624,7 @@ namespace pl
 			auto &_pathIndex = _vpathIndex[p];
 			auto &_path = _vpath[p];
 			auto &localGraph = _m_vGraph[p];
+			auto &leafSet = _vLeafSet[p];
 			size_t i = 0;
 			do
 			{
@@ -593,9 +642,25 @@ namespace pl
 				vector<bex::VertexDescriptor> vNeighbors;
 				for (auto ni = neighborsIter.first; ni != neighborsIter.second; ++ni)
 				{
-					if (!localGraph[*ni].NeighbourState)
+					if (find(leafSet.begin(), leafSet.end(), *ni) == leafSet.end())
 					{
-						vNeighbors.push_back(*ni);
+						if (!localGraph[*ni].NeighbourState)
+						{
+							vNeighbors.push_back(*ni);
+						}
+					}
+					else
+					{
+						//此处需要修改
+						if (_mainMap.isConnected(_vlocal2T[p][*ni], _vlocal2T[p][cenVd],graphType::base))
+						{
+							localGraph[*ni].NeighbourState = true;
+							leafSet.erase(find(leafSet.begin(), leafSet.end(), *ni));
+							_pathIndex.push_back(*ni);
+							_path.push_back(localGraph[*ni].pnt);
+							_pathIndex.push_back(cenVd);
+							_path.push_back(cenVp.pnt);
+						}
 					}
 				}
 				canVd = cenVd;
@@ -672,7 +737,7 @@ namespace pl
 				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
 				//auto  &t_ind = _vT2local[p][ind];
 				cout << " i		= " << i << endl;
-				if (_ob_tGrid[ind] == bex::vertType::WayVert)
+				if (_ob_tGrid[ind] == bex::vertType::WayVert && _vNoPathInd[p].count(_vitualPathIndex[i]) == 0)
 				{
 					if (nei_bool)
 					{

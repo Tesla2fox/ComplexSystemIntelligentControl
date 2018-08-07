@@ -434,6 +434,20 @@ namespace pl
 		return res;
 	}
 
+	vector<bex::VertexDescriptor> Obmap::STCGraphVd2TGraphVdSp(bex::VertexDescriptor const & svd)
+	{
+		vector<bex::VertexDescriptor> res;
+		STCGridInd sgridInd = graphVd2GridInd[svd];
+
+		res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].LB]);
+		res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].RT]);
+		res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].LT]);
+		res.push_back(tmap2graph[_STCVirtualGrid[sgridInd].RB]);
+		return res;
+
+		return vector<bex::VertexDescriptor>();
+	}
+
 	std::vector<GridIndex> Obmap::getSearchVerticalNeighbor(GridIndex const & cen_index, size_t const & gridType)
 	{
 		GridMap *gridPtr;
