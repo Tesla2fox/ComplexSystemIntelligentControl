@@ -567,7 +567,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst.append(robRowLst)
         robLst.append(robColLst)
         env.addRobotStartPnt(robLst)
-        pathNameCfg = conFileDir +'auctionSTCDeg.txt'
+        pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
         

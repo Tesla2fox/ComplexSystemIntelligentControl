@@ -144,15 +144,26 @@ namespace pl
 				indAndType.second = NOVIR;
 				indAndType.first = ind;
 				bool existVir = false;
+				if (obNum == 0)
+					vert._vertType = bex::vertType::WayVert;
+				if (obNum == 3)
+					vert._vertType = bex::vertType::DoubleDiffOb;
+				if (obNum == 1)
+					vert._vertType = bex::vertType::SingleOb;
+				if (obNum == 4)
+					vert._vertType = bex::vertType::ObVert;
 				if (obNum == 2) {
+					vert._vertType = bex::vertType::DoubleSameOb;
 					if (_tGrid[vert.LT]== bex::ObVert &&_tGrid[vert.RB] == bex::ObVert)
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VRT;
+						vertVir._vertType = bex::vertType::DoubleDiffOb;
 //						indAndType.second = STCVertType::Left;
 						indAndType.second = VRT;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
 						vert.virtualType = VLB;
+						vertVir._vertType = bex::vertType::DoubleDiffOb;
 //						indAndType.second = STCVertType::Right;
 						indAndType.second = VLB;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
@@ -163,12 +174,14 @@ namespace pl
 					{
 						auto vertVir = vert;
 						vertVir.virtualType = VLT;
+						vertVir._vertType = bex::vertType::DoubleDiffOb;
 						//indAndType.second = STCVertType::Left;
 						indAndType.second = VLT;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vertVir));
 						vert.virtualType = VRB;
 //						indAndType.second = STCVertType::Right;
 						indAndType.second = VRB;
+						vertVir._vertType = bex::vertType::DoubleDiffOb;
 						this->_STCVirtualGrid.insert(pair<STCGridInd, STCVert>(indAndType, vert));
 						existVir = true;
 						vitualVertSet.insert(ind);
@@ -190,10 +203,11 @@ namespace pl
 			//auto tGridIndex = getTgraphGridInd(ind);
 			vp.pnt.x(it.second.x);
 			vp.pnt.y(it.second.y);
-			if (allObstacle(it.second._vGridIndex))
-				vp.Type = bex::vertType::ObVert;
-			else
-				vp.Type = bex::vertType::WayVert;
+			vp.Type = it.second._vertType;
+			//if (allObstacle(it.second._vGridIndex))
+			//	vp.Type = bex::vertType::ObVert;
+			//else
+			//	vp.Type = bex::vertType::WayVert;
 			vp.EdgeState = false;
 			boost::add_vertex(vp, this->_sGraph);
 			//std::pair<int, int> localIndex;			
@@ -216,8 +230,6 @@ namespace pl
 			{
 				//auto localIndex = sgraph2map[vd];
 				auto gridInd = graphVd2GridInd[vd];
-				if (gridInd.first.first == 3 && gridInd.first.second == 1)
-					cout << "bug" << endl;
 				auto vNeiInd = getSTCNeighbor(gridInd);
 				//auto vlocalIndex = getSTCVerticalNeighbor(localIndex);
 				std::vector<int> vvd;				
@@ -513,7 +525,7 @@ namespace pl
 		auto neighbour = [=](GridIndex &ind, vector<GridIndex>  &vInd) {
 			if (grid.count(ind))
 			{
-				if (grid.at(ind) == bex::vertType::WayVert)
+				if (grid.at(ind) != bex::vertType::ObVert)
 				{
 					vInd.push_back(ind);
 					return true;

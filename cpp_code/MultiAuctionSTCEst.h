@@ -12,10 +12,11 @@ bool writeDebug(std::ofstream &deg, string const &str, T const &v_val);
 
 namespace pl
 {
-	// this auction is no estimate
-	class MultiAuctionSTC {
+	using STCEdge = pair<bex::VertexDescriptor, bex::VertexDescriptor>;
+	// this auction uses estimate
+	class MultiAuctionSTCEst {
 	public:
-		MultiAuctionSTC(Obmap  & ob_map, vector<GridIndex> const &vStartPnt) :
+		MultiAuctionSTCEst(Obmap  & ob_map, vector<GridIndex> const &vStartPnt) :
 			_mainMap(ob_map), _ob_sgraph2map(ob_map.sgraph2map), _ob_smap2graph(ob_map.smap2graph), _ob_tgraph2map(ob_map.tgraph2map),
 			_ob_gridInd2GraphVd(ob_map.gridInd2GraphVd), _ob_graphVd2GridInd(ob_map.graphVd2GridInd), _ob_STCGrid(ob_map._STCVirtualGrid),
 			_ob_tmap2graph(ob_map.tmap2graph),_vStartPnt(vStartPnt),_robNum(vStartPnt.size()),
@@ -23,7 +24,7 @@ namespace pl
 			, _ob_tGrid(ob_map.getGridMap(graphType::base)), _ob_sGrid(ob_map.getGridMap(graphType::span)),aplan(ob_map)
 		{
 			string  str_deg = conDir;
-			str_deg += "auctionSTCDeg.txt";
+			str_deg += "auctionSTCEstDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);
 			
 		};
@@ -91,10 +92,15 @@ namespace pl
 		size_t randomSeed = 0;
 
 		//
-		shared_ptr<vector<double>> _vRobEstCostPtr = nullptr;
+		shared_ptr<vector<size_t>> _vRobEstCostPtr = nullptr;
+
 		shared_ptr<vector<set<size_t>>> _vRobSetPtr = nullptr;
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
 		shared_ptr<vector<set<bex::VertexDescriptor>>> _vRobNeiPtr = nullptr;
+
+		shared_ptr<vector<vector<STCEdge>>> _vRobEdgePtr = nullptr;
+		shared_ptr<vector<vector<pair<bex::VertexDescriptor, bex::VertexDescriptor>>>> _vRobNeiEdgePtr = nullptr;
+
 		shared_ptr<vector<bool>> _vRobSleepPtr = nullptr;
 		map<bex::VertexDescriptor, int> _GridMap;
 		//shared_ptr<vector<set<size_t>>>_vRobNghSetPtr = nullptr;

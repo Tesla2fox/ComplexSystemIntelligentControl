@@ -56,7 +56,8 @@ namespace bex {
 
 	////
 	//// ggq define
-	enum   vertType {ObVert,WayVert,EdgeObVert,ShoulderVert,NearVert };
+	enum   vertType {ObVert,WayVert,EdgeObVert,ShoulderVert,NearVert,DoubleSameOb,SingleOb,DoubleDiffOb};
+
 	class PointVert
 	{
 	public:

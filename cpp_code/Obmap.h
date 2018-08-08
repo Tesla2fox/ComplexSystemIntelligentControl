@@ -36,6 +36,7 @@ namespace pl
 		double y;
 		vector<GridIndex> _vGridIndex;
 		size_t virtualType;
+		size_t _vertType;
 		//
 		bool _virtualVertExist();
 	private:

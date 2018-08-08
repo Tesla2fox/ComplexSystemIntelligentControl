@@ -1,0 +1,240 @@
+g_sPntx 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3 3 5 5 5 5 5 5 5 5 7 7 7 7 7 7 7 7 9 9 9 9 9 9 9 9 11 11 11 11 11 11 11 11 13 13 13 13 13 13 13 13
+g_sPnty 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15
+g_tPntx 1 1 1 1 1 1 3 3 5 1 1 3 3 3 5 3 7 3 3 5 3 5 7 7 9 7 5 7 5 7 7 9 11 9 7 9 7 9 7 11 13 13 9 11 9 11 11 11 13 13 11 13 13 13 13 13
+g_tPnty 1 1 3 5 11 13 13 15 1 3 5 5 7 9 13 13 1 3 5 5 9 9 13 15 1 5 5 5 9 9 15 15 1 5 5 5 9 9 13 15 1 3 5 5 9 9 11 13 3 5 5 5 7 9 11 13
+circleTime = 0
+aucNeer = 0
+aucVertID = 28
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 1
+aucNeer = 0
+aucVertID = 20
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 2
+aucNeer = 0
+aucVertID = 12
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 3
+aucNeer = 0
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 4
+aucNeer = 0
+aucVertID = 3
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 5
+aucNeer = 0
+aucVertID = 2
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 6
+aucNeer = 0
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 7
+aucNeer = 0
+aucVertID = 0
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 8
+aucNeer = 0
+aucVertID = 9
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 9
+aucNeer = 0
+aucVertID = 10
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 10
+aucNeer = 0
+aucVertID = 13
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 11
+aucNeer = 0
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 12
+aucNeer = 0
+aucVertID = 4
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 13
+aucNeer = 0
+aucVertID = 6
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 14
+aucNeer = 0
+aucVertID = 14
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 15
+aucNeer = 0
+aucVertID = 15
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 16
+aucNeer = 0
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 17
+aucNeer = 0
+aucVertID = 17
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 18
+aucNeer = 0
+aucVertID = 18
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 19
+aucNeer = 0
+aucVertID = 19
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 20
+aucNeer = 0
+aucVertID = 21
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 21
+aucNeer = 0
+aucVertID = 22
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 22
+aucNeer = 0
+aucVertID = 23
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 23
+aucNeer = 0
+aucVertID = 26
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 24
+aucNeer = 0
+aucVertID = 25
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 25
+aucNeer = 0
+aucVertID = 24
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 26
+aucNeer = 0
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 27
+aucNeer = 0
+aucVertID = 8
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 28
+aucNeer = 0
+aucVertID = 27
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 29
+aucNeer = 0
+aucVertID = 29
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 30
+aucNeer = 0
+aucVertID = 30
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 31
+aucNeer = 0
+aucVertID = 31
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 32
+aucNeer = 0
+aucVertID = 32
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 33
+aucNeer = 0
+aucVertID = 33
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 34
+aucNeer = 0
+aucVertID = 34
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 35
+aucNeer = 0
+aucVertID = 35
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 36
+aucNeer = 0
+aucVertID = 37
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 37
+aucNeer = 0
+aucVertID = 38
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 38
+aucNeer = 0
+aucVertID = 39
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 39
+aucNeer = 0
+aucVertID = 40
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 40
+aucNeer = 0
+aucVertID = 41
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 41
+aucNeer = 0
+aucVertID = 42
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 42
+aucNeer = 0
+aucVertID = 43
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 43
+aucNeer = 0
+aucVertID = 44
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 44
+aucNeer = 0
+aucVertID = 45
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 45
+aucNeer = 0
+aucVertID = 46
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 46
+aucNeer = 0
+aucVertID = 47
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 47
+aucNeer = 0
+aucVertID = 48
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 48
+aucNeer = 0
+aucVertID = 49
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 49
+aucNeer = 0
+aucVertID = 50
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 50
+aucNeer = 0
+aucVertID = 51
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 51
+aucNeer = 0
+aucVertID = 52
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 52
+aucNeer = 0
+aucVertID = 53
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 53
+aucNeer = 0
+aucVertID = 54
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 54
+aucNeer = 0
+aucVertID = 55
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+circleTime = 55
+aucNeer = 0
+aucVertID = 55
+aucVertGridInd.first =  0aucVertGrid.second  = 0
+rob0	set size = 56
+max  = 56 min = 56
+allNumSize = 56
+path_x0 8.5 9.5 10.5 11.5 11.5 11.5 11.5 10.5 10.5 10.5 10.5 11.5 11.5 11.5 10.5 9.5 8.5 7.5 6.5 5.5 4.5 4.5 4.5 4.5 5.5 6.5 6.5 6.5 5.5 4.5 3.5 3.5 3.5 2.5 1.5 0.5 0.5 0.5 0.5 1.5 2.5 3.5 3.5 3.5 2.5 1.5 1.5 1.5 0.5 0.5 1.5 1.5 1.5 0.5 0.5 0.5 1.5 1.5 1.5 1.5 2.5 3.5 4.5 5.5 5.5 5.5 6.5 7.5 7.5 8.5 8.5 8.5 7.5 7.5 7.5 7.5 8.5 9.5 10.5 11.5 11.5 11.5 10.5 10.5 10.5 10.5 10.5 9.5 9.5 9.5 9.5 9.5 8.5 8.5 7.5 7.5 7.5 6.5 6.5 6.5 5.5 5.5 4.5 4.5 4.5 3.5 3.5 3.5 2.5 2.5 2.5 3.5 3.5 3.5 2.5 2.5 2.5 2.5 2.5 2.5 1.5 1.5 1.5 1.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1.5 1.5 0.5 0.5 0.5 1.5 2.5 2.5 2.5 3.5 4.5 3.5 2.5 1.5 1.5 2.5 3.5 3.5 3.5 4.5 5.5 5.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 8.5 8.5 8.5 9.5 9.5 9.5 9.5 10.5 11.5 12.5 12.5 12.5 12.5 11.5 10.5 11.5 12.5 12.5 11.5 10.5 9.5 8.5 7.5 6.5 5.5 5.5 5.5 4.5 3.5 3.5 3.5 3.5 4.5 5.5 6.5 6.5 6.5 7.5 8.5 8.5 9.5 10.5 10.5 10.5 11.5 12.5 12.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 12.5 12.5 12.5 12.5 12.5 12.5 13.5 13.5 13.5 12.5 12.5 12.5 12.5 12.5 11.5 11.5 11.5 10.5 10.5 10.5 9.5 9.5 9.5 8.5 8.5 8.5 7.5 7.5 7.5 6.5 6.5 6.5 6.5 5.5 5.5 5.5 4.5 4.5 4.5 3.5 3.5 3.5 2.5 2.5 2.5 3.5 4.5 5.5 6.5 7.5
+path_y0 8.5 8.5 8.5 8.5 9.5 10.5 10.5 10.5 11.5 12.5 13.5 13.5 14.5 15.5 15.5 15.5 15.5 15.5 15.5 15.5 15.5 14.5 14.5 15.5 15.5 15.5 14.5 13.5 13.5 13.5 13.5 14.5 15.5 15.5 15.5 15.5 14.5 14.5 15.5 15.5 15.5 15.5 14.5 13.5 13.5 13.5 13.5 12.5 12.5 12.5 12.5 11.5 10.5 10.5 9.5 9.5 9.5 10.5 11.5 12.5 12.5 12.5 12.5 12.5 12.5 13.5 13.5 13.5 12.5 12.5 12.5 13.5 13.5 14.5 14.5 15.5 15.5 15.5 15.5 15.5 14.5 13.5 13.5 12.5 11.5 10.5 9.5 9.5 10.5 11.5 11.5 10.5 10.5 9.5 9.5 10.5 11.5 11.5 10.5 9.5 9.5 9.5 9.5 10.5 9.5 9.5 10.5 11.5 11.5 10.5 10.5 10.5 9.5 8.5 8.5 7.5 6.5 5.5 5.5 6.5 6.5 7.5 7.5 6.5 6.5 5.5 4.5 3.5 2.5 1.5 0.5 0.5 0.5 0.5 1.5 2.5 2.5 2.5 2.5 3.5 3.5 3.5 3.5 3.5 3.5 4.5 4.5 4.5 4.5 5.5 5.5 5.5 4.5 4.5 3.5 3.5 3.5 2.5 3.5 4.5 4.5 3.5 3.5 3.5 2.5 3.5 4.5 4.5 4.5 4.5 3.5 3.5 2.5 2.5 2.5 2.5 2.5 1.5 1.5 1.5 1.5 1.5 1.5 1.5 1.5 1.5 0.5 0.5 0.5 1.5 1.5 0.5 0.5 0.5 0.5 0.5 1.5 1.5 1.5 0.5 0.5 0.5 0.5 1.5 1.5 1.5 0.5 0.5 1.5 2.5 3.5 4.5 5.5 6.5 7.5 8.5 9.5 10.5 11.5 12.5 13.5 14.5 15.5 15.5 14.5 13.5 12.5 11.5 11.5 11.5 10.5 9.5 9.5 8.5 7.5 6.5 5.5 5.5 6.5 7.5 7.5 6.5 5.5 5.5 6.5 7.5 7.5 6.5 5.5 5.5 6.5 6.5 6.5 7.5 6.5 5.5 5.5 6.5 7.5 7.5 6.5 5.5 5.5 6.5 6.5 6.5 7.5 8.5 8.5 8.5 8.5 8.5 8.5
+sPntx 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3 3 5 5 5 5 5 5 5 5 7 7 7 7 7 7 7 7 9 9 9 9 9 9 9 9 11 11 11 11 11 11 11 11 13 13 13 13 13 13 13 13
+sPnty 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15 1 3 5 7 9 11 13 15
+tPntx 1 1 1 1 1 1 3 3 5 1 1 3 3 3 5 3 7 3 3 5 3 5 7 7 9 7 5 7 5 7 7 9 11 9 7 9 7 9 7 11 13 13 9 11 9 11 11 11 13 13 11 13 13 13 13 13
+tPnty 1 1 3 5 11 13 13 15 1 3 5 5 7 9 13 13 1 3 5 5 9 9 13 15 1 5 5 5 9 9 15 15 1 5 5 5 9 9 13 15 1 3 5 5 9 9 11 13 3 5 5 5 7 9 11 13
+robNum 1
+row0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 0 1 1 0 1 1 0 1 0 3 3 2 3 2 2 3 2 3 2 2 3 2 3 3 2 3 2 3 2 3 2 3 3 2 3 4 5 5 4 5 4 5 4 5 4 5 4 5 4 5 4 4 5 4 5 4 5 4 6 7 6 7 6 7 6 7 6 7 6 6 7 6 7 6 7 6 7 6 7 7 6 7 6 7 6 7 8 9 8 9 9 8 9 8 9 8 9 8 9 8 9 8 9 8 9 8 9 9 8 8 9 8 10 11 10 10 11 10 11 10 11 10 11 10 11 10 11 10 11 10 10 11 10 11 10 11 10 11 12 13 12 13 12 13 12 13 12 13 12 13 12 13 12 13 12 13 12 13 13 12 13 12 13 12 13 12 13 12 13
+col0 0 1 0 2 3 3 2 4 5 4 6 7 6 9 9 10 11 10 12 13 12 14 15 15 1 0 2 3 3 4 5 5 4 6 7 6 8 9 8 10 11 11 10 12 13 13 12 15 15 14 0 1 0 3 5 5 4 6 7 7 6 8 9 9 8 10 12 13 13 12 14 15 15 0 1 1 3 3 2 4 5 5 4 6 7 6 8 9 9 8 10 11 11 10 13 13 12 14 15 15 14 0 1 1 0 3 3 2 4 5 5 4 6 7 7 6 8 9 9 8 10 11 10 12 13 15 15 0 1 1 2 2 4 5 5 4 6 7 7 6 8 9 9 8 10 11 10 12 13 13 15 15 14 0 1 1 0 2 3 3 2 4 5 5 4 6 7 7 6 8 9 9 8 11 11 10 12 13 13 12 14 15 15 14

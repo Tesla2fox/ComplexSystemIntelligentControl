@@ -35,7 +35,9 @@ set(file_list
 	#
 	MultiAuctionSTC.h
 	MultiAuctionSTC.cpp
-	#
+	#EST
+	MultiAuctionSTCEst.h
+	MultiAuctionSTCEst.cpp
 	AstarPlan.h
 	AstarPlan.cpp
 )

@@ -1,4 +1,4 @@
-#include "MultiAuctionSTC.h"
+#include "MultiAuctionSTCEst.h"
 
 //void pl::MultiAuction::setStartPnt(vector<size_t> const & vStartPntRow, vector<size_t> const & vStartPntCol)
 //{
@@ -11,7 +11,7 @@
 
 namespace pl
 {
-	void pl::MultiAuctionSTC::process()
+	void pl::MultiAuctionSTCEst::process()
 	{
 		_GridMap.clear();
 		size_t gridNum = boost::num_vertices(_ob_sGraph);
@@ -30,7 +30,7 @@ namespace pl
 		wirteMultiGraphSeg();
 	}
 
-	void MultiAuctionSTC::writeRobGraph()
+	void MultiAuctionSTCEst::writeRobGraph()
 	{
 		writeDebug(c_deg, "robNum", _robNum);
 		for (size_t i = 0; i < _robNum; i++)
@@ -121,7 +121,7 @@ namespace pl
 		//	writeDebug(c_deg, str_col, vCol);
 		//}
 	}
-	void MultiAuctionSTC::formSpanningTree()
+	void MultiAuctionSTCEst::formSpanningTree()
 	{
 
 		typedef bt::adjacency_list < bt::vecS, bt::vecS, bt::undirectedS,
@@ -187,12 +187,12 @@ namespace pl
 		writeDebug(c_deg, "g_tPnty", tPnty);
 	}
 
-	void MultiAuctionSTC::testAstar()
+	void MultiAuctionSTCEst::testAstar()
 	{
 		
 	}
 
-	void MultiAuctionSTC::writeMultiGraph()
+	void MultiAuctionSTCEst::writeMultiGraph()
 	{
 		vector<double> sPntx, sPnty, tPntx, tPnty;
 		for (size_t i = 0; i < _robNum; i++)
@@ -233,7 +233,7 @@ namespace pl
 	}
 	
 
-	void MultiAuctionSTC::writeMultiPath()
+	void MultiAuctionSTCEst::writeMultiPath()
 	{
 		for (size_t i = 0; i < _robNum; i++)
 		{
@@ -253,7 +253,7 @@ namespace pl
 		}
 	}
 
-	void MultiAuctionSTC::wirteMultiGraphSeg()
+	void MultiAuctionSTCEst::wirteMultiGraphSeg()
 	{
 		vector<double> sPntx, sPnty, tPntx, tPnty;
 		for (size_t i = 0; i < _robNum; i++)
@@ -273,21 +273,23 @@ namespace pl
 		writeDebug(c_deg, "tPnty", tPnty);
 	}
 
-	void MultiAuctionSTC::writeMultiGraphEdge()
+	void MultiAuctionSTCEst::writeMultiGraphEdge()
 	{
 
 	}
 
 
-	void pl::MultiAuctionSTC::auction()
+	void pl::MultiAuctionSTCEst::auction()
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
 		_vRobGridPtr = make_shared<vector<vector<GridIndex>>>(_robNum);
 		_vRobNeiPtr = make_shared<vector<set<bex::VertexDescriptor>>>(_robNum);
 		_vRobSleepPtr = make_shared<vector<bool>>(_robNum, false);
-		_vRobEstCostPtr = make_shared<vector<double>>(_robNum);
-		vector<bool> allAucEd(bt::num_vertices(_ob_sGraph), false);
+		_vRobEstCostPtr = make_shared<vector<size_t>>(_robNum);
+		_vRobNeiEdgePtr = make_shared<vector<vector<pair<bex::VertexDescriptor, bex::VertexDescriptor>>>>(_robNum);
+		_vRobEdgePtr = make_shared<vector<vector<STCEdge>>>(_robNum);
 
+		vector<bool> allAucEd(bt::num_vertices(_ob_sGraph), false);
 		auto aucCompleted = [](vector<bool> const &vb) {
 			auto iter = std::find(vb.begin(), vb.end(), false);
 			if (iter == vb.end())
@@ -304,7 +306,10 @@ namespace pl
 		{
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
 			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
-			_vRobSetPtr->at(i).insert(_ob_gridInd2GraphVd[ind]);	
+			_vRobSetPtr->at(i).insert(_ob_gridInd2GraphVd[ind]);
+			auto initCost = leafCost(_ob_gridInd2GraphVd[ind]);
+			_vRobEdgePtr->at(i).push_back(STCEdge(_ob_gridInd2GraphVd[ind], _ob_gridInd2GraphVd[ind]));
+			_vRobEstCostPtr->at(i) = initCost;
 			_GridMap[_ob_gridInd2GraphVd[ind]] = i;
 			updateNeiGraph(i);
 		}
@@ -361,7 +366,7 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 200/*maxcircleTime*/)
+			if ( ++circleTime >= 15/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -384,7 +389,7 @@ namespace pl
 		cout << "safe" << endl;
 	}
 
-	void MultiAuctionSTC::getSpanningTreeSgs()
+	void MultiAuctionSTCEst::getSpanningTreeSgs()
 	{
 		_vLeafSet.clear();
 		_vLeafSet.resize(_robNum);
@@ -481,7 +486,7 @@ namespace pl
 #endif // _DEBUG		
 	}
 
-	void MultiAuctionSTC::getNewGraph()
+	void MultiAuctionSTCEst::getNewGraph()
 	{
 		auto &graph = _ob_tGraph;
 		set<bex::VertexDescriptor> robBaseSet;
@@ -604,7 +609,7 @@ namespace pl
 		}
 	}
 
-	void MultiAuctionSTC::searchVitualPath()
+	void MultiAuctionSTCEst::searchVitualPath()
 	{
 		_vpathIndex.clear();
 		_vpath.clear();
@@ -713,7 +718,7 @@ namespace pl
 		cout << "path___success" << endl;
 	}
 
-	void MultiAuctionSTC::generateRealPath()
+	void MultiAuctionSTCEst::generateRealPath()
 	{
 		auto vVitualPathIndex = _vpathIndex;
 		//auto vVitualPath = _vpath;
@@ -769,7 +774,7 @@ namespace pl
 	}
 
 
-	bool MultiAuctionSTC::treeIntersection(bex::DSegment const sg, size_t const robID) const
+	bool MultiAuctionSTCEst::treeIntersection(bex::DSegment const sg, size_t const robID) const
 	{
 		auto &vTreeSg = this->_vTreeSgs[robID];
 		for (auto &it : vTreeSg)
@@ -782,7 +787,7 @@ namespace pl
 		return false;
 	}
 
-	size_t MultiAuctionSTC::getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID)
+	size_t MultiAuctionSTCEst::getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID)
 	{
 		auto &local2T = _vlocal2T[robID];
 		bex::VertexDescriptor cen_index = local2T[lcen_index];
@@ -813,7 +818,7 @@ namespace pl
 		//return size_t();
 	}
 
-	bool MultiAuctionSTC::isAdjacent(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2)
+	bool MultiAuctionSTCEst::isAdjacent(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2)
 	{
 		auto &graph = _ob_sGraph;
 		auto neighborIter = boost::adjacent_vertices(vd1, graph);
@@ -826,7 +831,7 @@ namespace pl
 		return true;
 	}
 
-	bool MultiAuctionSTC::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
+	bool MultiAuctionSTCEst::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
 	{
 
 		double UnCoverMinFit = 99999;
@@ -855,7 +860,7 @@ namespace pl
 				inOtherSet = true;
 				auto &opRobID = _GridMap[*it];
 				robOpCandi.push_back(_vRobSetPtr->at(opRobID).size());
-				robOpNeiSet.push_back(tuple<size_t, size_t, size_t>(opRobID,*it, _vRobSetPtr->at(opRobID).size()));
+				robOpNeiSet.push_back(tuple<size_t, size_t, size_t>(opRobID,*it,_vRobEstCostPtr->at(opRobID)));
 			}
 			if (!inOtherSet) {
 				double fit = this->calUnopPriority(aucNeer, *it);
@@ -911,7 +916,7 @@ namespace pl
 		return allCovered;
 	}
 
-	size_t MultiAuctionSTC::maxBiddingRob(size_t const & aucVertID)
+	size_t MultiAuctionSTCEst::maxBiddingRob(size_t const & aucVertID)
 	{
 		size_t maxBidding = -1;
 		vector<double> vBidding;
@@ -943,13 +948,13 @@ namespace pl
 		return robWinner;
 	}
 
-	double MultiAuctionSTC::calBidding(size_t const & bidding)
+	double MultiAuctionSTCEst::calBidding(size_t const & bidding)
 	{
 		return 0.0;
 	}
 
 
-	double MultiAuctionSTC::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
+	double MultiAuctionSTCEst::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
 	{
 		double fitNess = 0;
 		auto &graph = _ob_sGraph;
@@ -966,7 +971,7 @@ namespace pl
 		return fitNess;
 	}
 
-	double MultiAuctionSTC::calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd)
+	double MultiAuctionSTCEst::calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd)
 	{
 		auto &robNeiSet = _vRobSetPtr->at(OpRobId);
 		vector<bex::VertexDescriptor> v_vd;
@@ -983,29 +988,29 @@ namespace pl
 		return std::numeric_limits<double>::max();
 	}
 
-	size_t MultiAuctionSTC::leafCost(bex::VertexDescriptor const & tvd)
+	size_t MultiAuctionSTCEst::leafCost(bex::VertexDescriptor const & tvd)
 	{
-		size_t cost;
+		size_t cost = 0;
 		switch (_ob_sGraph[tvd].Type)
 		{
 		case bex::vertType::SingleOb:
 		{
-			cost += 6;
+			cost = 6;
 			break;
 		}
 		case bex::vertType::DoubleSameOb:
 		{
-			cost += 2;
+			cost = 2;
 			break;
 		}
 		case bex::vertType::DoubleDiffOb:
 		{
-			cost += 2;
+			cost = 2;
 			break;
 		}
 		case bex::vertType::WayVert:
 		{
-			cost += 4;
+			cost = 4;
 			break;
 		}
 		default:
@@ -1014,7 +1019,7 @@ namespace pl
 		return cost;
 	}
 
-	size_t MultiAuctionSTC::estAddCost(size_t const & robID, bex::VertexDescriptor const & svd, bex::VertexDescriptor const & tvd)
+	size_t MultiAuctionSTCEst::estAddCost(size_t const & robID, bex::VertexDescriptor const & svd, bex::VertexDescriptor const & tvd)
 	{
 		//for
 		double cost = 0;
@@ -1057,11 +1062,13 @@ namespace pl
 	//	return 0.0;
 	//}
 
-	bool MultiAuctionSTC::updateNeiGraph(size_t const & robID)
+	bool MultiAuctionSTCEst::updateNeiGraph(size_t const & robID)
 	{
 		auto &robNghSet = _vRobNeiPtr->at(robID);
+		auto &robNeiEdge = _vRobNeiEdgePtr->at(robID);
 		auto &robSet = _vRobSetPtr->at(robID);
 		robNghSet.clear();
+		robNeiEdge.clear();
 		for (auto it = robSet.begin(); it != robSet.end(); it++)
 		{
 			auto &cenInd = *it;
@@ -1071,13 +1078,14 @@ namespace pl
 				if (robSet.count(*ni) == 0)
 				{
 					robNghSet.insert(*ni);
-				}
+					robNeiEdge.push_back(pair<bex::VertexDescriptor, bex::VertexDescriptor>(*it, *ni));
+				}				
 			}
 		}
 		return false;
 	}
 
-	bool MultiAuctionSTC::updateNeiGraph(size_t const & succBidID, bex::VertexDescriptor const & vd)
+	bool MultiAuctionSTCEst::updateNeiGraph(size_t const & succBidID, bex::VertexDescriptor const & vd)
 	{
 		auto &robSet = _vRobSetPtr->at(succBidID);
 		auto &robNghSet = _vRobNeiPtr->at(succBidID);
@@ -1097,7 +1105,7 @@ namespace pl
 		}
 		return false;
 	}
-	bool MultiAuctionSTC::updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd)
+	bool MultiAuctionSTCEst::updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd)
 	{
 		auto &robSet = _vRobSetPtr->at(loseID);
 		auto &robNghSet = _vRobNeiPtr->at(loseID);

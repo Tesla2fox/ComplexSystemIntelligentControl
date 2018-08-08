@@ -3,12 +3,12 @@
 #include "Obmap.h"
 #include "STCplan.h"
 #include "MultiAuction.h"
-#include "MultiAuctionSTC.h"
+#include "MultiAuctionSTCEst.h"
 int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	str_conDir += "1_14_16_40_Outdoor_Cfg.txt";
+	str_conDir += "5_20_20_80_Outdoor_Cfg.txt";
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);
 
@@ -41,7 +41,7 @@ int main(int argc, char * argv[])
 	//multi_auc.process();
 	//multi_auc.writeRobGraph();
 	
-	pl::MultiAuctionSTC multi_aucSTC(obmap,startPnt);
+	pl::MultiAuctionSTCEst multi_aucSTC(obmap,startPnt);
 	multi_aucSTC.setRandomSeed(1);
 	multi_aucSTC.process();
 	multi_aucSTC.writeRobGraph();
