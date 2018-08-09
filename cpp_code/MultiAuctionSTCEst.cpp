@@ -1,4 +1,4 @@
-#include "MultiAuctionSTCEst.h"
+ï»¿#include "MultiAuctionSTCEst.h"
 
 //void pl::MultiAuction::setStartPnt(vector<size_t> const & vStartPntRow, vector<size_t> const & vStartPntCol)
 //{
@@ -22,11 +22,12 @@ namespace pl
 		auction();
 		this->_vTreeSgs.clear();
 		this->_vTreeSgs.resize(this->_robNum);
-		getSpanningTreeSgs();
-		getNewGraph();
-		searchVitualPath();
-		generateRealPath();
-		writeMultiPath();
+		exchange2TreeSgs();
+//		getSpanningTreeSgs();
+//		getNewGraph();
+//		searchVitualPath();
+//		generateRealPath();
+//		writeMultiPath();
 		wirteMultiGraphSeg();
 	}
 
@@ -282,6 +283,7 @@ namespace pl
 	void pl::MultiAuctionSTCEst::auction()
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
+		_vRobMapPtr = make_shared<vector<map<size_t, bool>>>(_robNum);
 		_vRobGridPtr = make_shared<vector<vector<GridIndex>>>(_robNum);
 		_vRobNeiPtr = make_shared<vector<set<bex::VertexDescriptor>>>(_robNum);
 		_vRobSleepPtr = make_shared<vector<bool>>(_robNum, false);
@@ -306,7 +308,11 @@ namespace pl
 		{
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
 			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
+			auto &stcVertInd = _ob_gridInd2GraphVd[ind];
 			_vRobSetPtr->at(i).insert(_ob_gridInd2GraphVd[ind]);
+			_vRobMapPtr->at(i).insert(pair<size_t, bool>(stcVertInd, true));
+			//true mean  this vertex is leaf node
+			//fasle mean this vertex is not leaf node
 			auto initCost = leafCost(_ob_gridInd2GraphVd[ind]);
 			_vRobEdgePtr->at(i).push_back(STCEdge(_ob_gridInd2GraphVd[ind], _ob_gridInd2GraphVd[ind]));
 			_vRobEstCostPtr->at(i) = initCost;
@@ -358,6 +364,7 @@ namespace pl
 			{
 				auto &robWinnerSet = _vRobSetPtr->at(robWinner);
 				robWinnerSet.insert(aucVertID);
+				
 				_GridMap[aucVertID] = robWinner;
 				updateNeiGraph(robWinner);
 				
@@ -419,8 +426,8 @@ namespace pl
 			//auto &vBoolTree = _vvBoolTree[robID];
 			//vBoolTree.assign(vvd.size(), true);
 			vector<bool> vBoolTree(vvd.size(),true);		
-			// µÈÓÚtrueÊ±£¬Õı³£¼ÆËã
-			// µÈÓÚfalseÊ±£¬·ÇÕı³£¼ÆËã
+			// ç­‰äºtrueæ—¶ï¼Œæ­£å¸¸è®¡ç®—
+			// ç­‰äºfalseæ—¶ï¼Œéæ­£å¸¸è®¡ç®—
 			for (auto iter = vvd.begin(); iter != vvd.end();iter++)
 			{
 				if (_mainMap.vitualVertSet.count(_ob_graphVd2GridInd[*iter].first) == 1)
@@ -505,7 +512,7 @@ namespace pl
 				
 				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
-				// ´Ë´¦Ìí¼Ó..
+				// æ­¤å¤„æ·»åŠ ..
 				vector<bex::VertexDescriptor> vvd;
 				if (_vNoLeafSTCSet[p].count(svd) == 0)
 				{
@@ -587,7 +594,7 @@ namespace pl
 
 
 							if (this->treeIntersection(sg, p))
-								//ÅĞ¶ÏÊÇ·ñÏà½»
+								//åˆ¤æ–­æ˜¯å¦ç›¸äº¤
 							{
 								//								std::cout << "inter" << endl;
 							}
@@ -656,7 +663,7 @@ namespace pl
 					}
 					else
 					{
-						//´Ë´¦ĞèÒªĞŞ¸Ä
+						//æ­¤å¤„éœ€è¦ä¿®æ”¹
 						if (_mainMap.isConnected(_vlocal2T[p][*ni], _vlocal2T[p][cenVd],graphType::base))
 						{
 							localGraph[*ni].NeighbourState = true;
@@ -916,6 +923,7 @@ namespace pl
 		return allCovered;
 	}
 
+
 	size_t MultiAuctionSTCEst::maxBiddingRob(size_t const & aucVertID)
 	{
 		size_t maxBidding = -1;
@@ -946,6 +954,44 @@ namespace pl
 		}
 		size_t robWinner = (std::max_element(vBidding.begin(), vBidding.end())-vBidding.begin());
 		return robWinner;
+	}
+
+	size_t MultiAuctionSTCEst::calCost(const size_t & robID, const size_t & aucVertID, size_t &sVertID)
+	{
+		size_t cost = std::numeric_limits<size_t>::max();
+		if (_vRobNeiPtr->at(robID).count(aucVertID) == 1)
+		{
+			vector<size_t> vCandinateVd;
+			for (auto &it : _vRobNeiEdgePtr->at(robID))
+			{
+				if (it.second == aucVertID)
+				{
+					vCandinateVd.push_back(it.first);
+				}
+			}
+			vector<size_t> vCandVal;
+			for (size_t i = 0; i < vCandinateVd.size(); i++)
+			{
+				vCandVal.push_back(estAddCost(robID, aucVertID, vCandinateVd[i]));
+			}
+			auto iter = std::min_element(vCandVal.begin(), vCandVal.end());
+			sVertID = *(iter - vCandVal.begin() + vCandinateVd.begin());
+			cost = *iter;
+		}
+		if (_vRobMapPtr->at(robID).count(aucVertID) == 1)
+		{
+			cost = _vRobEstCostPtr->at(robID);
+			// may be  this part do not have any meanings
+			for (auto &it : _vRobEdgePtr->at(robID))
+			{
+				if (it.second == aucVertID)
+				{
+					sVertID = it.first;
+					break;
+				}
+			}
+		}
+		return cost;
 	}
 
 	double MultiAuctionSTCEst::calBidding(size_t const & bidding)
@@ -1018,40 +1064,42 @@ namespace pl
 		}
 		return cost;
 	}
-
+	//esatimate the add cost of rob path
+	//the svd means the vertex out of the graph
+	//the tvd means the vertex in the rob graph
 	size_t MultiAuctionSTCEst::estAddCost(size_t const & robID, bex::VertexDescriptor const & svd, bex::VertexDescriptor const & tvd)
 	{
-		//for
+		//for		
 		double cost = 0;
-		if (_ob_sGraph[svd].Type == bex::vertType::DoubleSameOb || _ob_sGraph[svd].Type == bex::vertType::DoubleDiffOb)
-		{
-			cost = 2;
-		}
-		switch (_ob_sGraph[tvd].Type)
+		switch (_ob_sGraph[svd].Type)
 		{
 		case bex::vertType::SingleOb:
 		{
-			cost += 6;
+			cost = 6;
 			break;
 		}
 		case bex::vertType::DoubleSameOb:
 		{
-			cost += 2;
+			cost = 2;
 			break;
 		}
 		case bex::vertType::DoubleDiffOb:
 		{
-			cost += 2;
+			cost = 2;
 			break;
 		}
 		case bex::vertType::WayVert:
 		{
-			cost += 4;
+			cost = 4;
 			break;
 		}
 		default:
 			break;
 		}
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleSameOb && _vRobMapPtr->at(robID)[tvd])
+			cost += 2;
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleDiffOb && _vRobMapPtr->at(robID)[tvd])
+			cost += 2;
 		return cost;
 	}
 
@@ -1121,6 +1169,23 @@ namespace pl
 				{
 					robNghSet.insert(*ni);
 				}
+			}
+		}
+		return false;
+	}
+	bool MultiAuctionSTCEst::exchange2TreeSgs()
+	{
+		this->_vTreeSgs.clear();
+		this->_vTreeSgs.resize(this->_robNum);
+		for (size_t p = 0;  p< _robNum; p++)
+		{
+			auto &robEdges = this->_vRobEdgePtr->at(p);			
+			for (size_t i = 0; i < robEdges.size(); i++)
+			{
+				auto sInd = robEdges[i].first;
+				auto tInd = robEdges[i].second;
+				auto sg = bex::DSegment(_ob_sGraph[sInd].pnt, _ob_sGraph[tInd].pnt);
+				_vTreeSgs[p].push_back(sg);
 			}
 		}
 		return false;

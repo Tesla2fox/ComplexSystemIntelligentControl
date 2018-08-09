@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <vector>
 #include <iostream>
 #include <sstream>
@@ -34,6 +34,6 @@ using std::map;
 using std::set;
 using std::pair;
 
-#define conDir "D:\\py_code\\ComplexSystemIntelligentControl\\data\\"
+#define conDir "D:\\pyCode\\ComplexSystemIntelligentControl\\data\\"
 //using std::min_element;
 

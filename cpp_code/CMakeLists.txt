@@ -69,10 +69,13 @@ set(DARP_file_list tutorial_DARP.cpp
 
 
 IF(WIN32)
-set(BOOST_ROOT "D:/boost/boost_1_65_0_64")
+#set(BOOST_ROOT "D:/boost/boost_1_65_0_64")
+set(BOOST_ROOT "D:/boost_1_64_0/boost_1_64_0_64")
 ENDIF()
 #include_directories(../include)
-find_package(Boost 1.65.0)
+#find_package(Boost 1.65.0)
+
+find_package(Boost 1.64.0)
 
 if(Boost_FOUND)
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Obmap.h"
 #include "Gwrite.hpp"
 #include "bgraph.h"
@@ -82,7 +82,6 @@ namespace pl
 		void searchVitualPath();
 		void generateRealPath();
 		void auctioneer(const size_t & robID);
-		void bidding(const size_t &robID);
 
 
 		Obmap &_mainMap;
@@ -95,10 +94,14 @@ namespace pl
 		shared_ptr<vector<size_t>> _vRobEstCostPtr = nullptr;
 
 		shared_ptr<vector<set<size_t>>> _vRobSetPtr = nullptr;
+		//the stc vertex ind and it is a leaf node or not.
+		shared_ptr<vector<map<size_t, bool>>> _vRobMapPtr = nullptr;
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
 		shared_ptr<vector<set<bex::VertexDescriptor>>> _vRobNeiPtr = nullptr;
 
 		shared_ptr<vector<vector<STCEdge>>> _vRobEdgePtr = nullptr;
+		// the first means in the robot graph
+		// the second means out of the robot graph
 		shared_ptr<vector<vector<pair<bex::VertexDescriptor, bex::VertexDescriptor>>>> _vRobNeiEdgePtr = nullptr;
 
 		shared_ptr<vector<bool>> _vRobSleepPtr = nullptr;
@@ -107,7 +110,7 @@ namespace pl
 
 	
 		//shared_ptr<vector<set<size_t>>> _vRob
-
+		
 
 		// the val for the STC algorithm 
 		const vector<GridIndex> _vStartPnt;
@@ -139,7 +142,12 @@ namespace pl
 		const size_t _robNum;
 		// auction function begin
 		bool calAucVertID(size_t const & aucNeer, size_t &aucVertID);
+
+//		bool calAucVertID(size_t const & aucNeer, STCEdge &aucEdgeID);
 		size_t maxBiddingRob(size_t const & aucVertID);
+		// sVertID means the vert in the rob graph
+		size_t calCost(const size_t &robID,const size_t &aucVertID, size_t &sVertID);
+
 		double calBidding(size_t const &bidding);
 
 		//
@@ -149,12 +157,16 @@ namespace pl
 
 		size_t leafCost(bex::VertexDescriptor const &tvd);
 		//esatimate the add cost of rob path
+		//the svd means the vertex out of the graph
+		//the tvd means the vertex in the rob graph
 		size_t estAddCost(size_t const &robID, bex::VertexDescriptor const &svd,bex::VertexDescriptor const &tvd);
 
 
 		bool updateNeiGraph(size_t const &robID);
 		bool updateNeiGraph(size_t const &succBidID, bex::VertexDescriptor const & vd);
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
+		//
+		bool exchange2TreeSgs();
 		// auction function end
 	};
 	

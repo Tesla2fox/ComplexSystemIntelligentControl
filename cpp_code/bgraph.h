@@ -22,8 +22,6 @@ namespace bt = boost;
 
 namespace bex {
 
-
-
 	///*图库*/
     class VertexProperty { // 图节点中保存的信息
     public:
