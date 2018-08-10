@@ -24,11 +24,12 @@ namespace pl
 		this->_vTreeSgs.resize(this->_robNum);
 		exchange2TreeSgs();
 //		getSpanningTreeSgs();
-//		getNewGraph();
-//		searchVitualPath();
-//		generateRealPath();
-//		writeMultiPath();
+		getNewGraph();
+		searchVitualPath();
+		generateRealPath();
+		writeMultiPath();
 		wirteMultiGraphSeg();
+		calMakeSpan();
 	}
 
 	void MultiAuctionSTCEst::writeRobGraph()
@@ -240,6 +241,7 @@ namespace pl
 		{
 			string str_x = "path_x";
 			string str_y = "path_y";
+			string str_len = "path_len";
 			str_x += std::to_string(i);
 			str_y += std::to_string(i);
 			vector<double> path_x, path_y;
@@ -251,6 +253,7 @@ namespace pl
 			}
 			writeDebug(c_deg, str_x, path_x);
 			writeDebug(c_deg, str_y, path_y);
+			writeDebug(c_deg, str_len, path_x.size());
 		}
 	}
 
@@ -327,26 +330,23 @@ namespace pl
 			if (circleTime == 253)
 				c_deg << "";
 			bool allOccupied = calAucVertID(aucNeer, aucVertID);
-			c_deg << "circleTime = " << circleTime << endl;
-			c_deg << "aucNeer = " << aucNeer << endl;
-			c_deg << "aucVertID = " << aucVertID << endl;
-			c_deg << "aucVertGridInd.first =  " << this->_ob_sgraph2map[aucVertID].first <<
-				"aucVertGrid.second  = " << this->_ob_sgraph2map[aucVertID].second << endl;
-			if (_ob_sgraph2map[aucVertID].first == 9 && _ob_sgraph2map[aucVertID].second == 9)
-			{
-				cout << "bug" << endl;
-			}
-			if (aucVertID == 155)
-				c_deg << "";
-			if (aucNeer == 0 && _ob_sgraph2map[aucVertID].first == 19 && _ob_sgraph2map[aucVertID].second == 6)
-			{
-				c_deg << " " << endl;
-			}
+			//c_deg << "circleTime = " << circleTime << endl;
+			//c_deg << "aucNeer = " << aucNeer << endl;
+			//c_deg << "aucVertID = " << aucVertID << endl;
 			
-			size_t robWinner = maxBiddingRob(aucVertID);
+			if (_vRobSleepPtr->at(aucNeer))
+			{
+				continue;
+			}
+			//size_t robWinner = maxBiddingRob(aucVertID);
+			size_t robWinner;
+			size_t sVertID;
+			size_t minCost;
+			maxBiddingRob(aucVertID, robWinner, sVertID, minCost);
 			//_vRobSetPtr->at(robWinner).insert(aucVertID);
 			if (allOccupied)
 			{
+				//break;
 				if (robWinner != _GridMap[aucVertID])
 				{
 					//earse loser
@@ -364,16 +364,18 @@ namespace pl
 			{
 				auto &robWinnerSet = _vRobSetPtr->at(robWinner);
 				robWinnerSet.insert(aucVertID);
-				
+				_vRobEdgePtr->at(robWinner).push_back(STCEdge(aucVertID,sVertID));
+				_vRobMapPtr->at(robWinner)[sVertID] = false;
+				_vRobMapPtr->at(robWinner)[aucVertID] = true;
+				_vRobEstCostPtr->at(robWinner) = minCost;
 				_GridMap[aucVertID] = robWinner;
-				updateNeiGraph(robWinner);
-				
+				updateNeiGraph(robWinner);				
 			}
 #ifdef _DEBUG
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 15/*maxcircleTime*/)
+			if ( ++circleTime >= 100/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -383,14 +385,14 @@ namespace pl
 		size_t allNumSize = 0;
 		for (size_t i = 0; i < _robNum; i++)
 		{
-			c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
+			c_deg << "rob" << i << "	set size = " << _vRobEstCostPtr->at(i)<< endl;
 			//c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
-			vSize.push_back(_vRobSetPtr->at(i).size());
+			vSize.push_back(_vRobEstCostPtr->at(i));
 			allNumSize += _vRobSetPtr->at(i).size();
 		}
 		auto maxSize = *std::max_element(vSize.begin(), vSize.end());
 		auto minSize = *std::min_element(vSize.begin(), vSize.end());
-
+		
 		c_deg << "max  = " << maxSize << " min = " << minSize << endl;
 		c_deg << "allNumSize = " << allNumSize << endl;
 		cout << "safe" << endl;
@@ -735,26 +737,38 @@ namespace pl
 		_vpathIndex.resize(_robNum);
 		for (size_t p = 0; p < _robNum; p++)
 		{
+			vector<GridIndex> allWayPnt;
+			auto &_vitualPathIndex = vVitualPathIndex[p];
+			size_t wayPntCount = 0;
+			for (size_t i = 0; i < _vitualPathIndex.size(); i++)
+			{
+				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
+				if (_ob_tGrid[ind] == bex::vertType::WayVert && _vNoPathInd[p].count(_vitualPathIndex[i]) == 0)
+				{
+					wayPntCount++;
+				}
+			}			
+			set<GridIndex> cmpWayPnt;
 			//auto _startPnt = this->_vStartPnt[]
 			auto _startPnt = this->_vStartPnt[p];
 			auto &_pathIndex = _vpathIndex[p];
 			auto &_path = _vpath[p];
 			auto &localGraph = _m_vGraph[p];
-			auto &_vitualPathIndex = vVitualPathIndex[p];
 			_pathIndex.push_back(_vitualPathIndex.front());
 			_path.push_back(bex::DPoint(_startPnt.first + 0.5, _startPnt.second + 0.5));
+			cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(_path.front()));
 			bool nei_bool = true;
 			for (size_t i = 1; i < _vitualPathIndex.size(); i++)
 			{
 				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
-				//auto  &t_ind = _vT2local[p][ind];
-				cout << " i		= " << i << endl;
 				if (_ob_tGrid[ind] == bex::vertType::WayVert && _vNoPathInd[p].count(_vitualPathIndex[i]) == 0)
 				{
 					if (nei_bool)
 					{
 //						_pathIndex.push_back(_vitualPathIndex[i]);
 						_path.push_back(localGraph[_vitualPathIndex[i]].pnt);
+						//_mainMap.
+						cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(localGraph[_vitualPathIndex[i]].pnt));
 					}
 					else
 					{
@@ -762,9 +776,14 @@ namespace pl
 						auto lastInd = _ob_tgraph2map[_vlocal2T[p][_pathIndex.back()]];
 						aplan.init(lastInd, ind);
 						aplan.plan();
-						for (auto &it :aplan.m_path)
+						//for (auto &it :aplan.m_path)
+						//{
+						//	_path.push_back(it);
+						//}
+						for (size_t n = 1; n < aplan.m_path.size(); n++)
 						{
-							_path.push_back(it);
+							_path.push_back(aplan.m_path[n]);
+							cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(aplan.m_path[n]));
 						}
 						//_path.emplace(aplan.m_path.begin(), aplan.m_path.end());
 					}
@@ -775,7 +794,11 @@ namespace pl
 				{
 					nei_bool = false;
 				}
+				cout << "size = " << cmpWayPnt.size() << endl;
+				if (cmpWayPnt.size() == wayPntCount)
+					break;
 			}
+			cout << "stop" << endl;
 		}
 		cout << "generate real path" << endl;
 	}
@@ -857,7 +880,7 @@ namespace pl
 			(*_vRobSleepPtr)[aucNeer] = true;
 			return false;
 		}
-		vector<tuple<size_t,size_t,size_t>> robOpNeiSet;
+		vector<tuple<size_t,size_t,int>> robOpNeiSet;
 		vector<size_t> robOpCandi;
 		for (auto it = robNeiSet.begin(); it != robNeiSet.end(); it++)
 		{
@@ -867,7 +890,7 @@ namespace pl
 				inOtherSet = true;
 				auto &opRobID = _GridMap[*it];
 				robOpCandi.push_back(_vRobSetPtr->at(opRobID).size());
-				robOpNeiSet.push_back(tuple<size_t, size_t, size_t>(opRobID,*it,_vRobEstCostPtr->at(opRobID)));
+				robOpNeiSet.push_back(tuple<size_t, size_t, int>(opRobID,*it,_vRobEstCostPtr->at(opRobID)));
 			}
 			if (!inOtherSet) {
 				double fit = this->calUnopPriority(aucNeer, *it);
@@ -886,7 +909,7 @@ namespace pl
 
 
 		//end the rule 1
-		auto cmpOp = [](tuple<size_t, size_t, size_t> ind0, tuple<size_t, size_t, size_t> ind1)
+		auto cmpOp = [](tuple<size_t, size_t, int> ind0, tuple<size_t, size_t, int> ind1)
 		{
 			if (get<2>(ind0) < get<2>(ind1))
 			{
@@ -895,13 +918,20 @@ namespace pl
 			return false;
 		};
 
+		for (size_t i = 0; i < robOpNeiSet.size(); i++)
+		{
+			int wtf;
+			auto cost = calCost(aucNeer, get<1>(robOpNeiSet[i]), wtf);
+			get<2>(robOpNeiSet[i]) = get<2>(robOpNeiSet[i]) - cost;
+		}
+		//calCost(aucNeer,)
 		std::sort(robOpNeiSet.begin(), robOpNeiSet.end(), cmpOp);
 		//for (size_t i = 0; i < robOpNeiSet.size(); i++)
 		//{
 		//	cout<<i << "	robOpNeiSet[i].first = " << robOpNeiSet[i].first << "	robOpNeiSet[i].second =  " << robOpNeiSet[i].second << endl;
 		//}
 		auto maxCandi = get<2>(robOpNeiSet.back());
-		if (robSet.size() >= (maxCandi - 1))
+		if (maxCandi <= 0)
 		{
 			(*_vRobSleepPtr)[aucNeer] = true;
 			return allCovered;
@@ -924,8 +954,30 @@ namespace pl
 	}
 
 
+	bool MultiAuctionSTCEst::maxBiddingRob(size_t const & aucVertID, size_t & winnerRob, size_t &sVertID, size_t &minCost)
+	{
+		size_t maxBidding = -1;
+		vector<double> vBidding;
+		vector<double> vCost;
+		vector<int> vSvertID;
+		for (size_t i = 0; i < _robNum; i++)
+		{
+			int vertID = -1;
+			vCost.push_back(calCost(i, aucVertID, vertID));
+			//vBidding.push_back()
+			double bidding = 1 / double(vCost.back());
+			vBidding.push_back(bidding);
+			vSvertID.push_back(vertID);
+		}
+		winnerRob = (std::max_element(vBidding.begin(), vBidding.end()) - vBidding.begin());		
+		sVertID = vSvertID[winnerRob];
+		minCost = vCost[winnerRob];
+		return false;
+	}
+
 	size_t MultiAuctionSTCEst::maxBiddingRob(size_t const & aucVertID)
 	{
+		
 		size_t maxBidding = -1;
 		vector<double> vBidding;
 		for (size_t i = 0; i < _robNum; i++)
@@ -956,7 +1008,8 @@ namespace pl
 		return robWinner;
 	}
 
-	size_t MultiAuctionSTCEst::calCost(const size_t & robID, const size_t & aucVertID, size_t &sVertID)
+	
+	size_t MultiAuctionSTCEst::calCost(const size_t & robID, const size_t & aucVertID, int &sVertID)
 	{
 		size_t cost = std::numeric_limits<size_t>::max();
 		if (_vRobNeiPtr->at(robID).count(aucVertID) == 1)
@@ -976,7 +1029,7 @@ namespace pl
 			}
 			auto iter = std::min_element(vCandVal.begin(), vCandVal.end());
 			sVertID = *(iter - vCandVal.begin() + vCandinateVd.begin());
-			cost = *iter;
+			cost = *iter + _vRobEstCostPtr->at(robID);
 		}
 		if (_vRobMapPtr->at(robID).count(aucVertID) == 1)
 		{
@@ -1177,17 +1230,47 @@ namespace pl
 	{
 		this->_vTreeSgs.clear();
 		this->_vTreeSgs.resize(this->_robNum);
+
+		_vLeafSet.clear();
+		_vLeafSet.resize(_robNum);
+		_vLeafSTCSet.clear();
+		_vLeafSTCSet.resize(_robNum);
+		_vNoLeafSTCSet.clear();
+		_vNoLeafSTCSet.resize(_robNum);
+		_vNoPathInd.clear();
+		_vNoPathInd.resize(_robNum);
+
 		for (size_t p = 0;  p< _robNum; p++)
 		{
 			auto &robEdges = this->_vRobEdgePtr->at(p);			
 			for (size_t i = 0; i < robEdges.size(); i++)
 			{
-				auto sInd = robEdges[i].first;
-				auto tInd = robEdges[i].second;
+				auto &sInd = robEdges[i].first;
+				auto &tInd = robEdges[i].second;
+				auto &gridInd = _ob_graphVd2GridInd[sInd].first;
+				if (_mainMap.vitualVertSet.count(gridInd) == 1)
+				{
+					if (_vRobMapPtr->at(p)[sInd])
+					{
+						_vLeafSTCSet[p].insert(sInd);
+						continue;
+					}
+					_vNoLeafSTCSet[p].insert(sInd);
+				}
 				auto sg = bex::DSegment(_ob_sGraph[sInd].pnt, _ob_sGraph[tInd].pnt);
 				_vTreeSgs[p].push_back(sg);
+				//if(robEdges)
 			}
 		}
+		return false;
+	}
+	bool MultiAuctionSTCEst::calMakeSpan()
+	{
+		vector<size_t> vCompleteTime;
+		for (auto &it : _vpath)
+			vCompleteTime.push_back(it.size());
+		size_t makeSpan = *std::max_element(vCompleteTime.begin(), vCompleteTime.end());
+		writeDebug(c_deg, "makeSpan", makeSpan);
 		return false;
 	}
 }

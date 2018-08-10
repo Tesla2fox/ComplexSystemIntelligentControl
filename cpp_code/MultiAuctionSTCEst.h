@@ -144,9 +144,10 @@ namespace pl
 		bool calAucVertID(size_t const & aucNeer, size_t &aucVertID);
 
 //		bool calAucVertID(size_t const & aucNeer, STCEdge &aucEdgeID);
+		bool maxBiddingRob(size_t const &aucVertID, size_t &winnerRob, size_t &sVertID, size_t &minCost);
 		size_t maxBiddingRob(size_t const & aucVertID);
 		// sVertID means the vert in the rob graph
-		size_t calCost(const size_t &robID,const size_t &aucVertID, size_t &sVertID);
+		size_t calCost(const size_t &robID,const size_t &aucVertID, int &sVertID);
 
 		double calBidding(size_t const &bidding);
 
@@ -167,6 +168,7 @@ namespace pl
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
 		//
 		bool exchange2TreeSgs();
+		bool calMakeSpan();
 		// auction function end
 	};
 	

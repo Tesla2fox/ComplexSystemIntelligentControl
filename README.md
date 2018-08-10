@@ -34,6 +34,7 @@ version 2.0
 拍卖的过程中 每个节点自带代价，可以减少路径的冲突。
 选择拍卖者的过程，可以每次选择自身估计的路径最小的智能体，作为对比实验。
 
+#根节点是否是leafNode的判断方式需要更新
 
 core paper:
 Competitive on-line coverage of grid environments

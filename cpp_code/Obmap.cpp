@@ -1,4 +1,4 @@
-#include "Obmap.h"
+﻿#include "Obmap.h"
 #include "Gwrite.hpp"
 
 namespace pl
@@ -256,6 +256,7 @@ namespace pl
 	}
 
 
+
 	void Obmap::writeEdges(size_t const & type)
 	{		
 		bex::Graph *graphPtr;
@@ -342,6 +343,58 @@ namespace pl
 				return STCGridInd(stc_ind, VRT);
 		}
 		return STCGridInd(GridIndex(first, second), NOVIR);
+	}
+
+	GridIndex Obmap::pnt2IndexInBaseGrid(bex::DPoint const & pnt)
+	{
+		GridMap * gridPtr = &this->_tGrid;
+		double gridStep = 1;
+		GridIndex rindex;
+		rindex.first = -1;
+		rindex.second = -1;
+
+		GridIndex initIndex;
+		initIndex.first = 0;
+		initIndex.second = 0;
+
+		double _min_x = 0;
+		double _min_y = 0;
+
+		double _i_x = 0.5;
+		double _i_y = 0.5;
+
+
+		if (pnt.y()<_min_y)
+		{
+			return rindex;
+		}
+		if (pnt.x()<_min_x)
+		{
+			return rindex;
+		}
+		//cout << "pnt.x " << pnt.x() << "pnt.y" << pnt.y() << endl;
+		//cout << "min_x  " << _min_x << " min_y " << _min_y << endl;
+		//cout << "gridStep = " << gridStep << endl;
+		auto bais_x = pnt.x() - _min_x;
+		auto bais_y = pnt.y() - _min_y;
+		auto p_col = floor(bais_x / gridStep);
+		auto p_row = floor(bais_y / gridStep);
+
+		//		cout << " :" << this->m_MaxCol << endl;
+		if (p_col>m_MaxCol)
+		{
+			//			cout << "dayu" << endl;
+			return rindex;
+		}
+		if (p_row>this->m_MaxRow)
+		{
+			//			cout << "dayu" << endl;
+			return rindex;
+		}
+		rindex.first = p_col;
+		rindex.second = p_row;
+		return rindex;
+//		return GridIndex();
 	}
 
 	bool Obmap::allConnected(vector<bex::VertexDescriptor> const & v_vd)

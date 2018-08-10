@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "stadfx.h"
 #include "bgeometry.h"
 #include "bgraph.h"
@@ -103,6 +103,7 @@ namespace pl
 
 		bex::Graph &getGraph(const size_t &type) { if (type == graphType::base) { return _tGraph; } return _sGraph; }
 		GridMap &getGridMap(const size_t &type) { if (type == graphType::base) { return _tGrid; } return _sGrid; }
+		GridIndex pnt2IndexInBaseGrid(bex::DPoint const &pnt);
 		//
 		bool allConnected(vector<bex::VertexDescriptor> const &vvd);
 
@@ -137,13 +138,13 @@ namespace pl
 		size_t _reachableVertNum;
 		size_t _obVertNum;
 
-		//×î´óÐÐ
+		//æœ€å¤§è¡Œ
 		size_t m_MaxRow;
-		//×î´óÁÐ
+		//æœ€å¤§åˆ—
 		size_t m_MaxCol;
-		//×î´ósÐÐ
+		//æœ€å¤§sè¡Œ
 		const size_t m_sMaxRow;
-		//×î´ósÁÐ
+		//æœ€å¤§såˆ—
 		const size_t m_sMaxCol;
 	public:
 		std::vector<GridIndex> getSearchVerticalNeighbor(GridIndex const &cen_index, size_t const &gridType);

@@ -12,7 +12,7 @@ from env import *
 #import env
 
 if __name__ == '__main__':
-    org_exe_name = 'D:\\py_code\\ComplexSystemIntelligentControl\\bin\\exc\\Debug\\MultiCover.exe'    
+    org_exe_name = 'D:\\pyCode\\ComplexSystemIntelligentControl\\bin\\exc\\Debug\\MultiCover.exe'    
     conFileDir = './/data//'
     fileCfgName =  '5_20_20_80_Outdoor_Cfg.txt'
     degNameCfg = conFileDir + fileCfgName
