@@ -17,6 +17,7 @@
 #include <limits>
 #include <float.h>
 #include <array>
+#include <queue>
 
 #define M_MAX std::numeric_limits<double>::max()
 #define M_INF std::numeric_limits<double>::infinity()
@@ -33,6 +34,7 @@ using std::make_shared;
 using std::map;
 using std::set;
 using std::pair;
+using std::queue;
 
 #define conDir "D:\\pyCode\\ComplexSystemIntelligentControl\\data\\"
 //using std::min_element;

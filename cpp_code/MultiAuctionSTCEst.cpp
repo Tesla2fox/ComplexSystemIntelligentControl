@@ -19,6 +19,7 @@ namespace pl
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
 
 		formSpanningTree();
+		wirteGlobalSTCGraph();
 		auction();
 		this->_vTreeSgs.clear();
 		this->_vTreeSgs.resize(this->_robNum);
@@ -282,11 +283,26 @@ namespace pl
 
 	}
 
+	void MultiAuctionSTCEst::wirteGlobalSTCGraph()
+	{
+		vector<double> gPntx, gPnty;
+		std::pair<bex::VertexIterator, bex::VertexIterator> vi = boost::vertices(this->_ob_sGraph);
+		for (bex::VertexIterator vit = vi.first; vit != vi.second; vit++)
+		{
+			bex::VertexDescriptor vd = *vit;
+			auto vp = _ob_sGraph[vd];
+			gPntx.push_back(vp.pnt.x());
+			gPnty.push_back(vp.pnt.y());
+		}
+		writeDebug(c_deg, "STCPntx", gPntx);
+		writeDebug(c_deg, "STCPnty", gPnty);
+	}
+
 
 	void pl::MultiAuctionSTCEst::auction()
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
-		_vRobMapPtr = make_shared<vector<map<size_t, bool>>>(_robNum);
+		_vRobMapPtr = make_shared<vector<map<size_t, size_t>>>(_robNum);
 		_vRobGridPtr = make_shared<vector<vector<GridIndex>>>(_robNum);
 		_vRobNeiPtr = make_shared<vector<set<bex::VertexDescriptor>>>(_robNum);
 		_vRobSleepPtr = make_shared<vector<bool>>(_robNum, false);
@@ -313,11 +329,11 @@ namespace pl
 			auto ind = _mainMap.tGridInd2SGridInd(_vStartPnt[i]);
 			auto &stcVertInd = _ob_gridInd2GraphVd[ind];
 			_vRobSetPtr->at(i).insert(_ob_gridInd2GraphVd[ind]);
-			_vRobMapPtr->at(i).insert(pair<size_t, bool>(stcVertInd, true));
+			_vRobMapPtr->at(i).insert(pair<size_t, size_t>(stcVertInd, 0));
 			//true mean  this vertex is leaf node
 			//fasle mean this vertex is not leaf node
 			auto initCost = leafCost(_ob_gridInd2GraphVd[ind]);
-			_vRobEdgePtr->at(i).push_back(STCEdge(_ob_gridInd2GraphVd[ind], _ob_gridInd2GraphVd[ind]));
+			//_vRobEdgePtr->at(i).push_back(STCEdge(_ob_gridInd2GraphVd[ind], _ob_gridInd2GraphVd[ind]));
 			_vRobEstCostPtr->at(i) = initCost;
 			_GridMap[_ob_gridInd2GraphVd[ind]] = i;
 			updateNeiGraph(i);
@@ -338,35 +354,54 @@ namespace pl
 			{
 				continue;
 			}
+			//if (circleTime >= 77/*maxcircleTime*/)
+			//{
+			//	break;
+			//}
 			//size_t robWinner = maxBiddingRob(aucVertID);
 			size_t robWinner;
 			size_t sVertID;
 			size_t minCost;
-			maxBiddingRob(aucVertID, robWinner, sVertID, minCost);
+			maxBiddingRob(aucVertID, robWinner, sVertID, minCost);			
 			//_vRobSetPtr->at(robWinner).insert(aucVertID);
 			if (allOccupied)
 			{
-				//break;
-				if (robWinner != _GridMap[aucVertID])
+				if (robWinner == aucNeer)
 				{
 					//earse loser
-					auto &robLoserSet = _vRobSetPtr->at(_GridMap[aucVertID]);
-					robLoserSet.erase(aucVertID);
-					updateNeiGraph(_GridMap[aucVertID]);
-					//update winner
+					loserEarseVert(_GridMap[aucVertID], aucVertID);
+
 					auto &robWinnerSet = _vRobSetPtr->at(robWinner);
 					robWinnerSet.insert(aucVertID);
+					_vRobEdgePtr->at(robWinner).push_back(STCEdge(aucVertID,sVertID));
+					_vRobMapPtr->at(robWinner)[sVertID] = _vRobMapPtr->at(robWinner)[sVertID] + 1;
+					if (this->_ob_sGraph[aucVertID].Type == bex::vertType::DoubleSameOb)
+					{
+						if (!_mainMap.verticalDouble(aucVertID, sVertID))
+						{
+							_vRobMapPtr->at(robWinner)[aucVertID] = 2;
+						}
+					}
+					_vRobEstCostPtr->at(robWinner) = minCost;
 					_GridMap[aucVertID] = robWinner;
 					updateNeiGraph(robWinner);
 				}
+				//break;
 			}
 			else
 			{
 				auto &robWinnerSet = _vRobSetPtr->at(robWinner);
 				robWinnerSet.insert(aucVertID);
 				_vRobEdgePtr->at(robWinner).push_back(STCEdge(aucVertID,sVertID));
-				_vRobMapPtr->at(robWinner)[sVertID] = false;
-				_vRobMapPtr->at(robWinner)[aucVertID] = true;
+				_vRobMapPtr->at(robWinner)[sVertID] = _vRobMapPtr->at(robWinner)[sVertID] + 1;
+				_vRobMapPtr->at(robWinner)[aucVertID] = 1;
+				if (this->_ob_sGraph[aucVertID].Type == bex::vertType::DoubleSameOb)
+				{
+					if (!_mainMap.verticalDouble(aucVertID, sVertID))
+					{
+						_vRobMapPtr->at(robWinner)[aucVertID] = 2;
+					}					
+				}
 				_vRobEstCostPtr->at(robWinner) = minCost;
 				_GridMap[aucVertID] = robWinner;
 				updateNeiGraph(robWinner);				
@@ -375,7 +410,7 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 100/*maxcircleTime*/)
+			if ( ++circleTime >= 1000/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -866,7 +901,8 @@ namespace pl
 
 		double UnCoverMinFit = 99999;
 		double coverMinFit = 999999;
-		double unCoverMaxPri = -1;
+		//double unCoverMaxPri = -1;
+		pair<bool, double> unCoverMaxPri(true, -1);
 		int UnCoverResVd = -1;
 		int coverResVd = -1;
 		bool allCovered = true;
@@ -874,6 +910,26 @@ namespace pl
 		auto &robSet = (*_vRobSetPtr)[aucNeer];
 		auto &robNeiSet = (*_vRobNeiPtr)[aucNeer];
 		//auto &robNghSet = (*_vRobNghSetPtr)[robID];
+
+
+
+		auto cmpUnOp = [](pair<bool, double> ind0, pair<bool, double> ind1)
+		{
+			if (ind0.first == ind1.first)
+			{
+				if (ind0.second > ind1.second)
+					return true;
+				else
+					return false;
+			}
+			else
+			{
+				if (ind0.first == true)
+					return false;
+				else
+					return true;
+			}
+		};
 
 		if (robNeiSet.empty())
 		{
@@ -893,10 +949,10 @@ namespace pl
 				robOpNeiSet.push_back(tuple<size_t, size_t, int>(opRobID,*it,_vRobEstCostPtr->at(opRobID)));
 			}
 			if (!inOtherSet) {
-				double fit = this->calUnopPriority(aucNeer, *it);
+				auto fit = this->calUnopPriority(aucNeer, *it);
 				// need optimal
 				//double dis = bg::distance(graph[it->first].pnt, graph[it->second].pnt);
-				if (fit > unCoverMaxPri)
+				if (cmpUnOp(fit, unCoverMaxPri))
 				{
 					unCoverMaxPri = fit;
 					UnCoverResVd = *it;
@@ -943,7 +999,13 @@ namespace pl
 		auto size = robOpNeiSet.size();
 		for (size_t i = 0; i < robOpNeiSet.size(); i++)
 		{
-			if (calOpPriority(aucNeer, get<0>(robOpNeiSet[size - 1 - i]), get<1>(robOpNeiSet[size - 1 - i])) != std::numeric_limits<double>::max())
+			if (get<2>(robOpNeiSet[size - 1 - i]) <= 0)
+			{
+				(*_vRobSleepPtr)[aucNeer] = true;
+				return allCovered;
+			}
+			double priority;
+			if(calOpPriority(get<0>(robOpNeiSet[size - 1 - i]), get<1>(robOpNeiSet[size - 1 - i]), priority))
 			{
 				aucVertID = get<1>(robOpNeiSet[size - 1 - i]);
 				return allCovered;
@@ -1031,7 +1093,7 @@ namespace pl
 			sVertID = *(iter - vCandVal.begin() + vCandinateVd.begin());
 			cost = *iter + _vRobEstCostPtr->at(robID);
 		}
-		if (_vRobMapPtr->at(robID).count(aucVertID) == 1)
+		if (_vRobSetPtr->at(robID).count(aucVertID) == 1)
 		{
 			cost = _vRobEstCostPtr->at(robID);
 			// may be  this part do not have any meanings
@@ -1053,7 +1115,7 @@ namespace pl
 	}
 
 
-	double MultiAuctionSTCEst::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
+	pair<bool, double> MultiAuctionSTCEst::calUnopPriority(size_t const & robID, bex::VertexDescriptor const & vd)
 	{
 		double fitNess = 0;
 		auto &graph = _ob_sGraph;
@@ -1067,7 +1129,13 @@ namespace pl
 				fitNess += dis;
 			}
 		}
-		return fitNess;
+		bool betterLeaf;
+		if (_ob_sGraph[vd].Type == bex::vertType::DoubleSameOb || _ob_sGraph[vd].Type == bex::vertType::DoubleDiffOb)
+			betterLeaf = true;
+		else
+			betterLeaf = false;
+
+		return pair<bool,double>(betterLeaf,fitNess);
 	}
 
 	double MultiAuctionSTCEst::calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd)
@@ -1085,6 +1153,23 @@ namespace pl
 			return 0;
 		}
 		return std::numeric_limits<double>::max();
+	}
+
+	bool MultiAuctionSTCEst::calOpPriority(size_t const & OpRobId, bex::VertexDescriptor const & vd, double &priority)
+	{
+		auto &robNeiSet = _vRobSetPtr->at(OpRobId);
+		vector<bex::VertexDescriptor> v_vd;
+
+		for (auto it = robNeiSet.begin(); it != robNeiSet.end(); it++)
+		{
+			if (vd == *it) continue;
+			v_vd.push_back(*it);
+		}
+		if (_mainMap.allConnectedBase(v_vd))
+		{
+			return false;
+		}
+		return true;
 	}
 
 	size_t MultiAuctionSTCEst::leafCost(bex::VertexDescriptor const & tvd)
@@ -1123,7 +1208,7 @@ namespace pl
 	size_t MultiAuctionSTCEst::estAddCost(size_t const & robID, bex::VertexDescriptor const & svd, bex::VertexDescriptor const & tvd)
 	{
 		//for		
-		double cost = 0;
+		size_t cost = 0;
 		switch (_ob_sGraph[svd].Type)
 		{
 		case bex::vertType::SingleOb:
@@ -1133,7 +1218,14 @@ namespace pl
 		}
 		case bex::vertType::DoubleSameOb:
 		{
-			cost = 2;
+			if (_mainMap.verticalDouble(svd, tvd))
+			{
+				cost = 2;
+			}
+			else
+			{
+				cost = 4;
+			}
 			break;
 		}
 		case bex::vertType::DoubleDiffOb:
@@ -1149,9 +1241,52 @@ namespace pl
 		default:
 			break;
 		}
-		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleSameOb && _vRobMapPtr->at(robID)[tvd])
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleSameOb && _vRobMapPtr->at(robID)[tvd] == 1)
 			cost += 2;
-		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleDiffOb && _vRobMapPtr->at(robID)[tvd])
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleDiffOb && _vRobMapPtr->at(robID)[tvd] == 1)
+			cost += 2;
+		return cost;
+	}
+
+	size_t MultiAuctionSTCEst::estEraseCost(size_t const & robID, bex::VertexDescriptor const & svd, bex::VertexDescriptor const & tvd)
+	{
+		//return 6;
+		size_t cost = 0;
+		switch (_ob_sGraph[svd].Type)
+		{
+		case bex::vertType::SingleOb:
+		{
+			cost = 6;
+			break;
+		}
+		case bex::vertType::DoubleSameOb:
+		{
+			if (_mainMap.verticalDouble(svd, tvd))
+			{
+				cost = 2;
+			}
+			else
+			{
+				cost = 4;
+			}
+			break;
+		}
+		case bex::vertType::DoubleDiffOb:
+		{
+			cost = 2;
+			break;
+		}
+		case bex::vertType::WayVert:
+		{
+			cost = 4;
+			break;
+		}
+		default:
+			break;
+		}
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleSameOb && _vRobMapPtr->at(robID)[tvd] == 2)
+			cost += 2;
+		if (_ob_sGraph[tvd].Type == bex::vertType::DoubleDiffOb && _vRobMapPtr->at(robID)[tvd] == 2)
 			cost += 2;
 		return cost;
 	}
@@ -1223,6 +1358,71 @@ namespace pl
 					robNghSet.insert(*ni);
 				}
 			}
+		}
+		return false;
+	}
+	bool MultiAuctionSTCEst::loserEarseVert(size_t const & loserID, size_t const & vertID)
+	{
+		auto &robLoserSet = _vRobSetPtr->at(loserID);
+		robLoserSet.erase(vertID);
+
+
+		auto &robLoserEdgeSet = _vRobEdgePtr->at(loserID);
+		size_t markInd = 0;
+		for (size_t i = 0; i < robLoserEdgeSet.size(); i++)
+		{
+			if (robLoserEdgeSet[i].first == vertID)
+			{
+				markInd = i;
+				break;
+			}
+		}
+		robLoserEdgeSet.erase(robLoserEdgeSet.begin() + markInd);
+		size_t connectCentre;
+		connectCentre = vertID;
+		//reconstruct
+		vector<size_t> reConInd;
+		std::queue<size_t> reCon;
+		do {
+			reCon.push(vertID);
+			for (size_t i = 0; i < robLoserEdgeSet.size(); i++)
+			{
+				if (robLoserEdgeSet[i].second == vertID)
+				{
+					reConInd.push_back(i);
+				}
+			}
+			reCon.pop();
+		} while (true);
+
+		for (size_t i = 0; i < reConInd.size(); i++)
+		{
+			if (!isLeafNode(loserID, robLoserEdgeSet[reConInd[i]].first))
+			{
+				cout << "wtf" << endl;
+			}
+		}
+		
+		updateNeiGraph(loserID);
+
+		return false;
+	}
+	bool MultiAuctionSTCEst::isLeafNode(size_t const & robID, size_t const & vertID)
+	{
+		if (_vRobMapPtr->at(robID)[vertID] == 1)
+			return true;		
+		if (_ob_sGraph[vertID].Type == bex::vertType::DoubleSameOb &&_vRobMapPtr->at(robID)[vertID] == 2)
+		{
+			size_t degree = 0;
+			auto &robEdgeSet = _vRobEdgePtr->at(robID);
+			for (size_t i = 0; i < robEdgeSet.size(); i++)
+			{
+				if (robEdgeSet[i].second == vertID)
+					degree++;
+			}
+			if (degree == 0)
+				return true;
+			return false;
 		}
 		return false;
 	}

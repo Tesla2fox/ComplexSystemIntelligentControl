@@ -513,6 +513,55 @@ namespace pl
 		return vector<bex::VertexDescriptor>();
 	}
 
+	bool Obmap::verticalDouble(bex::VertexDescriptor const & cenVd, bex::VertexDescriptor const & neiVd)
+	{
+		auto neighborIter = boost::adjacent_vertices(cenVd, this->_sGraph);
+		auto cenInd = this->graphVd2GridInd[cenVd];
+		size_t i = cenInd.first.first;
+		size_t j = cenInd.first.second;
+		auto neiInd = this->graphVd2GridInd[neiVd];
+		//left
+		if (obstacleOccupy(cenInd, left))
+		{
+			if (neiInd.first.first == i +1 && neiInd.first.second == j)
+			{
+				return true;
+			}
+			return false;
+		}
+		//right
+		if (obstacleOccupy(cenInd, right))
+		{
+			if (neiInd.first.first == i - 1 && neiInd.first.second == j)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		//top
+		if (obstacleOccupy(cenInd, top))
+		{
+			if (neiInd.first.first == i && neiInd.first.second == j -1)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		//bottom
+		if (obstacleOccupy(cenInd, bottom))
+		{
+			if (neiInd.first.first == i&& neiInd.first.second == j +1)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		return false;
+	}
+
 	std::vector<GridIndex> Obmap::getSearchVerticalNeighbor(GridIndex const & cen_index, size_t const & gridType)
 	{
 		GridMap *gridPtr;

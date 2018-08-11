@@ -128,8 +128,9 @@ class Env:
             lst[0][i] = lst[0][i] + 0.5
             lst[1][i] = lst[1][i] + 0.5
             startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),
-                                    name = 'start')
-#                                    'Robot_'+ str(i))
+                                    name = 
+#                                    'start')
+                                    'Robot_'+ str(i))
             self.drawData.append(startTrace)
     def addRobotTerminalPnt(self,lst= []):
         terminalTrace = go.Scatter(x =[lst[0]], y = [lst[1]],mode ='markers',marker = dict(symbol = 'circle-open-dot',size = 20),
@@ -239,9 +240,14 @@ class Env:
                     self.annotations.append(dict(showarrow = False,
                                              x = pnt.x + 1 ,y = pnt.y + 1,
                                              text = str(int(lst[2*i][j]))+'-'+
-                                             str(int(lst[2*i +1][j]))))
-                    
+                                             str(int(lst[2*i +1][j]))))                    
                 self.shapeLst.append(copy.deepcopy(rectDic))
+    def addSTCVert(self,lst = []):
+        for i in range(len(lst[0])):
+            self.annotations.append(dict(showarrow = False,
+                                             x = lst[0][i],y = lst[1][i],
+                                             text = str(i)))
+            
     def addNeiGraph(self,robNum  = 0, lst = []):
         g_color = 'blue'
         bupu = cl.scales[str(robNum)]['seq']['BuPu']
@@ -601,6 +607,17 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addgrid()
         env.addEdgeInPnt(edgeData)
         
+        STCData =  []
+        STCUnit = []
+        pathCfg.get('STCPntx',STCUnit)
+        STCData.append(copy.deepcopy(STCUnit))
+        STCUnit =[]
+        pathCfg.get('STCPnty',STCUnit)
+#        print(STCUnit)
+        STCData.append(copy.deepcopy(STCUnit))        
+#        env.addgrid()
+        env.addSTCVert(STCData)
+#        env.addEdgeInPnt(edgeData)
         
         pathData = []
         for i in range(robNum):
@@ -610,7 +627,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             path_y = []
             pathCfg.get('path_y'+str(i),path_y)
             pathData.append(copy.deepcopy(path_y))
-        env.addPath(robNum = robNum, lst = pathData)
+#        env.addPath(robNum = robNum, lst = pathData)
 #            graphData.append(copy.deepcopy(graphUnit))
         
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)

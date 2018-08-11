@@ -116,6 +116,8 @@ namespace pl
 		vector<bex::VertexDescriptor> STCGraphVd2TGraphVd(bex::VertexDescriptor const & svd);
 		// special case  
 		vector<bex::VertexDescriptor> STCGraphVd2TGraphVdSp(bex::VertexDescriptor const & svd);
+
+		bool verticalDouble(bex::VertexDescriptor const& cenVd, bex::VertexDescriptor const & neiVd);
 	private:
 
 		//write txt

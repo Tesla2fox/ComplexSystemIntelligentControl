@@ -52,6 +52,7 @@ namespace pl
 		void writeMultiPath();
 		void wirteMultiGraphSeg();
 		void writeMultiGraphEdge();
+		void wirteGlobalSTCGraph();
 		//
 		AstarPlan aplan;
 
@@ -95,7 +96,7 @@ namespace pl
 
 		shared_ptr<vector<set<size_t>>> _vRobSetPtr = nullptr;
 		//the stc vertex ind and it is a leaf node or not.
-		shared_ptr<vector<map<size_t, bool>>> _vRobMapPtr = nullptr;
+		shared_ptr<vector<map<size_t, size_t>>> _vRobMapPtr = nullptr;
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
 		shared_ptr<vector<set<bex::VertexDescriptor>>> _vRobNeiPtr = nullptr;
 
@@ -152,20 +153,24 @@ namespace pl
 		double calBidding(size_t const &bidding);
 
 		//
-		double calUnopPriority(size_t const &robID, bex::VertexDescriptor const &vd);
+		pair<bool, double> calUnopPriority(size_t const &robID, bex::VertexDescriptor const &vd);
+
 		double calOpPriority(size_t const &aucNeer, size_t const & OpRobId, bex::VertexDescriptor const &vd);
-		
+		bool calOpPriority(size_t const & OpRobId, bex::VertexDescriptor const &vd,double &priority);
 
 		size_t leafCost(bex::VertexDescriptor const &tvd);
 		//esatimate the add cost of rob path
 		//the svd means the vertex out of the graph
 		//the tvd means the vertex in the rob graph
 		size_t estAddCost(size_t const &robID, bex::VertexDescriptor const &svd,bex::VertexDescriptor const &tvd);
-
+		size_t estEraseCost(size_t const &robID, bex::VertexDescriptor const &svd, bex::VertexDescriptor const &tvd);
 
 		bool updateNeiGraph(size_t const &robID);
 		bool updateNeiGraph(size_t const &succBidID, bex::VertexDescriptor const & vd);
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
+
+		bool loserEarseVert(size_t const &loserID, size_t const&vertID);
+		bool isLeafNode(size_t const &robID, size_t const &vertID);
 		//
 		bool exchange2TreeSgs();
 		bool calMakeSpan();
