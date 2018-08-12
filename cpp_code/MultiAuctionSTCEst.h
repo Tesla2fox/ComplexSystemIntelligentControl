@@ -165,6 +165,8 @@ namespace pl
 		size_t estAddCost(size_t const &robID, bex::VertexDescriptor const &svd,bex::VertexDescriptor const &tvd);
 		size_t estEraseCost(size_t const &robID, bex::VertexDescriptor const &svd, bex::VertexDescriptor const &tvd);
 
+		bool updateWinner(size_t const &robID, size_t const &aucVertID, size_t const&sVertID, size_t const& minCost);
+
 		bool updateNeiGraph(size_t const &robID);
 		bool updateNeiGraph(size_t const &succBidID, bex::VertexDescriptor const & vd);
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
@@ -173,6 +175,9 @@ namespace pl
 		bool isLeafNode(size_t const &robID, size_t const &vertID);
 		//
 		bool exchange2TreeSgs();
+		bool realExchange();
+
+		bool updateMap(size_t const&robID);
 		bool calMakeSpan();
 		// auction function end
 	};

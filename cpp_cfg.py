@@ -124,8 +124,8 @@ def getNeighbor(envMat,lst = (0,0),row =20, col =20):
 
 if __name__ =='__main__':
     
-    row = 14
-    col = 16
+    row = 40
+    col = 40
     
     mat = zeros((row,col),dtype=int)
     for i in range(row):
@@ -134,10 +134,10 @@ if __name__ =='__main__':
 # zero means the obstacle pnt
 # one means the way pnt
 
-    robNum = 1
+    robNum = 5
     random.seed(100)
     
-    obNum = 40
+    obNum = 300
     
     robRowLst = []
     robColLst = []

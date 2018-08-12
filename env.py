@@ -181,7 +181,8 @@ class Env:
         self.drawData.append(markTrace)
     def addGraph(self,robNum  = 0, lst = [], txtType = False):
         g_color = 'blue'
-        bupu = cl.scales[str(5)]['seq']['BuPu']
+#        bupu = cl.scales[str(6)]['seq']['BuPu']
+        bupu =  cl.scales[str(robNum)]['div']['PRGn']
         print(bupu)
         for i in range(robNum):
             for j in range(len(lst[2*i])):
@@ -191,7 +192,7 @@ class Env:
                 rectDic['line']['color'] = g_color
                 rectDic['line']['width'] = 0.5
                 rectDic['fillcolor'] = bupu[i]
-                rectDic['opacity'] = 0.6
+                rectDic['opacity'] = 0.3
                 if(False):
                     if(txtType):
                         self.annotations.append(dict(showarrow = False,
@@ -210,7 +211,7 @@ class Env:
                                    x= x,
                                    y= y,
 #                                   marker =dict(size =8),
-#                                   line = dict(shape = 'spline'),
+                                   line = dict(width = 3),
 #                                   ,
                                    name = 'Path_' + str(i+1))
             if(txtType):
@@ -572,7 +573,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst = []
         robLst.append(robRowLst)
         robLst.append(robColLst)
-        env.addRobotStartPnt(robLst)
+#        env.addRobotStartPnt(robLst)
         pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
@@ -617,7 +618,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         STCData.append(copy.deepcopy(STCUnit))        
 #        env.addgrid()
         env.addSTCVert(STCData)
-#        env.addEdgeInPnt(edgeData)
+        env.addEdgeInPnt(edgeData)
         
         pathData = []
         for i in range(robNum):
@@ -627,7 +628,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             path_y = []
             pathCfg.get('path_y'+str(i),path_y)
             pathData.append(copy.deepcopy(path_y))
-#        env.addPath(robNum = robNum, lst = pathData)
+#        env.addPath(robNum = robNum, lst = pathData,txtType = False)
 #            graphData.append(copy.deepcopy(graphUnit))
         
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)
@@ -692,7 +693,31 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
 #            graphData.append(copy.deepcopy(graphUnit))        
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)
 #        print('wtf')
-    
+    #case 10 draw multi path
+    if(drawType == 12):
+        env = Env(mat)
+        env.addgrid()
+        robLst = []
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)
+        pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        
+        
+        pathData = []
+        for i in range(robNum):
+            path_x = []
+            pathCfg.get('path_x'+str(i),path_x)
+            pathData.append(copy.deepcopy(path_x))
+            path_y = []
+            pathCfg.get('path_y'+str(i),path_y)
+            pathData.append(copy.deepcopy(path_y))
+        env.addPath(robNum = robNum, lst = pathData,txtType = False)
+#            graphData.append(copy.deepcopy(graphUnit))
+        
+        env.drawPic('./png/env_'+cfgFileName+'JustPath',fileType)
 
 if __name__ == '__main__':
 
