@@ -540,12 +540,18 @@ namespace pl
 		set<bex::VertexDescriptor> robBaseSet;
 		_vT2local.clear();
 		_vlocal2T.clear();
+		_vSlocal2T.clear();
+		_vT2Slocal.clear();
 		for (size_t p = 0; p < _robNum; p++)
 		{
+			//if (p != 1)
+			//	continue;
 			bex::Graph new_graph;
 			auto &robSet = _vRobSetPtr->at(p);
 			map<size_t, size_t> T2local;
 			map<size_t, size_t> local2T;
+			map<size_t, size_t> Slocal2T;
+			map<size_t, size_t> T2Slocal;
 			bex::VertexDescriptor localVd = 0;
 			size_t gSTCInd = 0;
 			for (auto &it : robSet)
@@ -553,6 +559,8 @@ namespace pl
 				
 				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
+				if (svd == 136)
+					cout << "wtf" << endl;
 				// 此处添加..
 				vector<bex::VertexDescriptor> vvd;
 				if (_vNoLeafSTCSet[p].count(svd) == 0)
@@ -579,7 +587,7 @@ namespace pl
 				{
 
 					//此处存在问题
-					 导致转换 混乱
+					 //导致转换 混乱
 					auto realVd = _mainMap.STCGraphVd2TGraphVd(svd);
 					vvd = _mainMap.STCGraphVd2TGraphVdSp(svd);
 					for (auto &vd : vvd)
@@ -594,20 +602,24 @@ namespace pl
 						vp.NeighbourState = false;
 						vp.QueueState = false;
 						bt::add_vertex(vp, new_graph);
-						T2local.insert(pair<size_t, size_t>(vd, localVd));
-						local2T.insert(pair<size_t, size_t>(localVd, vd));
+						T2Slocal.insert(pair<size_t, size_t>(vd, localVd));
+						Slocal2T.insert(pair<size_t, size_t>(localVd, vd));
 						localVd++;
 					}
 				}
 			}
 			_vT2local.push_back(T2local);
 			_vlocal2T.push_back(local2T);
+			_vT2Slocal.push_back(T2Slocal);
+			_vSlocal2T.push_back(Slocal2T);
 			//add edge 
 			std::pair<bex::VertexIterator, bex::VertexIterator> vi = boost::vertices(new_graph);
 			for (bex::VertexIterator vit = vi.first; vit != vi.second; vit++)
 			{
 				bex::VertexDescriptor vd = *vit;
-				if (true)
+				if (vd == 193)
+					cout << "wtf" << endl;
+				if (local2T.count(vd) == 1)
 				{
 					/*			cout << "___" << endl;
 					cout << " new_graph[vd].pnt x = " << new_graph[vd].pnt.x()
@@ -622,14 +634,71 @@ namespace pl
 					{
 						if (robBaseSet.count(it) == 1)
 						{
+							if (T2Slocal.count(it) == 1)
+							{
+								if (std::find(_vLeafSet[p].begin(), _vLeafSet[p].end(), it) == _vLeafSet[p].end())
+								{
+									vvd.push_back(T2Slocal[it]);
+								}
+							}
+							if(T2local.count(it) == 1)
+							{
+								vvd.push_back(T2local[it]);
+							}
 							//						cout << "nei__it " << it << endl;
-							vvd.push_back(T2local[it]);
+							//vvd.push_back(T2local[it]);
 						}
 					}
 					for (auto &it : vvd)
 					{
 						//					cout << "vvd_it  = " << it << endl;
 
+						if (new_graph[it].EdgeState == false)
+						{
+							bex::DSegment sg(new_graph[it].pnt, new_graph[vd].pnt);
+							//cout << " new_graph[it].pnt x = " << new_graph[it].pnt.x()
+							//	<< " new_graph[it].pnt y = " << new_graph[it].pnt.y() << endl;
+
+
+							if (this->treeIntersection(sg, p))
+								//判断是否相交
+							{
+								//								std::cout << "inter" << endl;
+							}
+							else
+							{
+								bex::EdgeProperty ep;
+								//ep.weight = bg::distance(sGraph[vd].pnt, sGraph[it].pnt);
+								boost::add_edge(it, vd, ep, new_graph);
+							}
+						}
+					}
+				}
+
+				if (Slocal2T.count(vd) == 1)
+				{
+					auto tvd = Slocal2T[vd];
+					auto nei_vvd = _mainMap.getSearchAllNeighbor(tvd);
+					//auto vlocalIndex = getVerticalNeighbour(localIndex);
+					//getSearchNeighbor(localIndex, graphType::span);
+					std::vector<int> vvd;
+					for (auto &it : nei_vvd)
+					{
+						if (robBaseSet.count(it) == 1)
+						{
+							if (T2Slocal.count(it) == 1)
+							{
+								vvd.push_back(T2Slocal[it]);
+							}
+							else
+							{
+								vvd.push_back(T2local[it]);
+							}
+							//cout << "nei__it " << it << endl;
+						}
+					}
+					for (auto &it : vvd)
+					{
 						if (new_graph[it].EdgeState == false)
 						{
 							bex::DSegment sg(new_graph[it].pnt, new_graph[vd].pnt);
@@ -668,8 +737,8 @@ namespace pl
 		_vpathIndex.resize(_robNum);
 		for (size_t p = 0; p < _robNum; p++)
 		{
-			if (p == 3)
-				cout << "wtf" << endl;
+			//if (p != 1)
+			//	continue;
 			auto _startPnt = this->_vStartPnt[p];
 			GridIndex  cenGridIndex = _startPnt;
 			bex::VertexDescriptor totalCenVd = this->_ob_tmap2graph[cenGridIndex];
@@ -687,9 +756,11 @@ namespace pl
 			do
 			{
 #ifdef _DEBUG
-				//cout << "i = " << i++ << endl;
+			//	cout << "i = " << i++ << endl;
 #endif // _DEBUG
 				cenVd = canVd;
+				if (cenVd == 195)
+					cout << "wtf" << endl;
 				cenDir = canDir;
 				//canDir = cenDir;
 				_pathIndex.push_back(cenVd);
@@ -702,6 +773,7 @@ namespace pl
 				{
 					if (find(leafSet.begin(), leafSet.end(), *ni) == leafSet.end())
 					{
+						auto &wtf = localGraph[*ni];
 						if (!localGraph[*ni].NeighbourState)
 						{
 							vNeighbors.push_back(*ni);
@@ -731,8 +803,16 @@ namespace pl
 					//has not been covered
 					if (vp.NeighbourState == false)
 					{
-						auto g_it = _vlocal2T[p][it];
-						auto g_cenVd = _vlocal2T[p][cenVd];
+						bex::VertexDescriptor g_it, g_cenVd;
+						if (_vlocal2T[p].count(it) == 1)
+							g_it = _vlocal2T[p][it];
+						else
+							g_it = _vSlocal2T[p][it];
+						if (_vlocal2T[p].count(it) == 1)
+							g_cenVd = _vlocal2T[p][cenVd];
+						else
+							g_cenVd = _vSlocal2T[p][cenVd];
+						
 						if (_mainMap.inSameSTCMegaBox(g_it,g_cenVd))
 						{
 							canVd = it;
@@ -767,6 +847,7 @@ namespace pl
 				}
 				canDir = getDir(cenVd, canVd, p);
 			} while (canVd != cenVd);
+			//cout << "0-0" << endl;
 		}
 		cout << "path___success" << endl;
 	}
@@ -864,8 +945,18 @@ namespace pl
 	size_t MultiAuctionSTCEst::getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID)
 	{
 		auto &local2T = _vlocal2T[robID];
-		bex::VertexDescriptor cen_index = local2T[lcen_index];
-		bex::VertexDescriptor n_index = local2T[ln_index];
+		auto &slocal2T = _vSlocal2T[robID];
+		
+		bex::VertexDescriptor cen_index;
+		bex::VertexDescriptor n_index;
+		if (local2T.count(lcen_index) == 1)
+			cen_index = local2T[lcen_index];
+		else
+			cen_index = slocal2T[lcen_index];
+		if (local2T.count(ln_index) == 1)
+			n_index = local2T[ln_index];
+		else
+			n_index = slocal2T[ln_index];
 
 		GridIndex cenGridInd = _ob_tgraph2map[cen_index];
 		GridIndex nGridInd = _ob_tgraph2map[n_index];
@@ -1542,7 +1633,8 @@ namespace pl
 
 		for (size_t p = 0;  p< _robNum; p++)
 		{
-			auto &robEdges = this->_vRobEdgePtr->at(p);			
+			auto &robEdges = this->_vRobEdgePtr->at(p);		
+			updateMap(p);
 			for (size_t i = 0; i < robEdges.size(); i++)
 			{
 				auto &sInd = robEdges[i].first;

@@ -119,6 +119,8 @@ namespace pl
 		vector<bex::Graph> _m_vGraph;
 		vector<map<size_t, size_t>> _vT2local;
 		vector<map<size_t, size_t>> _vlocal2T;
+		vector<map<size_t, size_t>> _vSlocal2T;
+		vector<map<size_t, size_t>> _vT2Slocal;
 
 		vector<bex::DLineString> _vpath;
 		vector<vector<bex::VertexDescriptor>> _vpathIndex;
