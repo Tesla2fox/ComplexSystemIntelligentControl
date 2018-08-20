@@ -130,7 +130,7 @@ class Env:
             startTrace = go.Scatter(x =[lst[0][i]], y = [lst[1][i]],mode ='markers',marker = dict(symbol = 'cross-dot',size = 20),
                                     name = 
 #                                    'start')
-                                    'Robot_'+ str(i))
+                                    'Robot_'+ str(i+1))
             self.drawData.append(startTrace)
     def addRobotTerminalPnt(self,lst= []):
         terminalTrace = go.Scatter(x =[lst[0]], y = [lst[1]],mode ='markers',marker = dict(symbol = 'circle-open-dot',size = 20),
@@ -179,9 +179,32 @@ class Env:
                                    marker =dict(size =12),
                                    name = 'Spanning-Tree')
         self.drawData.append(markTrace)
+    def addMultiEdgeInPnt(self, robNum = 5,lst =[]):
+        for i in range(robNum):            
+            mark_x = []
+            mark_y = []
+            for  p in range(len(lst[i][0])):                
+                pnt0 = Pnt(lst[i][0][p],lst[i][1][p])
+                pnt1 = Pnt(lst[i][2][p],lst[i][3][p])
+                mark_x.append(pnt0.x)
+                mark_x.append(pnt1.x)
+                mark_y.append(pnt0.y)
+                mark_y.append(pnt1.y)
+                line = Line(pnt0,pnt1)
+                lineDic = line.line2dict()
+                lineDic['line']['color'] = 'black'
+                lineDic['line']['width'] = 1
+                self.shapeLst.append(copy.deepcopy(lineDic))
+            markTrace = go.Scatter(mode ='markers',
+                                       x= mark_x,
+                                       y= mark_y,
+                                       marker =dict(size =12),
+                                       name = 'Spanning Tree_' + str(i +1))
+            self.drawData.append(markTrace)
     def addGraph(self,robNum  = 0, lst = [], txtType = False):
         g_color = 'blue'
 #        bupu = cl.scales[str(6)]['seq']['BuPu']
+        print(robNum)
         bupu =  cl.scales[str(robNum)]['div']['PRGn']
         print(bupu)
         for i in range(robNum):
@@ -573,7 +596,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst = []
         robLst.append(robRowLst)
         robLst.append(robColLst)
-#        env.addRobotStartPnt(robLst)
+        env.addRobotStartPnt(robLst)
         pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
@@ -628,7 +651,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             path_y = []
             pathCfg.get('path_y'+str(i),path_y)
             pathData.append(copy.deepcopy(path_y))
-#        env.addPath(robNum = robNum, lst = pathData,txtType = False)
+        env.addPath(robNum = robNum, lst = pathData,txtType = False)
 #            graphData.append(copy.deepcopy(graphUnit))
         
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)
@@ -644,17 +667,18 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
         
-#        graphData = []
-#        print('row',row)
-#        print('col',col)
-#        for i in range(robNum):
-#            graphUnit = []
-#            pathCfg.get('row'+str(i),graphUnit)
-#            graphData.append(copy.deepcopy(graphUnit))
-#            graphUnit = []
-#            pathCfg.get('col'+str(i),graphUnit)
-#            graphData.append(copy.deepcopy(graphUnit))
-#        env.addGraph(robNum,graphData,False)        
+        graphData = []
+        print('row',row)
+        print('col',col)
+        print(robNum)
+        for i in range(robNum):
+            graphUnit = []
+            pathCfg.get('row'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+            graphUnit = []
+            pathCfg.get('col'+str(i),graphUnit)
+            graphData.append(copy.deepcopy(graphUnit))
+        env.addGraph(robNum,graphData,False)        
         terminalPnt = []
         pathData = []
         for i in range(robNum):
@@ -698,9 +722,6 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env = Env(mat)
         env.addgrid()
         robLst = []
-        robLst.append(robRowLst)
-        robLst.append(robColLst)
-        env.addRobotStartPnt(robLst)
         pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
@@ -716,8 +737,35 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             pathData.append(copy.deepcopy(path_y))
         env.addPath(robNum = robNum, lst = pathData,txtType = False)
 #            graphData.append(copy.deepcopy(graphUnit))
-        
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)        
         env.drawPic('./png/env_'+cfgFileName+'JustPath',fileType)
+    if(drawType == 13):
+        env = Env(mat)
+        spanningData = []
+        pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        for i in range(robNum):
+            edgeData = []
+            edgeUnit = []
+            pathCfg.get('sPntx'+str(i),edgeUnit)
+            print('edgeLength',len(edgeUnit))
+            edgeData.append(copy.deepcopy(edgeUnit))
+            edgeUnit =[]
+            pathCfg.get('sPnty'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit))
+    
+            edgeUnit = []
+            pathCfg.get('tPntx'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit))
+            edgeUnit =[]
+            pathCfg.get('tPnty'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit)) 
+            spanningData.append(copy.deepcopy(edgeData))
+        env.addMultiEdgeInPnt(robNum = robNum, lst =  spanningData)
+        env.drawPic('./png/env_'+cfgFileName+'spanningTree',fileType)
 
 if __name__ == '__main__':
 

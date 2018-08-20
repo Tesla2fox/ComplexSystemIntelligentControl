@@ -21,6 +21,7 @@ namespace pl
 		formSpanningTree();
 		wirteGlobalSTCGraph();
 		auction();
+		writeMultiGraphEdge();
 		this->_vTreeSgs.clear();
 		this->_vTreeSgs.resize(this->_robNum);
 		exchange2TreeSgs();
@@ -282,7 +283,32 @@ namespace pl
 
 	void MultiAuctionSTCEst::writeMultiGraphEdge()
 	{
-
+		for (size_t p = 0; p < _robNum; p++)
+		{
+			auto &robEdges = this->_vRobEdgePtr->at(p);
+			string str_sPntx = "sPntx";
+			string str_sPnty = "sPnty";
+			string str_tPntx = "tPntx";
+			string str_tPnty = "tPnty";
+			str_sPntx += std::to_string(p);
+			str_sPnty += std::to_string(p);
+			str_tPntx += std::to_string(p);
+			str_tPnty += std::to_string(p);
+			vector<double> sPntx, sPnty, tPntx, tPnty;
+			for (auto &it : robEdges)
+			{
+				auto spnt = this->_ob_sGraph[it.first].pnt;
+				auto tpnt = this->_ob_sGraph[it.second].pnt;
+				sPntx.push_back(spnt.x());
+				sPnty.push_back(spnt.y());
+				tPntx.push_back(tpnt.x());
+				tPnty.push_back(tpnt.y());
+			}
+			writeDebug(c_deg, str_sPntx, sPntx);
+			writeDebug(c_deg, str_sPnty, sPnty);
+			writeDebug(c_deg, str_tPntx, tPntx);
+			writeDebug(c_deg, str_tPnty, tPnty);
+		}
 	}
 
 	void MultiAuctionSTCEst::wirteGlobalSTCGraph()

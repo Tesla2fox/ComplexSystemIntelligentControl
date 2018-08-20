@@ -135,9 +135,9 @@ if __name__ =='__main__':
 # one means the way pnt
 
     robNum = 5
-    random.seed(100)
+    random.seed(10)
     
-    obNum = 300
+    obNum = 301
     
     robRowLst = []
     robColLst = []
