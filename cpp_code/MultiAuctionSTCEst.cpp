@@ -28,7 +28,7 @@ namespace pl
 //		getSpanningTreeSgs();
 		getNewGraph();
 		searchVitualPath();
-		generateRealPath();
+//		generateRealPath();
 
 		//realExchange();
 		writeMultiPath();
@@ -337,6 +337,7 @@ namespace pl
 		_vRobEstCostPtr = make_shared<vector<size_t>>(_robNum);
 		_vRobNeiEdgePtr = make_shared<vector<vector<pair<bex::VertexDescriptor, bex::VertexDescriptor>>>>(_robNum);
 		_vRobEdgePtr = make_shared<vector<vector<STCEdge>>>(_robNum);
+		_notBidSetPtr = make_shared<set<size_t>>();
 
 		vector<bool> allAucEd(bt::num_vertices(_ob_sGraph), false);
 		auto aucCompleted = [](vector<bool> const &vb) {
@@ -364,18 +365,19 @@ namespace pl
 			//_vRobEdgePtr->at(i).push_back(STCEdge(_ob_gridInd2GraphVd[ind], _ob_gridInd2GraphVd[ind]));
 			_vRobEstCostPtr->at(i) = initCost;
 			_GridMap[_ob_gridInd2GraphVd[ind]] = i;
+			_notBidSetPtr->insert(stcVertInd);
 			updateNeiGraph(i);
 		}
 		do
 		{
-			size_t aucNeer = dis(eng);
-			
+//			size_t aucNeer = dis(eng);
+			size_t aucNeer = selectAuctioneer(circleTime++, 1);
 			bex::VertexDescriptor aucVertID;
 
 			if (circleTime >= 398/*maxcircleTime*/)
 			{
 				cout << "wtf" << endl;
-			//	break;
+//				break;
 			}
 
 			if (circleTime == 253)
@@ -441,7 +443,7 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 1000/*maxcircleTime*/)
+			if ( circleTime >= 1000/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -1022,6 +1024,30 @@ namespace pl
 		return true;
 	}
 
+	size_t MultiAuctionSTCEst::selectAuctioneer(size_t const & iterations, size_t const &selectMode)
+	{
+		size_t aucNeerID;
+		//select orderly
+		if (selectMode == 1)
+		{
+			aucNeerID = iterations % _robNum;
+		}
+		//select the minimum est
+		else
+		{
+			size_t minElement = 999999;
+			for (size_t i = 0; i < _robNum; i++)
+			{
+				if (_vRobEstCostPtr->at(i) < minElement && !_vRobSleepPtr->at(i))
+				{
+					minElement = _vRobEstCostPtr->at(i);
+					aucNeerID = i;
+				}
+			}
+		}
+		return aucNeerID;
+	}
+
 	bool MultiAuctionSTCEst::calAucVertID(size_t const & aucNeer, size_t & aucVertID)
 	{
 
@@ -1286,6 +1312,8 @@ namespace pl
 		auto &robNeiSet = _vRobSetPtr->at(OpRobId);
 		vector<bex::VertexDescriptor> v_vd;
 
+		if (_notBidSetPtr->count(vd) == 1)
+			return false;
 		for (auto it = robNeiSet.begin(); it != robNeiSet.end(); it++)
 		{
 			if (vd == *it) continue;

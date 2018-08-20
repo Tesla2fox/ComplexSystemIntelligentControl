@@ -192,8 +192,8 @@ class Env:
                 mark_y.append(pnt1.y)
                 line = Line(pnt0,pnt1)
                 lineDic = line.line2dict()
-                lineDic['line']['color'] = 'black'
-                lineDic['line']['width'] = 1
+                lineDic['line']['color'] = 'red'
+                lineDic['line']['width'] = 4
                 self.shapeLst.append(copy.deepcopy(lineDic))
             markTrace = go.Scatter(mode ='markers',
                                        x= mark_x,
@@ -766,6 +766,50 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             spanningData.append(copy.deepcopy(edgeData))
         env.addMultiEdgeInPnt(robNum = robNum, lst =  spanningData)
         env.drawPic('./png/env_'+cfgFileName+'spanningTree',fileType)
+    if(drawType == 14):
+        env = Env(mat)
+        env.addgrid()
+        robLst = []
+        print('0-0-',len(cfgFileName))
+        cfgFileNameStri = cfgFileName.split('.')
+        pathNameCfg = conFileDir +'GAcomp//'+ cfgFileNameStri[0]+'auctionSTCEstDeg.txt'
+        pathCfg = Read_Cfg(pathNameCfg)
+        robNum = int(pathCfg.getSingleVal('robNum'))
+        
+        
+        pathData = []
+        for i in range(robNum):
+            path_x = []
+            pathCfg.get('path_x'+str(i),path_x)
+            pathData.append(copy.deepcopy(path_x))
+            path_y = []
+            pathCfg.get('path_y'+str(i),path_y)
+            pathData.append(copy.deepcopy(path_y))        
+        env.addPath(robNum = robNum, lst = pathData,txtType = False)
+#            graphData.append(copy.deepcopy(graphUnit))
+        spanningData = []
+        for i in range(robNum):
+            edgeData = []
+            edgeUnit = []
+            pathCfg.get('sPntx'+str(i),edgeUnit)
+            print('edgeLength',len(edgeUnit))
+            edgeData.append(copy.deepcopy(edgeUnit))
+            edgeUnit =[]
+            pathCfg.get('sPnty'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit))
+    
+            edgeUnit = []
+            pathCfg.get('tPntx'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit))
+            edgeUnit =[]
+            pathCfg.get('tPnty'+str(i),edgeUnit)
+            edgeData.append(copy.deepcopy(edgeUnit)) 
+            spanningData.append(copy.deepcopy(edgeData))
+        env.addMultiEdgeInPnt(robNum = robNum, lst =  spanningData)
+        robLst.append(robRowLst)
+        robLst.append(robColLst)
+        env.addRobotStartPnt(robLst)        
+        env.drawPic('./png/env_'+cfgFileName+'JustPath',fileType)
 
 if __name__ == '__main__':
 

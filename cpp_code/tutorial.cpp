@@ -8,7 +8,8 @@ int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	str_conDir += "5_40_40_301_Outdoor_Cfg.txt";
+	string str_txt = "2_20_20_80_Outdoor_Cfg.txt";
+	str_conDir += str_txt;
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);
 
@@ -24,12 +25,14 @@ int main(int argc, char * argv[])
 	str_deg += "data.txt";
 	e_deg.open(str_deg, std::ios::trunc);
 
-	pl::Obmap obmap(readCfg);
+	pl::Obmap obmap(readCfg, str_txt);
 	obmap.map2tGrid();
 	obmap.map2sGrid();
 	obmap.writeEdges(pl::graphType::span);
 	obmap.writeEdgesInPnt(pl::graphType::span);
 
+	cout << "obMapName = " << obmap._m_name << endl;
+	//print("obmapString")
 	pl::STCPlan stcPlan(obmap);
 	vector<pl::GridIndex> startPnt;
 	for (size_t i = 0; i < readCfg._vStartMatPntPtr->size(); i++)

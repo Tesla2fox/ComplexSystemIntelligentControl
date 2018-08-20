@@ -54,15 +54,17 @@ namespace pl
 	
 	class Obmap {
 	public:
-		Obmap(cfg::ReadConfig const& readCfg):
+		Obmap(cfg::ReadConfig const& readCfg, std::string const & str):
 			m_MaxRow(readCfg._row), m_MaxCol(readCfg._col),_vGridPtr(readCfg._vGridPtr),
 			m_sMaxRow(ceil(double(readCfg._row)/2)),m_sMaxCol(ceil(double(readCfg._col) / 2)),_vObGridInd(readCfg._vObGridInd)
+			,_m_name(str)
 		{			
 			string  str_deg = conDir;
 			str_deg += "obmapDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);
 		}
 
+		std::string _m_name;
 		template<typename T>
 		friend  bool ::writeDebug(std::ofstream &deg, string const &str, vector<T> const &v_val);
 

@@ -23,10 +23,13 @@ namespace pl
 			_ob_tGraph(ob_map.getGraph(graphType::base)), _ob_sGraph(ob_map.getGraph(graphType::span))
 			, _ob_tGrid(ob_map.getGridMap(graphType::base)), _ob_sGrid(ob_map.getGridMap(graphType::span)),aplan(ob_map)
 		{
-			string  str_deg = conDir;
+			string  str_deg = conDir;			
+			string prefix(ob_map._m_name.begin(), ob_map._m_name.end()-4);
+			cout << prefix << endl;
+			str_deg += "\\GAComp\\";
+			str_deg += prefix;
 			str_deg += "auctionSTCEstDeg.txt";
-			c_deg.open(str_deg, std::ios::trunc);
-			
+			c_deg.open(str_deg, std::ios::trunc);			
 		};
 
 		template<typename T>
@@ -100,6 +103,7 @@ namespace pl
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
 		shared_ptr<vector<set<bex::VertexDescriptor>>> _vRobNeiPtr = nullptr;
 
+		shared_ptr<set<size_t>> _notBidSetPtr = nullptr;
 		shared_ptr<vector<vector<STCEdge>>> _vRobEdgePtr = nullptr;
 		// the first means in the robot graph
 		// the second means out of the robot graph
@@ -144,6 +148,9 @@ namespace pl
 		///
 		const size_t _robNum;
 		// auction function begin
+
+		size_t selectAuctioneer(size_t const &iterations,size_t const &selectMode);
+
 		bool calAucVertID(size_t const & aucNeer, size_t &aucVertID);
 
 //		bool calAucVertID(size_t const & aucNeer, STCEdge &aucEdgeID);
