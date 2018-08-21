@@ -8,7 +8,7 @@ int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	string str_txt = "2_20_20_80_Outdoor_Cfg.txt";
+	string str_txt = "8_40_40_320_Outdoor_Cfg.txt";
 	str_conDir += str_txt;
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);

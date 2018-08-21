@@ -1024,6 +1024,12 @@ namespace pl
 		return true;
 	}
 
+	bool MultiAuctionSTCEst::compType(size_t const & vd1, size_t const & vd2)
+	{
+		if(_ob_sGraph[vd1].Type == bex::vertType::DoubleSameOb || _ob_sGraph[vd1].Type == bex::vertType::DoubleDiffOb)
+			return false;
+	}
+
 	size_t MultiAuctionSTCEst::selectAuctioneer(size_t const & iterations, size_t const &selectMode)
 	{
 		size_t aucNeerID;
@@ -1576,6 +1582,7 @@ namespace pl
 		size_t connectCentre;
 		connectCentre = vertID;
 		//reconstruct
+		// delete vertexes which is related to the vertID
 		vector<size_t> reConInd;
 		//vector<size_t> delInd;
 		std::queue<size_t> reCon;
@@ -1616,6 +1623,38 @@ namespace pl
 		}
 		//add edges
 		updateNeiGraph(loserID);
+
+		//reconstruct the reConInd ;
+		
+		vector<size_t> poxfix;
+		// here need some fix 
+		for (size_t i = 0; i < reConInd.size(); i++)
+		{
+			auto &vd = reConInd[i];
+			if (_ob_sGraph[vd].Type == bex::vertType::DoubleSameOb || 
+				_ob_sGraph[vd].Type == bex::vertType::DoubleDiffOb)
+			{
+				poxfix.push_back(vd);
+			}
+		}
+		//erase some node 
+		for (size_t i = 0; i < poxfix.size(); i++)
+		{
+			size_t delInd = 0;
+			for (size_t j = 0; j < reConInd.size(); j++)
+			{
+				if (reConInd[j] == poxfix[i])
+				{
+					delInd = j;
+					break;
+				}
+			}
+			reConInd.erase(reConInd.begin() + delInd);
+		}
+		reConInd.insert(reConInd.end(), poxfix.begin(), poxfix.end());
+
+		// need some bug fix 
+//		std::sort(reConInd.begin(), reConInd.end(),this->compType);
 		do
 		{
 			vector<size_t> vDelInd;

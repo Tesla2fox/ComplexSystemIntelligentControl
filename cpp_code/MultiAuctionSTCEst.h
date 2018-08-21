@@ -26,8 +26,8 @@ namespace pl
 			string  str_deg = conDir;			
 			string prefix(ob_map._m_name.begin(), ob_map._m_name.end()-4);
 			cout << prefix << endl;
-			str_deg += "\\GAComp\\";
-			str_deg += prefix;
+			//str_deg += "\\GAComp\\";
+			//str_deg += prefix;
 			str_deg += "auctionSTCEstDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);			
 		};
@@ -142,6 +142,8 @@ namespace pl
 		size_t getDir(bex::VertexDescriptor const & lcen_index, bex::VertexDescriptor const & ln_index, size_t const & robID);
 
 		bool isAdjacent(bex::VertexDescriptor const & vd1, bex::VertexDescriptor const & vd2);
+
+		bool compType(size_t const &vd1, size_t const &vd2);
 		//end the STC function
 
 		///
