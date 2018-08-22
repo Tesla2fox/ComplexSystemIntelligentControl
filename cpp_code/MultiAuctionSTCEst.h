@@ -99,6 +99,7 @@ namespace pl
 
 		shared_ptr<vector<set<size_t>>> _vRobSetPtr = nullptr;
 		//the stc vertex ind and it is a leaf node or not.
+		shared_ptr<vector<set<size_t>>> _vRobSetBasePtr = nullptr;
 		shared_ptr<vector<map<size_t, size_t>>> _vRobMapPtr = nullptr;
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
 		shared_ptr<vector<set<bex::VertexDescriptor>>> _vRobNeiPtr = nullptr;

@@ -358,10 +358,17 @@ namespace pl {
 	{
 		vdirIndex.clear();
 		auto res = _mainMap.getSearchVerticalNeighbor(mindex, graphType::base);
+
+		std::vector<GridIndex> resDel;
+
 		for (size_t i = 0; i < res.size(); i++)
 		{
-			vdirIndex.push_back(aicentre);
+			if (i_setSize.count(res[i]) == 1)
+			{
+				resDel.push_back(res[i]);
+				vdirIndex.push_back(aicentre);
+			}
 		}
-		return res;
+		return resDel;
 	}
 }

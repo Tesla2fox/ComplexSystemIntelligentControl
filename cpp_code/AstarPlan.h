@@ -70,6 +70,7 @@ namespace pl {
 		GridIndex m_Tindex;
 		GridIndex m_Sindex;
 
+		set<GridIndex> i_setSize;
 		std::vector<GridIndex> m_pathIndex;
 		std::vector<bex::DPoint> m_path;
 		void init(GridIndex const &startInd, GridIndex const &end);

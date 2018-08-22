@@ -28,7 +28,7 @@ namespace pl
 //		getSpanningTreeSgs();
 		getNewGraph();
 		searchVitualPath();
-//		generateRealPath();
+		generateRealPath();
 
 		//realExchange();
 		writeMultiPath();
@@ -565,7 +565,7 @@ namespace pl
 	void MultiAuctionSTCEst::getNewGraph()
 	{
 		auto &graph = _ob_tGraph;
-		set<bex::VertexDescriptor> robBaseSet;
+		_vRobSetBasePtr = make_shared<vector<set<size_t>>>(_robNum);
 		_vT2local.clear();
 		_vlocal2T.clear();
 		_vSlocal2T.clear();
@@ -575,6 +575,7 @@ namespace pl
 			//if (p != 1)
 			//	continue;
 			bex::Graph new_graph;
+			set<bex::VertexDescriptor> &robBaseSet = this->_vRobSetBasePtr->at(p);
 			auto &robSet = _vRobSetPtr->at(p);
 			map<size_t, size_t> T2local;
 			map<size_t, size_t> local2T;
@@ -587,8 +588,8 @@ namespace pl
 				
 				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
-				if (svd == 136)
-					cout << "wtf" << endl;
+				if (svd == 180)
+					cout << "162" << endl;
 				// 此处添加..
 				vector<bex::VertexDescriptor> vvd;
 				if (_vNoLeafSTCSet[p].count(svd) == 0)
@@ -601,6 +602,7 @@ namespace pl
 					for (auto &vd : vvd)
 					{
 						robBaseSet.insert(vd);
+						//_vRobBasePtr->at(p).push_back(vd);
 						bex::VertexProperty vp = graph[vd];
 						vp.EdgeState = false;
 						vp.NeighbourState = false;
@@ -633,6 +635,7 @@ namespace pl
 						T2Slocal.insert(pair<size_t, size_t>(vd, localVd));
 						Slocal2T.insert(pair<size_t, size_t>(localVd, vd));
 						localVd++;
+						//_vRobBasePtr->at(p).push_back(vd);
 					}
 				}
 			}
@@ -787,7 +790,7 @@ namespace pl
 			//	cout << "i = " << i++ << endl;
 #endif // _DEBUG
 				cenVd = canVd;
-				if (cenVd == 195)
+				if (cenVd == 152)
 					cout << "wtf" << endl;
 				cenDir = canDir;
 				//canDir = cenDir;
@@ -809,8 +812,18 @@ namespace pl
 					}
 					else
 					{
+						
+						bex::VertexDescriptor g_it, g_cenVd;
+						if (_vlocal2T[p].count(*ni) == 1)
+							g_it = _vlocal2T[p][*ni];
+						else
+							g_it = _vSlocal2T[p][*ni];
+						if (_vlocal2T[p].count(cenVd) == 1)
+							g_cenVd = _vlocal2T[p][cenVd];
+						else
+							g_cenVd = _vSlocal2T[p][cenVd];
 						//此处需要修改
-						if (_mainMap.isConnected(_vlocal2T[p][*ni], _vlocal2T[p][cenVd],graphType::base))
+						if (_mainMap.isConnected(g_it, g_cenVd,graphType::base))
 						{
 							localGraph[*ni].NeighbourState = true;
 							leafSet.erase(find(leafSet.begin(), leafSet.end(), *ni));
@@ -836,7 +849,7 @@ namespace pl
 							g_it = _vlocal2T[p][it];
 						else
 							g_it = _vSlocal2T[p][it];
-						if (_vlocal2T[p].count(it) == 1)
+						if (_vlocal2T[p].count(cenVd) == 1)
 							g_cenVd = _vlocal2T[p][cenVd];
 						else
 							g_cenVd = _vSlocal2T[p][cenVd];
@@ -888,8 +901,17 @@ namespace pl
 		_vpath.clear();
 		_vpath.resize(_robNum);
 		_vpathIndex.resize(_robNum);
+		
 		for (size_t p = 0; p < _robNum; p++)
 		{
+			
+			aplan.i_setSize.clear();
+			set<GridIndex> _robBaseSet;
+			for (auto &it : _vRobSetBasePtr->at(p))
+			{
+				_robBaseSet.insert(_ob_tgraph2map[it]);
+			}
+			aplan.i_setSize = _robBaseSet;
 			vector<GridIndex> allWayPnt;
 			auto &_vitualPathIndex = vVitualPathIndex[p];
 			size_t wayPntCount = 0;

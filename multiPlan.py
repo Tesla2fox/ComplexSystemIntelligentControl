@@ -20,7 +20,7 @@ if __name__ == '__main__':
 #    for line in proOrgStatic.stdout:
 #        print(line)
 #    drawPic(fileCfgName,10,'testNothing',False)
-    drawPic(fileCfgName,10,'testNothing',True)
+    drawPic(fileCfgName,12,'testNothing',True)
 #    drawPic(fileCfgName,12,'testNothing',True)
         
 #    drawPic(fileCfgName,10,'testNothing',True)

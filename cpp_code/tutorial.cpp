@@ -30,7 +30,7 @@ int main(int argc, char * argv[])
 	obmap.map2sGrid();
 	obmap.writeEdges(pl::graphType::span);
 	obmap.writeEdgesInPnt(pl::graphType::span);
-
+	//auto wtf = obmap;
 	cout << "obMapName = " << obmap._m_name << endl;
 	//print("obmapString")
 	pl::STCPlan stcPlan(obmap);
