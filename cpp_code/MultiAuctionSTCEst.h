@@ -12,7 +12,6 @@ bool writeDebug(std::ofstream &deg, string const &str, T const &v_val);
 
 namespace pl
 {
-	using STCEdge = pair<bex::VertexDescriptor, bex::VertexDescriptor>;
 	// this auction uses estimate
 	class MultiAuctionSTCEst {
 	public:
@@ -45,6 +44,7 @@ namespace pl
 
 		void setRandomSeed(const size_t &val) { randomSeed = val; }
 
+		size_t _makeSpan = 0;
 	private:
 		//write txt
 		std::ofstream c_deg;

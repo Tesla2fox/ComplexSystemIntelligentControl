@@ -3,12 +3,13 @@
 #include "Obmap.h"
 #include "STCplan.h"
 #include "MultiAuction.h"
+#include "MultiAuctionSTC.h"
 #include "MultiAuctionSTCEst.h"
 int main(int argc, char * argv[])
 {
 	
 	string str_conDir = conDir;
-	string str_txt = "8_40_40_320_Outdoor_Cfg.txt";
+	string str_txt = "cfg2.txt";
 	str_conDir += str_txt;
 	char * conFileName = new char[str_conDir.size() + 1];
 	memcpy(conFileName, str_conDir.c_str(), str_conDir.size() + 1);
@@ -22,6 +23,7 @@ int main(int argc, char * argv[])
 	std::ofstream e_deg;
 
 	string  str_deg = conDir;
+	str_deg += "cfg2";
 	str_deg += "data.txt";
 	e_deg.open(str_deg, std::ios::trunc);
 
@@ -39,16 +41,21 @@ int main(int argc, char * argv[])
 	{
 		startPnt.push_back(pl::GridIndex(readCfg._vStartMatPntPtr->at(i).row, readCfg._vStartMatPntPtr->at(i).col));
 	}
-	//pl::MultiAuction multi_auc(obmap, startPnt);	
+	//pl::MultiAuctionSTC multi_auc(obmap, startPnt);
 	//multi_auc.setRandomSeed(1);
 	//multi_auc.process();
 	//multi_auc.writeRobGraph();
-	
-	pl::MultiAuctionSTCEst multi_aucSTC(obmap,startPnt);
-	multi_aucSTC.setRandomSeed(1);
-	multi_aucSTC.process();
-	multi_aucSTC.writeRobGraph();
+	e_deg << "makeSpan ";
+	for (size_t i = 0; i < 20; i++)
+	{
+		pl::MultiAuctionSTCEst multi_aucSTC(obmap, startPnt);
+		multi_aucSTC.setRandomSeed(i);
+		multi_aucSTC.process();
+		multi_aucSTC.writeRobGraph();
+		e_deg << multi_aucSTC._makeSpan<<"  ";
+	}
 
+	e_deg.close();
 	cout << "ggq' code" << endl;
 	if (argc <= 1) {
 		size_t input_val;

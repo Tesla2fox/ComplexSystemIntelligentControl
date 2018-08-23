@@ -1,4 +1,4 @@
-#include "MultiAuctionSTC.h"
+Ôªø#include "MultiAuctionSTC.h"
 
 //void pl::MultiAuction::setStartPnt(vector<size_t> const & vStartPntRow, vector<size_t> const & vStartPntCol)
 //{
@@ -23,11 +23,14 @@ namespace pl
 		this->_vTreeSgs.clear();
 		this->_vTreeSgs.resize(this->_robNum);
 		getSpanningTreeSgs();
+		exchange2TreeSgs();
+
 		getNewGraph();
 		searchVitualPath();
 		generateRealPath();
 		writeMultiPath();
-		wirteMultiGraphSeg();
+		wirteMultiGraphSeg();		
+		calMakeSpan();
 	}
 
 	void MultiAuctionSTC::writeRobGraph()
@@ -283,6 +286,8 @@ namespace pl
 	{
 		_vRobSetPtr = make_shared<vector<set<size_t>>>(_robNum);
 		_vRobGridPtr = make_shared<vector<vector<GridIndex>>>(_robNum);
+		_vRobMapPtr = make_shared<vector<map<size_t, size_t>>>(_robNum);
+		_vRobEdgePtr = make_shared<vector<vector<STCEdge>>>(_robNum);
 		_vRobNeiPtr = make_shared<vector<set<bex::VertexDescriptor>>>(_robNum);
 		_vRobSleepPtr = make_shared<vector<bool>>(_robNum, false);
 		_vRobEstCostPtr = make_shared<vector<double>>(_robNum);
@@ -310,17 +315,17 @@ namespace pl
 		}
 		do
 		{
-			size_t aucNeer = dis(eng);
+			size_t aucNeer = circleTime++%_robNum;
 			bex::VertexDescriptor aucVertID;
 
 			if (circleTime == 253)
 				c_deg << "";
 			bool allOccupied = calAucVertID(aucNeer, aucVertID);
-			c_deg << "circleTime = " << circleTime << endl;
-			c_deg << "aucNeer = " << aucNeer << endl;
-			c_deg << "aucVertID = " << aucVertID << endl;
-			c_deg << "aucVertGridInd.first =  " << this->_ob_sgraph2map[aucVertID].first <<
-				"aucVertGrid.second  = " << this->_ob_sgraph2map[aucVertID].second << endl;
+			//c_deg << "circleTime = " << circleTime << endl;
+			//c_deg << "aucNeer = " << aucNeer << endl;
+			//c_deg << "aucVertID = " << aucVertID << endl;
+			//c_deg << "aucVertGridInd.first =  " << this->_ob_sgraph2map[aucVertID].first <<
+			//	"aucVertGrid.second  = " << this->_ob_sgraph2map[aucVertID].second << endl;
 			if (_ob_sgraph2map[aucVertID].first == 9 && _ob_sgraph2map[aucVertID].second == 9)
 			{
 				cout << "bug" << endl;
@@ -361,7 +366,7 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 #endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
-			if ( ++circleTime >= 200/*maxcircleTime*/)
+			if ( circleTime >= 1000/*maxcircleTime*/)
 			{
 				break;
 			}
@@ -369,6 +374,7 @@ namespace pl
 
 		vector<size_t> vSize;
 		size_t allNumSize = 0;
+
 		for (size_t i = 0; i < _robNum; i++)
 		{
 			c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
@@ -414,43 +420,40 @@ namespace pl
 			//auto &vBoolTree = _vvBoolTree[robID];
 			//vBoolTree.assign(vvd.size(), true);
 			vector<bool> vBoolTree(vvd.size(),true);		
-			// µ»”⁄true ±£¨’˝≥£º∆À„
-			// µ»”⁄false ±£¨∑«’˝≥£º∆À„
-			for (auto iter = vvd.begin(); iter != vvd.end();iter++)
-			{
-				if (_mainMap.vitualVertSet.count(_ob_graphVd2GridInd[*iter].first) == 1)
-				{
-					auto c_vvd = vvd;
-					c_vvd.erase(iter - vvd.begin() + c_vvd.begin());
-					if (_mainMap.allConnected(c_vvd))
-					{
-						//cout << " +" << vvd[iter - vvd.begin()] << endl;
-						vBoolTree[iter - vvd.begin()] = false;
-						//_vLeafSTCSet[robID].push_back(*iter);
-						_vLeafSTCSet[robID].insert(*iter);
-						//auto wtfff = iter - vvd.begin();
-						//_vLeafSet[robID].push_back(iter - vvd.begin());
-					}
-					else
-					{
-						_vNoLeafSTCSet[robID].insert(*iter);
-	//					cout << " -" << vvd[iter - vvd.begin()] << endl;
-					}
-				}
-			}
+			// Á≠â‰∫étrueÊó∂ÔºåÊ≠£Â∏∏ËÆ°ÁÆó
+			// Á≠â‰∫éfalseÊó∂ÔºåÈùûÊ≠£Â∏∏ËÆ°ÁÆó
+	//		for (auto iter = vvd.begin(); iter != vvd.end();iter++)
+	//		{
+	//			if (_mainMap.vitualVertSet.count(_ob_graphVd2GridInd[*iter].first) == 1)
+	//			{
+	//				auto c_vvd = vvd;
+	//				c_vvd.erase(iter - vvd.begin() + c_vvd.begin());
+	//				if (_mainMap.allConnected(c_vvd))
+	//				{
+	//					//cout << " +" << vvd[iter - vvd.begin()] << endl;
+	//					vBoolTree[iter - vvd.begin()] = false;
+	//					//_vLeafSTCSet[robID].push_back(*iter);
+	//					_vLeafSTCSet[robID].insert(*iter);
+	//					//auto wtfff = iter - vvd.begin();
+	//					//_vLeafSet[robID].push_back(iter - vvd.begin());
+	//				}
+	//				else
+	//				{
+	//					_vNoLeafSTCSet[robID].insert(*iter);
+	////					cout << " -" << vvd[iter - vvd.begin()] << endl;
+	//				}
+	//			}
+	//		}
 			for (size_t i = 0; i < vvd.size(); i++)
 			{
 				for (size_t j = i; j < vvd.size(); j++)
 				{
 					//assume the virtual vertex dosen't connected
-					if (vBoolTree[i] && vBoolTree[j])
-					{
 						if (isAdjacent(vvd[i], vvd[j]))
 						{
 							vSvd.push_back(i);
 							vTvd.push_back(j);
 						}
-					}
 				}
 			}
 			const int edgeNum = vSvd.size();
@@ -471,6 +474,8 @@ namespace pl
 			bt::prim_minimum_spanning_tree(g, &p[0]);
 			for (std::size_t i = 0; i != p.size(); ++i)
 			{
+				_vRobEdgePtr->at(robID).push_back(STCEdge(vvd[i], vvd[p[i]]));
+
 				//cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
 				auto sg = bex::DSegment(_ob_sGraph[vvd[i]].pnt, _ob_sGraph[vvd[p[i]]].pnt);
 				_vTreeSgs[robID].push_back(sg);
@@ -484,23 +489,32 @@ namespace pl
 	void MultiAuctionSTC::getNewGraph()
 	{
 		auto &graph = _ob_tGraph;
-		set<bex::VertexDescriptor> robBaseSet;
+		_vRobSetBasePtr = make_shared<vector<set<size_t>>>(_robNum);
 		_vT2local.clear();
 		_vlocal2T.clear();
+		_vSlocal2T.clear();
+		_vT2Slocal.clear();
 		for (size_t p = 0; p < _robNum; p++)
 		{
+			//if (p != 1)
+			//	continue;
 			bex::Graph new_graph;
+			set<bex::VertexDescriptor> &robBaseSet = this->_vRobSetBasePtr->at(p);
 			auto &robSet = _vRobSetPtr->at(p);
 			map<size_t, size_t> T2local;
 			map<size_t, size_t> local2T;
+			map<size_t, size_t> Slocal2T;
+			map<size_t, size_t> T2Slocal;
 			bex::VertexDescriptor localVd = 0;
 			size_t gSTCInd = 0;
 			for (auto &it : robSet)
 			{
-				
+
 				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
-				// ¥À¥¶ÃÌº”..
+				if (svd == 180)
+					cout << "162" << endl;
+				// Ê≠§Â§ÑÊ∑ªÂä†..
 				vector<bex::VertexDescriptor> vvd;
 				if (_vNoLeafSTCSet[p].count(svd) == 0)
 				{
@@ -512,6 +526,7 @@ namespace pl
 					for (auto &vd : vvd)
 					{
 						robBaseSet.insert(vd);
+						//_vRobBasePtr->at(p).push_back(vd);
 						bex::VertexProperty vp = graph[vd];
 						vp.EdgeState = false;
 						vp.NeighbourState = false;
@@ -524,6 +539,9 @@ namespace pl
 				}
 				else
 				{
+
+					//Ê≠§Â§ÑÂ≠òÂú®ÈóÆÈ¢ò
+					//ÂØºËá¥ËΩ¨Êç¢ Ê∑∑‰π±
 					auto realVd = _mainMap.STCGraphVd2TGraphVd(svd);
 					vvd = _mainMap.STCGraphVd2TGraphVdSp(svd);
 					for (auto &vd : vvd)
@@ -538,20 +556,25 @@ namespace pl
 						vp.NeighbourState = false;
 						vp.QueueState = false;
 						bt::add_vertex(vp, new_graph);
-						T2local.insert(pair<size_t, size_t>(vd, localVd));
-						local2T.insert(pair<size_t, size_t>(localVd, vd));
+						T2Slocal.insert(pair<size_t, size_t>(vd, localVd));
+						Slocal2T.insert(pair<size_t, size_t>(localVd, vd));
 						localVd++;
+						//_vRobBasePtr->at(p).push_back(vd);
 					}
 				}
 			}
 			_vT2local.push_back(T2local);
 			_vlocal2T.push_back(local2T);
+			_vT2Slocal.push_back(T2Slocal);
+			_vSlocal2T.push_back(Slocal2T);
 			//add edge 
 			std::pair<bex::VertexIterator, bex::VertexIterator> vi = boost::vertices(new_graph);
 			for (bex::VertexIterator vit = vi.first; vit != vi.second; vit++)
 			{
 				bex::VertexDescriptor vd = *vit;
-				if (true)
+				if (vd == 193)
+					cout << "wtf" << endl;
+				if (local2T.count(vd) == 1)
 				{
 					/*			cout << "___" << endl;
 					cout << " new_graph[vd].pnt x = " << new_graph[vd].pnt.x()
@@ -566,8 +589,19 @@ namespace pl
 					{
 						if (robBaseSet.count(it) == 1)
 						{
+							if (T2Slocal.count(it) == 1)
+							{
+								if (std::find(_vLeafSet[p].begin(), _vLeafSet[p].end(), it) == _vLeafSet[p].end())
+								{
+									vvd.push_back(T2Slocal[it]);
+								}
+							}
+							if (T2local.count(it) == 1)
+							{
+								vvd.push_back(T2local[it]);
+							}
 							//						cout << "nei__it " << it << endl;
-							vvd.push_back(T2local[it]);
+							//vvd.push_back(T2local[it]);
 						}
 					}
 					for (auto &it : vvd)
@@ -582,7 +616,53 @@ namespace pl
 
 
 							if (this->treeIntersection(sg, p))
-								//≈–∂œ «∑Òœ‡Ωª
+								//Âà§Êñ≠ÊòØÂê¶Áõ∏‰∫§
+							{
+								//								std::cout << "inter" << endl;
+							}
+							else
+							{
+								bex::EdgeProperty ep;
+								//ep.weight = bg::distance(sGraph[vd].pnt, sGraph[it].pnt);
+								boost::add_edge(it, vd, ep, new_graph);
+							}
+						}
+					}
+				}
+
+				if (Slocal2T.count(vd) == 1)
+				{
+					auto tvd = Slocal2T[vd];
+					auto nei_vvd = _mainMap.getSearchAllNeighbor(tvd);
+					//auto vlocalIndex = getVerticalNeighbour(localIndex);
+					//getSearchNeighbor(localIndex, graphType::span);
+					std::vector<int> vvd;
+					for (auto &it : nei_vvd)
+					{
+						if (robBaseSet.count(it) == 1)
+						{
+							if (T2Slocal.count(it) == 1)
+							{
+								vvd.push_back(T2Slocal[it]);
+							}
+							else
+							{
+								vvd.push_back(T2local[it]);
+							}
+							//cout << "nei__it " << it << endl;
+						}
+					}
+					for (auto &it : vvd)
+					{
+						if (new_graph[it].EdgeState == false)
+						{
+							bex::DSegment sg(new_graph[it].pnt, new_graph[vd].pnt);
+							//cout << " new_graph[it].pnt x = " << new_graph[it].pnt.x()
+							//	<< " new_graph[it].pnt y = " << new_graph[it].pnt.y() << endl;
+
+
+							if (this->treeIntersection(sg, p))
+								//Âà§Êñ≠ÊòØÂê¶Áõ∏‰∫§
 							{
 								//								std::cout << "inter" << endl;
 							}
@@ -612,6 +692,8 @@ namespace pl
 		_vpathIndex.resize(_robNum);
 		for (size_t p = 0; p < _robNum; p++)
 		{
+			//if (p != 1)
+			//	continue;
 			auto _startPnt = this->_vStartPnt[p];
 			GridIndex  cenGridIndex = _startPnt;
 			bex::VertexDescriptor totalCenVd = this->_ob_tmap2graph[cenGridIndex];
@@ -629,9 +711,11 @@ namespace pl
 			do
 			{
 #ifdef _DEBUG
-				//cout << "i = " << i++ << endl;
+				//	cout << "i = " << i++ << endl;
 #endif // _DEBUG
 				cenVd = canVd;
+				if (cenVd == 152)
+					cout << "wtf" << endl;
 				cenDir = canDir;
 				//canDir = cenDir;
 				_pathIndex.push_back(cenVd);
@@ -644,6 +728,7 @@ namespace pl
 				{
 					if (find(leafSet.begin(), leafSet.end(), *ni) == leafSet.end())
 					{
+						auto &wtf = localGraph[*ni];
 						if (!localGraph[*ni].NeighbourState)
 						{
 							vNeighbors.push_back(*ni);
@@ -651,8 +736,18 @@ namespace pl
 					}
 					else
 					{
-						//¥À¥¶–Ë“™–ﬁ∏ƒ
-						if (_mainMap.isConnected(_vlocal2T[p][*ni], _vlocal2T[p][cenVd],graphType::base))
+
+						bex::VertexDescriptor g_it, g_cenVd;
+						if (_vlocal2T[p].count(*ni) == 1)
+							g_it = _vlocal2T[p][*ni];
+						else
+							g_it = _vSlocal2T[p][*ni];
+						if (_vlocal2T[p].count(cenVd) == 1)
+							g_cenVd = _vlocal2T[p][cenVd];
+						else
+							g_cenVd = _vSlocal2T[p][cenVd];
+						//Ê≠§Â§ÑÈúÄË¶Å‰øÆÊîπ
+						if (_mainMap.isConnected(g_it, g_cenVd, graphType::base))
 						{
 							localGraph[*ni].NeighbourState = true;
 							leafSet.erase(find(leafSet.begin(), leafSet.end(), *ni));
@@ -673,9 +768,17 @@ namespace pl
 					//has not been covered
 					if (vp.NeighbourState == false)
 					{
-						auto g_it = _vlocal2T[p][it];
-						auto g_cenVd = _vlocal2T[p][cenVd];
-						if (_mainMap.inSameSTCMegaBox(g_it,g_cenVd))
+						bex::VertexDescriptor g_it, g_cenVd;
+						if (_vlocal2T[p].count(it) == 1)
+							g_it = _vlocal2T[p][it];
+						else
+							g_it = _vSlocal2T[p][it];
+						if (_vlocal2T[p].count(cenVd) == 1)
+							g_cenVd = _vlocal2T[p][cenVd];
+						else
+							g_cenVd = _vSlocal2T[p][cenVd];
+
+						if (_mainMap.inSameSTCMegaBox(g_it, g_cenVd))
 						{
 							canVd = it;
 							chsSameMega = true;
@@ -708,8 +811,9 @@ namespace pl
 					}
 				}
 				canDir = getDir(cenVd, canVd, p);
-			} while (canVd != cenVd);
-		}
+		} while (canVd != cenVd);
+		//cout << "0-0" << endl;
+	}
 		cout << "path___success" << endl;
 	}
 
@@ -721,28 +825,49 @@ namespace pl
 		_vpath.clear();
 		_vpath.resize(_robNum);
 		_vpathIndex.resize(_robNum);
+
 		for (size_t p = 0; p < _robNum; p++)
 		{
+
+			aplan.i_setSize.clear();
+			set<GridIndex> _robBaseSet;
+			for (auto &it : _vRobSetBasePtr->at(p))
+			{
+				_robBaseSet.insert(_ob_tgraph2map[it]);
+			}
+			aplan.i_setSize = _robBaseSet;
+			vector<GridIndex> allWayPnt;
+			auto &_vitualPathIndex = vVitualPathIndex[p];
+			size_t wayPntCount = 0;
+			for (size_t i = 0; i < _vitualPathIndex.size(); i++)
+			{
+				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
+				if (_ob_tGrid[ind] == bex::vertType::WayVert && _vNoPathInd[p].count(_vitualPathIndex[i]) == 0)
+				{
+					wayPntCount++;
+				}
+			}
+			set<GridIndex> cmpWayPnt;
 			//auto _startPnt = this->_vStartPnt[]
 			auto _startPnt = this->_vStartPnt[p];
 			auto &_pathIndex = _vpathIndex[p];
 			auto &_path = _vpath[p];
 			auto &localGraph = _m_vGraph[p];
-			auto &_vitualPathIndex = vVitualPathIndex[p];
 			_pathIndex.push_back(_vitualPathIndex.front());
 			_path.push_back(bex::DPoint(_startPnt.first + 0.5, _startPnt.second + 0.5));
+			cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(_path.front()));
 			bool nei_bool = true;
 			for (size_t i = 1; i < _vitualPathIndex.size(); i++)
 			{
 				auto  &ind = this->_ob_tgraph2map[_vlocal2T[p][_vitualPathIndex[i]]];
-				//auto  &t_ind = _vT2local[p][ind];
-				cout << " i		= " << i << endl;
 				if (_ob_tGrid[ind] == bex::vertType::WayVert && _vNoPathInd[p].count(_vitualPathIndex[i]) == 0)
 				{
 					if (nei_bool)
 					{
-//						_pathIndex.push_back(_vitualPathIndex[i]);
+						//						_pathIndex.push_back(_vitualPathIndex[i]);
 						_path.push_back(localGraph[_vitualPathIndex[i]].pnt);
+						//_mainMap.
+						cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(localGraph[_vitualPathIndex[i]].pnt));
 					}
 					else
 					{
@@ -750,9 +875,14 @@ namespace pl
 						auto lastInd = _ob_tgraph2map[_vlocal2T[p][_pathIndex.back()]];
 						aplan.init(lastInd, ind);
 						aplan.plan();
-						for (auto &it :aplan.m_path)
+						//for (auto &it :aplan.m_path)
+						//{
+						//	_path.push_back(it);
+						//}
+						for (size_t n = 1; n < aplan.m_path.size(); n++)
 						{
-							_path.push_back(it);
+							_path.push_back(aplan.m_path[n]);
+							cmpWayPnt.insert(_mainMap.pnt2IndexInBaseGrid(aplan.m_path[n]));
 						}
 						//_path.emplace(aplan.m_path.begin(), aplan.m_path.end());
 					}
@@ -763,9 +893,85 @@ namespace pl
 				{
 					nei_bool = false;
 				}
+				cout << "size = " << cmpWayPnt.size() << endl;
+				//		if (cmpWayPnt.size() == wayPntCount)
+				//			break;
 			}
+			cout << "stop" << endl;
 		}
 		cout << "generate real path" << endl;
+	}
+
+	bool MultiAuctionSTC::exchange2TreeSgs()
+	{
+		
+		this->_vTreeSgs.clear();
+		this->_vTreeSgs.resize(this->_robNum);
+
+		_vLeafSet.clear();
+		_vLeafSet.resize(_robNum);
+		_vLeafSTCSet.clear();
+		_vLeafSTCSet.resize(_robNum);
+		_vNoLeafSTCSet.clear();
+		_vNoLeafSTCSet.resize(_robNum);
+		_vNoPathInd.clear();
+		_vNoPathInd.resize(_robNum);
+
+		for (size_t p = 0; p< _robNum; p++)
+		{
+			auto &robEdges = this->_vRobEdgePtr->at(p);
+			updateMap(p);
+			for (size_t i = 0; i < robEdges.size(); i++)
+			{
+				auto &sInd = robEdges[i].first;
+				auto &tInd = robEdges[i].second;
+				auto &gridInd = _ob_graphVd2GridInd[sInd].first;
+				if (sInd == 216)
+					cout << "wtf" << endl;
+				if (_mainMap.vitualVertSet.count(gridInd) == 1)
+				{
+					if (_vRobMapPtr->at(p)[sInd] == 1)
+					{
+						_vLeafSTCSet[p].insert(sInd);
+						continue;
+					}
+					_vNoLeafSTCSet[p].insert(sInd);
+				}
+				auto sg = bex::DSegment(_ob_sGraph[sInd].pnt, _ob_sGraph[tInd].pnt);
+				_vTreeSgs[p].push_back(sg);
+				//if(robEdges)
+			}
+		}
+		return false;
+		return false;
+	}
+
+	bool MultiAuctionSTC::updateMap(size_t const & robID)
+	{
+		auto &robLoserEdgeSet = _vRobEdgePtr->at(robID);
+		auto &robMap = _vRobMapPtr->at(robID);
+		robMap.clear();
+		for (size_t i = 0; i < robLoserEdgeSet.size(); i++)
+		{
+			if (robMap.count(robLoserEdgeSet[i].first) == 1)
+			{
+				robMap[robLoserEdgeSet[i].first]++;
+			}
+			else
+			{
+				robMap[robLoserEdgeSet[i].first] = 1;
+			}
+
+			if (robMap.count(robLoserEdgeSet[i].second) == 1)
+			{
+				robMap[robLoserEdgeSet[i].second]++;
+			}
+			else
+			{
+				robMap[robLoserEdgeSet[i].second] = 1;
+			}
+		}
+		return false;
 	}
 
 
@@ -1116,5 +1322,15 @@ namespace pl
 			}
 		}
 		return false;
+	}
+	bool MultiAuctionSTC::calMakeSpan()
+	{
+		vector<size_t> vCompleteTime;
+		for (auto &it : _vpath)
+			vCompleteTime.push_back(it.size());
+		size_t makeSpan = *std::max_element(vCompleteTime.begin(), vCompleteTime.end());
+		writeDebug(c_deg, "makeSpan", makeSpan);
+		return false;
+		//return false;
 	}
 }

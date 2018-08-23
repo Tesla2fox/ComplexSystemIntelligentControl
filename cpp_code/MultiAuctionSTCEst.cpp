@@ -26,7 +26,9 @@ namespace pl
 		this->_vTreeSgs.resize(this->_robNum);
 		exchange2TreeSgs();
 //		getSpanningTreeSgs();
+//		exchange2TreeSgs();
 		getNewGraph();
+
 		searchVitualPath();
 		generateRealPath();
 
@@ -370,8 +372,8 @@ namespace pl
 		}
 		do
 		{
-//			size_t aucNeer = dis(eng);
-			size_t aucNeer = selectAuctioneer(circleTime++, 1);
+			size_t aucNeer = dis(eng);
+	//		size_t aucNeer = selectAuctioneer(circleTime++, 1);
 			bex::VertexDescriptor aucVertID;
 
 			if (circleTime >= 398/*maxcircleTime*/)
@@ -554,6 +556,7 @@ namespace pl
 			{
 				//cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
 				auto sg = bex::DSegment(_ob_sGraph[vvd[i]].pnt, _ob_sGraph[vvd[p[i]]].pnt);
+				_vRobEdgePtr->at(robID).push_back(STCEdge(vvd[i], vvd[p[i]]));
 				_vTreeSgs[robID].push_back(sg);
 			}
 		}
@@ -1850,6 +1853,7 @@ namespace pl
 			vCompleteTime.push_back(it.size());
 		size_t makeSpan = *std::max_element(vCompleteTime.begin(), vCompleteTime.end());
 		writeDebug(c_deg, "makeSpan", makeSpan);
+		_makeSpan = makeSpan;
 		return false;
 	}
 }

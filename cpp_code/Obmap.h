@@ -11,6 +11,7 @@ bool writeDebug(std::ofstream &deg, string const &str, vector<T> const &v_val);
 
 namespace pl
 {
+	using STCEdge = pair<bex::VertexDescriptor, bex::VertexDescriptor>;
 
 	using GridIndex = pair<int, int>;
 	enum graphType { span, base, tree };

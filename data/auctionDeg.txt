@@ -1,760 +1,6179 @@
 circleTime = 0
-aucNeer = 0
-aucVertID = 14757395258967641292
-aucVertGridInd.first =  0aucVertGrid.second  = 0
+aucNeer = 5
+aucVertID = 35
+aucVertGridInd.first =  0aucVertGrid.second  = 35
 circleTime = 1
-aucNeer = 4
-aucVertID = 34
-aucVertGridInd.first =  1aucVertGrid.second  = 14
+aucNeer = 3
+aucVertID = 1229
+aucVertGridInd.first =  30aucVertGrid.second  = 29
 circleTime = 2
 aucNeer = 4
-aucVertID = 14
-aucVertGridInd.first =  0aucVertGrid.second  = 14
+aucVertID = 289
+aucVertGridInd.first =  7aucVertGrid.second  = 9
 circleTime = 3
-aucNeer = 3
-aucVertID = 41
-aucVertGridInd.first =  2aucVertGrid.second  = 1
-circleTime = 4
-aucNeer = 3
-aucVertID = 40
-aucVertGridInd.first =  2aucVertGrid.second  = 0
-circleTime = 5
-aucNeer = 3
-aucVertID = 20
-aucVertGridInd.first =  1aucVertGrid.second  = 0
-circleTime = 6
-aucNeer = 1
-aucVertID = 20
-aucVertGridInd.first =  1aucVertGrid.second  = 0
-circleTime = 7
-aucNeer = 1
-aucVertID = 20
-aucVertGridInd.first =  1aucVertGrid.second  = 0
-circleTime = 8
-aucNeer = 4
-aucVertID = 35
-aucVertGridInd.first =  1aucVertGrid.second  = 15
-circleTime = 9
-aucNeer = 2
-aucVertID = 35
-aucVertGridInd.first =  1aucVertGrid.second  = 15
-circleTime = 10
-aucNeer = 3
-aucVertID = 0
-aucVertGridInd.first =  0aucVertGrid.second  = 0
-circleTime = 11
-aucNeer = 4
-aucVertID = 36
-aucVertGridInd.first =  1aucVertGrid.second  = 16
-circleTime = 12
-aucNeer = 1
-aucVertID = 36
-aucVertGridInd.first =  1aucVertGrid.second  = 16
-circleTime = 13
-aucNeer = 3
-aucVertID = 60
-aucVertGridInd.first =  3aucVertGrid.second  = 0
-circleTime = 14
-aucNeer = 3
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
-circleTime = 15
 aucNeer = 0
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucVertID = 356
+aucVertGridInd.first =  8aucVertGrid.second  = 36
+circleTime = 4
+aucNeer = 7
+aucVertID = 463
+aucVertGridInd.first =  11aucVertGrid.second  = 23
+circleTime = 5
+aucNeer = 1
+aucVertID = 640
+aucVertGridInd.first =  16aucVertGrid.second  = 0
+circleTime = 6
+aucNeer = 3
+aucVertID = 1269
+aucVertGridInd.first =  31aucVertGrid.second  = 29
+circleTime = 7
+aucNeer = 5
+aucVertID = 76
+aucVertGridInd.first =  1aucVertGrid.second  = 36
+circleTime = 8
+aucNeer = 7
+aucVertID = 423
+aucVertGridInd.first =  10aucVertGrid.second  = 23
+circleTime = 9
+aucNeer = 0
+aucVertID = 316
+aucVertGridInd.first =  7aucVertGrid.second  = 36
+circleTime = 10
+aucNeer = 0
+aucVertID = 317
+aucVertGridInd.first =  7aucVertGrid.second  = 37
+circleTime = 11
+aucNeer = 1
+aucVertID = 680
+aucVertGridInd.first =  17aucVertGrid.second  = 0
+circleTime = 12
+aucNeer = 4
+aucVertID = 288
+aucVertGridInd.first =  7aucVertGrid.second  = 8
+circleTime = 13
+aucNeer = 7
+aucVertID = 422
+aucVertGridInd.first =  10aucVertGrid.second  = 22
+circleTime = 14
+aucNeer = 5
+aucVertID = 34
+aucVertGridInd.first =  0aucVertGrid.second  = 34
+circleTime = 15
+aucNeer = 4
+aucVertID = 287
+aucVertGridInd.first =  7aucVertGrid.second  = 7
 circleTime = 16
-aucNeer = 2
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucNeer = 6
+aucVertID = 677
+aucVertGridInd.first =  16aucVertGrid.second  = 37
 circleTime = 17
 aucNeer = 1
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucVertID = 720
+aucVertGridInd.first =  18aucVertGrid.second  = 0
 circleTime = 18
 aucNeer = 2
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucVertID = 1185
+aucVertGridInd.first =  29aucVertGrid.second  = 25
 circleTime = 19
-aucNeer = 1
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucNeer = 4
+aucVertID = 286
+aucVertGridInd.first =  7aucVertGrid.second  = 6
 circleTime = 20
-aucNeer = 0
-aucVertID = 1
-aucVertGridInd.first =  0aucVertGrid.second  = 1
+aucNeer = 6
+aucVertID = 717
+aucVertGridInd.first =  17aucVertGrid.second  = 37
 circleTime = 21
-aucNeer = 3
-aucVertID = 80
-aucVertGridInd.first =  4aucVertGrid.second  = 0
+aucNeer = 5
+aucVertID = 75
+aucVertGridInd.first =  1aucVertGrid.second  = 35
 circleTime = 22
-aucNeer = 1
-aucVertID = 80
-aucVertGridInd.first =  4aucVertGrid.second  = 0
+aucNeer = 2
+aucVertID = 1186
+aucVertGridInd.first =  29aucVertGrid.second  = 26
 circleTime = 23
 aucNeer = 4
-aucVertID = 37
-aucVertGridInd.first =  1aucVertGrid.second  = 17
+aucVertID = 285
+aucVertGridInd.first =  7aucVertGrid.second  = 5
 circleTime = 24
 aucNeer = 3
-aucVertID = 21
-aucVertGridInd.first =  1aucVertGrid.second  = 1
+aucVertID = 1270
+aucVertGridInd.first =  31aucVertGrid.second  = 30
 circleTime = 25
-aucNeer = 1
-aucVertID = 21
-aucVertGridInd.first =  1aucVertGrid.second  = 1
+aucNeer = 4
+aucVertID = 284
+aucVertGridInd.first =  7aucVertGrid.second  = 4
 circleTime = 26
-aucNeer = 4
-aucVertID = 38
-aucVertGridInd.first =  1aucVertGrid.second  = 18
+aucNeer = 2
+aucVertID = 1226
+aucVertGridInd.first =  30aucVertGrid.second  = 26
 circleTime = 27
-aucNeer = 2
-aucVertID = 38
-aucVertGridInd.first =  1aucVertGrid.second  = 18
+aucNeer = 4
+aucVertID = 283
+aucVertGridInd.first =  7aucVertGrid.second  = 3
 circleTime = 28
-aucNeer = 4
-aucVertID = 39
-aucVertGridInd.first =  1aucVertGrid.second  = 19
+aucNeer = 5
+aucVertID = 33
+aucVertGridInd.first =  0aucVertGrid.second  = 33
 circleTime = 29
-aucNeer = 4
-aucVertID = 19
-aucVertGridInd.first =  0aucVertGrid.second  = 19
+aucNeer = 6
+aucVertID = 718
+aucVertGridInd.first =  17aucVertGrid.second  = 38
 circleTime = 30
-aucNeer = 3
-aucVertID = 61
-aucVertGridInd.first =  3aucVertGrid.second  = 1
+aucNeer = 2
+aucVertID = 1266
+aucVertGridInd.first =  31aucVertGrid.second  = 26
 circleTime = 31
-aucNeer = 1
-aucVertID = 61
-aucVertGridInd.first =  3aucVertGrid.second  = 1
+aucNeer = 4
+aucVertID = 282
+aucVertGridInd.first =  7aucVertGrid.second  = 2
 circleTime = 32
-aucNeer = 2
-aucVertID = 61
-aucVertGridInd.first =  3aucVertGrid.second  = 1
+aucNeer = 7
+aucVertID = 382
+aucVertGridInd.first =  9aucVertGrid.second  = 22
 circleTime = 33
-aucNeer = 3
-aucVertID = 2
-aucVertGridInd.first =  0aucVertGrid.second  = 2
+aucNeer = 7
+aucVertID = 381
+aucVertGridInd.first =  9aucVertGrid.second  = 21
 circleTime = 34
-aucNeer = 2
-aucVertID = 2
-aucVertGridInd.first =  0aucVertGrid.second  = 2
-circleTime = 35
-aucNeer = 3
-aucVertID = 22
-aucVertGridInd.first =  1aucVertGrid.second  = 2
-circleTime = 36
-aucNeer = 3
-aucVertID = 62
-aucVertGridInd.first =  3aucVertGrid.second  = 2
-circleTime = 37
 aucNeer = 1
-aucVertID = 62
-aucVertGridInd.first =  3aucVertGrid.second  = 2
+aucVertID = 721
+aucVertGridInd.first =  18aucVertGrid.second  = 1
+circleTime = 35
+aucNeer = 1
+aucVertID = 761
+aucVertGridInd.first =  19aucVertGrid.second  = 1
+circleTime = 36
+aucNeer = 7
+aucVertID = 380
+aucVertGridInd.first =  9aucVertGrid.second  = 20
+circleTime = 37
+aucNeer = 6
+aucVertID = 719
+aucVertGridInd.first =  17aucVertGrid.second  = 39
 circleTime = 38
-aucNeer = 2
-aucVertID = 62
-aucVertGridInd.first =  3aucVertGrid.second  = 2
+aucNeer = 0
+aucVertID = 277
+aucVertGridInd.first =  6aucVertGrid.second  = 37
 circleTime = 39
-aucNeer = 0
-aucVertID = 62
-aucVertGridInd.first =  3aucVertGrid.second  = 2
+aucNeer = 6
+aucVertID = 759
+aucVertGridInd.first =  18aucVertGrid.second  = 39
 circleTime = 40
-aucNeer = 0
-aucVertID = 62
-aucVertGridInd.first =  3aucVertGrid.second  = 2
+aucNeer = 5
+aucVertID = 74
+aucVertGridInd.first =  1aucVertGrid.second  = 34
 circleTime = 41
-aucNeer = 4
-aucVertID = 59
-aucVertGridInd.first =  2aucVertGrid.second  = 19
+aucNeer = 1
+aucVertID = 801
+aucVertGridInd.first =  20aucVertGrid.second  = 1
 circleTime = 42
-aucNeer = 0
-aucVertID = 59
-aucVertGridInd.first =  2aucVertGrid.second  = 19
+aucNeer = 1
+aucVertID = 800
+aucVertGridInd.first =  20aucVertGrid.second  = 0
 circleTime = 43
-aucNeer = 3
-aucVertID = 82
-aucVertGridInd.first =  4aucVertGrid.second  = 2
+aucNeer = 7
+aucVertID = 340
+aucVertGridInd.first =  8aucVertGrid.second  = 20
 circleTime = 44
-aucNeer = 3
-aucVertID = 3
-aucVertGridInd.first =  0aucVertGrid.second  = 3
+aucNeer = 7
+aucVertID = 300
+aucVertGridInd.first =  7aucVertGrid.second  = 20
 circleTime = 45
-aucNeer = 0
-aucVertID = 3
-aucVertGridInd.first =  0aucVertGrid.second  = 3
+aucNeer = 5
+aucVertID = 32
+aucVertGridInd.first =  0aucVertGrid.second  = 32
 circleTime = 46
-aucNeer = 3
-aucVertID = 23
-aucVertGridInd.first =  1aucVertGrid.second  = 3
+aucNeer = 6
+aucVertID = 799
+aucVertGridInd.first =  19aucVertGrid.second  = 39
 circleTime = 47
-aucNeer = 4
-aucVertID = 79
-aucVertGridInd.first =  3aucVertGrid.second  = 19
+aucNeer = 1
+aucVertID = 840
+aucVertGridInd.first =  21aucVertGrid.second  = 0
 circleTime = 48
 aucNeer = 1
-aucVertID = 79
-aucVertGridInd.first =  3aucVertGrid.second  = 19
+aucVertID = 560
+aucVertGridInd.first =  14aucVertGrid.second  = 0
 circleTime = 49
-aucNeer = 4
-aucVertID = 99
-aucVertGridInd.first =  4aucVertGrid.second  = 19
+aucNeer = 0
+aucVertID = 237
+aucVertGridInd.first =  5aucVertGrid.second  = 37
 circleTime = 50
 aucNeer = 4
-aucVertID = 18
-aucVertGridInd.first =  0aucVertGrid.second  = 18
+aucVertID = 281
+aucVertGridInd.first =  7aucVertGrid.second  = 1
 circleTime = 51
-aucNeer = 0
-aucVertID = 18
-aucVertGridInd.first =  0aucVertGrid.second  = 18
+aucNeer = 1
+aucVertID = 802
+aucVertGridInd.first =  20aucVertGrid.second  = 2
 circleTime = 52
-aucNeer = 3
-aucVertID = 63
-aucVertGridInd.first =  3aucVertGrid.second  = 3
+aucNeer = 0
+aucVertID = 238
+aucVertGridInd.first =  5aucVertGrid.second  = 38
 circleTime = 53
 aucNeer = 0
-aucVertID = 63
-aucVertGridInd.first =  3aucVertGrid.second  = 3
+aucVertID = 239
+aucVertGridInd.first =  5aucVertGrid.second  = 39
 circleTime = 54
-aucNeer = 1
-aucVertID = 63
-aucVertGridInd.first =  3aucVertGrid.second  = 3
+aucNeer = 5
+aucVertID = 73
+aucVertGridInd.first =  1aucVertGrid.second  = 33
 circleTime = 55
 aucNeer = 3
-aucVertID = 4
-aucVertGridInd.first =  0aucVertGrid.second  = 4
+aucVertID = 1310
+aucVertGridInd.first =  32aucVertGrid.second  = 30
 circleTime = 56
-aucNeer = 1
-aucVertID = 4
-aucVertGridInd.first =  0aucVertGrid.second  = 4
+aucNeer = 7
+aucVertID = 260
+aucVertGridInd.first =  6aucVertGrid.second  = 20
 circleTime = 57
-aucNeer = 4
-aucVertID = 58
-aucVertGridInd.first =  2aucVertGrid.second  = 18
-circleTime = 58
 aucNeer = 2
-aucVertID = 58
-aucVertGridInd.first =  2aucVertGrid.second  = 18
-circleTime = 59
-aucNeer = 3
-aucVertID = 24
-aucVertGridInd.first =  1aucVertGrid.second  = 4
-circleTime = 60
+aucVertID = 1306
+aucVertGridInd.first =  32aucVertGrid.second  = 26
+circleTime = 58
 aucNeer = 1
-aucVertID = 24
-aucVertGridInd.first =  1aucVertGrid.second  = 4
+aucVertID = 842
+aucVertGridInd.first =  21aucVertGrid.second  = 2
+circleTime = 59
+aucNeer = 0
+aucVertID = 199
+aucVertGridInd.first =  4aucVertGrid.second  = 39
+circleTime = 60
+aucNeer = 6
+aucVertID = 839
+aucVertGridInd.first =  20aucVertGrid.second  = 39
 circleTime = 61
-aucNeer = 4
-aucVertID = 98
-aucVertGridInd.first =  4aucVertGrid.second  = 18
+aucNeer = 7
+aucVertID = 259
+aucVertGridInd.first =  6aucVertGrid.second  = 19
 circleTime = 62
-aucNeer = 4
-aucVertID = 78
-aucVertGridInd.first =  3aucVertGrid.second  = 18
+aucNeer = 3
+aucVertID = 1350
+aucVertGridInd.first =  33aucVertGrid.second  = 30
 circleTime = 63
-aucNeer = 3
-aucVertID = 64
-aucVertGridInd.first =  3aucVertGrid.second  = 4
+aucNeer = 6
+aucVertID = 879
+aucVertGridInd.first =  21aucVertGrid.second  = 39
 circleTime = 64
-aucNeer = 3
-aucVertID = 84
-aucVertGridInd.first =  4aucVertGrid.second  = 4
+aucNeer = 5
+aucVertID = 72
+aucVertGridInd.first =  1aucVertGrid.second  = 32
 circleTime = 65
-aucNeer = 3
-aucVertID = 5
-aucVertGridInd.first =  0aucVertGrid.second  = 5
+aucNeer = 1
+aucVertID = 882
+aucVertGridInd.first =  22aucVertGrid.second  = 2
 circleTime = 66
 aucNeer = 1
-aucVertID = 5
-aucVertGridInd.first =  0aucVertGrid.second  = 5
+aucVertID = 881
+aucVertGridInd.first =  22aucVertGrid.second  = 1
 circleTime = 67
-aucNeer = 2
-aucVertID = 5
-aucVertGridInd.first =  0aucVertGrid.second  = 5
-circleTime = 68
-aucNeer = 2
-aucVertID = 5
-aucVertGridInd.first =  0aucVertGrid.second  = 5
-circleTime = 69
 aucNeer = 3
-aucVertID = 25
-aucVertGridInd.first =  1aucVertGrid.second  = 5
-circleTime = 70
+aucVertID = 1390
+aucVertGridInd.first =  34aucVertGrid.second  = 30
+circleTime = 68
 aucNeer = 4
-aucVertID = 17
-aucVertGridInd.first =  0aucVertGrid.second  = 17
+aucVertID = 241
+aucVertGridInd.first =  6aucVertGrid.second  = 1
+circleTime = 69
+aucNeer = 0
+aucVertID = 159
+aucVertGridInd.first =  3aucVertGrid.second  = 39
+circleTime = 70
+aucNeer = 1
+aucVertID = 922
+aucVertGridInd.first =  23aucVertGrid.second  = 2
 circleTime = 71
 aucNeer = 3
-aucVertID = 45
-aucVertGridInd.first =  2aucVertGrid.second  = 5
+aucVertID = 1391
+aucVertGridInd.first =  34aucVertGrid.second  = 31
 circleTime = 72
-aucNeer = 0
-aucVertID = 45
-aucVertGridInd.first =  2aucVertGrid.second  = 5
+aucNeer = 4
+aucVertID = 240
+aucVertGridInd.first =  6aucVertGrid.second  = 0
 circleTime = 73
 aucNeer = 2
-aucVertID = 45
-aucVertGridInd.first =  2aucVertGrid.second  = 5
+aucVertID = 1346
+aucVertGridInd.first =  33aucVertGrid.second  = 26
 circleTime = 74
-aucNeer = 2
-aucVertID = 45
-aucVertGridInd.first =  2aucVertGrid.second  = 5
+aucNeer = 4
+aucVertID = 200
+aucVertGridInd.first =  5aucVertGrid.second  = 0
 circleTime = 75
-aucNeer = 3
-aucVertID = 85
-aucVertGridInd.first =  4aucVertGrid.second  = 5
+aucNeer = 0
+aucVertID = 119
+aucVertGridInd.first =  2aucVertGrid.second  = 39
 circleTime = 76
-aucNeer = 0
-aucVertID = 85
-aucVertGridInd.first =  4aucVertGrid.second  = 5
+aucNeer = 5
+aucVertID = 71
+aucVertGridInd.first =  1aucVertGrid.second  = 31
 circleTime = 77
-aucNeer = 4
-aucVertID = 97
-aucVertGridInd.first =  4aucVertGrid.second  = 17
+aucNeer = 3
+aucVertID = 1431
+aucVertGridInd.first =  35aucVertGrid.second  = 31
 circleTime = 78
-aucNeer = 4
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 1
+aucVertID = 962
+aucVertGridInd.first =  24aucVertGrid.second  = 2
 circleTime = 79
-aucNeer = 0
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 2
+aucVertID = 1386
+aucVertGridInd.first =  34aucVertGrid.second  = 26
 circleTime = 80
-aucNeer = 1
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 7
+aucVertID = 219
+aucVertGridInd.first =  5aucVertGrid.second  = 19
 circleTime = 81
-aucNeer = 2
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 0
+aucVertID = 79
+aucVertGridInd.first =  1aucVertGrid.second  = 39
 circleTime = 82
-aucNeer = 2
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 4
+aucVertID = 160
+aucVertGridInd.first =  4aucVertGrid.second  = 0
 circleTime = 83
-aucNeer = 0
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 1
+aucVertID = 961
+aucVertGridInd.first =  24aucVertGrid.second  = 1
 circleTime = 84
-aucNeer = 0
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 7
+aucVertID = 179
+aucVertGridInd.first =  4aucVertGrid.second  = 19
 circleTime = 85
-aucNeer = 0
-aucVertID = 16
-aucVertGridInd.first =  0aucVertGrid.second  = 16
+aucNeer = 2
+aucVertID = 1426
+aucVertGridInd.first =  35aucVertGrid.second  = 26
 circleTime = 86
-aucNeer = 4
-aucVertID = 96
-aucVertGridInd.first =  4aucVertGrid.second  = 16
+aucNeer = 7
+aucVertID = 139
+aucVertGridInd.first =  3aucVertGrid.second  = 19
 circleTime = 87
-aucNeer = 1
-aucVertID = 96
-aucVertGridInd.first =  4aucVertGrid.second  = 16
+aucNeer = 7
+aucVertID = 99
+aucVertGridInd.first =  2aucVertGrid.second  = 19
 circleTime = 88
-aucNeer = 1
-aucVertID = 96
-aucVertGridInd.first =  4aucVertGrid.second  = 16
+aucNeer = 2
+aucVertID = 1466
+aucVertGridInd.first =  36aucVertGrid.second  = 26
 circleTime = 89
-aucNeer = 4
-aucVertID = 95
-aucVertGridInd.first =  4aucVertGrid.second  = 15
+aucNeer = 1
+aucVertID = 960
+aucVertGridInd.first =  24aucVertGrid.second  = 0
 circleTime = 90
 aucNeer = 0
-aucVertID = 95
-aucVertGridInd.first =  4aucVertGrid.second  = 15
+aucVertID = 39
+aucVertGridInd.first =  0aucVertGrid.second  = 39
 circleTime = 91
-aucNeer = 3
-aucVertID = 65
-aucVertGridInd.first =  3aucVertGrid.second  = 5
+aucNeer = 6
+aucVertID = 919
+aucVertGridInd.first =  22aucVertGrid.second  = 39
 circleTime = 92
-aucNeer = 2
-aucVertID = 65
-aucVertGridInd.first =  3aucVertGrid.second  = 5
+aucNeer = 1
+aucVertID = 1001
+aucVertGridInd.first =  25aucVertGrid.second  = 1
 circleTime = 93
-aucNeer = 2
-aucVertID = 65
-aucVertGridInd.first =  3aucVertGrid.second  = 5
+aucNeer = 3
+aucVertID = 1471
+aucVertGridInd.first =  36aucVertGrid.second  = 31
 circleTime = 94
-aucNeer = 3
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 7
+aucVertID = 59
+aucVertGridInd.first =  1aucVertGrid.second  = 19
 circleTime = 95
-aucNeer = 2
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 6
+aucVertID = 959
+aucVertGridInd.first =  23aucVertGrid.second  = 39
 circleTime = 96
-aucNeer = 2
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 7
+aucVertID = 19
+aucVertGridInd.first =  0aucVertGrid.second  = 19
 circleTime = 97
-aucNeer = 2
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 5
+aucVertID = 112
+aucVertGridInd.first =  2aucVertGrid.second  = 32
 circleTime = 98
-aucNeer = 2
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 4
+aucVertID = 120
+aucVertGridInd.first =  3aucVertGrid.second  = 0
 circleTime = 99
-aucNeer = 2
-aucVertID = 86
-aucVertGridInd.first =  4aucVertGrid.second  = 6
+aucNeer = 3
+aucVertID = 1511
+aucVertGridInd.first =  37aucVertGrid.second  = 31
 circleTime = 100
-aucNeer = 3
-aucVertID = 46
-aucVertGridInd.first =  2aucVertGrid.second  = 6
+aucNeer = 5
+aucVertID = 70
+aucVertGridInd.first =  1aucVertGrid.second  = 30
 circleTime = 101
-aucNeer = 3
-aucVertID = 66
-aucVertGridInd.first =  3aucVertGrid.second  = 6
+aucNeer = 1
+aucVertID = 1041
+aucVertGridInd.first =  26aucVertGrid.second  = 1
 circleTime = 102
 aucNeer = 3
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucVertID = 1551
+aucVertGridInd.first =  38aucVertGrid.second  = 31
 circleTime = 103
-aucNeer = 1
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 6
+aucVertID = 999
+aucVertGridInd.first =  24aucVertGrid.second  = 39
 circleTime = 104
-aucNeer = 1
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 0
+aucVertID = 78
+aucVertGridInd.first =  1aucVertGrid.second  = 38
 circleTime = 105
-aucNeer = 1
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 0
+aucVertID = 198
+aucVertGridInd.first =  4aucVertGrid.second  = 38
 circleTime = 106
-aucNeer = 0
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 2
+aucVertID = 1506
+aucVertGridInd.first =  37aucVertGrid.second  = 26
 circleTime = 107
-aucNeer = 0
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 2
+aucVertID = 1546
+aucVertGridInd.first =  38aucVertGrid.second  = 26
 circleTime = 108
-aucNeer = 2
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 7
+aucVertID = 20
+aucVertGridInd.first =  0aucVertGrid.second  = 20
 circleTime = 109
-aucNeer = 0
-aucVertID = 47
-aucVertGridInd.first =  2aucVertGrid.second  = 7
+aucNeer = 7
+aucVertID = 21
+aucVertGridInd.first =  0aucVertGrid.second  = 21
 circleTime = 110
-aucNeer = 3
-aucVertID = 27
-aucVertGridInd.first =  1aucVertGrid.second  = 7
+aucNeer = 7
+aucVertID = 22
+aucVertGridInd.first =  0aucVertGrid.second  = 22
 circleTime = 111
-aucNeer = 0
-aucVertID = 27
-aucVertGridInd.first =  1aucVertGrid.second  = 7
+aucNeer = 7
+aucVertID = 23
+aucVertGridInd.first =  0aucVertGrid.second  = 23
 circleTime = 112
-aucNeer = 0
-aucVertID = 27
-aucVertGridInd.first =  1aucVertGrid.second  = 7
+aucNeer = 1
+aucVertID = 1040
+aucVertGridInd.first =  26aucVertGrid.second  = 0
 circleTime = 113
-aucNeer = 4
-aucVertID = 55
-aucVertGridInd.first =  2aucVertGrid.second  = 15
+aucNeer = 7
+aucVertID = 60
+aucVertGridInd.first =  1aucVertGrid.second  = 20
 circleTime = 114
-aucNeer = 4
-aucVertID = 75
-aucVertGridInd.first =  3aucVertGrid.second  = 15
-circleTime = 115
-aucNeer = 2
-aucVertID = 75
-aucVertGridInd.first =  3aucVertGrid.second  = 15
-circleTime = 116
-aucNeer = 0
-aucVertID = 75
-aucVertGridInd.first =  3aucVertGrid.second  = 15
-circleTime = 117
-aucNeer = 0
-aucVertID = 75
-aucVertGridInd.first =  3aucVertGrid.second  = 15
-circleTime = 118
 aucNeer = 3
-aucVertID = 7
-aucVertGridInd.first =  0aucVertGrid.second  = 7
+aucVertID = 1591
+aucVertGridInd.first =  39aucVertGrid.second  = 31
+circleTime = 115
+aucNeer = 4
+aucVertID = 121
+aucVertGridInd.first =  3aucVertGrid.second  = 1
+circleTime = 116
+aucNeer = 2
+aucVertID = 1586
+aucVertGridInd.first =  39aucVertGrid.second  = 26
+circleTime = 117
+aucNeer = 6
+aucVertID = 1039
+aucVertGridInd.first =  25aucVertGrid.second  = 39
+circleTime = 118
+aucNeer = 6
+aucVertID = 1079
+aucVertGridInd.first =  26aucVertGrid.second  = 39
 circleTime = 119
 aucNeer = 0
-aucVertID = 7
-aucVertGridInd.first =  0aucVertGrid.second  = 7
+aucVertID = 279
+aucVertGridInd.first =  6aucVertGrid.second  = 39
 circleTime = 120
-aucNeer = 2
-aucVertID = 7
-aucVertGridInd.first =  0aucVertGrid.second  = 7
+aucNeer = 0
+aucVertID = 319
+aucVertGridInd.first =  7aucVertGrid.second  = 39
 circleTime = 121
-aucNeer = 1
-aucVertID = 7
-aucVertGridInd.first =  0aucVertGrid.second  = 7
+aucNeer = 7
+aucVertID = 61
+aucVertGridInd.first =  1aucVertGrid.second  = 21
 circleTime = 122
-aucNeer = 4
-aucVertID = 94
-aucVertGridInd.first =  4aucVertGrid.second  = 14
+aucNeer = 7
+aucVertID = 62
+aucVertGridInd.first =  1aucVertGrid.second  = 22
 circleTime = 123
-aucNeer = 2
-aucVertID = 94
-aucVertGridInd.first =  4aucVertGrid.second  = 14
+aucNeer = 1
+aucVertID = 1080
+aucVertGridInd.first =  27aucVertGrid.second  = 0
 circleTime = 124
-aucNeer = 4
-aucVertID = 13
-aucVertGridInd.first =  0aucVertGrid.second  = 13
+aucNeer = 1
+aucVertID = 1120
+aucVertGridInd.first =  28aucVertGrid.second  = 0
 circleTime = 125
-aucNeer = 4
-aucVertID = 33
-aucVertGridInd.first =  1aucVertGrid.second  = 13
+aucNeer = 5
+aucVertID = 30
+aucVertGridInd.first =  0aucVertGrid.second  = 30
 circleTime = 126
 aucNeer = 3
-aucVertID = 67
-aucVertGridInd.first =  3aucVertGrid.second  = 7
+aucVertID = 1592
+aucVertGridInd.first =  39aucVertGrid.second  = 32
 circleTime = 127
-aucNeer = 4
-aucVertID = 93
-aucVertGridInd.first =  4aucVertGrid.second  = 13
+aucNeer = 0
+aucVertID = 359
+aucVertGridInd.first =  8aucVertGrid.second  = 39
 circleTime = 128
-aucNeer = 2
-aucVertID = 93
-aucVertGridInd.first =  4aucVertGrid.second  = 13
+aucNeer = 0
+aucVertID = 197
+aucVertGridInd.first =  4aucVertGrid.second  = 37
 circleTime = 129
-aucNeer = 1
-aucVertID = 93
-aucVertGridInd.first =  4aucVertGrid.second  = 13
+aucNeer = 5
+aucVertID = 29
+aucVertGridInd.first =  0aucVertGrid.second  = 29
 circleTime = 130
-aucNeer = 4
-aucVertID = 53
-aucVertGridInd.first =  2aucVertGrid.second  = 13
-circleTime = 131
-aucNeer = 1
-aucVertID = 53
-aucVertGridInd.first =  2aucVertGrid.second  = 13
-circleTime = 132
-aucNeer = 3
-aucVertID = 8
-aucVertGridInd.first =  0aucVertGrid.second  = 8
-circleTime = 133
-aucNeer = 4
-aucVertID = 73
-aucVertGridInd.first =  3aucVertGrid.second  = 13
-circleTime = 134
-aucNeer = 3
+aucNeer = 5
 aucVertID = 28
-aucVertGridInd.first =  1aucVertGrid.second  = 8
+aucVertGridInd.first =  0aucVertGrid.second  = 28
+circleTime = 131
+aucNeer = 6
+aucVertID = 1119
+aucVertGridInd.first =  27aucVertGrid.second  = 39
+circleTime = 132
+aucNeer = 4
+aucVertID = 161
+aucVertGridInd.first =  4aucVertGrid.second  = 1
+circleTime = 133
+aucNeer = 5
+aucVertID = 27
+aucVertGridInd.first =  0aucVertGrid.second  = 27
+circleTime = 134
+aucNeer = 6
+aucVertID = 1159
+aucVertGridInd.first =  28aucVertGrid.second  = 39
 circleTime = 135
-aucNeer = 3
-aucVertID = 48
-aucVertGridInd.first =  2aucVertGrid.second  = 8
+aucNeer = 2
+aucVertID = 1587
+aucVertGridInd.first =  39aucVertGrid.second  = 27
 circleTime = 136
-aucNeer = 1
-aucVertID = 48
-aucVertGridInd.first =  2aucVertGrid.second  = 8
+aucNeer = 4
+aucVertID = 122
+aucVertGridInd.first =  3aucVertGrid.second  = 2
 circleTime = 137
-aucNeer = 2
-aucVertID = 48
-aucVertGridInd.first =  2aucVertGrid.second  = 8
-circleTime = 138
-aucNeer = 4
-aucVertID = 12
-aucVertGridInd.first =  0aucVertGrid.second  = 12
-circleTime = 139
-aucNeer = 4
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 140
-aucNeer = 1
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 141
-aucNeer = 2
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 142
-aucNeer = 2
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 143
-aucNeer = 0
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 144
-aucNeer = 0
-aucVertID = 92
-aucVertGridInd.first =  4aucVertGrid.second  = 12
-circleTime = 145
-aucNeer = 4
-aucVertID = 32
-aucVertGridInd.first =  1aucVertGrid.second  = 12
-circleTime = 146
 aucNeer = 3
-aucVertID = 68
-aucVertGridInd.first =  3aucVertGrid.second  = 8
+aucVertID = 1593
+aucVertGridInd.first =  39aucVertGrid.second  = 33
+circleTime = 138
+aucNeer = 5
+aucVertID = 69
+aucVertGridInd.first =  1aucVertGrid.second  = 29
+circleTime = 139
+aucNeer = 3
+aucVertID = 1594
+aucVertGridInd.first =  39aucVertGrid.second  = 34
+circleTime = 140
+aucNeer = 7
+aucVertID = 63
+aucVertGridInd.first =  1aucVertGrid.second  = 23
+circleTime = 141
+aucNeer = 5
+aucVertID = 111
+aucVertGridInd.first =  2aucVertGrid.second  = 31
+circleTime = 142
+aucNeer = 0
+aucVertID = 157
+aucVertGridInd.first =  3aucVertGrid.second  = 37
+circleTime = 143
+aucNeer = 3
+aucVertID = 1595
+aucVertGridInd.first =  39aucVertGrid.second  = 35
+circleTime = 144
+aucNeer = 4
+aucVertID = 82
+aucVertGridInd.first =  2aucVertGrid.second  = 2
+circleTime = 145
+aucNeer = 3
+aucVertID = 1596
+aucVertGridInd.first =  39aucVertGrid.second  = 36
+circleTime = 146
+aucNeer = 4
+aucVertID = 42
+aucVertGridInd.first =  1aucVertGrid.second  = 2
 circleTime = 147
-aucNeer = 4
-aucVertID = 72
-aucVertGridInd.first =  3aucVertGrid.second  = 12
+aucNeer = 6
+aucVertID = 1199
+aucVertGridInd.first =  29aucVertGrid.second  = 39
 circleTime = 148
-aucNeer = 1
-aucVertID = 72
-aucVertGridInd.first =  3aucVertGrid.second  = 12
-circleTime = 149
-aucNeer = 0
-aucVertID = 72
-aucVertGridInd.first =  3aucVertGrid.second  = 12
-circleTime = 150
-aucNeer = 0
-aucVertID = 72
-aucVertGridInd.first =  3aucVertGrid.second  = 12
-circleTime = 151
 aucNeer = 4
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucVertID = 41
+aucVertGridInd.first =  1aucVertGrid.second  = 1
+circleTime = 149
+aucNeer = 7
+aucVertID = 100
+aucVertGridInd.first =  2aucVertGrid.second  = 20
+circleTime = 150
+aucNeer = 7
+aucVertID = 64
+aucVertGridInd.first =  1aucVertGrid.second  = 24
+circleTime = 151
+aucNeer = 5
+aucVertID = 152
+aucVertGridInd.first =  3aucVertGrid.second  = 32
 circleTime = 152
-aucNeer = 2
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucNeer = 4
+aucVertID = 40
+aucVertGridInd.first =  1aucVertGrid.second  = 0
 circleTime = 153
 aucNeer = 1
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucVertID = 1160
+aucVertGridInd.first =  29aucVertGrid.second  = 0
 circleTime = 154
-aucNeer = 2
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
-circleTime = 155
 aucNeer = 0
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucVertID = 399
+aucVertGridInd.first =  9aucVertGrid.second  = 39
+circleTime = 155
+aucNeer = 4
+aucVertID = 0
+aucVertGridInd.first =  0aucVertGrid.second  = 0
 circleTime = 156
-aucNeer = 1
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucNeer = 2
+aucVertID = 1588
+aucVertGridInd.first =  39aucVertGrid.second  = 28
 circleTime = 157
-aucNeer = 1
-aucVertID = 11
-aucVertGridInd.first =  0aucVertGrid.second  = 11
+aucNeer = 0
+aucVertID = 439
+aucVertGridInd.first =  10aucVertGrid.second  = 39
 circleTime = 158
-aucNeer = 3
-aucVertID = 88
-aucVertGridInd.first =  4aucVertGrid.second  = 8
+aucNeer = 5
+aucVertID = 109
+aucVertGridInd.first =  2aucVertGrid.second  = 29
 circleTime = 159
 aucNeer = 2
-aucVertID = 88
-aucVertGridInd.first =  4aucVertGrid.second  = 8
+aucVertID = 1589
+aucVertGridInd.first =  39aucVertGrid.second  = 29
 circleTime = 160
-aucNeer = 0
-aucVertID = 88
-aucVertGridInd.first =  4aucVertGrid.second  = 8
+aucNeer = 7
+aucVertID = 138
+aucVertGridInd.first =  3aucVertGrid.second  = 18
 circleTime = 161
-aucNeer = 0
-aucVertID = 88
-aucVertGridInd.first =  4aucVertGrid.second  = 8
+aucNeer = 4
+aucVertID = 1
+aucVertGridInd.first =  0aucVertGrid.second  = 1
 circleTime = 162
-aucNeer = 4
-aucVertID = 31
-aucVertGridInd.first =  1aucVertGrid.second  = 11
+aucNeer = 1
+aucVertID = 1200
+aucVertGridInd.first =  30aucVertGrid.second  = 0
 circleTime = 163
-aucNeer = 1
-aucVertID = 31
-aucVertGridInd.first =  1aucVertGrid.second  = 11
+aucNeer = 7
+aucVertID = 137
+aucVertGridInd.first =  3aucVertGrid.second  = 17
 circleTime = 164
-aucNeer = 4
-aucVertID = 71
-aucVertGridInd.first =  3aucVertGrid.second  = 11
+aucNeer = 1
+aucVertID = 1240
+aucVertGridInd.first =  31aucVertGrid.second  = 0
 circleTime = 165
-aucNeer = 4
-aucVertID = 51
-aucVertGridInd.first =  2aucVertGrid.second  = 11
+aucNeer = 0
+aucVertID = 479
+aucVertGridInd.first =  11aucVertGrid.second  = 39
 circleTime = 166
-aucNeer = 4
-aucVertID = 10
-aucVertGridInd.first =  0aucVertGrid.second  = 10
+aucNeer = 2
+aucVertID = 1590
+aucVertGridInd.first =  39aucVertGrid.second  = 30
 circleTime = 167
-aucNeer = 0
-aucVertID = 10
-aucVertGridInd.first =  0aucVertGrid.second  = 10
-circleTime = 168
-aucNeer = 1
-aucVertID = 10
-aucVertGridInd.first =  0aucVertGrid.second  = 10
-circleTime = 169
 aucNeer = 4
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
-circleTime = 170
-aucNeer = 1
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
-circleTime = 171
+aucVertID = 2
+aucVertGridInd.first =  0aucVertGrid.second  = 2
+circleTime = 168
+aucNeer = 4
+aucVertID = 3
+aucVertGridInd.first =  0aucVertGrid.second  = 3
+circleTime = 169
 aucNeer = 0
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
+aucVertID = 358
+aucVertGridInd.first =  8aucVertGrid.second  = 38
+circleTime = 170
+aucNeer = 4
+aucVertID = 43
+aucVertGridInd.first =  1aucVertGrid.second  = 3
+circleTime = 171
+aucNeer = 1
+aucVertID = 1280
+aucVertGridInd.first =  32aucVertGrid.second  = 0
 circleTime = 172
-aucNeer = 2
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
+aucNeer = 6
+aucVertID = 1239
+aucVertGridInd.first =  30aucVertGrid.second  = 39
 circleTime = 173
-aucNeer = 2
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
+aucNeer = 4
+aucVertID = 4
+aucVertGridInd.first =  0aucVertGrid.second  = 4
 circleTime = 174
-aucNeer = 2
-aucVertID = 30
-aucVertGridInd.first =  1aucVertGrid.second  = 10
+aucNeer = 1
+aucVertID = 1320
+aucVertGridInd.first =  33aucVertGrid.second  = 0
 circleTime = 175
-aucNeer = 3
-aucVertID = 9
-aucVertGridInd.first =  0aucVertGrid.second  = 9
+aucNeer = 0
+aucVertID = 519
+aucVertGridInd.first =  12aucVertGrid.second  = 39
 circleTime = 176
-aucNeer = 3
-aucVertID = 29
-aucVertGridInd.first =  1aucVertGrid.second  = 9
+aucNeer = 2
+aucVertID = 1585
+aucVertGridInd.first =  39aucVertGrid.second  = 25
 circleTime = 177
 aucNeer = 3
-aucVertID = 49
-aucVertGridInd.first =  2aucVertGrid.second  = 9
+aucVertID = 1597
+aucVertGridInd.first =  39aucVertGrid.second  = 37
 circleTime = 178
-aucNeer = 0
-aucVertID = 49
-aucVertGridInd.first =  2aucVertGrid.second  = 9
+aucNeer = 1
+aucVertID = 1360
+aucVertGridInd.first =  34aucVertGrid.second  = 0
 circleTime = 179
-aucNeer = 4
-aucVertID = 29
-aucVertGridInd.first =  1aucVertGrid.second  = 9
+aucNeer = 2
+aucVertID = 1584
+aucVertGridInd.first =  39aucVertGrid.second  = 24
 circleTime = 180
-aucNeer = 3
-aucVertID = 29
-aucVertGridInd.first =  1aucVertGrid.second  = 9
+aucNeer = 4
+aucVertID = 162
+aucVertGridInd.first =  4aucVertGrid.second  = 2
 circleTime = 181
 aucNeer = 4
-aucVertID = 29
-aucVertGridInd.first =  1aucVertGrid.second  = 9
+aucVertID = 44
+aucVertGridInd.first =  1aucVertGrid.second  = 4
 circleTime = 182
+aucNeer = 7
+aucVertID = 97
+aucVertGridInd.first =  2aucVertGrid.second  = 17
+circleTime = 183
+aucNeer = 2
+aucVertID = 1583
+aucVertGridInd.first =  39aucVertGrid.second  = 23
+circleTime = 184
+aucNeer = 2
+aucVertID = 1582
+aucVertGridInd.first =  39aucVertGrid.second  = 22
+circleTime = 185
+aucNeer = 6
+aucVertID = 1279
+aucVertGridInd.first =  31aucVertGrid.second  = 39
+circleTime = 186
+aucNeer = 0
+aucVertID = 196
+aucVertGridInd.first =  4aucVertGrid.second  = 36
+circleTime = 187
+aucNeer = 1
+aucVertID = 1400
+aucVertGridInd.first =  35aucVertGrid.second  = 0
+circleTime = 188
+aucNeer = 2
+aucVertID = 1581
+aucVertGridInd.first =  39aucVertGrid.second  = 21
+circleTime = 189
+aucNeer = 6
+aucVertID = 1319
+aucVertGridInd.first =  32aucVertGrid.second  = 39
+circleTime = 190
+aucNeer = 6
+aucVertID = 1359
+aucVertGridInd.first =  33aucVertGrid.second  = 39
+circleTime = 191
+aucNeer = 2
+aucVertID = 1580
+aucVertGridInd.first =  39aucVertGrid.second  = 20
+circleTime = 192
+aucNeer = 7
+aucVertID = 57
+aucVertGridInd.first =  1aucVertGrid.second  = 17
+circleTime = 193
+aucNeer = 7
+aucVertID = 17
+aucVertGridInd.first =  0aucVertGrid.second  = 17
+circleTime = 194
+aucNeer = 0
+aucVertID = 398
+aucVertGridInd.first =  9aucVertGrid.second  = 38
+circleTime = 195
+aucNeer = 6
+aucVertID = 1399
+aucVertGridInd.first =  34aucVertGrid.second  = 39
+circleTime = 196
+aucNeer = 7
+aucVertID = 16
+aucVertGridInd.first =  0aucVertGrid.second  = 16
+circleTime = 197
+aucNeer = 5
+aucVertID = 192
+aucVertGridInd.first =  4aucVertGrid.second  = 32
+circleTime = 198
+aucNeer = 1
+aucVertID = 1401
+aucVertGridInd.first =  35aucVertGrid.second  = 1
+circleTime = 199
+aucNeer = 2
+aucVertID = 1579
+aucVertGridInd.first =  39aucVertGrid.second  = 19
+circleTime = 200
 aucNeer = 4
-aucVertID = 29
-aucVertGridInd.first =  1aucVertGrid.second  = 9
-rob0	set size = 1
-rob1	set size = 1
-rob2	set size = 1
-rob3	set size = 41
-rob4	set size = 39
-max  = 41 min = 1
-allNumSize = 83
-robNum 5
-row0 8
-col0 3
-row1 7
-col1 15
-row2 16
-col2 10
-row3 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4
-col3 0 1 2 3 4 5 7 8 9 0 1 2 3 4 5 7 8 9 0 1 2 5 6 7 8 9 0 1 2 3 4 5 6 7 8 0 2 4 5 6 8
-row4 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4 4 4
-col4 10 11 12 13 14 16 17 18 19 10 11 12 13 14 15 16 17 18 19 11 13 14 15 18 19 11 12 13 15 18 19 12 13 14 15 16 17 18 19
-neiRow0 7 8 8 9
-neiCol0 3 2 4 3
-neiRow1 6 7 7 8
-neiCol1 15 14 16 15
-neiRow2 16 17
-neiCol2 11 10
-neiRow3 0 1 5 5 5 5 5
-neiCol3 10 10 0 4 5 6 8
-neiRow4 0 1 5 5 5 5 5 5
-neiCol4 9 9 12 14 15 16 17 19
+aucVertID = 5
+aucVertGridInd.first =  0aucVertGrid.second  = 5
+circleTime = 201
+aucNeer = 6
+aucVertID = 1439
+aucVertGridInd.first =  35aucVertGrid.second  = 39
+circleTime = 202
+aucNeer = 0
+aucVertID = 559
+aucVertGridInd.first =  13aucVertGrid.second  = 39
+circleTime = 203
+aucNeer = 6
+aucVertID = 1479
+aucVertGridInd.first =  36aucVertGrid.second  = 39
+circleTime = 204
+aucNeer = 5
+aucVertID = 193
+aucVertGridInd.first =  4aucVertGrid.second  = 33
+circleTime = 205
+aucNeer = 5
+aucVertID = 194
+aucVertGridInd.first =  4aucVertGrid.second  = 34
+circleTime = 206
+aucNeer = 1
+aucVertID = 1441
+aucVertGridInd.first =  36aucVertGrid.second  = 1
+circleTime = 207
+aucNeer = 2
+aucVertID = 1578
+aucVertGridInd.first =  39aucVertGrid.second  = 18
+circleTime = 208
+aucNeer = 1
+aucVertID = 1481
+aucVertGridInd.first =  37aucVertGrid.second  = 1
+circleTime = 209
+aucNeer = 5
+aucVertID = 195
+aucVertGridInd.first =  4aucVertGrid.second  = 35
+circleTime = 210
+aucNeer = 4
+aucVertID = 123
+aucVertGridInd.first =  3aucVertGrid.second  = 3
+circleTime = 211
+aucNeer = 2
+aucVertID = 1577
+aucVertGridInd.first =  39aucVertGrid.second  = 17
+circleTime = 212
+aucNeer = 0
+aucVertID = 438
+aucVertGridInd.first =  10aucVertGrid.second  = 38
+circleTime = 213
+aucNeer = 7
+aucVertID = 15
+aucVertGridInd.first =  0aucVertGrid.second  = 15
+circleTime = 214
+aucNeer = 5
+aucVertID = 155
+aucVertGridInd.first =  3aucVertGrid.second  = 35
+circleTime = 215
+aucNeer = 0
+aucVertID = 599
+aucVertGridInd.first =  14aucVertGrid.second  = 39
+circleTime = 216
+aucNeer = 1
+aucVertID = 1480
+aucVertGridInd.first =  37aucVertGrid.second  = 0
+circleTime = 217
+aucNeer = 5
+aucVertID = 235
+aucVertGridInd.first =  5aucVertGrid.second  = 35
+circleTime = 218
+aucNeer = 7
+aucVertID = 14
+aucVertGridInd.first =  0aucVertGrid.second  = 14
+circleTime = 219
+aucNeer = 0
+aucVertID = 639
+aucVertGridInd.first =  15aucVertGrid.second  = 39
+circleTime = 220
+aucNeer = 1
+aucVertID = 1520
+aucVertGridInd.first =  38aucVertGrid.second  = 0
+circleTime = 221
+aucNeer = 3
+aucVertID = 1598
+aucVertGridInd.first =  39aucVertGrid.second  = 38
+circleTime = 222
+aucNeer = 1
+aucVertID = 1560
+aucVertGridInd.first =  39aucVertGrid.second  = 0
+circleTime = 223
+aucNeer = 1
+aucVertID = 1561
+aucVertGridInd.first =  39aucVertGrid.second  = 1
+circleTime = 224
+aucNeer = 6
+aucVertID = 1519
+aucVertGridInd.first =  37aucVertGrid.second  = 39
+circleTime = 225
+aucNeer = 5
+aucVertID = 234
+aucVertGridInd.first =  5aucVertGrid.second  = 34
+circleTime = 226
+aucNeer = 4
+aucVertID = 202
+aucVertGridInd.first =  5aucVertGrid.second  = 2
+circleTime = 227
+aucNeer = 4
+aucVertID = 84
+aucVertGridInd.first =  2aucVertGrid.second  = 4
+circleTime = 228
+aucNeer = 3
+aucVertID = 1599
+aucVertGridInd.first =  39aucVertGrid.second  = 39
+circleTime = 229
+aucNeer = 6
+aucVertID = 1559
+aucVertGridInd.first =  38aucVertGrid.second  = 39
+circleTime = 230
+aucNeer = 5
+aucVertID = 275
+aucVertGridInd.first =  6aucVertGrid.second  = 35
+circleTime = 231
+aucNeer = 0
+aucVertID = 478
+aucVertGridInd.first =  11aucVertGrid.second  = 38
+circleTime = 232
+aucNeer = 3
+aucVertID = 1558
+aucVertGridInd.first =  38aucVertGrid.second  = 38
+circleTime = 233
+aucNeer = 7
+aucVertID = 13
+aucVertGridInd.first =  0aucVertGrid.second  = 13
+circleTime = 234
+aucNeer = 0
+aucVertID = 679
+aucVertGridInd.first =  16aucVertGrid.second  = 39
+circleTime = 235
+aucNeer = 3
+aucVertID = 1557
+aucVertGridInd.first =  38aucVertGrid.second  = 37
+circleTime = 236
+aucNeer = 1
+aucVertID = 1521
+aucVertGridInd.first =  38aucVertGrid.second  = 1
+circleTime = 237
+aucNeer = 2
+aucVertID = 1576
+aucVertGridInd.first =  39aucVertGrid.second  = 16
+circleTime = 238
+aucNeer = 7
+aucVertID = 12
+aucVertGridInd.first =  0aucVertGrid.second  = 12
+circleTime = 239
+aucNeer = 5
+aucVertID = 108
+aucVertGridInd.first =  2aucVertGrid.second  = 28
+circleTime = 240
+aucNeer = 5
+aucVertID = 233
+aucVertGridInd.first =  5aucVertGrid.second  = 33
+circleTime = 241
+aucNeer = 4
+aucVertID = 45
+aucVertGridInd.first =  1aucVertGrid.second  = 5
+circleTime = 242
+aucNeer = 5
+aucVertID = 274
+aucVertGridInd.first =  6aucVertGrid.second  = 34
+circleTime = 243
+aucNeer = 0
+aucVertID = 518
+aucVertGridInd.first =  12aucVertGrid.second  = 38
+circleTime = 244
+aucNeer = 5
+aucVertID = 315
+aucVertGridInd.first =  7aucVertGrid.second  = 35
+circleTime = 245
+aucNeer = 0
+aucVertID = 558
+aucVertGridInd.first =  13aucVertGrid.second  = 38
+circleTime = 246
+aucNeer = 5
+aucVertID = 191
+aucVertGridInd.first =  4aucVertGrid.second  = 31
+circleTime = 247
+aucNeer = 3
+aucVertID = 1518
+aucVertGridInd.first =  37aucVertGrid.second  = 38
+circleTime = 248
+aucNeer = 1
+aucVertID = 1562
+aucVertGridInd.first =  39aucVertGrid.second  = 2
+circleTime = 249
+aucNeer = 1
+aucVertID = 1522
+aucVertGridInd.first =  38aucVertGrid.second  = 2
+circleTime = 250
+aucNeer = 7
+aucVertID = 11
+aucVertGridInd.first =  0aucVertGrid.second  = 11
+circleTime = 251
+aucNeer = 5
+aucVertID = 107
+aucVertGridInd.first =  2aucVertGrid.second  = 27
+circleTime = 252
+aucNeer = 0
+aucVertID = 598
+aucVertGridInd.first =  14aucVertGrid.second  = 38
+circleTime = 253
+aucNeer = 6
+aucVertID = 1478
+aucVertGridInd.first =  36aucVertGrid.second  = 38
+circleTime = 254
+aucNeer = 5
+aucVertID = 149
+aucVertGridInd.first =  3aucVertGrid.second  = 29
+circleTime = 255
+aucNeer = 7
+aucVertID = 10
+aucVertGridInd.first =  0aucVertGrid.second  = 10
+circleTime = 256
+aucNeer = 0
+aucVertID = 437
+aucVertGridInd.first =  10aucVertGrid.second  = 37
+circleTime = 257
+aucNeer = 4
+aucVertID = 321
+aucVertGridInd.first =  8aucVertGrid.second  = 1
+circleTime = 258
+aucNeer = 2
+aucVertID = 1575
+aucVertGridInd.first =  39aucVertGrid.second  = 15
+circleTime = 259
+aucNeer = 5
+aucVertID = 150
+aucVertGridInd.first =  3aucVertGrid.second  = 30
+circleTime = 260
+aucNeer = 3
+aucVertID = 1517
+aucVertGridInd.first =  37aucVertGrid.second  = 37
+circleTime = 261
+aucNeer = 4
+aucVertID = 320
+aucVertGridInd.first =  8aucVertGrid.second  = 0
+circleTime = 262
+aucNeer = 2
+aucVertID = 1574
+aucVertGridInd.first =  39aucVertGrid.second  = 14
+circleTime = 263
+aucNeer = 6
+aucVertID = 1438
+aucVertGridInd.first =  35aucVertGrid.second  = 38
+circleTime = 264
+aucNeer = 6
+aucVertID = 1437
+aucVertGridInd.first =  35aucVertGrid.second  = 37
+circleTime = 265
+aucNeer = 0
+aucVertID = 638
+aucVertGridInd.first =  15aucVertGrid.second  = 38
+circleTime = 266
+aucNeer = 5
+aucVertID = 106
+aucVertGridInd.first =  2aucVertGrid.second  = 26
+circleTime = 267
+aucNeer = 7
+aucVertID = 9
+aucVertGridInd.first =  0aucVertGrid.second  = 9
+circleTime = 268
+aucNeer = 3
+aucVertID = 1555
+aucVertGridInd.first =  38aucVertGrid.second  = 35
+circleTime = 269
+aucNeer = 3
+aucVertID = 1516
+aucVertGridInd.first =  37aucVertGrid.second  = 36
+circleTime = 270
+aucNeer = 5
+aucVertID = 66
+aucVertGridInd.first =  1aucVertGrid.second  = 26
+circleTime = 271
+aucNeer = 5
+aucVertID = 65
+aucVertGridInd.first =  1aucVertGrid.second  = 25
+circleTime = 272
+aucNeer = 1
+aucVertID = 1563
+aucVertGridInd.first =  39aucVertGrid.second  = 3
+circleTime = 273
+aucNeer = 2
+aucVertID = 1573
+aucVertGridInd.first =  39aucVertGrid.second  = 13
+circleTime = 274
+aucNeer = 4
+aucVertID = 163
+aucVertGridInd.first =  4aucVertGrid.second  = 3
+circleTime = 275
+aucNeer = 3
+aucVertID = 1554
+aucVertGridInd.first =  38aucVertGrid.second  = 34
+circleTime = 276
+aucNeer = 0
+aucVertID = 477
+aucVertGridInd.first =  11aucVertGrid.second  = 37
+circleTime = 277
+aucNeer = 6
+aucVertID = 1477
+aucVertGridInd.first =  36aucVertGrid.second  = 37
+circleTime = 278
+aucNeer = 0
+aucVertID = 517
+aucVertGridInd.first =  12aucVertGrid.second  = 37
+circleTime = 279
+aucNeer = 5
+aucVertID = 25
+aucVertGridInd.first =  0aucVertGrid.second  = 25
+circleTime = 280
+aucNeer = 4
+aucVertID = 6
+aucVertGridInd.first =  0aucVertGrid.second  = 6
+circleTime = 281
+aucNeer = 7
+aucVertID = 8
+aucVertGridInd.first =  0aucVertGrid.second  = 8
+circleTime = 282
+aucNeer = 2
+aucVertID = 1572
+aucVertGridInd.first =  39aucVertGrid.second  = 12
+circleTime = 283
+aucNeer = 7
+aucVertID = 7
+aucVertGridInd.first =  0aucVertGrid.second  = 7
+circleTime = 284
+aucNeer = 4
+aucVertID = 124
+aucVertGridInd.first =  3aucVertGrid.second  = 4
+circleTime = 285
+aucNeer = 6
+aucVertID = 1476
+aucVertGridInd.first =  36aucVertGrid.second  = 36
+circleTime = 286
+aucNeer = 2
+aucVertID = 1571
+aucVertGridInd.first =  39aucVertGrid.second  = 11
+circleTime = 287
+aucNeer = 0
+aucVertID = 557
+aucVertGridInd.first =  13aucVertGrid.second  = 37
+circleTime = 288
+aucNeer = 5
+aucVertID = 314
+aucVertGridInd.first =  7aucVertGrid.second  = 34
+circleTime = 289
+aucNeer = 3
+aucVertID = 1515
+aucVertGridInd.first =  37aucVertGrid.second  = 35
+circleTime = 290
+aucNeer = 0
+aucVertID = 436
+aucVertGridInd.first =  10aucVertGrid.second  = 36
+circleTime = 291
+aucNeer = 0
+aucVertID = 637
+aucVertGridInd.first =  15aucVertGrid.second  = 37
+circleTime = 292
+aucNeer = 4
+aucVertID = 361
+aucVertGridInd.first =  9aucVertGrid.second  = 1
+circleTime = 293
+aucNeer = 5
+aucVertID = 105
+aucVertGridInd.first =  2aucVertGrid.second  = 25
+circleTime = 294
+aucNeer = 2
+aucVertID = 1570
+aucVertGridInd.first =  39aucVertGrid.second  = 10
+circleTime = 295
+aucNeer = 7
+aucVertID = 48
+aucVertGridInd.first =  1aucVertGrid.second  = 8
+circleTime = 296
+aucNeer = 1
+aucVertID = 1523
+aucVertGridInd.first =  38aucVertGrid.second  = 3
+circleTime = 297
+aucNeer = 0
+aucVertID = 355
+aucVertGridInd.first =  8aucVertGrid.second  = 35
+circleTime = 298
+aucNeer = 4
+aucVertID = 203
+aucVertGridInd.first =  5aucVertGrid.second  = 3
+circleTime = 299
+aucNeer = 3
+aucVertID = 1553
+aucVertGridInd.first =  38aucVertGrid.second  = 33
+circleTime = 300
+aucNeer = 0
+aucVertID = 476
+aucVertGridInd.first =  11aucVertGrid.second  = 36
+circleTime = 301
+aucNeer = 1
+aucVertID = 1564
+aucVertGridInd.first =  39aucVertGrid.second  = 4
+circleTime = 302
+aucNeer = 2
+aucVertID = 1569
+aucVertGridInd.first =  39aucVertGrid.second  = 9
+circleTime = 303
+aucNeer = 4
+aucVertID = 85
+aucVertGridInd.first =  2aucVertGrid.second  = 5
+circleTime = 304
+aucNeer = 4
+aucVertID = 401
+aucVertGridInd.first =  10aucVertGrid.second  = 1
+circleTime = 305
+aucNeer = 7
+aucVertID = 88
+aucVertGridInd.first =  2aucVertGrid.second  = 8
+circleTime = 306
+aucNeer = 6
+aucVertID = 1358
+aucVertGridInd.first =  33aucVertGrid.second  = 38
+circleTime = 307
+aucNeer = 3
+aucVertID = 1552
+aucVertGridInd.first =  38aucVertGrid.second  = 32
+circleTime = 308
+aucNeer = 6
+aucVertID = 1475
+aucVertGridInd.first =  36aucVertGrid.second  = 35
+circleTime = 309
+aucNeer = 3
+aucVertID = 1513
+aucVertGridInd.first =  37aucVertGrid.second  = 33
+circleTime = 310
+aucNeer = 3
+aucVertID = 1550
+aucVertGridInd.first =  38aucVertGrid.second  = 30
+circleTime = 311
+aucNeer = 3
+aucVertID = 1512
+aucVertGridInd.first =  37aucVertGrid.second  = 32
+circleTime = 312
+aucNeer = 2
+aucVertID = 1568
+aucVertGridInd.first =  39aucVertGrid.second  = 8
+circleTime = 313
+aucNeer = 3
+aucVertID = 1473
+aucVertGridInd.first =  36aucVertGrid.second  = 33
+circleTime = 314
+aucNeer = 6
+aucVertID = 1397
+aucVertGridInd.first =  34aucVertGrid.second  = 37
+circleTime = 315
+aucNeer = 7
+aucVertID = 87
+aucVertGridInd.first =  2aucVertGrid.second  = 7
+circleTime = 316
+aucNeer = 3
+aucVertID = 1474
+aucVertGridInd.first =  36aucVertGrid.second  = 34
+circleTime = 317
+aucNeer = 5
+aucVertID = 147
+aucVertGridInd.first =  3aucVertGrid.second  = 27
+circleTime = 318
+aucNeer = 7
+aucVertID = 86
+aucVertGridInd.first =  2aucVertGrid.second  = 6
+circleTime = 319
+aucNeer = 6
+aucVertID = 1436
+aucVertGridInd.first =  35aucVertGrid.second  = 36
+circleTime = 320
+aucNeer = 4
+aucVertID = 400
+aucVertGridInd.first =  10aucVertGrid.second  = 0
+circleTime = 321
+aucNeer = 3
+aucVertID = 1433
+aucVertGridInd.first =  35aucVertGrid.second  = 33
+circleTime = 322
+aucNeer = 2
+aucVertID = 1567
+aucVertGridInd.first =  39aucVertGrid.second  = 7
+circleTime = 323
+aucNeer = 4
+aucVertID = 440
+aucVertGridInd.first =  11aucVertGrid.second  = 0
+circleTime = 324
+aucNeer = 4
+aucVertID = 480
+aucVertGridInd.first =  12aucVertGrid.second  = 0
+circleTime = 325
+aucNeer = 0
+aucVertID = 516
+aucVertGridInd.first =  12aucVertGrid.second  = 36
+circleTime = 326
+aucNeer = 3
+aucVertID = 1434
+aucVertGridInd.first =  35aucVertGrid.second  = 34
+circleTime = 327
+aucNeer = 3
+aucVertID = 1470
+aucVertGridInd.first =  36aucVertGrid.second  = 30
+circleTime = 328
+aucNeer = 0
+aucVertID = 435
+aucVertGridInd.first =  10aucVertGrid.second  = 35
+circleTime = 329
+aucNeer = 3
+aucVertID = 1469
+aucVertGridInd.first =  36aucVertGrid.second  = 29
+circleTime = 330
+aucNeer = 5
+aucVertID = 189
+aucVertGridInd.first =  4aucVertGrid.second  = 29
+circleTime = 331
+aucNeer = 6
+aucVertID = 1357
+aucVertGridInd.first =  33aucVertGrid.second  = 37
+circleTime = 332
+aucNeer = 6
+aucVertID = 1396
+aucVertGridInd.first =  34aucVertGrid.second  = 36
+circleTime = 333
+aucNeer = 7
+aucVertID = 46
+aucVertGridInd.first =  1aucVertGrid.second  = 6
+circleTime = 334
+aucNeer = 7
+aucVertID = 126
+aucVertGridInd.first =  3aucVertGrid.second  = 6
+circleTime = 335
+aucNeer = 5
+aucVertID = 146
+aucVertGridInd.first =  3aucVertGrid.second  = 26
+circleTime = 336
+aucNeer = 7
+aucVertID = 125
+aucVertGridInd.first =  3aucVertGrid.second  = 5
+circleTime = 337
+aucNeer = 7
+aucVertID = 165
+aucVertGridInd.first =  4aucVertGrid.second  = 5
+circleTime = 338
+aucNeer = 1
+aucVertID = 1442
+aucVertGridInd.first =  36aucVertGrid.second  = 2
+circleTime = 339
+aucNeer = 7
+aucVertID = 164
+aucVertGridInd.first =  4aucVertGrid.second  = 4
+circleTime = 340
+aucNeer = 0
+aucVertID = 556
+aucVertGridInd.first =  13aucVertGrid.second  = 36
+circleTime = 341
+aucNeer = 2
+aucVertID = 1566
+aucVertGridInd.first =  39aucVertGrid.second  = 6
+circleTime = 342
+aucNeer = 2
+aucVertID = 1565
+aucVertGridInd.first =  39aucVertGrid.second  = 5
+circleTime = 343
+aucNeer = 2
+aucVertID = 1525
+aucVertGridInd.first =  38aucVertGrid.second  = 5
+circleTime = 344
+aucNeer = 0
+aucVertID = 354
+aucVertGridInd.first =  8aucVertGrid.second  = 34
+circleTime = 345
+aucNeer = 2
+aucVertID = 1524
+aucVertGridInd.first =  38aucVertGrid.second  = 4
+circleTime = 346
+aucNeer = 6
+aucVertID = 1435
+aucVertGridInd.first =  35aucVertGrid.second  = 35
+circleTime = 347
+aucNeer = 1
+aucVertID = 1361
+aucVertGridInd.first =  34aucVertGrid.second  = 1
+circleTime = 348
+aucNeer = 4
+aucVertID = 520
+aucVertGridInd.first =  13aucVertGrid.second  = 0
+circleTime = 349
+aucNeer = 0
+aucVertID = 596
+aucVertGridInd.first =  14aucVertGrid.second  = 36
+circleTime = 350
+aucNeer = 4
+aucVertID = 322
+aucVertGridInd.first =  8aucVertGrid.second  = 2
+circleTime = 351
+aucNeer = 4
+aucVertID = 243
+aucVertGridInd.first =  6aucVertGrid.second  = 3
+circleTime = 352
+aucNeer = 6
+aucVertID = 1395
+aucVertGridInd.first =  34aucVertGrid.second  = 35
+circleTime = 353
+aucNeer = 1
+aucVertID = 1402
+aucVertGridInd.first =  35aucVertGrid.second  = 2
+circleTime = 354
+aucNeer = 7
+aucVertID = 50
+aucVertGridInd.first =  1aucVertGrid.second  = 10
+circleTime = 355
+aucNeer = 3
+aucVertID = 1509
+aucVertGridInd.first =  37aucVertGrid.second  = 29
+circleTime = 356
+aucNeer = 1
+aucVertID = 1443
+aucVertGridInd.first =  36aucVertGrid.second  = 3
+circleTime = 357
+aucNeer = 4
+aucVertID = 362
+aucVertGridInd.first =  9aucVertGrid.second  = 2
+circleTime = 358
+aucNeer = 6
+aucVertID = 1238
+aucVertGridInd.first =  30aucVertGrid.second  = 38
+circleTime = 359
+aucNeer = 6
+aucVertID = 1198
+aucVertGridInd.first =  29aucVertGrid.second  = 38
+circleTime = 360
+aucNeer = 1
+aucVertID = 1321
+aucVertGridInd.first =  33aucVertGrid.second  = 1
+circleTime = 361
+aucNeer = 2
+aucVertID = 1484
+aucVertGridInd.first =  37aucVertGrid.second  = 4
+circleTime = 362
+aucNeer = 5
+aucVertID = 188
+aucVertGridInd.first =  4aucVertGrid.second  = 28
+circleTime = 363
+aucNeer = 6
+aucVertID = 1355
+aucVertGridInd.first =  33aucVertGrid.second  = 35
+circleTime = 364
+aucNeer = 1
+aucVertID = 1362
+aucVertGridInd.first =  34aucVertGrid.second  = 2
+circleTime = 365
+aucNeer = 6
+aucVertID = 1394
+aucVertGridInd.first =  34aucVertGrid.second  = 34
+circleTime = 366
+aucNeer = 0
+aucVertID = 475
+aucVertGridInd.first =  11aucVertGrid.second  = 35
+circleTime = 367
+aucNeer = 0
+aucVertID = 394
+aucVertGridInd.first =  9aucVertGrid.second  = 34
+circleTime = 368
+aucNeer = 2
+aucVertID = 1526
+aucVertGridInd.first =  38aucVertGrid.second  = 6
+circleTime = 369
+aucNeer = 6
+aucVertID = 1237
+aucVertGridInd.first =  30aucVertGrid.second  = 37
+circleTime = 370
+aucNeer = 4
+aucVertID = 402
+aucVertGridInd.first =  10aucVertGrid.second  = 2
+circleTime = 371
+aucNeer = 1
+aucVertID = 1403
+aucVertGridInd.first =  35aucVertGrid.second  = 3
+circleTime = 372
+aucNeer = 6
+aucVertID = 1277
+aucVertGridInd.first =  31aucVertGrid.second  = 37
+circleTime = 373
+aucNeer = 0
+aucVertID = 636
+aucVertGridInd.first =  15aucVertGrid.second  = 36
+circleTime = 374
+aucNeer = 6
+aucVertID = 1315
+aucVertGridInd.first =  32aucVertGrid.second  = 35
+circleTime = 375
+aucNeer = 7
+aucVertID = 205
+aucVertGridInd.first =  5aucVertGrid.second  = 5
+circleTime = 376
+aucNeer = 0
+aucVertID = 353
+aucVertGridInd.first =  8aucVertGrid.second  = 33
+circleTime = 377
+aucNeer = 3
+aucVertID = 1549
+aucVertGridInd.first =  38aucVertGrid.second  = 29
+circleTime = 378
+aucNeer = 1
+aucVertID = 1281
+aucVertGridInd.first =  32aucVertGrid.second  = 1
+circleTime = 379
+aucNeer = 0
+aucVertID = 434
+aucVertGridInd.first =  10aucVertGrid.second  = 34
+circleTime = 380
+aucNeer = 4
+aucVertID = 244
+aucVertGridInd.first =  6aucVertGrid.second  = 4
+circleTime = 381
+aucNeer = 3
+aucVertID = 1548
+aucVertGridInd.first =  38aucVertGrid.second  = 28
+circleTime = 382
+aucNeer = 7
+aucVertID = 51
+aucVertGridInd.first =  1aucVertGrid.second  = 11
+circleTime = 383
+aucNeer = 2
+aucVertID = 1485
+aucVertGridInd.first =  37aucVertGrid.second  = 5
+circleTime = 384
+aucNeer = 3
+aucVertID = 1508
+aucVertGridInd.first =  37aucVertGrid.second  = 28
+circleTime = 385
+aucNeer = 4
+aucVertID = 323
+aucVertGridInd.first =  8aucVertGrid.second  = 3
+circleTime = 386
+aucNeer = 7
+aucVertID = 128
+aucVertGridInd.first =  3aucVertGrid.second  = 8
+circleTime = 387
+aucNeer = 6
+aucVertID = 1316
+aucVertGridInd.first =  32aucVertGrid.second  = 36
+circleTime = 388
+aucNeer = 7
+aucVertID = 52
+aucVertGridInd.first =  1aucVertGrid.second  = 12
+circleTime = 389
+aucNeer = 5
+aucVertID = 145
+aucVertGridInd.first =  3aucVertGrid.second  = 25
+circleTime = 390
+aucNeer = 6
+aucVertID = 1197
+aucVertGridInd.first =  29aucVertGrid.second  = 37
+circleTime = 391
+aucNeer = 4
+aucVertID = 442
+aucVertGridInd.first =  11aucVertGrid.second  = 2
+circleTime = 392
+aucNeer = 3
+aucVertID = 1507
+aucVertGridInd.first =  37aucVertGrid.second  = 27
+circleTime = 393
+aucNeer = 0
+aucVertID = 555
+aucVertGridInd.first =  13aucVertGrid.second  = 35
+circleTime = 394
+aucNeer = 0
+aucVertID = 474
+aucVertGridInd.first =  11aucVertGrid.second  = 34
+circleTime = 395
+aucNeer = 0
+aucVertID = 393
+aucVertGridInd.first =  9aucVertGrid.second  = 33
+circleTime = 396
+aucNeer = 6
+aucVertID = 1354
+aucVertGridInd.first =  33aucVertGrid.second  = 34
+circleTime = 397
+aucNeer = 6
+aucVertID = 1393
+aucVertGridInd.first =  34aucVertGrid.second  = 33
+circleTime = 398
+aucNeer = 7
+aucVertID = 90
+aucVertGridInd.first =  2aucVertGrid.second  = 10
+circleTime = 399
+aucNeer = 7
+aucVertID = 245
+aucVertGridInd.first =  6aucVertGrid.second  = 5
+circleTime = 400
+aucNeer = 4
+aucVertID = 363
+aucVertGridInd.first =  9aucVertGrid.second  = 3
+circleTime = 401
+aucNeer = 6
+aucVertID = 1118
+aucVertGridInd.first =  27aucVertGrid.second  = 38
+circleTime = 402
+aucNeer = 5
+aucVertID = 187
+aucVertGridInd.first =  4aucVertGrid.second  = 27
+circleTime = 403
+aucNeer = 7
+aucVertID = 129
+aucVertGridInd.first =  3aucVertGrid.second  = 9
+circleTime = 404
+aucNeer = 1
+aucVertID = 1444
+aucVertGridInd.first =  36aucVertGrid.second  = 4
+circleTime = 405
+aucNeer = 5
+aucVertID = 144
+aucVertGridInd.first =  3aucVertGrid.second  = 24
+circleTime = 406
+aucNeer = 4
+aucVertID = 482
+aucVertGridInd.first =  12aucVertGrid.second  = 2
+circleTime = 407
+aucNeer = 1
+aucVertID = 1363
+aucVertGridInd.first =  34aucVertGrid.second  = 3
+circleTime = 408
+aucNeer = 2
+aucVertID = 1486
+aucVertGridInd.first =  37aucVertGrid.second  = 6
+circleTime = 409
+aucNeer = 5
+aucVertID = 143
+aucVertGridInd.first =  3aucVertGrid.second  = 23
+circleTime = 410
+aucNeer = 2
+aucVertID = 1528
+aucVertGridInd.first =  38aucVertGrid.second  = 8
+circleTime = 411
+aucNeer = 6
+aucVertID = 1236
+aucVertGridInd.first =  30aucVertGrid.second  = 36
+circleTime = 412
+aucNeer = 5
+aucVertID = 186
+aucVertGridInd.first =  4aucVertGrid.second  = 26
+circleTime = 413
+aucNeer = 4
+aucVertID = 403
+aucVertGridInd.first =  10aucVertGrid.second  = 3
+circleTime = 414
+aucNeer = 5
+aucVertID = 228
+aucVertGridInd.first =  5aucVertGrid.second  = 28
+circleTime = 415
+aucNeer = 6
+aucVertID = 1314
+aucVertGridInd.first =  32aucVertGrid.second  = 34
+circleTime = 416
+aucNeer = 3
+aucVertID = 1467
+aucVertGridInd.first =  36aucVertGrid.second  = 27
+circleTime = 417
+aucNeer = 6
+aucVertID = 1196
+aucVertGridInd.first =  29aucVertGrid.second  = 36
+circleTime = 418
+aucNeer = 4
+aucVertID = 522
+aucVertGridInd.first =  13aucVertGrid.second  = 2
+circleTime = 419
+aucNeer = 4
+aucVertID = 521
+aucVertGridInd.first =  13aucVertGrid.second  = 1
+circleTime = 420
+aucNeer = 0
+aucVertID = 595
+aucVertGridInd.first =  14aucVertGrid.second  = 35
+circleTime = 421
+aucNeer = 3
+aucVertID = 1429
+aucVertGridInd.first =  35aucVertGrid.second  = 29
+circleTime = 422
+aucNeer = 2
+aucVertID = 1445
+aucVertGridInd.first =  36aucVertGrid.second  = 5
+circleTime = 423
+aucNeer = 4
+aucVertID = 324
+aucVertGridInd.first =  8aucVertGrid.second  = 4
+circleTime = 424
+aucNeer = 7
+aucVertID = 91
+aucVertGridInd.first =  2aucVertGrid.second  = 11
+circleTime = 425
+aucNeer = 7
+aucVertID = 168
+aucVertGridInd.first =  4aucVertGrid.second  = 8
+circleTime = 426
+aucNeer = 7
+aucVertID = 167
+aucVertGridInd.first =  4aucVertGrid.second  = 7
+circleTime = 427
+aucNeer = 5
+aucVertID = 142
+aucVertGridInd.first =  3aucVertGrid.second  = 22
+circleTime = 428
+aucNeer = 3
+aucVertID = 1428
+aucVertGridInd.first =  35aucVertGrid.second  = 28
+circleTime = 429
+aucNeer = 4
+aucVertID = 562
+aucVertGridInd.first =  14aucVertGrid.second  = 2
+circleTime = 430
+aucNeer = 2
+aucVertID = 1487
+aucVertGridInd.first =  37aucVertGrid.second  = 7
+circleTime = 431
+aucNeer = 6
+aucVertID = 1117
+aucVertGridInd.first =  27aucVertGrid.second  = 37
+circleTime = 432
+aucNeer = 3
+aucVertID = 1427
+aucVertGridInd.first =  35aucVertGrid.second  = 27
+circleTime = 433
+aucNeer = 0
+aucVertID = 352
+aucVertGridInd.first =  8aucVertGrid.second  = 32
+circleTime = 434
+aucNeer = 5
+aucVertID = 102
+aucVertGridInd.first =  2aucVertGrid.second  = 22
+circleTime = 435
+aucNeer = 5
+aucVertID = 101
+aucVertGridInd.first =  2aucVertGrid.second  = 21
+circleTime = 436
+aucNeer = 2
+aucVertID = 1404
+aucVertGridInd.first =  35aucVertGrid.second  = 4
+circleTime = 437
+aucNeer = 1
+aucVertID = 1282
+aucVertGridInd.first =  32aucVertGrid.second  = 2
+circleTime = 438
+aucNeer = 3
+aucVertID = 1389
+aucVertGridInd.first =  34aucVertGrid.second  = 29
+circleTime = 439
+aucNeer = 2
+aucVertID = 1488
+aucVertGridInd.first =  37aucVertGrid.second  = 8
+circleTime = 440
+aucNeer = 0
+aucVertID = 514
+aucVertGridInd.first =  12aucVertGrid.second  = 34
+circleTime = 441
+aucNeer = 5
+aucVertID = 185
+aucVertGridInd.first =  4aucVertGrid.second  = 25
+circleTime = 442
+aucNeer = 1
+aucVertID = 1201
+aucVertGridInd.first =  30aucVertGrid.second  = 1
+circleTime = 443
+aucNeer = 4
+aucVertID = 561
+aucVertGridInd.first =  14aucVertGrid.second  = 1
+circleTime = 444
+aucNeer = 1
+aucVertID = 1323
+aucVertGridInd.first =  33aucVertGrid.second  = 3
+circleTime = 445
+aucNeer = 3
+aucVertID = 1351
+aucVertGridInd.first =  33aucVertGrid.second  = 31
+circleTime = 446
+aucNeer = 3
+aucVertID = 1352
+aucVertGridInd.first =  33aucVertGrid.second  = 32
+circleTime = 447
+aucNeer = 1
+aucVertID = 1242
+aucVertGridInd.first =  31aucVertGrid.second  = 2
+circleTime = 448
+aucNeer = 2
+aucVertID = 1405
+aucVertGridInd.first =  35aucVertGrid.second  = 5
+circleTime = 449
+aucNeer = 7
+aucVertID = 54
+aucVertGridInd.first =  1aucVertGrid.second  = 14
+circleTime = 450
+aucNeer = 6
+aucVertID = 1038
+aucVertGridInd.first =  25aucVertGrid.second  = 38
+circleTime = 451
+aucNeer = 0
+aucVertID = 554
+aucVertGridInd.first =  13aucVertGrid.second  = 34
+circleTime = 452
+aucNeer = 2
+aucVertID = 1364
+aucVertGridInd.first =  34aucVertGrid.second  = 4
+circleTime = 453
+aucNeer = 4
+aucVertID = 443
+aucVertGridInd.first =  11aucVertGrid.second  = 3
+circleTime = 454
+aucNeer = 6
+aucVertID = 998
+aucVertGridInd.first =  24aucVertGrid.second  = 38
+circleTime = 455
+aucNeer = 7
+aucVertID = 207
+aucVertGridInd.first =  5aucVertGrid.second  = 7
+circleTime = 456
+aucNeer = 0
+aucVertID = 392
+aucVertGridInd.first =  9aucVertGrid.second  = 32
+circleTime = 457
+aucNeer = 6
+aucVertID = 1156
+aucVertGridInd.first =  28aucVertGrid.second  = 36
+circleTime = 458
+aucNeer = 2
+aucVertID = 1447
+aucVertGridInd.first =  36aucVertGrid.second  = 7
+circleTime = 459
+aucNeer = 4
+aucVertID = 364
+aucVertGridInd.first =  9aucVertGrid.second  = 4
+circleTime = 460
+aucNeer = 3
+aucVertID = 1388
+aucVertGridInd.first =  34aucVertGrid.second  = 28
+circleTime = 461
+aucNeer = 6
+aucVertID = 1077
+aucVertGridInd.first =  26aucVertGrid.second  = 37
+circleTime = 462
+aucNeer = 4
+aucVertID = 602
+aucVertGridInd.first =  15aucVertGrid.second  = 2
+circleTime = 463
+aucNeer = 7
+aucVertID = 92
+aucVertGridInd.first =  2aucVertGrid.second  = 12
+circleTime = 464
+aucNeer = 6
+aucVertID = 1313
+aucVertGridInd.first =  32aucVertGrid.second  = 33
+circleTime = 465
+aucNeer = 3
+aucVertID = 1349
+aucVertGridInd.first =  33aucVertGrid.second  = 29
+circleTime = 466
+aucNeer = 7
+aucVertID = 246
+aucVertGridInd.first =  6aucVertGrid.second  = 6
+circleTime = 467
+aucNeer = 0
+aucVertID = 473
+aucVertGridInd.first =  11aucVertGrid.second  = 33
+circleTime = 468
+aucNeer = 5
+aucVertID = 141
+aucVertGridInd.first =  3aucVertGrid.second  = 21
+circleTime = 469
+aucNeer = 6
+aucVertID = 958
+aucVertGridInd.first =  23aucVertGrid.second  = 38
+circleTime = 470
+aucNeer = 5
+aucVertID = 140
+aucVertGridInd.first =  3aucVertGrid.second  = 20
+circleTime = 471
+aucNeer = 4
+aucVertID = 601
+aucVertGridInd.first =  15aucVertGrid.second  = 1
+circleTime = 472
+aucNeer = 7
+aucVertID = 55
+aucVertGridInd.first =  1aucVertGrid.second  = 15
+circleTime = 473
+aucNeer = 6
+aucVertID = 1195
+aucVertGridInd.first =  29aucVertGrid.second  = 35
+circleTime = 474
+aucNeer = 2
+aucVertID = 1531
+aucVertGridInd.first =  38aucVertGrid.second  = 11
+circleTime = 475
+aucNeer = 2
+aucVertID = 1406
+aucVertGridInd.first =  35aucVertGrid.second  = 6
+circleTime = 476
+aucNeer = 4
+aucVertID = 483
+aucVertGridInd.first =  12aucVertGrid.second  = 3
+circleTime = 477
+aucNeer = 1
+aucVertID = 1161
+aucVertGridInd.first =  29aucVertGrid.second  = 1
+circleTime = 478
+aucNeer = 2
+aucVertID = 1532
+aucVertGridInd.first =  38aucVertGrid.second  = 12
+circleTime = 479
+aucNeer = 7
+aucVertID = 169
+aucVertGridInd.first =  4aucVertGrid.second  = 9
+circleTime = 480
+aucNeer = 5
+aucVertID = 184
+aucVertGridInd.first =  4aucVertGrid.second  = 24
+circleTime = 481
+aucNeer = 1
+aucVertID = 1202
+aucVertGridInd.first =  30aucVertGrid.second  = 2
+circleTime = 482
+aucNeer = 1
+aucVertID = 1121
+aucVertGridInd.first =  28aucVertGrid.second  = 1
+circleTime = 483
+aucNeer = 1
+aucVertID = 1324
+aucVertGridInd.first =  33aucVertGrid.second  = 4
+circleTime = 484
+aucNeer = 0
+aucVertID = 351
+aucVertGridInd.first =  8aucVertGrid.second  = 31
+circleTime = 485
+aucNeer = 5
+aucVertID = 226
+aucVertGridInd.first =  5aucVertGrid.second  = 26
+circleTime = 486
+aucNeer = 6
+aucVertID = 1037
+aucVertGridInd.first =  25aucVertGrid.second  = 37
+circleTime = 487
+aucNeer = 5
+aucVertID = 268
+aucVertGridInd.first =  6aucVertGrid.second  = 28
+circleTime = 488
+aucNeer = 4
+aucVertID = 404
+aucVertGridInd.first =  10aucVertGrid.second  = 4
+circleTime = 489
+aucNeer = 4
+aucVertID = 642
+aucVertGridInd.first =  16aucVertGrid.second  = 2
+circleTime = 490
+aucNeer = 2
+aucVertID = 1448
+aucVertGridInd.first =  36aucVertGrid.second  = 8
+circleTime = 491
+aucNeer = 2
+aucVertID = 1365
+aucVertGridInd.first =  34aucVertGrid.second  = 5
+circleTime = 492
+aucNeer = 3
+aucVertID = 1311
+aucVertGridInd.first =  32aucVertGrid.second  = 31
+circleTime = 493
+aucNeer = 1
+aucVertID = 1081
+aucVertGridInd.first =  27aucVertGrid.second  = 1
+circleTime = 494
+aucNeer = 4
+aucVertID = 641
+aucVertGridInd.first =  16aucVertGrid.second  = 1
+circleTime = 495
+aucNeer = 0
+aucVertID = 311
+aucVertGridInd.first =  7aucVertGrid.second  = 31
+circleTime = 496
+aucNeer = 0
+aucVertID = 271
+aucVertGridInd.first =  6aucVertGrid.second  = 31
+circleTime = 497
+aucNeer = 6
+aucVertID = 1116
+aucVertGridInd.first =  27aucVertGrid.second  = 36
+circleTime = 498
+aucNeer = 3
+aucVertID = 1348
+aucVertGridInd.first =  33aucVertGrid.second  = 28
+circleTime = 499
+aucNeer = 2
+aucVertID = 1449
+aucVertGridInd.first =  36aucVertGrid.second  = 9
+circleTime = 500
+aucNeer = 4
+aucVertID = 325
+aucVertGridInd.first =  8aucVertGrid.second  = 5
+circleTime = 501
+aucNeer = 1
+aucVertID = 1162
+aucVertGridInd.first =  29aucVertGrid.second  = 2
+circleTime = 502
+aucNeer = 3
+aucVertID = 1347
+aucVertGridInd.first =  33aucVertGrid.second  = 27
+circleTime = 503
+aucNeer = 1
+aucVertID = 1203
+aucVertGridInd.first =  30aucVertGrid.second  = 3
+circleTime = 504
+aucNeer = 1
+aucVertID = 1122
+aucVertGridInd.first =  28aucVertGrid.second  = 2
+circleTime = 505
+aucNeer = 2
+aucVertID = 1534
+aucVertGridInd.first =  38aucVertGrid.second  = 14
+circleTime = 506
+aucNeer = 5
+aucVertID = 269
+aucVertGridInd.first =  6aucVertGrid.second  = 29
+circleTime = 507
+aucNeer = 5
+aucVertID = 225
+aucVertGridInd.first =  5aucVertGrid.second  = 25
+circleTime = 508
+aucNeer = 4
+aucVertID = 682
+aucVertGridInd.first =  17aucVertGrid.second  = 2
+circleTime = 509
+aucNeer = 5
+aucVertID = 267
+aucVertGridInd.first =  6aucVertGrid.second  = 27
+circleTime = 510
+aucNeer = 6
+aucVertID = 918
+aucVertGridInd.first =  22aucVertGrid.second  = 38
+circleTime = 511
+aucNeer = 0
+aucVertID = 272
+aucVertGridInd.first =  6aucVertGrid.second  = 32
+circleTime = 512
+aucNeer = 3
+aucVertID = 1271
+aucVertGridInd.first =  31aucVertGrid.second  = 31
+circleTime = 513
+aucNeer = 0
+aucVertID = 513
+aucVertGridInd.first =  12aucVertGrid.second  = 33
+circleTime = 514
+aucNeer = 4
+aucVertID = 681
+aucVertGridInd.first =  17aucVertGrid.second  = 1
+circleTime = 515
+aucNeer = 2
+aucVertID = 1366
+aucVertGridInd.first =  34aucVertGrid.second  = 6
+circleTime = 516
+aucNeer = 3
+aucVertID = 1308
+aucVertGridInd.first =  32aucVertGrid.second  = 28
+circleTime = 517
+aucNeer = 5
+aucVertID = 181
+aucVertGridInd.first =  4aucVertGrid.second  = 21
+circleTime = 518
+aucNeer = 1
+aucVertID = 920
+aucVertGridInd.first =  23aucVertGrid.second  = 0
+circleTime = 519
+aucNeer = 1
+aucVertID = 1163
+aucVertGridInd.first =  29aucVertGrid.second  = 3
+circleTime = 520
+aucNeer = 4
+aucVertID = 444
+aucVertGridInd.first =  11aucVertGrid.second  = 4
+circleTime = 521
+aucNeer = 4
+aucVertID = 365
+aucVertGridInd.first =  9aucVertGrid.second  = 5
+circleTime = 522
+aucNeer = 0
+aucVertID = 432
+aucVertGridInd.first =  10aucVertGrid.second  = 32
+circleTime = 523
+aucNeer = 2
+aucVertID = 1492
+aucVertGridInd.first =  37aucVertGrid.second  = 12
+circleTime = 524
+aucNeer = 1
+aucVertID = 1082
+aucVertGridInd.first =  27aucVertGrid.second  = 2
+circleTime = 525
+aucNeer = 6
+aucVertID = 997
+aucVertGridInd.first =  24aucVertGrid.second  = 37
+circleTime = 526
+aucNeer = 7
+aucVertID = 93
+aucVertGridInd.first =  2aucVertGrid.second  = 13
+circleTime = 527
+aucNeer = 3
+aucVertID = 1307
+aucVertGridInd.first =  32aucVertGrid.second  = 27
+circleTime = 528
+aucNeer = 6
+aucVertID = 878
+aucVertGridInd.first =  21aucVertGrid.second  = 38
+circleTime = 529
+aucNeer = 0
+aucVertID = 310
+aucVertGridInd.first =  7aucVertGrid.second  = 30
+circleTime = 530
+aucNeer = 1
+aucVertID = 1123
+aucVertGridInd.first =  28aucVertGrid.second  = 3
+circleTime = 531
+aucNeer = 7
+aucVertID = 131
+aucVertGridInd.first =  3aucVertGrid.second  = 11
+circleTime = 532
+aucNeer = 0
+aucVertID = 391
+aucVertGridInd.first =  9aucVertGrid.second  = 31
+circleTime = 533
+aucNeer = 7
+aucVertID = 56
+aucVertGridInd.first =  1aucVertGrid.second  = 16
+circleTime = 534
+aucNeer = 5
+aucVertID = 180
+aucVertGridInd.first =  4aucVertGrid.second  = 20
+circleTime = 535
+aucNeer = 2
+aucVertID = 1535
+aucVertGridInd.first =  38aucVertGrid.second  = 15
+circleTime = 536
+aucNeer = 2
+aucVertID = 1408
+aucVertGridInd.first =  35aucVertGrid.second  = 8
+circleTime = 537
+aucNeer = 4
+aucVertID = 563
+aucVertGridInd.first =  14aucVertGrid.second  = 3
+circleTime = 538
+aucNeer = 6
+aucVertID = 1155
+aucVertGridInd.first =  28aucVertGrid.second  = 35
+circleTime = 539
+aucNeer = 3
+aucVertID = 1230
+aucVertGridInd.first =  30aucVertGrid.second  = 30
+circleTime = 540
+aucNeer = 2
+aucVertID = 1325
+aucVertGridInd.first =  33aucVertGrid.second  = 5
+circleTime = 541
+aucNeer = 2
+aucVertID = 1450
+aucVertGridInd.first =  36aucVertGrid.second  = 10
+circleTime = 542
+aucNeer = 2
+aucVertID = 1490
+aucVertGridInd.first =  37aucVertGrid.second  = 10
+circleTime = 543
+aucNeer = 0
+aucVertID = 472
+aucVertGridInd.first =  11aucVertGrid.second  = 32
+circleTime = 544
+aucNeer = 5
+aucVertID = 224
+aucVertGridInd.first =  5aucVertGrid.second  = 24
+circleTime = 545
+aucNeer = 2
+aucVertID = 1284
+aucVertGridInd.first =  32aucVertGrid.second  = 4
+circleTime = 546
+aucNeer = 7
+aucVertID = 94
+aucVertGridInd.first =  2aucVertGrid.second  = 14
+circleTime = 547
+aucNeer = 0
+aucVertID = 431
+aucVertGridInd.first =  10aucVertGrid.second  = 31
+circleTime = 548
+aucNeer = 4
+aucVertID = 722
+aucVertGridInd.first =  18aucVertGrid.second  = 2
+circleTime = 549
+aucNeer = 5
+aucVertID = 266
+aucVertGridInd.first =  6aucVertGrid.second  = 26
+circleTime = 550
+aucNeer = 1
+aucVertID = 1002
+aucVertGridInd.first =  25aucVertGrid.second  = 2
+circleTime = 551
+aucNeer = 5
+aucVertID = 223
+aucVertGridInd.first =  5aucVertGrid.second  = 23
+circleTime = 552
+aucNeer = 0
+aucVertID = 512
+aucVertGridInd.first =  12aucVertGrid.second  = 32
+circleTime = 553
+aucNeer = 2
+aucVertID = 1536
+aucVertGridInd.first =  38aucVertGrid.second  = 16
+circleTime = 554
+aucNeer = 3
+aucVertID = 1268
+aucVertGridInd.first =  31aucVertGrid.second  = 28
+circleTime = 555
+aucNeer = 6
+aucVertID = 1076
+aucVertGridInd.first =  26aucVertGrid.second  = 36
+circleTime = 556
+aucNeer = 6
+aucVertID = 1273
+aucVertGridInd.first =  31aucVertGrid.second  = 33
+circleTime = 557
+aucNeer = 0
+aucVertID = 390
+aucVertGridInd.first =  9aucVertGrid.second  = 30
+circleTime = 558
+aucNeer = 6
+aucVertID = 838
+aucVertGridInd.first =  20aucVertGrid.second  = 38
+circleTime = 559
+aucNeer = 4
+aucVertID = 247
+aucVertGridInd.first =  6aucVertGrid.second  = 7
+circleTime = 560
+aucNeer = 7
+aucVertID = 170
+aucVertGridInd.first =  4aucVertGrid.second  = 10
+circleTime = 561
+aucNeer = 3
+aucVertID = 1267
+aucVertGridInd.first =  31aucVertGrid.second  = 27
+circleTime = 562
+aucNeer = 3
+aucVertID = 1190
+aucVertGridInd.first =  29aucVertGrid.second  = 30
+circleTime = 563
+aucNeer = 7
+aucVertID = 209
+aucVertGridInd.first =  5aucVertGrid.second  = 9
+circleTime = 564
+aucNeer = 3
+aucVertID = 1191
+aucVertGridInd.first =  29aucVertGrid.second  = 31
+circleTime = 565
+aucNeer = 0
+aucVertID = 552
+aucVertGridInd.first =  13aucVertGrid.second  = 32
+circleTime = 566
+aucNeer = 6
+aucVertID = 1194
+aucVertGridInd.first =  29aucVertGrid.second  = 34
+circleTime = 567
+aucNeer = 3
+aucVertID = 1192
+aucVertGridInd.first =  29aucVertGrid.second  = 32
+circleTime = 568
+aucNeer = 1
+aucVertID = 1164
+aucVertGridInd.first =  29aucVertGrid.second  = 4
+circleTime = 569
+aucNeer = 6
+aucVertID = 1234
+aucVertGridInd.first =  30aucVertGrid.second  = 34
+circleTime = 570
+aucNeer = 2
+aucVertID = 1367
+aucVertGridInd.first =  34aucVertGrid.second  = 7
+circleTime = 571
+aucNeer = 0
+aucVertID = 471
+aucVertGridInd.first =  11aucVertGrid.second  = 31
+circleTime = 572
+aucNeer = 6
+aucVertID = 798
+aucVertGridInd.first =  19aucVertGrid.second  = 38
+circleTime = 573
+aucNeer = 1
+aucVertID = 1083
+aucVertGridInd.first =  27aucVertGrid.second  = 3
+circleTime = 574
+aucNeer = 6
+aucVertID = 1036
+aucVertGridInd.first =  25aucVertGrid.second  = 36
+circleTime = 575
+aucNeer = 4
+aucVertID = 484
+aucVertGridInd.first =  12aucVertGrid.second  = 4
+circleTime = 576
+aucNeer = 2
+aucVertID = 1493
+aucVertGridInd.first =  37aucVertGrid.second  = 13
+circleTime = 577
+aucNeer = 3
+aucVertID = 1232
+aucVertGridInd.first =  30aucVertGrid.second  = 32
+circleTime = 578
+aucNeer = 4
+aucVertID = 326
+aucVertGridInd.first =  8aucVertGrid.second  = 6
+circleTime = 579
+aucNeer = 5
+aucVertID = 222
+aucVertGridInd.first =  5aucVertGrid.second  = 22
+circleTime = 580
+aucNeer = 4
+aucVertID = 603
+aucVertGridInd.first =  15aucVertGrid.second  = 3
+circleTime = 581
+aucNeer = 6
+aucVertID = 1115
+aucVertGridInd.first =  27aucVertGrid.second  = 35
+circleTime = 582
+aucNeer = 2
+aucVertID = 1409
+aucVertGridInd.first =  35aucVertGrid.second  = 9
+circleTime = 583
+aucNeer = 6
+aucVertID = 917
+aucVertGridInd.first =  22aucVertGrid.second  = 37
+circleTime = 584
+aucNeer = 1
+aucVertID = 1043
+aucVertGridInd.first =  26aucVertGrid.second  = 3
+circleTime = 585
+aucNeer = 2
+aucVertID = 1451
+aucVertGridInd.first =  36aucVertGrid.second  = 11
+circleTime = 586
+aucNeer = 6
+aucVertID = 758
+aucVertGridInd.first =  18aucVertGrid.second  = 38
+circleTime = 587
+aucNeer = 7
+aucVertID = 133
+aucVertGridInd.first =  3aucVertGrid.second  = 13
+circleTime = 588
+aucNeer = 5
+aucVertID = 265
+aucVertGridInd.first =  6aucVertGrid.second  = 25
+circleTime = 589
+aucNeer = 0
+aucVertID = 430
+aucVertGridInd.first =  10aucVertGrid.second  = 30
+circleTime = 590
+aucNeer = 7
+aucVertID = 248
+aucVertGridInd.first =  6aucVertGrid.second  = 8
+circleTime = 591
+aucNeer = 5
+aucVertID = 307
+aucVertGridInd.first =  7aucVertGrid.second  = 27
+circleTime = 592
+aucNeer = 3
+aucVertID = 1233
+aucVertGridInd.first =  30aucVertGrid.second  = 33
+circleTime = 593
+aucNeer = 5
+aucVertID = 264
+aucVertGridInd.first =  6aucVertGrid.second  = 24
+circleTime = 594
+aucNeer = 3
+aucVertID = 1193
+aucVertGridInd.first =  29aucVertGrid.second  = 33
+circleTime = 595
+aucNeer = 2
+aucVertID = 1326
+aucVertGridInd.first =  33aucVertGrid.second  = 6
+circleTime = 596
+aucNeer = 6
+aucVertID = 996
+aucVertGridInd.first =  24aucVertGrid.second  = 36
+circleTime = 597
+aucNeer = 0
+aucVertID = 592
+aucVertGridInd.first =  14aucVertGrid.second  = 32
+circleTime = 598
+aucNeer = 6
+aucVertID = 877
+aucVertGridInd.first =  21aucVertGrid.second  = 37
+circleTime = 599
+aucNeer = 0
+aucVertID = 593
+aucVertGridInd.first =  14aucVertGrid.second  = 33
+circleTime = 600
+aucNeer = 0
+aucVertID = 633
+aucVertGridInd.first =  15aucVertGrid.second  = 33
+circleTime = 601
+aucNeer = 0
+aucVertID = 634
+aucVertGridInd.first =  15aucVertGrid.second  = 34
+circleTime = 602
+aucNeer = 6
+aucVertID = 1154
+aucVertGridInd.first =  28aucVertGrid.second  = 34
+circleTime = 603
+aucNeer = 7
+aucVertID = 96
+aucVertGridInd.first =  2aucVertGrid.second  = 16
+circleTime = 604
+aucNeer = 2
+aucVertID = 1285
+aucVertGridInd.first =  32aucVertGrid.second  = 5
+circleTime = 605
+aucNeer = 4
+aucVertID = 405
+aucVertGridInd.first =  10aucVertGrid.second  = 5
+circleTime = 606
+aucNeer = 0
+aucVertID = 674
+aucVertGridInd.first =  16aucVertGrid.second  = 34
+circleTime = 607
+aucNeer = 7
+aucVertID = 210
+aucVertGridInd.first =  5aucVertGrid.second  = 10
+circleTime = 608
+aucNeer = 4
+aucVertID = 643
+aucVertGridInd.first =  16aucVertGrid.second  = 3
+circleTime = 609
+aucNeer = 1
+aucVertID = 1124
+aucVertGridInd.first =  28aucVertGrid.second  = 4
+circleTime = 610
+aucNeer = 2
+aucVertID = 1537
+aucVertGridInd.first =  38aucVertGrid.second  = 17
+circleTime = 611
+aucNeer = 1
+aucVertID = 1003
+aucVertGridInd.first =  25aucVertGrid.second  = 3
+circleTime = 612
+aucNeer = 2
+aucVertID = 1494
+aucVertGridInd.first =  37aucVertGrid.second  = 14
+circleTime = 613
+aucNeer = 4
+aucVertID = 524
+aucVertGridInd.first =  13aucVertGrid.second  = 4
+circleTime = 614
+aucNeer = 1
+aucVertID = 1165
+aucVertGridInd.first =  29aucVertGrid.second  = 5
+circleTime = 615
+aucNeer = 3
+aucVertID = 1153
+aucVertGridInd.first =  28aucVertGrid.second  = 33
+circleTime = 616
+aucNeer = 5
+aucVertID = 306
+aucVertGridInd.first =  7aucVertGrid.second  = 26
+circleTime = 617
+aucNeer = 1
+aucVertID = 1205
+aucVertGridInd.first =  30aucVertGrid.second  = 5
+circleTime = 618
+aucNeer = 5
+aucVertID = 263
+aucVertGridInd.first =  6aucVertGrid.second  = 23
+circleTime = 619
+aucNeer = 1
+aucVertID = 1245
+aucVertGridInd.first =  31aucVertGrid.second  = 5
+circleTime = 620
+aucNeer = 2
+aucVertID = 1368
+aucVertGridInd.first =  34aucVertGrid.second  = 8
+circleTime = 621
+aucNeer = 6
+aucVertID = 1075
+aucVertGridInd.first =  26aucVertGrid.second  = 35
+circleTime = 622
+aucNeer = 4
+aucVertID = 366
+aucVertGridInd.first =  9aucVertGrid.second  = 6
+circleTime = 623
+aucNeer = 1
+aucVertID = 1084
+aucVertGridInd.first =  27aucVertGrid.second  = 4
+circleTime = 624
+aucNeer = 0
+aucVertID = 675
+aucVertGridInd.first =  16aucVertGrid.second  = 35
+circleTime = 625
+aucNeer = 6
+aucVertID = 837
+aucVertGridInd.first =  20aucVertGrid.second  = 37
+circleTime = 626
+aucNeer = 7
+aucVertID = 134
+aucVertGridInd.first =  3aucVertGrid.second  = 14
+circleTime = 627
+aucNeer = 2
+aucVertID = 1244
+aucVertGridInd.first =  31aucVertGrid.second  = 4
+circleTime = 628
+aucNeer = 5
+aucVertID = 262
+aucVertGridInd.first =  6aucVertGrid.second  = 22
+circleTime = 629
+aucNeer = 1
+aucVertID = 963
+aucVertGridInd.first =  24aucVertGrid.second  = 3
+circleTime = 630
+aucNeer = 2
+aucVertID = 1452
+aucVertGridInd.first =  36aucVertGrid.second  = 12
+circleTime = 631
+aucNeer = 0
+aucVertID = 715
+aucVertGridInd.first =  17aucVertGrid.second  = 35
+circleTime = 632
+aucNeer = 0
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 633
+aucNeer = 5
+aucVertID = 305
+aucVertGridInd.first =  7aucVertGrid.second  = 25
+circleTime = 634
+aucNeer = 3
+aucVertID = 1152
+aucVertGridInd.first =  28aucVertGrid.second  = 32
+circleTime = 635
+aucNeer = 4
+aucVertID = 683
+aucVertGridInd.first =  17aucVertGrid.second  = 3
+circleTime = 636
+aucNeer = 1
+aucVertID = 1206
+aucVertGridInd.first =  30aucVertGrid.second  = 6
+circleTime = 637
+aucNeer = 5
+aucVertID = 347
+aucVertGridInd.first =  8aucVertGrid.second  = 27
+circleTime = 638
+aucNeer = 0
+aucVertID = 755
+aucVertGridInd.first =  18aucVertGrid.second  = 35
+circleTime = 639
+aucNeer = 4
+aucVertID = 564
+aucVertGridInd.first =  14aucVertGrid.second  = 4
+circleTime = 640
+aucNeer = 0
+aucVertID = 795
+aucVertGridInd.first =  19aucVertGrid.second  = 35
+circleTime = 641
+aucNeer = 6
+aucVertID = 956
+aucVertGridInd.first =  23aucVertGrid.second  = 36
+circleTime = 642
+aucNeer = 3
+aucVertID = 1113
+aucVertGridInd.first =  27aucVertGrid.second  = 33
+circleTime = 643
+aucNeer = 2
+aucVertID = 1410
+aucVertGridInd.first =  35aucVertGrid.second  = 10
+circleTime = 644
+aucNeer = 4
+aucVertID = 327
+aucVertGridInd.first =  8aucVertGrid.second  = 7
+circleTime = 645
+aucNeer = 3
+aucVertID = 1114
+aucVertGridInd.first =  27aucVertGrid.second  = 34
+circleTime = 646
+aucNeer = 2
+aucVertID = 1539
+aucVertGridInd.first =  38aucVertGrid.second  = 19
+circleTime = 647
+aucNeer = 4
+aucVertID = 723
+aucVertGridInd.first =  18aucVertGrid.second  = 3
+circleTime = 648
+aucNeer = 2
+aucVertID = 1453
+aucVertGridInd.first =  36aucVertGrid.second  = 13
+circleTime = 649
+aucNeer = 4
+aucVertID = 406
+aucVertGridInd.first =  10aucVertGrid.second  = 6
+circleTime = 650
+aucNeer = 0
+aucVertID = 796
+aucVertGridInd.first =  19aucVertGrid.second  = 36
+circleTime = 651
+aucNeer = 0
+aucVertID = 836
+aucVertGridInd.first =  20aucVertGrid.second  = 36
+circleTime = 652
+aucNeer = 5
+aucVertID = 346
+aucVertGridInd.first =  8aucVertGrid.second  = 26
+circleTime = 653
+aucNeer = 7
+aucVertID = 249
+aucVertGridInd.first =  6aucVertGrid.second  = 9
+circleTime = 654
+aucNeer = 4
+aucVertID = 763
+aucVertGridInd.first =  19aucVertGrid.second  = 3
+circleTime = 655
+aucNeer = 2
+aucVertID = 1540
+aucVertGridInd.first =  38aucVertGrid.second  = 20
+circleTime = 656
+aucNeer = 2
+aucVertID = 1496
+aucVertGridInd.first =  37aucVertGrid.second  = 16
+circleTime = 657
+aucNeer = 4
+aucVertID = 604
+aucVertGridInd.first =  15aucVertGrid.second  = 4
+circleTime = 658
+aucNeer = 2
+aucVertID = 1369
+aucVertGridInd.first =  34aucVertGrid.second  = 9
+circleTime = 659
+aucNeer = 6
+aucVertID = 916
+aucVertGridInd.first =  22aucVertGrid.second  = 36
+circleTime = 660
+aucNeer = 3
+aucVertID = 1074
+aucVertGridInd.first =  26aucVertGrid.second  = 34
+circleTime = 661
+aucNeer = 5
+aucVertID = 303
+aucVertGridInd.first =  7aucVertGrid.second  = 23
+circleTime = 662
+aucNeer = 0
+aucVertID = 835
+aucVertGridInd.first =  20aucVertGrid.second  = 35
+circleTime = 663
+aucNeer = 7
+aucVertID = 135
+aucVertGridInd.first =  3aucVertGrid.second  = 15
+circleTime = 664
+aucNeer = 0
+aucVertID = 875
+aucVertGridInd.first =  21aucVertGrid.second  = 35
+circleTime = 665
+aucNeer = 4
+aucVertID = 644
+aucVertGridInd.first =  16aucVertGrid.second  = 4
+circleTime = 666
+aucNeer = 3
+aucVertID = 1034
+aucVertGridInd.first =  25aucVertGrid.second  = 34
+circleTime = 667
+aucNeer = 4
+aucVertID = 367
+aucVertGridInd.first =  9aucVertGrid.second  = 7
+circleTime = 668
+aucNeer = 7
+aucVertID = 211
+aucVertGridInd.first =  5aucVertGrid.second  = 11
+circleTime = 669
+aucNeer = 3
+aucVertID = 1151
+aucVertGridInd.first =  28aucVertGrid.second  = 31
+circleTime = 670
+aucNeer = 3
+aucVertID = 1073
+aucVertGridInd.first =  26aucVertGrid.second  = 33
+circleTime = 671
+aucNeer = 4
+aucVertID = 446
+aucVertGridInd.first =  11aucVertGrid.second  = 6
+circleTime = 672
+aucNeer = 0
+aucVertID = 876
+aucVertGridInd.first =  21aucVertGrid.second  = 36
+circleTime = 673
+aucNeer = 6
+aucVertID = 757
+aucVertGridInd.first =  18aucVertGrid.second  = 37
+circleTime = 674
+aucNeer = 7
+aucVertID = 173
+aucVertGridInd.first =  4aucVertGrid.second  = 13
+circleTime = 675
+aucNeer = 5
+aucVertID = 345
+aucVertGridInd.first =  8aucVertGrid.second  = 25
+circleTime = 676
+aucNeer = 3
+aucVertID = 1227
+aucVertGridInd.first =  30aucVertGrid.second  = 27
+circleTime = 677
+aucNeer = 5
+aucVertID = 386
+aucVertGridInd.first =  9aucVertGrid.second  = 26
+circleTime = 678
+aucNeer = 1
+aucVertID = 1246
+aucVertGridInd.first =  31aucVertGrid.second  = 6
+circleTime = 679
+aucNeer = 4
+aucVertID = 684
+aucVertGridInd.first =  17aucVertGrid.second  = 4
+circleTime = 680
+aucNeer = 7
+aucVertID = 172
+aucVertGridInd.first =  4aucVertGrid.second  = 12
+circleTime = 681
+aucNeer = 4
+aucVertID = 565
+aucVertGridInd.first =  14aucVertGrid.second  = 5
+circleTime = 682
+aucNeer = 3
+aucVertID = 1150
+aucVertGridInd.first =  28aucVertGrid.second  = 30
+circleTime = 683
+aucNeer = 2
+aucVertID = 1286
+aucVertGridInd.first =  32aucVertGrid.second  = 6
+circleTime = 684
+aucNeer = 2
+aucVertID = 1541
+aucVertGridInd.first =  38aucVertGrid.second  = 21
+circleTime = 685
+aucNeer = 2
+aucVertID = 1542
+aucVertGridInd.first =  38aucVertGrid.second  = 22
+circleTime = 686
+aucNeer = 6
+aucVertID = 995
+aucVertGridInd.first =  24aucVertGrid.second  = 35
+circleTime = 687
+aucNeer = 2
+aucVertID = 1543
+aucVertGridInd.first =  38aucVertGrid.second  = 23
+circleTime = 688
+aucNeer = 6
+aucVertID = 955
+aucVertGridInd.first =  23aucVertGrid.second  = 35
+circleTime = 689
+aucNeer = 6
+aucVertID = 915
+aucVertGridInd.first =  22aucVertGrid.second  = 35
+circleTime = 690
+aucNeer = 2
+aucVertID = 1412
+aucVertGridInd.first =  35aucVertGrid.second  = 12
+circleTime = 691
+aucNeer = 0
+aucVertID = 714
+aucVertGridInd.first =  17aucVertGrid.second  = 34
+circleTime = 692
+aucNeer = 2
+aucVertID = 1370
+aucVertGridInd.first =  34aucVertGrid.second  = 10
+circleTime = 693
+aucNeer = 1
+aucVertID = 1044
+aucVertGridInd.first =  26aucVertGrid.second  = 4
+circleTime = 694
+aucNeer = 6
+aucVertID = 1044
+aucVertGridInd.first =  26aucVertGrid.second  = 4
+circleTime = 695
+aucNeer = 5
+aucVertID = 343
+aucVertGridInd.first =  8aucVertGrid.second  = 23
+circleTime = 696
+aucNeer = 2
+aucVertID = 1544
+aucVertGridInd.first =  38aucVertGrid.second  = 24
+circleTime = 697
+aucNeer = 6
+aucVertID = 1544
+aucVertGridInd.first =  38aucVertGrid.second  = 24
+circleTime = 698
+aucNeer = 3
+aucVertID = 1033
+aucVertGridInd.first =  25aucVertGrid.second  = 33
+circleTime = 699
+aucNeer = 5
+aucVertID = 385
+aucVertGridInd.first =  9aucVertGrid.second  = 25
+circleTime = 700
+aucNeer = 0
+aucVertID = 794
+aucVertGridInd.first =  19aucVertGrid.second  = 34
+circleTime = 701
+aucNeer = 0
+aucVertID = 673
+aucVertGridInd.first =  16aucVertGrid.second  = 33
+circleTime = 702
+aucNeer = 5
+aucVertID = 384
+aucVertGridInd.first =  9aucVertGrid.second  = 24
+circleTime = 703
+aucNeer = 5
+aucVertID = 426
+aucVertGridInd.first =  10aucVertGrid.second  = 26
+circleTime = 704
+aucNeer = 7
+aucVertID = 136
+aucVertGridInd.first =  3aucVertGrid.second  = 16
+circleTime = 705
+aucNeer = 6
+aucVertID = 136
+aucVertGridInd.first =  3aucVertGrid.second  = 16
+circleTime = 706
+aucNeer = 5
+aucVertID = 427
+aucVertGridInd.first =  10aucVertGrid.second  = 27
+circleTime = 707
+aucNeer = 1
+aucVertID = 1125
+aucVertGridInd.first =  28aucVertGrid.second  = 5
+circleTime = 708
+aucNeer = 6
+aucVertID = 1125
+aucVertGridInd.first =  28aucVertGrid.second  = 5
+circleTime = 709
+aucNeer = 1
+aucVertID = 1247
+aucVertGridInd.first =  31aucVertGrid.second  = 7
+circleTime = 710
+aucNeer = 3
+aucVertID = 1111
+aucVertGridInd.first =  27aucVertGrid.second  = 31
+circleTime = 711
+aucNeer = 3
+aucVertID = 1072
+aucVertGridInd.first =  26aucVertGrid.second  = 32
+circleTime = 712
+aucNeer = 5
+aucVertID = 383
+aucVertGridInd.first =  9aucVertGrid.second  = 23
+circleTime = 713
+aucNeer = 6
+aucVertID = 383
+aucVertGridInd.first =  9aucVertGrid.second  = 23
+circleTime = 714
+aucNeer = 3
+aucVertID = 1188
+aucVertGridInd.first =  29aucVertGrid.second  = 28
+circleTime = 715
+aucNeer = 6
+aucVertID = 1188
+aucVertGridInd.first =  29aucVertGrid.second  = 28
+circleTime = 716
+aucNeer = 1
+aucVertID = 1004
+aucVertGridInd.first =  25aucVertGrid.second  = 4
+circleTime = 717
+aucNeer = 3
+aucVertID = 1149
+aucVertGridInd.first =  28aucVertGrid.second  = 29
+circleTime = 718
+aucNeer = 3
+aucVertID = 1187
+aucVertGridInd.first =  29aucVertGrid.second  = 27
+circleTime = 719
+aucNeer = 3
+aucVertID = 993
+aucVertGridInd.first =  24aucVertGrid.second  = 33
+circleTime = 720
+aucNeer = 6
+aucVertID = 993
+aucVertGridInd.first =  24aucVertGrid.second  = 33
+circleTime = 721
+aucNeer = 1
+aucVertID = 883
+aucVertGridInd.first =  22aucVertGrid.second  = 3
+circleTime = 722
+aucNeer = 7
+aucVertID = 212
+aucVertGridInd.first =  5aucVertGrid.second  = 12
+circleTime = 723
+aucNeer = 3
+aucVertID = 1110
+aucVertGridInd.first =  27aucVertGrid.second  = 30
+circleTime = 724
+aucNeer = 0
+aucVertID = 834
+aucVertGridInd.first =  20aucVertGrid.second  = 34
+circleTime = 725
+aucNeer = 4
+aucVertID = 486
+aucVertGridInd.first =  12aucVertGrid.second  = 6
+circleTime = 726
+aucNeer = 5
+aucVertID = 467
+aucVertGridInd.first =  11aucVertGrid.second  = 27
+circleTime = 727
+aucNeer = 0
+aucVertID = 511
+aucVertGridInd.first =  12aucVertGrid.second  = 31
+circleTime = 728
+aucNeer = 5
+aucVertID = 424
+aucVertGridInd.first =  10aucVertGrid.second  = 24
+circleTime = 729
+aucNeer = 5
+aucVertID = 466
+aucVertGridInd.first =  11aucVertGrid.second  = 26
+circleTime = 730
+aucNeer = 2
+aucVertID = 1545
+aucVertGridInd.first =  38aucVertGrid.second  = 25
+circleTime = 731
+aucNeer = 6
+aucVertID = 915
+aucVertGridInd.first =  22aucVertGrid.second  = 35
+circleTime = 732
+aucNeer = 7
+aucVertID = 251
+aucVertGridInd.first =  6aucVertGrid.second  = 11
+circleTime = 733
+aucNeer = 6
+aucVertID = 914
+aucVertGridInd.first =  22aucVertGrid.second  = 34
+circleTime = 734
+aucNeer = 4
+aucVertID = 407
+aucVertGridInd.first =  10aucVertGrid.second  = 7
+circleTime = 735
+aucNeer = 4
+aucVertID = 764
+aucVertGridInd.first =  19aucVertGrid.second  = 4
+circleTime = 736
+aucNeer = 2
+aucVertID = 1329
+aucVertGridInd.first =  33aucVertGrid.second  = 9
+circleTime = 737
+aucNeer = 0
+aucVertID = 874
+aucVertGridInd.first =  21aucVertGrid.second  = 34
+circleTime = 738
+aucNeer = 6
+aucVertID = 874
+aucVertGridInd.first =  21aucVertGrid.second  = 34
+circleTime = 739
+aucNeer = 7
+aucVertID = 175
+aucVertGridInd.first =  4aucVertGrid.second  = 15
+circleTime = 740
+aucNeer = 3
+aucVertID = 1032
+aucVertGridInd.first =  25aucVertGrid.second  = 32
+circleTime = 741
+aucNeer = 5
+aucVertID = 507
+aucVertGridInd.first =  12aucVertGrid.second  = 27
+circleTime = 742
+aucNeer = 2
+aucVertID = 1413
+aucVertGridInd.first =  35aucVertGrid.second  = 13
+circleTime = 743
+aucNeer = 4
+aucVertID = 605
+aucVertGridInd.first =  15aucVertGrid.second  = 5
+circleTime = 744
+aucNeer = 5
+aucVertID = 465
+aucVertGridInd.first =  11aucVertGrid.second  = 25
+circleTime = 745
+aucNeer = 0
+aucVertID = 470
+aucVertGridInd.first =  11aucVertGrid.second  = 30
+circleTime = 746
+aucNeer = 7
+aucVertID = 176
+aucVertGridInd.first =  4aucVertGrid.second  = 16
+circleTime = 747
+aucNeer = 4
+aucVertID = 804
+aucVertGridInd.first =  20aucVertGrid.second  = 4
+circleTime = 748
+aucNeer = 6
+aucVertID = 804
+aucVertGridInd.first =  20aucVertGrid.second  = 4
+circleTime = 749
+aucNeer = 5
+aucVertID = 547
+aucVertGridInd.first =  13aucVertGrid.second  = 27
+circleTime = 750
+aucNeer = 7
+aucVertID = 252
+aucVertGridInd.first =  6aucVertGrid.second  = 12
+circleTime = 751
+aucNeer = 7
+aucVertID = 177
+aucVertGridInd.first =  4aucVertGrid.second  = 17
+circleTime = 752
+aucNeer = 2
+aucVertID = 1371
+aucVertGridInd.first =  34aucVertGrid.second  = 11
+circleTime = 753
+aucNeer = 3
+aucVertID = 1071
+aucVertGridInd.first =  26aucVertGrid.second  = 31
+circleTime = 754
+aucNeer = 4
+aucVertID = 844
+aucVertGridInd.first =  21aucVertGrid.second  = 4
+circleTime = 755
+aucNeer = 2
+aucVertID = 1456
+aucVertGridInd.first =  36aucVertGrid.second  = 16
+circleTime = 756
+aucNeer = 4
+aucVertID = 843
+aucVertGridInd.first =  21aucVertGrid.second  = 3
+circleTime = 757
+aucNeer = 1
+aucVertID = 1166
+aucVertGridInd.first =  29aucVertGrid.second  = 6
+circleTime = 758
+aucNeer = 7
+aucVertID = 291
+aucVertGridInd.first =  7aucVertGrid.second  = 11
+circleTime = 759
+aucNeer = 3
+aucVertID = 1148
+aucVertGridInd.first =  28aucVertGrid.second  = 28
+circleTime = 760
+aucNeer = 7
+aucVertID = 290
+aucVertGridInd.first =  7aucVertGrid.second  = 10
+circleTime = 761
+aucNeer = 4
+aucVertID = 884
+aucVertGridInd.first =  22aucVertGrid.second  = 4
+circleTime = 762
+aucNeer = 3
+aucVertID = 953
+aucVertGridInd.first =  23aucVertGrid.second  = 33
+circleTime = 763
+aucNeer = 0
+aucVertID = 551
+aucVertGridInd.first =  13aucVertGrid.second  = 31
+circleTime = 764
+aucNeer = 3
+aucVertID = 1109
+aucVertGridInd.first =  27aucVertGrid.second  = 29
+circleTime = 765
+aucNeer = 0
+aucVertID = 429
+aucVertGridInd.first =  10aucVertGrid.second  = 29
+circleTime = 766
+aucNeer = 4
+aucVertID = 526
+aucVertGridInd.first =  13aucVertGrid.second  = 6
+circleTime = 767
+aucNeer = 6
+aucVertID = 875
+aucVertGridInd.first =  21aucVertGrid.second  = 35
+circleTime = 768
+aucNeer = 6
+aucVertID = 875
+aucVertGridInd.first =  21aucVertGrid.second  = 35
+circleTime = 769
+aucNeer = 3
+aucVertID = 1031
+aucVertGridInd.first =  25aucVertGrid.second  = 31
+circleTime = 770
+aucNeer = 0
+aucVertID = 793
+aucVertGridInd.first =  19aucVertGrid.second  = 33
+circleTime = 771
+aucNeer = 6
+aucVertID = 875
+aucVertGridInd.first =  21aucVertGrid.second  = 35
+circleTime = 772
+aucNeer = 6
+aucVertID = 875
+aucVertGridInd.first =  21aucVertGrid.second  = 35
+circleTime = 773
+aucNeer = 5
+aucVertID = 546
+aucVertGridInd.first =  13aucVertGrid.second  = 26
+circleTime = 774
+aucNeer = 3
+aucVertID = 1147
+aucVertGridInd.first =  28aucVertGrid.second  = 27
+circleTime = 775
+aucNeer = 7
+aucVertID = 215
+aucVertGridInd.first =  5aucVertGrid.second  = 15
+circleTime = 776
+aucNeer = 1
+aucVertID = 1085
+aucVertGridInd.first =  27aucVertGrid.second  = 5
+circleTime = 777
+aucNeer = 6
+aucVertID = 1085
+aucVertGridInd.first =  27aucVertGrid.second  = 5
+circleTime = 778
+aucNeer = 4
+aucVertID = 368
+aucVertGridInd.first =  9aucVertGrid.second  = 8
+circleTime = 779
+aucNeer = 4
+aucVertID = 447
+aucVertGridInd.first =  11aucVertGrid.second  = 7
+circleTime = 780
+aucNeer = 5
+aucVertID = 587
+aucVertGridInd.first =  14aucVertGrid.second  = 27
+circleTime = 781
+aucNeer = 6
+aucVertID = 587
+aucVertGridInd.first =  14aucVertGrid.second  = 27
+circleTime = 782
+aucNeer = 6
+aucVertID = 587
+aucVertGridInd.first =  14aucVertGrid.second  = 27
+circleTime = 783
+aucNeer = 2
+aucVertID = 1455
+aucVertGridInd.first =  36aucVertGrid.second  = 15
+circleTime = 784
+aucNeer = 5
+aucVertID = 588
+aucVertGridInd.first =  14aucVertGrid.second  = 28
+circleTime = 785
+aucNeer = 5
+aucVertID = 589
+aucVertGridInd.first =  14aucVertGrid.second  = 29
+circleTime = 786
+aucNeer = 2
+aucVertID = 1500
+aucVertGridInd.first =  37aucVertGrid.second  = 20
+circleTime = 787
+aucNeer = 4
+aucVertID = 685
+aucVertGridInd.first =  17aucVertGrid.second  = 5
+circleTime = 788
+aucNeer = 2
+aucVertID = 1501
+aucVertGridInd.first =  37aucVertGrid.second  = 21
+circleTime = 789
+aucNeer = 7
+aucVertID = 178
+aucVertGridInd.first =  4aucVertGrid.second  = 18
+circleTime = 790
+aucNeer = 1
+aucVertID = 1207
+aucVertGridInd.first =  30aucVertGrid.second  = 7
+circleTime = 791
+aucNeer = 2
+aucVertID = 1502
+aucVertGridInd.first =  37aucVertGrid.second  = 22
+circleTime = 792
+aucNeer = 3
+aucVertID = 1108
+aucVertGridInd.first =  27aucVertGrid.second  = 28
+circleTime = 793
+aucNeer = 1
+aucVertID = 964
+aucVertGridInd.first =  24aucVertGrid.second  = 4
+circleTime = 794
+aucNeer = 5
+aucVertID = 590
+aucVertGridInd.first =  14aucVertGrid.second  = 30
+circleTime = 795
+aucNeer = 5
+aucVertID = 591
+aucVertGridInd.first =  14aucVertGrid.second  = 31
+circleTime = 796
+aucNeer = 3
+aucVertID = 952
+aucVertGridInd.first =  23aucVertGrid.second  = 32
+circleTime = 797
+aucNeer = 3
+aucVertID = 1146
+aucVertGridInd.first =  28aucVertGrid.second  = 26
+circleTime = 798
+aucNeer = 6
+aucVertID = 835
+aucVertGridInd.first =  20aucVertGrid.second  = 35
+circleTime = 799
+aucNeer = 7
+aucVertID = 330
+aucVertGridInd.first =  8aucVertGrid.second  = 10
+circleTime = 800
+aucNeer = 7
+aucVertID = 216
+aucVertGridInd.first =  5aucVertGrid.second  = 16
+circleTime = 801
+aucNeer = 0
+aucVertID = 753
+aucVertGridInd.first =  18aucVertGrid.second  = 33
+circleTime = 802
+aucNeer = 4
+aucVertID = 566
+aucVertGridInd.first =  14aucVertGrid.second  = 6
+circleTime = 803
+aucNeer = 3
+aucVertID = 1069
+aucVertGridInd.first =  26aucVertGrid.second  = 29
+circleTime = 804
+aucNeer = 3
+aucVertID = 991
+aucVertGridInd.first =  24aucVertGrid.second  = 31
+circleTime = 805
+aucNeer = 5
+aucVertID = 550
+aucVertGridInd.first =  13aucVertGrid.second  = 30
+circleTime = 806
+aucNeer = 3
+aucVertID = 1030
+aucVertGridInd.first =  25aucVertGrid.second  = 30
+circleTime = 807
+aucNeer = 3
+aucVertID = 1107
+aucVertGridInd.first =  27aucVertGrid.second  = 27
+circleTime = 808
+aucNeer = 7
+aucVertID = 292
+aucVertGridInd.first =  7aucVertGrid.second  = 12
+circleTime = 809
+aucNeer = 6
+aucVertID = 1559
+aucVertGridInd.first =  38aucVertGrid.second  = 39
+circleTime = 810
+aucNeer = 0
+aucVertID = 672
+aucVertGridInd.first =  16aucVertGrid.second  = 32
+circleTime = 811
+aucNeer = 2
+aucVertID = 1414
+aucVertGridInd.first =  35aucVertGrid.second  = 14
+circleTime = 812
+aucNeer = 6
+aucVertID = 1599
+aucVertGridInd.first =  39aucVertGrid.second  = 39
+circleTime = 813
+aucNeer = 3
+aucVertID = 1068
+aucVertGridInd.first =  26aucVertGrid.second  = 28
+circleTime = 814
+aucNeer = 5
+aucVertID = 510
+aucVertGridInd.first =  12aucVertGrid.second  = 30
+circleTime = 815
+aucNeer = 1
+aucVertID = 1126
+aucVertGridInd.first =  28aucVertGrid.second  = 6
+circleTime = 816
+aucNeer = 5
+aucVertID = 509
+aucVertGridInd.first =  12aucVertGrid.second  = 29
+circleTime = 817
+aucNeer = 7
+aucVertID = 331
+aucVertGridInd.first =  8aucVertGrid.second  = 11
+circleTime = 818
+aucNeer = 3
+aucVertID = 951
+aucVertGridInd.first =  23aucVertGrid.second  = 31
+circleTime = 819
+aucNeer = 2
+aucVertID = 1457
+aucVertGridInd.first =  36aucVertGrid.second  = 17
+circleTime = 820
+aucNeer = 6
+aucVertID = 1598
+aucVertGridInd.first =  39aucVertGrid.second  = 38
+circleTime = 821
+aucNeer = 5
+aucVertID = 630
+aucVertGridInd.first =  15aucVertGrid.second  = 30
+circleTime = 822
+aucNeer = 3
+aucVertID = 1029
+aucVertGridInd.first =  25aucVertGrid.second  = 29
+circleTime = 823
+aucNeer = 7
+aucVertID = 293
+aucVertGridInd.first =  7aucVertGrid.second  = 13
+circleTime = 824
+aucNeer = 2
+aucVertID = 1505
+aucVertGridInd.first =  37aucVertGrid.second  = 25
+circleTime = 825
+aucNeer = 6
+aucVertID = 1505
+aucVertGridInd.first =  37aucVertGrid.second  = 25
+circleTime = 826
+aucNeer = 5
+aucVertID = 670
+aucVertGridInd.first =  16aucVertGrid.second  = 30
+circleTime = 827
+aucNeer = 7
+aucVertID = 370
+aucVertGridInd.first =  9aucVertGrid.second  = 10
+circleTime = 828
+aucNeer = 2
+aucVertID = 1458
+aucVertGridInd.first =  36aucVertGrid.second  = 18
+circleTime = 829
+aucNeer = 0
+aucVertID = 833
+aucVertGridInd.first =  20aucVertGrid.second  = 33
+circleTime = 830
+aucNeer = 4
+aucVertID = 725
+aucVertGridInd.first =  18aucVertGrid.second  = 5
+circleTime = 831
+aucNeer = 0
+aucVertID = 792
+aucVertGridInd.first =  19aucVertGrid.second  = 32
+circleTime = 832
+aucNeer = 1
+aucVertID = 1045
+aucVertGridInd.first =  26aucVertGrid.second  = 5
+circleTime = 833
+aucNeer = 3
+aucVertID = 1106
+aucVertGridInd.first =  27aucVertGrid.second  = 26
+circleTime = 834
+aucNeer = 0
+aucVertID = 671
+aucVertGridInd.first =  16aucVertGrid.second  = 31
+circleTime = 835
+aucNeer = 6
+aucVertID = 1597
+aucVertGridInd.first =  39aucVertGrid.second  = 37
+circleTime = 836
+aucNeer = 0
+aucVertID = 832
+aucVertGridInd.first =  20aucVertGrid.second  = 32
+circleTime = 837
+aucNeer = 0
+aucVertID = 872
+aucVertGridInd.first =  21aucVertGrid.second  = 32
+circleTime = 838
+aucNeer = 1
+aucVertID = 1248
+aucVertGridInd.first =  31aucVertGrid.second  = 8
+circleTime = 839
+aucNeer = 2
+aucVertID = 1498
+aucVertGridInd.first =  37aucVertGrid.second  = 18
+circleTime = 840
+aucNeer = 7
+aucVertID = 369
+aucVertGridInd.first =  9aucVertGrid.second  = 9
+circleTime = 841
+aucNeer = 7
+aucVertID = 255
+aucVertGridInd.first =  6aucVertGrid.second  = 15
+circleTime = 842
+aucNeer = 4
+aucVertID = 487
+aucVertGridInd.first =  12aucVertGrid.second  = 7
+circleTime = 843
+aucNeer = 6
+aucVertID = 834
+aucVertGridInd.first =  20aucVertGrid.second  = 34
+circleTime = 844
+aucNeer = 4
+aucVertID = 408
+aucVertGridInd.first =  10aucVertGrid.second  = 8
+circleTime = 845
+aucNeer = 2
+aucVertID = 1415
+aucVertGridInd.first =  35aucVertGrid.second  = 15
+circleTime = 846
+aucNeer = 0
+aucVertID = 711
+aucVertGridInd.first =  17aucVertGrid.second  = 31
+circleTime = 847
+aucNeer = 1
+aucVertID = 1288
+aucVertGridInd.first =  32aucVertGrid.second  = 8
+circleTime = 848
+aucNeer = 0
+aucVertID = 751
+aucVertGridInd.first =  18aucVertGrid.second  = 31
+circleTime = 849
+aucNeer = 0
+aucVertID = 791
+aucVertGridInd.first =  19aucVertGrid.second  = 31
+circleTime = 850
+aucNeer = 5
+aucVertID = 629
+aucVertGridInd.first =  15aucVertGrid.second  = 29
+circleTime = 851
+aucNeer = 6
+aucVertID = 833
+aucVertGridInd.first =  20aucVertGrid.second  = 33
+circleTime = 852
+aucNeer = 2
+aucVertID = 1459
+aucVertGridInd.first =  36aucVertGrid.second  = 19
+circleTime = 853
+aucNeer = 6
+aucVertID = 796
+aucVertGridInd.first =  19aucVertGrid.second  = 36
+circleTime = 854
+aucNeer = 5
+aucVertID = 710
+aucVertGridInd.first =  17aucVertGrid.second  = 30
+circleTime = 855
+aucNeer = 4
+aucVertID = 765
+aucVertGridInd.first =  19aucVertGrid.second  = 5
+circleTime = 856
+aucNeer = 3
+aucVertID = 990
+aucVertGridInd.first =  24aucVertGrid.second  = 30
+circleTime = 857
+aucNeer = 0
+aucVertID = 871
+aucVertGridInd.first =  21aucVertGrid.second  = 31
+circleTime = 858
+aucNeer = 6
+aucVertID = 871
+aucVertGridInd.first =  21aucVertGrid.second  = 31
+circleTime = 859
+aucNeer = 2
+aucVertID = 1373
+aucVertGridInd.first =  34aucVertGrid.second  = 13
+circleTime = 860
+aucNeer = 1
+aucVertID = 1167
+aucVertGridInd.first =  29aucVertGrid.second  = 7
+circleTime = 861
+aucNeer = 3
+aucVertID = 1067
+aucVertGridInd.first =  26aucVertGrid.second  = 27
+circleTime = 862
+aucNeer = 3
+aucVertID = 1105
+aucVertGridInd.first =  27aucVertGrid.second  = 25
+circleTime = 863
+aucNeer = 1
+aucVertID = 1005
+aucVertGridInd.first =  25aucVertGrid.second  = 5
+circleTime = 864
+aucNeer = 4
+aucVertID = 805
+aucVertGridInd.first =  20aucVertGrid.second  = 5
+circleTime = 865
+aucNeer = 4
+aucVertID = 845
+aucVertGridInd.first =  21aucVertGrid.second  = 5
+circleTime = 866
+aucNeer = 4
+aucVertID = 527
+aucVertGridInd.first =  13aucVertGrid.second  = 7
+circleTime = 867
+aucNeer = 5
+aucVertID = 669
+aucVertGridInd.first =  16aucVertGrid.second  = 29
+circleTime = 868
+aucNeer = 0
+aucVertID = 911
+aucVertGridInd.first =  22aucVertGrid.second  = 31
+circleTime = 869
+aucNeer = 1
+aucVertID = 1086
+aucVertGridInd.first =  27aucVertGrid.second  = 6
+circleTime = 870
+aucNeer = 0
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 871
+aucNeer = 7
+aucVertID = 254
+aucVertGridInd.first =  6aucVertGrid.second  = 14
+circleTime = 872
+aucNeer = 7
+aucVertID = 409
+aucVertGridInd.first =  10aucVertGrid.second  = 9
+circleTime = 873
+aucNeer = 6
+aucVertID = 795
+aucVertGridInd.first =  19aucVertGrid.second  = 35
+circleTime = 874
+aucNeer = 1
+aucVertID = 1208
+aucVertGridInd.first =  30aucVertGrid.second  = 8
+circleTime = 875
+aucNeer = 2
+aucVertID = 1331
+aucVertGridInd.first =  33aucVertGrid.second  = 11
+circleTime = 876
+aucNeer = 7
+aucVertID = 332
+aucVertGridInd.first =  8aucVertGrid.second  = 12
+circleTime = 877
+aucNeer = 2
+aucVertID = 1460
+aucVertGridInd.first =  36aucVertGrid.second  = 20
+circleTime = 878
+aucNeer = 4
+aucVertID = 885
+aucVertGridInd.first =  22aucVertGrid.second  = 5
+circleTime = 879
+aucNeer = 5
+aucVertID = 628
+aucVertGridInd.first =  15aucVertGrid.second  = 28
+circleTime = 880
+aucNeer = 5
+aucVertID = 586
+aucVertGridInd.first =  14aucVertGrid.second  = 26
+circleTime = 881
+aucNeer = 6
+aucVertID = 586
+aucVertGridInd.first =  14aucVertGrid.second  = 26
+circleTime = 882
+aucNeer = 7
+aucVertID = 294
+aucVertGridInd.first =  7aucVertGrid.second  = 14
+circleTime = 883
+aucNeer = 2
+aucVertID = 1416
+aucVertGridInd.first =  35aucVertGrid.second  = 16
+circleTime = 884
+aucNeer = 4
+aucVertID = 567
+aucVertGridInd.first =  14aucVertGrid.second  = 7
+circleTime = 885
+aucNeer = 5
+aucVertID = 627
+aucVertGridInd.first =  15aucVertGrid.second  = 27
+circleTime = 886
+aucNeer = 6
+aucVertID = 627
+aucVertGridInd.first =  15aucVertGrid.second  = 27
+circleTime = 887
+aucNeer = 0
+aucVertID = 790
+aucVertGridInd.first =  19aucVertGrid.second  = 30
+circleTime = 888
+aucNeer = 5
+aucVertID = 585
+aucVertGridInd.first =  14aucVertGrid.second  = 25
+circleTime = 889
+aucNeer = 2
+aucVertID = 1461
+aucVertGridInd.first =  36aucVertGrid.second  = 21
+circleTime = 890
+aucNeer = 5
+aucVertID = 626
+aucVertGridInd.first =  15aucVertGrid.second  = 26
+circleTime = 891
+aucNeer = 4
+aucVertID = 488
+aucVertGridInd.first =  12aucVertGrid.second  = 8
+circleTime = 892
+aucNeer = 7
+aucVertID = 371
+aucVertGridInd.first =  9aucVertGrid.second  = 11
+circleTime = 893
+aucNeer = 4
+aucVertID = 726
+aucVertGridInd.first =  18aucVertGrid.second  = 6
+circleTime = 894
+aucNeer = 7
+aucVertID = 410
+aucVertGridInd.first =  10aucVertGrid.second  = 10
+circleTime = 895
+aucNeer = 1
+aucVertID = 965
+aucVertGridInd.first =  24aucVertGrid.second  = 5
+circleTime = 896
+aucNeer = 1
+aucVertID = 1249
+aucVertGridInd.first =  31aucVertGrid.second  = 9
+circleTime = 897
+aucNeer = 7
+aucVertID = 295
+aucVertGridInd.first =  7aucVertGrid.second  = 15
+circleTime = 898
+aucNeer = 1
+aucVertID = 1127
+aucVertGridInd.first =  28aucVertGrid.second  = 7
+circleTime = 899
+aucNeer = 1
+aucVertID = 1046
+aucVertGridInd.first =  26aucVertGrid.second  = 6
+circleTime = 900
+aucNeer = 5
+aucVertID = 667
+aucVertGridInd.first =  16aucVertGrid.second  = 27
+circleTime = 901
+aucNeer = 4
+aucVertID = 607
+aucVertGridInd.first =  15aucVertGrid.second  = 7
+circleTime = 902
+aucNeer = 6
+aucVertID = 607
+aucVertGridInd.first =  15aucVertGrid.second  = 7
+circleTime = 903
+aucNeer = 5
+aucVertID = 584
+aucVertGridInd.first =  14aucVertGrid.second  = 24
+circleTime = 904
+aucNeer = 3
+aucVertID = 1028
+aucVertGridInd.first =  25aucVertGrid.second  = 28
+circleTime = 905
+aucNeer = 6
+aucVertID = 1028
+aucVertGridInd.first =  25aucVertGrid.second  = 28
+circleTime = 906
+aucNeer = 4
+aucVertID = 766
+aucVertGridInd.first =  19aucVertGrid.second  = 6
+circleTime = 907
+aucNeer = 1
+aucVertID = 1168
+aucVertGridInd.first =  29aucVertGrid.second  = 8
+circleTime = 908
+aucNeer = 1
+aucVertID = 925
+aucVertGridInd.first =  23aucVertGrid.second  = 5
+circleTime = 909
+aucNeer = 6
+aucVertID = 925
+aucVertGridInd.first =  23aucVertGrid.second  = 5
+circleTime = 910
+aucNeer = 7
+aucVertID = 449
+aucVertGridInd.first =  11aucVertGrid.second  = 9
+circleTime = 911
+aucNeer = 5
+aucVertID = 544
+aucVertGridInd.first =  13aucVertGrid.second  = 24
+circleTime = 912
+aucNeer = 1
+aucVertID = 1087
+aucVertGridInd.first =  27aucVertGrid.second  = 7
+circleTime = 913
+aucNeer = 2
+aucVertID = 1462
+aucVertGridInd.first =  36aucVertGrid.second  = 22
+circleTime = 914
+aucNeer = 6
+aucVertID = 1462
+aucVertGridInd.first =  36aucVertGrid.second  = 22
+circleTime = 915
+aucNeer = 4
+aucVertID = 806
+aucVertGridInd.first =  20aucVertGrid.second  = 6
+circleTime = 916
+aucNeer = 3
+aucVertID = 950
+aucVertGridInd.first =  23aucVertGrid.second  = 30
+circleTime = 917
+aucNeer = 2
+aucVertID = 1465
+aucVertGridInd.first =  36aucVertGrid.second  = 25
+circleTime = 918
+aucNeer = 3
+aucVertID = 989
+aucVertGridInd.first =  24aucVertGrid.second  = 29
+circleTime = 919
+aucNeer = 7
+aucVertID = 258
+aucVertGridInd.first =  6aucVertGrid.second  = 18
+circleTime = 920
+aucNeer = 3
+aucVertID = 1066
+aucVertGridInd.first =  26aucVertGrid.second  = 26
+circleTime = 921
+aucNeer = 2
+aucVertID = 1464
+aucVertGridInd.first =  36aucVertGrid.second  = 24
+circleTime = 922
+aucNeer = 3
+aucVertID = 1104
+aucVertGridInd.first =  27aucVertGrid.second  = 24
+circleTime = 923
+aucNeer = 0
+aucVertID = 830
+aucVertGridInd.first =  20aucVertGrid.second  = 30
+circleTime = 924
+aucNeer = 2
+aucVertID = 1374
+aucVertGridInd.first =  34aucVertGrid.second  = 14
+circleTime = 925
+aucNeer = 0
+aucVertID = 870
+aucVertGridInd.first =  21aucVertGrid.second  = 30
+circleTime = 926
+aucNeer = 1
+aucVertID = 1250
+aucVertGridInd.first =  31aucVertGrid.second  = 10
+circleTime = 927
+aucNeer = 5
+aucVertID = 543
+aucVertGridInd.first =  13aucVertGrid.second  = 23
+circleTime = 928
+aucNeer = 0
+aucVertID = 749
+aucVertGridInd.first =  18aucVertGrid.second  = 29
+circleTime = 929
+aucNeer = 5
+aucVertID = 542
+aucVertGridInd.first =  13aucVertGrid.second  = 22
+circleTime = 930
+aucNeer = 6
+aucVertID = 1596
+aucVertGridInd.first =  39aucVertGrid.second  = 36
+circleTime = 931
+aucNeer = 0
+aucVertID = 789
+aucVertGridInd.first =  19aucVertGrid.second  = 29
+circleTime = 932
+aucNeer = 3
+aucVertID = 1144
+aucVertGridInd.first =  28aucVertGrid.second  = 24
+circleTime = 933
+aucNeer = 4
+aucVertID = 528
+aucVertGridInd.first =  13aucVertGrid.second  = 8
+circleTime = 934
+aucNeer = 0
+aucVertID = 829
+aucVertGridInd.first =  20aucVertGrid.second  = 29
+circleTime = 935
+aucNeer = 0
+aucVertID = 869
+aucVertGridInd.first =  21aucVertGrid.second  = 29
+circleTime = 936
+aucNeer = 5
+aucVertID = 502
+aucVertGridInd.first =  12aucVertGrid.second  = 22
+circleTime = 937
+aucNeer = 0
+aucVertID = 748
+aucVertGridInd.first =  18aucVertGrid.second  = 28
+circleTime = 938
+aucNeer = 0
+aucVertID = 708
+aucVertGridInd.first =  17aucVertGrid.second  = 28
+circleTime = 939
+aucNeer = 1
+aucVertID = 1290
+aucVertGridInd.first =  32aucVertGrid.second  = 10
+circleTime = 940
+aucNeer = 0
+aucVertID = 788
+aucVertGridInd.first =  19aucVertGrid.second  = 28
+circleTime = 941
+aucNeer = 5
+aucVertID = 501
+aucVertGridInd.first =  12aucVertGrid.second  = 21
+circleTime = 942
+aucNeer = 1
+aucVertID = 1291
+aucVertGridInd.first =  32aucVertGrid.second  = 11
+circleTime = 943
+aucNeer = 3
+aucVertID = 1143
+aucVertGridInd.first =  28aucVertGrid.second  = 23
+circleTime = 944
+aucNeer = 6
+aucVertID = 832
+aucVertGridInd.first =  20aucVertGrid.second  = 32
+circleTime = 945
+aucNeer = 3
+aucVertID = 1183
+aucVertGridInd.first =  29aucVertGrid.second  = 23
+circleTime = 946
+aucNeer = 6
+aucVertID = 872
+aucVertGridInd.first =  21aucVertGrid.second  = 32
+circleTime = 947
+aucNeer = 4
+aucVertID = 846
+aucVertGridInd.first =  21aucVertGrid.second  = 6
+circleTime = 948
+aucNeer = 6
+aucVertID = 871
+aucVertGridInd.first =  21aucVertGrid.second  = 31
+circleTime = 949
+aucNeer = 5
+aucVertID = 461
+aucVertGridInd.first =  11aucVertGrid.second  = 21
+circleTime = 950
+aucNeer = 0
+aucVertID = 828
+aucVertGridInd.first =  20aucVertGrid.second  = 28
+circleTime = 951
+aucNeer = 1
+aucVertID = 1128
+aucVertGridInd.first =  28aucVertGrid.second  = 8
+circleTime = 952
+aucNeer = 5
+aucVertID = 421
+aucVertGridInd.first =  10aucVertGrid.second  = 21
+circleTime = 953
+aucNeer = 0
+aucVertID = 868
+aucVertGridInd.first =  21aucVertGrid.second  = 28
+circleTime = 954
+aucNeer = 6
+aucVertID = 870
+aucVertGridInd.first =  21aucVertGrid.second  = 30
+circleTime = 955
+aucNeer = 3
+aucVertID = 1223
+aucVertGridInd.first =  30aucVertGrid.second  = 23
+circleTime = 956
+aucNeer = 2
+aucVertID = 1418
+aucVertGridInd.first =  35aucVertGrid.second  = 18
+circleTime = 957
+aucNeer = 1
+aucVertID = 966
+aucVertGridInd.first =  24aucVertGrid.second  = 6
+circleTime = 958
+aucNeer = 1
+aucVertID = 1169
+aucVertGridInd.first =  29aucVertGrid.second  = 9
+circleTime = 959
+aucNeer = 0
+aucVertID = 908
+aucVertGridInd.first =  22aucVertGrid.second  = 28
+circleTime = 960
+aucNeer = 0
+aucVertID = 948
+aucVertGridInd.first =  23aucVertGrid.second  = 28
+circleTime = 961
+aucNeer = 1
+aucVertID = 926
+aucVertGridInd.first =  23aucVertGrid.second  = 6
+circleTime = 962
+aucNeer = 6
+aucVertID = 869
+aucVertGridInd.first =  21aucVertGrid.second  = 29
+circleTime = 963
+aucNeer = 6
+aucVertID = 830
+aucVertGridInd.first =  20aucVertGrid.second  = 30
+circleTime = 964
+aucNeer = 1
+aucVertID = 1210
+aucVertGridInd.first =  30aucVertGrid.second  = 10
+circleTime = 965
+aucNeer = 3
+aucVertID = 1263
+aucVertGridInd.first =  31aucVertGrid.second  = 23
+circleTime = 966
+aucNeer = 7
+aucVertID = 257
+aucVertGridInd.first =  6aucVertGrid.second  = 17
+circleTime = 967
+aucNeer = 7
+aucVertID = 334
+aucVertGridInd.first =  8aucVertGrid.second  = 14
+circleTime = 968
+aucNeer = 3
+aucVertID = 1303
+aucVertGridInd.first =  32aucVertGrid.second  = 23
+circleTime = 969
+aucNeer = 5
+aucVertID = 460
+aucVertGridInd.first =  11aucVertGrid.second  = 20
+circleTime = 970
+aucNeer = 7
+aucVertID = 411
+aucVertGridInd.first =  10aucVertGrid.second  = 11
+circleTime = 971
+aucNeer = 3
+aucVertID = 1343
+aucVertGridInd.first =  33aucVertGrid.second  = 23
+circleTime = 972
+aucNeer = 4
+aucVertID = 886
+aucVertGridInd.first =  22aucVertGrid.second  = 6
+circleTime = 973
+aucNeer = 7
+aucVertID = 489
+aucVertGridInd.first =  12aucVertGrid.second  = 9
+circleTime = 974
+aucNeer = 5
+aucVertID = 459
+aucVertGridInd.first =  11aucVertGrid.second  = 19
+circleTime = 975
+aucNeer = 2
+aucVertID = 1375
+aucVertGridInd.first =  34aucVertGrid.second  = 15
+circleTime = 976
+aucNeer = 7
+aucVertID = 297
+aucVertGridInd.first =  7aucVertGrid.second  = 17
+circleTime = 977
+aucNeer = 5
+aucVertID = 419
+aucVertGridInd.first =  10aucVertGrid.second  = 19
+circleTime = 978
+aucNeer = 3
+aucVertID = 1383
+aucVertGridInd.first =  34aucVertGrid.second  = 23
+circleTime = 979
+aucNeer = 0
+aucVertID = 949
+aucVertGridInd.first =  23aucVertGrid.second  = 29
+circleTime = 980
+aucNeer = 2
+aucVertID = 1419
+aucVertGridInd.first =  35aucVertGrid.second  = 19
+circleTime = 981
+aucNeer = 2
+aucVertID = 1333
+aucVertGridInd.first =  33aucVertGrid.second  = 13
+circleTime = 982
+aucNeer = 0
+aucVertID = 988
+aucVertGridInd.first =  24aucVertGrid.second  = 28
+circleTime = 983
+aucNeer = 2
+aucVertID = 1376
+aucVertGridInd.first =  34aucVertGrid.second  = 16
+circleTime = 984
+aucNeer = 2
+aucVertID = 1421
+aucVertGridInd.first =  35aucVertGrid.second  = 21
+circleTime = 985
+aucNeer = 6
+aucVertID = 1595
+aucVertGridInd.first =  39aucVertGrid.second  = 35
+circleTime = 986
+aucNeer = 1
+aucVertID = 1088
+aucVertGridInd.first =  27aucVertGrid.second  = 8
+circleTime = 987
+aucNeer = 0
+aucVertID = 707
+aucVertGridInd.first =  17aucVertGrid.second  = 27
+circleTime = 988
+aucNeer = 1
+aucVertID = 1251
+aucVertGridInd.first =  31aucVertGrid.second  = 11
+circleTime = 989
+aucNeer = 4
+aucVertID = 568
+aucVertGridInd.first =  14aucVertGrid.second  = 8
+circleTime = 990
+aucNeer = 6
+aucVertID = 1594
+aucVertGridInd.first =  39aucVertGrid.second  = 34
+circleTime = 991
+aucNeer = 3
+aucVertID = 1423
+aucVertGridInd.first =  35aucVertGrid.second  = 23
+circleTime = 992
+aucNeer = 1
+aucVertID = 1129
+aucVertGridInd.first =  28aucVertGrid.second  = 9
+circleTime = 993
+aucNeer = 4
+aucVertID = 608
+aucVertGridInd.first =  15aucVertGrid.second  = 8
+circleTime = 994
+aucNeer = 0
+aucVertID = 787
+aucVertGridInd.first =  19aucVertGrid.second  = 27
+circleTime = 995
+aucNeer = 0
+aucVertID = 987
+aucVertGridInd.first =  24aucVertGrid.second  = 27
+circleTime = 996
+aucNeer = 0
+aucVertID = 1027
+aucVertGridInd.first =  25aucVertGrid.second  = 27
+circleTime = 997
+aucNeer = 6
+aucVertID = 829
+aucVertGridInd.first =  20aucVertGrid.second  = 29
+circleTime = 998
+aucNeer = 6
+aucVertID = 1593
+aucVertGridInd.first =  39aucVertGrid.second  = 33
+circleTime = 999
+aucNeer = 2
+aucVertID = 1425
+aucVertGridInd.first =  35aucVertGrid.second  = 25
+circleTime = 1000
+aucNeer = 0
+aucVertID = 827
+aucVertGridInd.first =  20aucVertGrid.second  = 27
+circleTime = 1001
+aucNeer = 6
+aucVertID = 596
+aucVertGridInd.first =  14aucVertGrid.second  = 36
+circleTime = 1002
+aucNeer = 4
+aucVertID = 767
+aucVertGridInd.first =  19aucVertGrid.second  = 7
+circleTime = 1003
+aucNeer = 1
+aucVertID = 967
+aucVertGridInd.first =  24aucVertGrid.second  = 7
+circleTime = 1004
+aucNeer = 4
+aucVertID = 529
+aucVertGridInd.first =  13aucVertGrid.second  = 9
+circleTime = 1005
+aucNeer = 0
+aucVertID = 706
+aucVertGridInd.first =  17aucVertGrid.second  = 26
+circleTime = 1006
+aucNeer = 2
+aucVertID = 1424
+aucVertGridInd.first =  35aucVertGrid.second  = 24
+circleTime = 1007
+aucNeer = 5
+aucVertID = 379
+aucVertGridInd.first =  9aucVertGrid.second  = 19
+circleTime = 1008
+aucNeer = 3
+aucVertID = 1382
+aucVertGridInd.first =  34aucVertGrid.second  = 22
+circleTime = 1009
+aucNeer = 2
+aucVertID = 1377
+aucVertGridInd.first =  34aucVertGrid.second  = 17
+circleTime = 1010
+aucNeer = 5
+aucVertID = 339
+aucVertGridInd.first =  8aucVertGrid.second  = 19
+circleTime = 1011
+aucNeer = 6
+aucVertID = 339
+aucVertGridInd.first =  8aucVertGrid.second  = 19
+circleTime = 1012
+aucNeer = 1
+aucVertID = 1007
+aucVertGridInd.first =  25aucVertGrid.second  = 7
+circleTime = 1013
+aucNeer = 7
+aucVertID = 335
+aucVertGridInd.first =  8aucVertGrid.second  = 15
+circleTime = 1014
+aucNeer = 6
+aucVertID = 335
+aucVertGridInd.first =  8aucVertGrid.second  = 15
+circleTime = 1015
+aucNeer = 5
+aucVertID = 338
+aucVertGridInd.first =  8aucVertGrid.second  = 18
+circleTime = 1016
+aucNeer = 3
+aucVertID = 1381
+aucVertGridInd.first =  34aucVertGrid.second  = 21
+circleTime = 1017
+aucNeer = 7
+aucVertID = 298
+aucVertGridInd.first =  7aucVertGrid.second  = 18
+circleTime = 1018
+aucNeer = 1
+aucVertID = 1170
+aucVertGridInd.first =  29aucVertGrid.second  = 10
+circleTime = 1019
+aucNeer = 7
+aucVertID = 412
+aucVertGridInd.first =  10aucVertGrid.second  = 12
+circleTime = 1020
+aucNeer = 1
+aucVertID = 927
+aucVertGridInd.first =  23aucVertGrid.second  = 7
+circleTime = 1021
+aucNeer = 7
+aucVertID = 451
+aucVertGridInd.first =  11aucVertGrid.second  = 11
+circleTime = 1022
+aucNeer = 5
+aucVertID = 337
+aucVertGridInd.first =  8aucVertGrid.second  = 17
+circleTime = 1023
+aucNeer = 6
+aucVertID = 1592
+aucVertGridInd.first =  39aucVertGrid.second  = 32
+circleTime = 1024
+aucNeer = 7
+aucVertID = 413
+aucVertGridInd.first =  10aucVertGrid.second  = 13
+circleTime = 1025
+aucNeer = 6
+aucVertID = 413
+aucVertGridInd.first =  10aucVertGrid.second  = 13
+circleTime = 1026
+aucNeer = 2
+aucVertID = 1378
+aucVertGridInd.first =  34aucVertGrid.second  = 18
+circleTime = 1027
+aucNeer = 7
+aucVertID = 373
+aucVertGridInd.first =  9aucVertGrid.second  = 13
+circleTime = 1028
+aucNeer = 7
+aucVertID = 301
+aucVertGridInd.first =  7aucVertGrid.second  = 21
+circleTime = 1029
+aucNeer = 5
+aucVertID = 377
+aucVertGridInd.first =  9aucVertGrid.second  = 17
+circleTime = 1030
+aucNeer = 6
+aucVertID = 377
+aucVertGridInd.first =  9aucVertGrid.second  = 17
+circleTime = 1031
+aucNeer = 0
+aucVertID = 666
+aucVertGridInd.first =  16aucVertGrid.second  = 26
+circleTime = 1032
+aucNeer = 7
+aucVertID = 375
+aucVertGridInd.first =  9aucVertGrid.second  = 15
+circleTime = 1033
+aucNeer = 4
+aucVertID = 807
+aucVertGridInd.first =  20aucVertGrid.second  = 7
+circleTime = 1034
+aucNeer = 4
+aucVertID = 648
+aucVertGridInd.first =  16aucVertGrid.second  = 8
+circleTime = 1035
+aucNeer = 2
+aucVertID = 1335
+aucVertGridInd.first =  33aucVertGrid.second  = 15
+circleTime = 1036
+aucNeer = 2
+aucVertID = 1379
+aucVertGridInd.first =  34aucVertGrid.second  = 19
+circleTime = 1037
+aucNeer = 4
+aucVertID = 887
+aucVertGridInd.first =  22aucVertGrid.second  = 7
+circleTime = 1038
+aucNeer = 0
+aucVertID = 907
+aucVertGridInd.first =  22aucVertGrid.second  = 27
+circleTime = 1039
+aucNeer = 0
+aucVertID = 867
+aucVertGridInd.first =  21aucVertGrid.second  = 27
+circleTime = 1040
+aucNeer = 6
+aucVertID = 556
+aucVertGridInd.first =  13aucVertGrid.second  = 36
+circleTime = 1041
+aucNeer = 3
+aucVertID = 1380
+aucVertGridInd.first =  34aucVertGrid.second  = 20
+circleTime = 1042
+aucNeer = 4
+aucVertID = 609
+aucVertGridInd.first =  15aucVertGrid.second  = 9
+circleTime = 1043
+aucNeer = 6
+aucVertID = 609
+aucVertGridInd.first =  15aucVertGrid.second  = 9
+circleTime = 1044
+aucNeer = 4
+aucVertID = 768
+aucVertGridInd.first =  19aucVertGrid.second  = 8
+circleTime = 1045
+aucNeer = 3
+aucVertID = 1344
+aucVertGridInd.first =  33aucVertGrid.second  = 24
+circleTime = 1046
+aucNeer = 5
+aucVertID = 376
+aucVertGridInd.first =  9aucVertGrid.second  = 16
+circleTime = 1047
+aucNeer = 1
+aucVertID = 1252
+aucVertGridInd.first =  31aucVertGrid.second  = 12
+circleTime = 1048
+aucNeer = 0
+aucVertID = 665
+aucVertGridInd.first =  16aucVertGrid.second  = 25
+circleTime = 1049
+aucNeer = 3
+aucVertID = 1341
+aucVertGridInd.first =  33aucVertGrid.second  = 21
+circleTime = 1050
+aucNeer = 6
+aucVertID = 1591
+aucVertGridInd.first =  39aucVertGrid.second  = 31
+circleTime = 1051
+aucNeer = 5
+aucVertID = 378
+aucVertGridInd.first =  9aucVertGrid.second  = 18
+circleTime = 1052
+aucNeer = 1
+aucVertID = 1008
+aucVertGridInd.first =  25aucVertGrid.second  = 8
+circleTime = 1053
+aucNeer = 2
+aucVertID = 1293
+aucVertGridInd.first =  32aucVertGrid.second  = 13
+circleTime = 1054
+aucNeer = 3
+aucVertID = 1302
+aucVertGridInd.first =  32aucVertGrid.second  = 22
+circleTime = 1055
+aucNeer = 6
+aucVertID = 1558
+aucVertGridInd.first =  38aucVertGrid.second  = 38
+circleTime = 1056
+aucNeer = 3
+aucVertID = 1301
+aucVertGridInd.first =  32aucVertGrid.second  = 21
+circleTime = 1057
+aucNeer = 1
+aucVertID = 968
+aucVertGridInd.first =  24aucVertGrid.second  = 8
+circleTime = 1058
+aucNeer = 0
+aucVertID = 625
+aucVertGridInd.first =  15aucVertGrid.second  = 25
+circleTime = 1059
+aucNeer = 4
+aucVertID = 728
+aucVertGridInd.first =  18aucVertGrid.second  = 8
+circleTime = 1060
+aucNeer = 7
+aucVertID = 452
+aucVertGridInd.first =  11aucVertGrid.second  = 12
+circleTime = 1061
+aucNeer = 0
+aucVertID = 786
+aucVertGridInd.first =  19aucVertGrid.second  = 26
+circleTime = 1062
+aucNeer = 7
+aucVertID = 491
+aucVertGridInd.first =  12aucVertGrid.second  = 11
+circleTime = 1063
+aucNeer = 1
+aucVertID = 1171
+aucVertGridInd.first =  29aucVertGrid.second  = 11
+circleTime = 1064
+aucNeer = 7
+aucVertID = 530
+aucVertGridInd.first =  13aucVertGrid.second  = 10
+circleTime = 1065
+aucNeer = 1
+aucVertID = 1212
+aucVertGridInd.first =  30aucVertGrid.second  = 12
+circleTime = 1066
+aucNeer = 6
+aucVertID = 516
+aucVertGridInd.first =  12aucVertGrid.second  = 36
+circleTime = 1067
+aucNeer = 6
+aucVertID = 476
+aucVertGridInd.first =  11aucVertGrid.second  = 36
+circleTime = 1068
+aucNeer = 5
+aucVertID = 416
+aucVertGridInd.first =  10aucVertGrid.second  = 16
+circleTime = 1069
+aucNeer = 3
+aucVertID = 1300
+aucVertGridInd.first =  32aucVertGrid.second  = 20
+circleTime = 1070
+aucNeer = 5
+aucVertID = 415
+aucVertGridInd.first =  10aucVertGrid.second  = 15
+circleTime = 1071
+aucNeer = 5
+aucVertID = 414
+aucVertGridInd.first =  10aucVertGrid.second  = 14
+circleTime = 1072
+aucNeer = 4
+aucVertID = 808
+aucVertGridInd.first =  20aucVertGrid.second  = 8
+circleTime = 1073
+aucNeer = 4
+aucVertID = 848
+aucVertGridInd.first =  21aucVertGrid.second  = 8
+circleTime = 1074
+aucNeer = 2
+aucVertID = 1336
+aucVertGridInd.first =  33aucVertGrid.second  = 16
+circleTime = 1075
+aucNeer = 5
+aucVertID = 417
+aucVertGridInd.first =  10aucVertGrid.second  = 17
+circleTime = 1076
+aucNeer = 6
+aucVertID = 1557
+aucVertGridInd.first =  38aucVertGrid.second  = 37
+circleTime = 1077
+aucNeer = 2
+aucVertID = 1337
+aucVertGridInd.first =  33aucVertGrid.second  = 17
+circleTime = 1078
+aucNeer = 2
+aucVertID = 1294
+aucVertGridInd.first =  32aucVertGrid.second  = 14
+circleTime = 1079
+aucNeer = 5
+aucVertID = 418
+aucVertGridInd.first =  10aucVertGrid.second  = 18
+circleTime = 1080
+aucNeer = 2
+aucVertID = 1338
+aucVertGridInd.first =  33aucVertGrid.second  = 18
+circleTime = 1081
+aucNeer = 7
+aucVertID = 453
+aucVertGridInd.first =  11aucVertGrid.second  = 13
+circleTime = 1082
+aucNeer = 3
+aucVertID = 1299
+aucVertGridInd.first =  32aucVertGrid.second  = 19
+circleTime = 1083
+aucNeer = 4
+aucVertID = 888
+aucVertGridInd.first =  22aucVertGrid.second  = 8
+circleTime = 1084
+aucNeer = 1
+aucVertID = 1253
+aucVertGridInd.first =  31aucVertGrid.second  = 13
+circleTime = 1085
+aucNeer = 3
+aucVertID = 1339
+aucVertGridInd.first =  33aucVertGrid.second  = 19
+circleTime = 1086
+aucNeer = 1
+aucVertID = 928
+aucVertGridInd.first =  23aucVertGrid.second  = 8
+circleTime = 1087
+aucNeer = 5
+aucVertID = 455
+aucVertGridInd.first =  11aucVertGrid.second  = 15
+circleTime = 1088
+aucNeer = 1
+aucVertID = 1009
+aucVertGridInd.first =  25aucVertGrid.second  = 9
+circleTime = 1089
+aucNeer = 4
+aucVertID = 610
+aucVertGridInd.first =  15aucVertGrid.second  = 10
+circleTime = 1090
+aucNeer = 1
+aucVertID = 1049
+aucVertGridInd.first =  26aucVertGrid.second  = 9
+circleTime = 1091
+aucNeer = 3
+aucVertID = 1298
+aucVertGridInd.first =  32aucVertGrid.second  = 18
+circleTime = 1092
+aucNeer = 7
+aucVertID = 570
+aucVertGridInd.first =  14aucVertGrid.second  = 10
+circleTime = 1093
+aucNeer = 7
+aucVertID = 531
+aucVertGridInd.first =  13aucVertGrid.second  = 11
+circleTime = 1094
+aucNeer = 0
+aucVertID = 624
+aucVertGridInd.first =  15aucVertGrid.second  = 24
+circleTime = 1095
+aucNeer = 7
+aucVertID = 493
+aucVertGridInd.first =  12aucVertGrid.second  = 13
+circleTime = 1096
+aucNeer = 4
+aucVertID = 769
+aucVertGridInd.first =  19aucVertGrid.second  = 9
+circleTime = 1097
+aucNeer = 0
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1098
+aucNeer = 4
+aucVertID = 849
+aucVertGridInd.first =  21aucVertGrid.second  = 9
+circleTime = 1099
+aucNeer = 6
+aucVertID = 1557
+aucVertGridInd.first =  38aucVertGrid.second  = 37
+circleTime = 1100
+aucNeer = 1
+aucVertID = 1131
+aucVertGridInd.first =  28aucVertGrid.second  = 11
+circleTime = 1101
+aucNeer = 2
+aucVertID = 1296
+aucVertGridInd.first =  32aucVertGrid.second  = 16
+circleTime = 1102
+aucNeer = 0
+aucVertID = 906
+aucVertGridInd.first =  22aucVertGrid.second  = 26
+circleTime = 1103
+aucNeer = 2
+aucVertID = 1254
+aucVertGridInd.first =  31aucVertGrid.second  = 14
+circleTime = 1104
+aucNeer = 4
+aucVertID = 929
+aucVertGridInd.first =  23aucVertGrid.second  = 9
+circleTime = 1105
+aucNeer = 4
+aucVertID = 889
+aucVertGridInd.first =  22aucVertGrid.second  = 9
+circleTime = 1106
+aucNeer = 6
+aucVertID = 476
+aucVertGridInd.first =  11aucVertGrid.second  = 36
+circleTime = 1107
+aucNeer = 1
+aucVertID = 1172
+aucVertGridInd.first =  29aucVertGrid.second  = 12
+circleTime = 1108
+aucNeer = 0
+aucVertID = 946
+aucVertGridInd.first =  23aucVertGrid.second  = 26
+circleTime = 1109
+aucNeer = 1
+aucVertID = 1213
+aucVertGridInd.first =  30aucVertGrid.second  = 13
+circleTime = 1110
+aucNeer = 4
+aucVertID = 571
+aucVertGridInd.first =  14aucVertGrid.second  = 11
+circleTime = 1111
+aucNeer = 1
+aucVertID = 1091
+aucVertGridInd.first =  27aucVertGrid.second  = 11
+circleTime = 1112
+aucNeer = 3
+aucVertID = 1262
+aucVertGridInd.first =  31aucVertGrid.second  = 22
+circleTime = 1113
+aucNeer = 6
+aucVertID = 1552
+aucVertGridInd.first =  38aucVertGrid.second  = 32
+circleTime = 1114
+aucNeer = 0
+aucVertID = 866
+aucVertGridInd.first =  21aucVertGrid.second  = 26
+circleTime = 1115
+aucNeer = 7
+aucVertID = 532
+aucVertGridInd.first =  13aucVertGrid.second  = 12
+circleTime = 1116
+aucNeer = 2
+aucVertID = 1255
+aucVertGridInd.first =  31aucVertGrid.second  = 15
+circleTime = 1117
+aucNeer = 7
+aucVertID = 494
+aucVertGridInd.first =  12aucVertGrid.second  = 14
+circleTime = 1118
+aucNeer = 5
+aucVertID = 456
+aucVertGridInd.first =  11aucVertGrid.second  = 16
+circleTime = 1119
+aucNeer = 1
+aucVertID = 1090
+aucVertGridInd.first =  27aucVertGrid.second  = 10
+circleTime = 1120
+aucNeer = 1
+aucVertID = 1132
+aucVertGridInd.first =  28aucVertGrid.second  = 12
+circleTime = 1121
+aucNeer = 1
+aucVertID = 1010
+aucVertGridInd.first =  25aucVertGrid.second  = 10
+circleTime = 1122
+aucNeer = 6
+aucVertID = 868
+aucVertGridInd.first =  21aucVertGrid.second  = 28
+circleTime = 1123
+aucNeer = 2
+aucVertID = 1256
+aucVertGridInd.first =  31aucVertGrid.second  = 16
+circleTime = 1124
+aucNeer = 4
+aucVertID = 611
+aucVertGridInd.first =  15aucVertGrid.second  = 11
+circleTime = 1125
+aucNeer = 0
+aucVertID = 664
+aucVertGridInd.first =  16aucVertGrid.second  = 24
+circleTime = 1126
+aucNeer = 2
+aucVertID = 1214
+aucVertGridInd.first =  30aucVertGrid.second  = 14
+circleTime = 1127
+aucNeer = 5
+aucVertID = 458
+aucVertGridInd.first =  11aucVertGrid.second  = 18
+circleTime = 1128
+aucNeer = 5
+aucVertID = 457
+aucVertGridInd.first =  11aucVertGrid.second  = 17
+circleTime = 1129
+aucNeer = 0
+aucVertID = 623
+aucVertGridInd.first =  15aucVertGrid.second  = 23
+circleTime = 1130
+aucNeer = 4
+aucVertID = 770
+aucVertGridInd.first =  19aucVertGrid.second  = 10
+circleTime = 1131
+aucNeer = 2
+aucVertID = 1215
+aucVertGridInd.first =  30aucVertGrid.second  = 15
+circleTime = 1132
+aucNeer = 3
+aucVertID = 1224
+aucVertGridInd.first =  30aucVertGrid.second  = 24
+circleTime = 1133
+aucNeer = 7
+aucVertID = 572
+aucVertGridInd.first =  14aucVertGrid.second  = 12
+circleTime = 1134
+aucNeer = 2
+aucVertID = 1265
+aucVertGridInd.first =  31aucVertGrid.second  = 25
+circleTime = 1135
+aucNeer = 7
+aucVertID = 495
+aucVertGridInd.first =  12aucVertGrid.second  = 15
+circleTime = 1136
+aucNeer = 7
+aucVertID = 534
+aucVertGridInd.first =  13aucVertGrid.second  = 14
+circleTime = 1137
+aucNeer = 5
+aucVertID = 500
+aucVertGridInd.first =  12aucVertGrid.second  = 20
+circleTime = 1138
+aucNeer = 6
+aucVertID = 867
+aucVertGridInd.first =  21aucVertGrid.second  = 27
+circleTime = 1139
+aucNeer = 0
+aucVertID = 583
+aucVertGridInd.first =  14aucVertGrid.second  = 23
+circleTime = 1140
+aucNeer = 4
+aucVertID = 730
+aucVertGridInd.first =  18aucVertGrid.second  = 10
+circleTime = 1141
+aucNeer = 2
+aucVertID = 1216
+aucVertGridInd.first =  30aucVertGrid.second  = 16
+circleTime = 1142
+aucNeer = 7
+aucVertID = 573
+aucVertGridInd.first =  14aucVertGrid.second  = 13
+circleTime = 1143
+aucNeer = 3
+aucVertID = 1261
+aucVertGridInd.first =  31aucVertGrid.second  = 21
+circleTime = 1144
+aucNeer = 6
+aucVertID = 828
+aucVertGridInd.first =  20aucVertGrid.second  = 28
+circleTime = 1145
+aucNeer = 1
+aucVertID = 1051
+aucVertGridInd.first =  26aucVertGrid.second  = 11
+circleTime = 1146
+aucNeer = 0
+aucVertID = 785
+aucVertGridInd.first =  19aucVertGrid.second  = 25
+circleTime = 1147
+aucNeer = 6
+aucVertID = 828
+aucVertGridInd.first =  20aucVertGrid.second  = 28
+circleTime = 1148
+aucNeer = 5
+aucVertID = 499
+aucVertGridInd.first =  12aucVertGrid.second  = 19
+circleTime = 1149
+aucNeer = 7
+aucVertID = 612
+aucVertGridInd.first =  15aucVertGrid.second  = 12
+circleTime = 1150
+aucNeer = 0
+aucVertID = 745
+aucVertGridInd.first =  18aucVertGrid.second  = 25
+circleTime = 1151
+aucNeer = 2
+aucVertID = 1174
+aucVertGridInd.first =  29aucVertGrid.second  = 14
+circleTime = 1152
+aucNeer = 2
+aucVertID = 1175
+aucVertGridInd.first =  29aucVertGrid.second  = 15
+circleTime = 1153
+aucNeer = 2
+aucVertID = 1134
+aucVertGridInd.first =  28aucVertGrid.second  = 14
+circleTime = 1154
+aucNeer = 0
+aucVertID = 582
+aucVertGridInd.first =  14aucVertGrid.second  = 22
+circleTime = 1155
+aucNeer = 3
+aucVertID = 1260
+aucVertGridInd.first =  31aucVertGrid.second  = 20
+circleTime = 1156
+aucNeer = 1
+aucVertID = 970
+aucVertGridInd.first =  24aucVertGrid.second  = 10
+circleTime = 1157
+aucNeer = 5
+aucVertID = 498
+aucVertGridInd.first =  12aucVertGrid.second  = 18
+circleTime = 1158
+aucNeer = 1
+aucVertID = 1092
+aucVertGridInd.first =  27aucVertGrid.second  = 12
+circleTime = 1159
+aucNeer = 1
+aucVertID = 1133
+aucVertGridInd.first =  28aucVertGrid.second  = 13
+circleTime = 1160
+aucNeer = 6
+aucVertID = 827
+aucVertGridInd.first =  20aucVertGrid.second  = 27
+circleTime = 1161
+aucNeer = 3
+aucVertID = 1259
+aucVertGridInd.first =  31aucVertGrid.second  = 19
+circleTime = 1162
+aucNeer = 6
+aucVertID = 1551
+aucVertGridInd.first =  38aucVertGrid.second  = 31
+circleTime = 1163
+aucNeer = 2
+aucVertID = 1135
+aucVertGridInd.first =  28aucVertGrid.second  = 15
+circleTime = 1164
+aucNeer = 1
+aucVertID = 1011
+aucVertGridInd.first =  25aucVertGrid.second  = 11
+circleTime = 1165
+aucNeer = 1
+aucVertID = 930
+aucVertGridInd.first =  23aucVertGrid.second  = 10
+circleTime = 1166
+aucNeer = 2
+aucVertID = 1136
+aucVertGridInd.first =  28aucVertGrid.second  = 16
+circleTime = 1167
+aucNeer = 7
+aucVertID = 535
+aucVertGridInd.first =  13aucVertGrid.second  = 15
+circleTime = 1168
+aucNeer = 7
+aucVertID = 574
+aucVertGridInd.first =  14aucVertGrid.second  = 14
+circleTime = 1169
+aucNeer = 5
+aucVertID = 497
+aucVertGridInd.first =  12aucVertGrid.second  = 17
+circleTime = 1170
+aucNeer = 5
+aucVertID = 541
+aucVertGridInd.first =  13aucVertGrid.second  = 21
+circleTime = 1171
+aucNeer = 2
+aucVertID = 1094
+aucVertGridInd.first =  27aucVertGrid.second  = 14
+circleTime = 1172
+aucNeer = 6
+aucVertID = 1551
+aucVertGridInd.first =  38aucVertGrid.second  = 31
+circleTime = 1173
+aucNeer = 4
+aucVertID = 810
+aucVertGridInd.first =  20aucVertGrid.second  = 10
+circleTime = 1174
+aucNeer = 3
+aucVertID = 1258
+aucVertGridInd.first =  31aucVertGrid.second  = 18
+circleTime = 1175
+aucNeer = 1
+aucVertID = 1093
+aucVertGridInd.first =  27aucVertGrid.second  = 13
+circleTime = 1176
+aucNeer = 4
+aucVertID = 850
+aucVertGridInd.first =  21aucVertGrid.second  = 10
+circleTime = 1177
+aucNeer = 5
+aucVertID = 540
+aucVertGridInd.first =  13aucVertGrid.second  = 20
+circleTime = 1178
+aucNeer = 7
+aucVertID = 505
+aucVertGridInd.first =  12aucVertGrid.second  = 25
+circleTime = 1179
+aucNeer = 7
+aucVertID = 614
+aucVertGridInd.first =  15aucVertGrid.second  = 14
+circleTime = 1180
+aucNeer = 7
+aucVertID = 654
+aucVertGridInd.first =  16aucVertGrid.second  = 14
+circleTime = 1181
+aucNeer = 7
+aucVertID = 653
+aucVertGridInd.first =  16aucVertGrid.second  = 13
+circleTime = 1182
+aucNeer = 3
+aucVertID = 1220
+aucVertGridInd.first =  30aucVertGrid.second  = 20
+circleTime = 1183
+aucNeer = 3
+aucVertID = 1219
+aucVertGridInd.first =  30aucVertGrid.second  = 19
+circleTime = 1184
+aucNeer = 5
+aucVertID = 539
+aucVertGridInd.first =  13aucVertGrid.second  = 19
+circleTime = 1185
+aucNeer = 5
+aucVertID = 536
+aucVertGridInd.first =  13aucVertGrid.second  = 16
+circleTime = 1186
+aucNeer = 0
+aucVertID = 945
+aucVertGridInd.first =  23aucVertGrid.second  = 25
+circleTime = 1187
+aucNeer = 2
+aucVertID = 1137
+aucVertGridInd.first =  28aucVertGrid.second  = 17
+circleTime = 1188
+aucNeer = 7
+aucVertID = 652
+aucVertGridInd.first =  16aucVertGrid.second  = 12
+circleTime = 1189
+aucNeer = 1
+aucVertID = 1012
+aucVertGridInd.first =  25aucVertGrid.second  = 12
+circleTime = 1190
+aucNeer = 4
+aucVertID = 890
+aucVertGridInd.first =  22aucVertGrid.second  = 10
+circleTime = 1191
+aucNeer = 6
+aucVertID = 1551
+aucVertGridInd.first =  38aucVertGrid.second  = 31
+circleTime = 1192
+aucNeer = 1
+aucVertID = 1053
+aucVertGridInd.first =  26aucVertGrid.second  = 13
+circleTime = 1193
+aucNeer = 4
+aucVertID = 731
+aucVertGridInd.first =  18aucVertGrid.second  = 11
+circleTime = 1194
+aucNeer = 6
+aucVertID = 1550
+aucVertGridInd.first =  38aucVertGrid.second  = 30
+circleTime = 1195
+aucNeer = 1
+aucVertID = 972
+aucVertGridInd.first =  24aucVertGrid.second  = 12
+circleTime = 1196
+aucNeer = 3
+aucVertID = 1182
+aucVertGridInd.first =  29aucVertGrid.second  = 22
+circleTime = 1197
+aucNeer = 3
+aucVertID = 1218
+aucVertGridInd.first =  30aucVertGrid.second  = 18
+circleTime = 1198
+aucNeer = 2
+aucVertID = 1177
+aucVertGridInd.first =  29aucVertGrid.second  = 17
+circleTime = 1199
+aucNeer = 0
+aucVertID = 985
+aucVertGridInd.first =  24aucVertGrid.second  = 25
+circleTime = 1200
+aucNeer = 4
+aucVertID = 691
+aucVertGridInd.first =  17aucVertGrid.second  = 11
+circleTime = 1201
+aucNeer = 0
+aucVertID = 1025
+aucVertGridInd.first =  25aucVertGrid.second  = 25
+circleTime = 1202
+aucNeer = 7
+aucVertID = 693
+aucVertGridInd.first =  17aucVertGrid.second  = 13
+circleTime = 1203
+aucNeer = 5
+aucVertID = 538
+aucVertGridInd.first =  13aucVertGrid.second  = 18
+circleTime = 1204
+aucNeer = 4
+aucVertID = 851
+aucVertGridInd.first =  21aucVertGrid.second  = 11
+circleTime = 1205
+aucNeer = 6
+aucVertID = 1590
+aucVertGridInd.first =  39aucVertGrid.second  = 30
+circleTime = 1206
+aucNeer = 1
+aucVertID = 1013
+aucVertGridInd.first =  25aucVertGrid.second  = 13
+circleTime = 1207
+aucNeer = 3
+aucVertID = 1181
+aucVertGridInd.first =  29aucVertGrid.second  = 21
+circleTime = 1208
+aucNeer = 0
+aucVertID = 1026
+aucVertGridInd.first =  25aucVertGrid.second  = 26
+circleTime = 1209
+aucNeer = 5
+aucVertID = 537
+aucVertGridInd.first =  13aucVertGrid.second  = 17
+circleTime = 1210
+aucNeer = 2
+aucVertID = 1178
+aucVertGridInd.first =  29aucVertGrid.second  = 18
+circleTime = 1211
+aucNeer = 7
+aucVertID = 692
+aucVertGridInd.first =  17aucVertGrid.second  = 12
+circleTime = 1212
+aucNeer = 0
+aucVertID = 1065
+aucVertGridInd.first =  26aucVertGrid.second  = 25
+circleTime = 1213
+aucNeer = 1
+aucVertID = 932
+aucVertGridInd.first =  23aucVertGrid.second  = 12
+circleTime = 1214
+aucNeer = 2
+aucVertID = 1138
+aucVertGridInd.first =  28aucVertGrid.second  = 18
+circleTime = 1215
+aucNeer = 2
+aucVertID = 1095
+aucVertGridInd.first =  27aucVertGrid.second  = 15
+circleTime = 1216
+aucNeer = 5
+aucVertID = 581
+aucVertGridInd.first =  14aucVertGrid.second  = 21
+circleTime = 1217
+aucNeer = 7
+aucVertID = 732
+aucVertGridInd.first =  18aucVertGrid.second  = 12
+circleTime = 1218
+aucNeer = 2
+aucVertID = 1096
+aucVertGridInd.first =  27aucVertGrid.second  = 16
+circleTime = 1219
+aucNeer = 6
+aucVertID = 1589
+aucVertGridInd.first =  39aucVertGrid.second  = 29
+circleTime = 1220
+aucNeer = 5
+aucVertID = 580
+aucVertGridInd.first =  14aucVertGrid.second  = 20
+circleTime = 1221
+aucNeer = 3
+aucVertID = 1142
+aucVertGridInd.first =  28aucVertGrid.second  = 22
+circleTime = 1222
+aucNeer = 5
+aucVertID = 579
+aucVertGridInd.first =  14aucVertGrid.second  = 19
+circleTime = 1223
+aucNeer = 1
+aucVertID = 931
+aucVertGridInd.first =  23aucVertGrid.second  = 11
+circleTime = 1224
+aucNeer = 2
+aucVertID = 1054
+aucVertGridInd.first =  26aucVertGrid.second  = 14
+circleTime = 1225
+aucNeer = 5
+aucVertID = 576
+aucVertGridInd.first =  14aucVertGrid.second  = 16
+circleTime = 1226
+aucNeer = 2
+aucVertID = 1097
+aucVertGridInd.first =  27aucVertGrid.second  = 17
+circleTime = 1227
+aucNeer = 7
+aucVertID = 772
+aucVertGridInd.first =  19aucVertGrid.second  = 12
+circleTime = 1228
+aucNeer = 5
+aucVertID = 578
+aucVertGridInd.first =  14aucVertGrid.second  = 18
+circleTime = 1229
+aucNeer = 7
+aucVertID = 812
+aucVertGridInd.first =  20aucVertGrid.second  = 12
+circleTime = 1230
+aucNeer = 5
+aucVertID = 577
+aucVertGridInd.first =  14aucVertGrid.second  = 17
+circleTime = 1231
+aucNeer = 4
+aucVertID = 852
+aucVertGridInd.first =  21aucVertGrid.second  = 12
+circleTime = 1232
+aucNeer = 1
+aucVertID = 973
+aucVertGridInd.first =  24aucVertGrid.second  = 13
+circleTime = 1233
+aucNeer = 6
+aucVertID = 1588
+aucVertGridInd.first =  39aucVertGrid.second  = 28
+circleTime = 1234
+aucNeer = 6
+aucVertID = 1587
+aucVertGridInd.first =  39aucVertGrid.second  = 27
+circleTime = 1235
+aucNeer = 1
+aucVertID = 892
+aucVertGridInd.first =  22aucVertGrid.second  = 12
+circleTime = 1236
+aucNeer = 7
+aucVertID = 655
+aucVertGridInd.first =  16aucVertGrid.second  = 15
+circleTime = 1237
+aucNeer = 5
+aucVertID = 616
+aucVertGridInd.first =  15aucVertGrid.second  = 16
+circleTime = 1238
+aucNeer = 0
+aucVertID = 1064
+aucVertGridInd.first =  26aucVertGrid.second  = 24
+circleTime = 1239
+aucNeer = 1
+aucVertID = 933
+aucVertGridInd.first =  23aucVertGrid.second  = 13
+circleTime = 1240
+aucNeer = 0
+aucVertID = 825
+aucVertGridInd.first =  20aucVertGrid.second  = 25
+circleTime = 1241
+aucNeer = 1
+aucVertID = 974
+aucVertGridInd.first =  24aucVertGrid.second  = 14
+circleTime = 1242
+aucNeer = 6
+aucVertID = 1586
+aucVertGridInd.first =  39aucVertGrid.second  = 26
+circleTime = 1243
+aucNeer = 2
+aucVertID = 1055
+aucVertGridInd.first =  26aucVertGrid.second  = 15
+circleTime = 1244
+aucNeer = 6
+aucVertID = 1585
+aucVertGridInd.first =  39aucVertGrid.second  = 25
+circleTime = 1245
+aucNeer = 1
+aucVertID = 893
+aucVertGridInd.first =  22aucVertGrid.second  = 13
+circleTime = 1246
+aucNeer = 0
+aucVertID = 704
+aucVertGridInd.first =  17aucVertGrid.second  = 24
+circleTime = 1247
+aucNeer = 3
+aucVertID = 1141
+aucVertGridInd.first =  28aucVertGrid.second  = 21
+circleTime = 1248
+aucNeer = 7
+aucVertID = 694
+aucVertGridInd.first =  17aucVertGrid.second  = 14
+circleTime = 1249
+aucNeer = 0
+aucVertID = 905
+aucVertGridInd.first =  22aucVertGrid.second  = 25
+circleTime = 1250
+aucNeer = 7
+aucVertID = 773
+aucVertGridInd.first =  19aucVertGrid.second  = 13
+circleTime = 1251
+aucNeer = 5
+aucVertID = 617
+aucVertGridInd.first =  15aucVertGrid.second  = 17
+circleTime = 1252
+aucNeer = 6
+aucVertID = 1584
+aucVertGridInd.first =  39aucVertGrid.second  = 24
+circleTime = 1253
+aucNeer = 0
+aucVertID = 865
+aucVertGridInd.first =  21aucVertGrid.second  = 25
+circleTime = 1254
+aucNeer = 0
+aucVertID = 1024
+aucVertGridInd.first =  25aucVertGrid.second  = 24
+circleTime = 1255
+aucNeer = 2
+aucVertID = 1056
+aucVertGridInd.first =  26aucVertGrid.second  = 16
+circleTime = 1256
+aucNeer = 7
+aucVertID = 656
+aucVertGridInd.first =  16aucVertGrid.second  = 16
+circleTime = 1257
+aucNeer = 3
+aucVertID = 1103
+aucVertGridInd.first =  27aucVertGrid.second  = 23
+circleTime = 1258
+aucNeer = 1
+aucVertID = 934
+aucVertGridInd.first =  23aucVertGrid.second  = 14
+circleTime = 1259
+aucNeer = 3
+aucVertID = 1102
+aucVertGridInd.first =  27aucVertGrid.second  = 22
+circleTime = 1260
+aucNeer = 5
+aucVertID = 657
+aucVertGridInd.first =  16aucVertGrid.second  = 17
+circleTime = 1261
+aucNeer = 3
+aucVertID = 1139
+aucVertGridInd.first =  28aucVertGrid.second  = 19
+circleTime = 1262
+aucNeer = 2
+aucVertID = 1053
+aucVertGridInd.first =  26aucVertGrid.second  = 13
+circleTime = 1263
+aucNeer = 2
+aucVertID = 1013
+aucVertGridInd.first =  25aucVertGrid.second  = 13
+circleTime = 1264
+aucNeer = 5
+aucVertID = 534
+aucVertGridInd.first =  13aucVertGrid.second  = 14
+circleTime = 1265
+aucNeer = 1
+aucVertID = 935
+aucVertGridInd.first =  23aucVertGrid.second  = 15
+circleTime = 1266
+aucNeer = 3
+aucVertID = 1101
+aucVertGridInd.first =  27aucVertGrid.second  = 21
+circleTime = 1267
+aucNeer = 3
+aucVertID = 1100
+aucVertGridInd.first =  27aucVertGrid.second  = 20
+circleTime = 1268
+aucNeer = 2
+aucVertID = 973
+aucVertGridInd.first =  24aucVertGrid.second  = 13
+circleTime = 1269
+aucNeer = 2
+aucVertID = 1291
+aucVertGridInd.first =  32aucVertGrid.second  = 11
+circleTime = 1270
+aucNeer = 3
+aucVertID = 1062
+aucVertGridInd.first =  26aucVertGrid.second  = 22
+circleTime = 1271
+aucNeer = 5
+aucVertID = 1062
+aucVertGridInd.first =  26aucVertGrid.second  = 22
+circleTime = 1272
+aucNeer = 2
+aucVertID = 1290
+aucVertGridInd.first =  32aucVertGrid.second  = 10
+circleTime = 1273
+aucNeer = 3
+aucVertID = 1099
+aucVertGridInd.first =  27aucVertGrid.second  = 19
+circleTime = 1274
+aucNeer = 7
+aucVertID = 734
+aucVertGridInd.first =  18aucVertGrid.second  = 14
+circleTime = 1275
+aucNeer = 3
+aucVertID = 1023
+aucVertGridInd.first =  25aucVertGrid.second  = 23
+circleTime = 1276
+aucNeer = 3
+aucVertID = 1061
+aucVertGridInd.first =  26aucVertGrid.second  = 21
+circleTime = 1277
+aucNeer = 6
+aucVertID = 1583
+aucVertGridInd.first =  39aucVertGrid.second  = 23
+circleTime = 1278
+aucNeer = 1
+aucVertID = 895
+aucVertGridInd.first =  22aucVertGrid.second  = 15
+circleTime = 1279
+aucNeer = 5
+aucVertID = 895
+aucVertGridInd.first =  22aucVertGrid.second  = 15
+circleTime = 1280
+aucNeer = 3
+aucVertID = 984
+aucVertGridInd.first =  24aucVertGrid.second  = 24
+circleTime = 1281
+aucNeer = 4
+aucVertID = 853
+aucVertGridInd.first =  21aucVertGrid.second  = 13
+circleTime = 1282
+aucNeer = 0
+aucVertID = 663
+aucVertGridInd.first =  16aucVertGrid.second  = 23
+circleTime = 1283
+aucNeer = 1
+aucVertID = 855
+aucVertGridInd.first =  21aucVertGrid.second  = 15
+circleTime = 1284
+aucNeer = 0
+aucVertID = 744
+aucVertGridInd.first =  18aucVertGrid.second  = 24
+circleTime = 1285
+aucNeer = 6
+aucVertID = 1582
+aucVertGridInd.first =  39aucVertGrid.second  = 22
+circleTime = 1286
+aucNeer = 4
+aucVertID = 813
+aucVertGridInd.first =  20aucVertGrid.second  = 13
+circleTime = 1287
+aucNeer = 6
+aucVertID = 1581
+aucVertGridInd.first =  39aucVertGrid.second  = 21
+circleTime = 1288
+aucNeer = 4
+aucVertID = 970
+aucVertGridInd.first =  24aucVertGrid.second  = 10
+circleTime = 1289
+aucNeer = 1
+aucVertID = 815
+aucVertGridInd.first =  20aucVertGrid.second  = 15
+circleTime = 1290
+aucNeer = 5
+aucVertID = 62
+aucVertGridInd.first =  1aucVertGrid.second  = 22
+circleTime = 1291
+aucNeer = 7
+aucVertID = 695
+aucVertGridInd.first =  17aucVertGrid.second  = 15
+circleTime = 1292
+aucNeer = 4
+aucVertID = 695
+aucVertGridInd.first =  17aucVertGrid.second  = 15
+circleTime = 1293
+aucNeer = 3
+aucVertID = 1060
+aucVertGridInd.first =  26aucVertGrid.second  = 20
+circleTime = 1294
+aucNeer = 7
+aucVertID = 774
+aucVertGridInd.first =  19aucVertGrid.second  = 14
+circleTime = 1295
+aucNeer = 2
+aucVertID = 1443
+aucVertGridInd.first =  36aucVertGrid.second  = 3
+circleTime = 1296
+aucNeer = 7
+aucVertID = 735
+aucVertGridInd.first =  18aucVertGrid.second  = 15
+circleTime = 1297
+aucNeer = 3
+aucVertID = 1022
+aucVertGridInd.first =  25aucVertGrid.second  = 22
+circleTime = 1298
+aucNeer = 2
+aucVertID = 1442
+aucVertGridInd.first =  36aucVertGrid.second  = 2
+circleTime = 1299
+aucNeer = 0
+aucVertID = 622
+aucVertGridInd.first =  15aucVertGrid.second  = 22
+circleTime = 1300
+aucNeer = 6
+aucVertID = 1580
+aucVertGridInd.first =  39aucVertGrid.second  = 20
+circleTime = 1301
+aucNeer = 3
+aucVertID = 983
+aucVertGridInd.first =  24aucVertGrid.second  = 23
+circleTime = 1302
+aucNeer = 2
+aucVertID = 1403
+aucVertGridInd.first =  35aucVertGrid.second  = 3
+circleTime = 1303
+aucNeer = 4
+aucVertID = 1403
+aucVertGridInd.first =  35aucVertGrid.second  = 3
+circleTime = 1304
+aucNeer = 0
+aucVertID = 784
+aucVertGridInd.first =  19aucVertGrid.second  = 24
+circleTime = 1305
+aucNeer = 5
+aucVertID = 61
+aucVertGridInd.first =  1aucVertGrid.second  = 21
+circleTime = 1306
+aucNeer = 7
+aucVertID = 814
+aucVertGridInd.first =  20aucVertGrid.second  = 14
+circleTime = 1307
+aucNeer = 1
+aucVertID = 896
+aucVertGridInd.first =  22aucVertGrid.second  = 16
+circleTime = 1308
+aucNeer = 2
+aucVertID = 1403
+aucVertGridInd.first =  35aucVertGrid.second  = 3
+circleTime = 1309
+aucNeer = 4
+aucVertID = 1403
+aucVertGridInd.first =  35aucVertGrid.second  = 3
+circleTime = 1310
+aucNeer = 7
+aucVertID = 775
+aucVertGridInd.first =  19aucVertGrid.second  = 15
+circleTime = 1311
+aucNeer = 1
+aucVertID = 897
+aucVertGridInd.first =  22aucVertGrid.second  = 17
+circleTime = 1312
+aucNeer = 4
+aucVertID = 1010
+aucVertGridInd.first =  25aucVertGrid.second  = 10
+circleTime = 1313
+aucNeer = 5
+aucVertID = 1010
+aucVertGridInd.first =  25aucVertGrid.second  = 10
+circleTime = 1314
+aucNeer = 2
+aucVertID = 1205
+aucVertGridInd.first =  30aucVertGrid.second  = 5
+circleTime = 1315
+aucNeer = 1
+aucVertID = 816
+aucVertGridInd.first =  20aucVertGrid.second  = 16
+circleTime = 1316
+aucNeer = 4
+aucVertID = 1010
+aucVertGridInd.first =  25aucVertGrid.second  = 10
+circleTime = 1317
+aucNeer = 3
+aucVertID = 1021
+aucVertGridInd.first =  25aucVertGrid.second  = 21
+circleTime = 1318
+aucNeer = 3
+aucVertID = 1020
+aucVertGridInd.first =  25aucVertGrid.second  = 20
+circleTime = 1319
+aucNeer = 1
+aucVertID = 776
+aucVertGridInd.first =  19aucVertGrid.second  = 16
+circleTime = 1320
+aucNeer = 5
+aucVertID = 776
+aucVertGridInd.first =  19aucVertGrid.second  = 16
+circleTime = 1321
+aucNeer = 5
+aucVertID = 776
+aucVertGridInd.first =  19aucVertGrid.second  = 16
+circleTime = 1322
+aucNeer = 7
+aucVertID = 736
+aucVertGridInd.first =  18aucVertGrid.second  = 16
+circleTime = 1323
+aucNeer = 2
+aucVertID = 1323
+aucVertGridInd.first =  33aucVertGrid.second  = 3
+circleTime = 1324
+aucNeer = 6
+aucVertID = 1579
+aucVertGridInd.first =  39aucVertGrid.second  = 19
+circleTime = 1325
+aucNeer = 5
+aucVertID = 100
+aucVertGridInd.first =  2aucVertGrid.second  = 20
+circleTime = 1326
+aucNeer = 1
+aucVertID = 898
+aucVertGridInd.first =  22aucVertGrid.second  = 18
+circleTime = 1327
+aucNeer = 1
+aucVertID = 938
+aucVertGridInd.first =  23aucVertGrid.second  = 18
+circleTime = 1328
+aucNeer = 6
+aucVertID = 1578
+aucVertGridInd.first =  39aucVertGrid.second  = 18
+circleTime = 1329
+aucNeer = 7
+aucVertID = 737
+aucVertGridInd.first =  18aucVertGrid.second  = 17
+circleTime = 1330
+aucNeer = 1
+aucVertID = 978
+aucVertGridInd.first =  24aucVertGrid.second  = 18
+circleTime = 1331
+aucNeer = 2
+aucVertID = 1523
+aucVertGridInd.first =  38aucVertGrid.second  = 3
+circleTime = 1332
+aucNeer = 6
+aucVertID = 1577
+aucVertGridInd.first =  39aucVertGrid.second  = 17
+circleTime = 1333
+aucNeer = 5
+aucVertID = 1577
+aucVertGridInd.first =  39aucVertGrid.second  = 17
+circleTime = 1334
+aucNeer = 0
+aucVertID = 703
+aucVertGridInd.first =  17aucVertGrid.second  = 23
+circleTime = 1335
+aucNeer = 7
+aucVertID = 697
+aucVertGridInd.first =  17aucVertGrid.second  = 17
+circleTime = 1336
+aucNeer = 5
+aucVertID = 697
+aucVertGridInd.first =  17aucVertGrid.second  = 17
+circleTime = 1337
+aucNeer = 7
+aucVertID = 738
+aucVertGridInd.first =  18aucVertGrid.second  = 18
+circleTime = 1338
+aucNeer = 4
+aucVertID = 968
+aucVertGridInd.first =  24aucVertGrid.second  = 8
+circleTime = 1339
+aucNeer = 4
+aucVertID = 968
+aucVertGridInd.first =  24aucVertGrid.second  = 8
+circleTime = 1340
+aucNeer = 3
+aucVertID = 982
+aucVertGridInd.first =  24aucVertGrid.second  = 22
+circleTime = 1341
+aucNeer = 3
+aucVertID = 981
+aucVertGridInd.first =  24aucVertGrid.second  = 21
+circleTime = 1342
+aucNeer = 2
+aucVertID = 1133
+aucVertGridInd.first =  28aucVertGrid.second  = 13
+circleTime = 1343
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1344
+aucNeer = 0
+aucVertID = 824
+aucVertGridInd.first =  20aucVertGrid.second  = 24
+circleTime = 1345
+aucNeer = 5
+aucVertID = 655
+aucVertGridInd.first =  16aucVertGrid.second  = 15
+circleTime = 1346
+aucNeer = 2
+aucVertID = 1132
+aucVertGridInd.first =  28aucVertGrid.second  = 12
+circleTime = 1347
+aucNeer = 4
+aucVertID = 1132
+aucVertGridInd.first =  28aucVertGrid.second  = 12
+circleTime = 1348
+aucNeer = 7
+aucVertID = 777
+aucVertGridInd.first =  19aucVertGrid.second  = 17
+circleTime = 1349
+aucNeer = 4
+aucVertID = 777
+aucVertGridInd.first =  19aucVertGrid.second  = 17
+circleTime = 1350
+aucNeer = 1
+aucVertID = 1018
+aucVertGridInd.first =  25aucVertGrid.second  = 18
+circleTime = 1351
+aucNeer = 2
+aucVertID = 1363
+aucVertGridInd.first =  34aucVertGrid.second  = 3
+circleTime = 1352
+aucNeer = 2
+aucVertID = 1363
+aucVertGridInd.first =  34aucVertGrid.second  = 3
+circleTime = 1353
+aucNeer = 3
+aucVertID = 980
+aucVertGridInd.first =  24aucVertGrid.second  = 20
+circleTime = 1354
+aucNeer = 5
+aucVertID = 980
+aucVertGridInd.first =  24aucVertGrid.second  = 20
+circleTime = 1355
+aucNeer = 5
+aucVertID = 980
+aucVertGridInd.first =  24aucVertGrid.second  = 20
+circleTime = 1356
+aucNeer = 1
+aucVertID = 1058
+aucVertGridInd.first =  26aucVertGrid.second  = 18
+circleTime = 1357
+aucNeer = 6
+aucVertID = 1576
+aucVertGridInd.first =  39aucVertGrid.second  = 16
+circleTime = 1358
+aucNeer = 4
+aucVertID = 968
+aucVertGridInd.first =  24aucVertGrid.second  = 8
+circleTime = 1359
+aucNeer = 3
+aucVertID = 979
+aucVertGridInd.first =  24aucVertGrid.second  = 19
+circleTime = 1360
+aucNeer = 3
+aucVertID = 940
+aucVertGridInd.first =  23aucVertGrid.second  = 20
+circleTime = 1361
+aucNeer = 5
+aucVertID = 940
+aucVertGridInd.first =  23aucVertGrid.second  = 20
+circleTime = 1362
+aucNeer = 4
+aucVertID = 940
+aucVertGridInd.first =  23aucVertGrid.second  = 20
+circleTime = 1363
+aucNeer = 1
+aucVertID = 1017
+aucVertGridInd.first =  25aucVertGrid.second  = 17
+circleTime = 1364
+aucNeer = 0
+aucVertID = 864
+aucVertGridInd.first =  21aucVertGrid.second  = 24
+circleTime = 1365
+aucNeer = 2
+aucVertID = 1522
+aucVertGridInd.first =  38aucVertGrid.second  = 2
+circleTime = 1366
+aucNeer = 0
+aucVertID = 904
+aucVertGridInd.first =  22aucVertGrid.second  = 24
+circleTime = 1367
+aucNeer = 3
+aucVertID = 941
+aucVertGridInd.first =  23aucVertGrid.second  = 21
+circleTime = 1368
+aucNeer = 2
+aucVertID = 974
+aucVertGridInd.first =  24aucVertGrid.second  = 14
+circleTime = 1369
+aucNeer = 7
+aucVertID = 778
+aucVertGridInd.first =  19aucVertGrid.second  = 18
+circleTime = 1370
+aucNeer = 3
+aucVertID = 942
+aucVertGridInd.first =  23aucVertGrid.second  = 22
+circleTime = 1371
+aucNeer = 5
+aucVertID = 424
+aucVertGridInd.first =  10aucVertGrid.second  = 24
+circleTime = 1372
+aucNeer = 1
+aucVertID = 977
+aucVertGridInd.first =  24aucVertGrid.second  = 17
+circleTime = 1373
+aucNeer = 3
+aucVertID = 902
+aucVertGridInd.first =  22aucVertGrid.second  = 22
+circleTime = 1374
+aucNeer = 6
+aucVertID = 1550
+aucVertGridInd.first =  38aucVertGrid.second  = 30
+circleTime = 1375
+aucNeer = 2
+aucVertID = 1550
+aucVertGridInd.first =  38aucVertGrid.second  = 30
+circleTime = 1376
+aucNeer = 3
+aucVertID = 901
+aucVertGridInd.first =  22aucVertGrid.second  = 21
+circleTime = 1377
+aucNeer = 0
+aucVertID = 743
+aucVertGridInd.first =  18aucVertGrid.second  = 23
+circleTime = 1378
+aucNeer = 0
+aucVertID = 702
+aucVertGridInd.first =  17aucVertGrid.second  = 22
+circleTime = 1379
+aucNeer = 7
+aucVertID = 817
+aucVertGridInd.first =  20aucVertGrid.second  = 17
+circleTime = 1380
+aucNeer = 4
+aucVertID = 817
+aucVertGridInd.first =  20aucVertGrid.second  = 17
+circleTime = 1381
+aucNeer = 0
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1382
+aucNeer = 2
+aucVertID = 1424
+aucVertGridInd.first =  35aucVertGrid.second  = 24
+circleTime = 1383
+aucNeer = 6
+aucVertID = 595
+aucVertGridInd.first =  14aucVertGrid.second  = 35
+circleTime = 1384
+aucNeer = 6
+aucVertID = 638
+aucVertGridInd.first =  15aucVertGrid.second  = 38
+circleTime = 1385
+aucNeer = 2
+aucVertID = 638
+aucVertGridInd.first =  15aucVertGrid.second  = 38
+circleTime = 1386
+aucNeer = 0
+aucVertID = 823
+aucVertGridInd.first =  20aucVertGrid.second  = 23
+circleTime = 1387
+aucNeer = 7
+aucVertID = 823
+aucVertGridInd.first =  20aucVertGrid.second  = 23
+circleTime = 1388
+aucNeer = 3
+aucVertID = 862
+aucVertGridInd.first =  21aucVertGrid.second  = 22
+circleTime = 1389
+aucNeer = 6
+aucVertID = 787
+aucVertGridInd.first =  19aucVertGrid.second  = 27
+circleTime = 1390
+aucNeer = 2
+aucVertID = 787
+aucVertGridInd.first =  19aucVertGrid.second  = 27
+circleTime = 1391
+aucNeer = 3
+aucVertID = 900
+aucVertGridInd.first =  22aucVertGrid.second  = 20
+circleTime = 1392
+aucNeer = 7
+aucVertID = 900
+aucVertGridInd.first =  22aucVertGrid.second  = 20
+circleTime = 1393
+aucNeer = 4
+aucVertID = 900
+aucVertGridInd.first =  22aucVertGrid.second  = 20
+circleTime = 1394
+aucNeer = 1
+aucVertID = 976
+aucVertGridInd.first =  24aucVertGrid.second  = 16
+circleTime = 1395
+aucNeer = 7
+aucVertID = 976
+aucVertGridInd.first =  24aucVertGrid.second  = 16
+circleTime = 1396
+aucNeer = 6
+aucVertID = 1549
+aucVertGridInd.first =  38aucVertGrid.second  = 29
+circleTime = 1397
+aucNeer = 6
+aucVertID = 755
+aucVertGridInd.first =  18aucVertGrid.second  = 35
+circleTime = 1398
+aucNeer = 3
+aucVertID = 822
+aucVertGridInd.first =  20aucVertGrid.second  = 22
+circleTime = 1399
+aucNeer = 2
+aucVertID = 822
+aucVertGridInd.first =  20aucVertGrid.second  = 22
+circleTime = 1400
+aucNeer = 4
+aucVertID = 822
+aucVertGridInd.first =  20aucVertGrid.second  = 22
+circleTime = 1401
+aucNeer = 1
+aucVertID = 858
+aucVertGridInd.first =  21aucVertGrid.second  = 18
+circleTime = 1402
+aucNeer = 2
+aucVertID = 1286
+aucVertGridInd.first =  32aucVertGrid.second  = 6
+circleTime = 1403
+aucNeer = 3
+aucVertID = 861
+aucVertGridInd.first =  21aucVertGrid.second  = 21
+circleTime = 1404
+aucNeer = 1
+aucVertID = 899
+aucVertGridInd.first =  22aucVertGrid.second  = 19
+circleTime = 1405
+aucNeer = 5
+aucVertID = 899
+aucVertGridInd.first =  22aucVertGrid.second  = 19
+circleTime = 1406
+aucNeer = 5
+aucVertID = 899
+aucVertGridInd.first =  22aucVertGrid.second  = 19
+circleTime = 1407
+aucNeer = 2
+aucVertID = 899
+aucVertGridInd.first =  22aucVertGrid.second  = 19
+circleTime = 1408
+aucNeer = 6
+aucVertID = 1548
+aucVertGridInd.first =  38aucVertGrid.second  = 28
+circleTime = 1409
+aucNeer = 1
+aucVertID = 1548
+aucVertGridInd.first =  38aucVertGrid.second  = 28
+circleTime = 1410
+aucNeer = 4
+aucVertID = 927
+aucVertGridInd.first =  23aucVertGrid.second  = 7
+circleTime = 1411
+aucNeer = 6
+aucVertID = 1575
+aucVertGridInd.first =  39aucVertGrid.second  = 15
+circleTime = 1412
+aucNeer = 7
+aucVertID = 1575
+aucVertGridInd.first =  39aucVertGrid.second  = 15
+circleTime = 1413
+aucNeer = 3
+aucVertID = 821
+aucVertGridInd.first =  20aucVertGrid.second  = 21
+circleTime = 1414
+aucNeer = 0
+aucVertID = 619
+aucVertGridInd.first =  15aucVertGrid.second  = 19
+circleTime = 1415
+aucNeer = 5
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1416
+aucNeer = 7
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1417
+aucNeer = 2
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1418
+aucNeer = 2
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1419
+aucNeer = 5
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1420
+aucNeer = 3
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1421
+aucNeer = 5
+aucVertID = 750
+aucVertGridInd.first =  18aucVertGrid.second  = 30
+circleTime = 1422
+aucNeer = 6
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1423
+aucNeer = 4
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1424
+aucNeer = 3
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1425
+aucNeer = 4
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1426
+aucNeer = 5
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1427
+aucNeer = 1
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1428
+aucNeer = 2
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1429
+aucNeer = 2
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1430
+aucNeer = 4
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1431
+aucNeer = 3
+aucVertID = 716
+aucVertGridInd.first =  17aucVertGrid.second  = 36
+circleTime = 1432
+aucNeer = 0
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1433
+aucNeer = 2
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1434
+aucNeer = 5
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1435
+aucNeer = 2
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1436
+aucNeer = 3
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1437
+aucNeer = 3
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1438
+aucNeer = 4
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1439
+aucNeer = 2
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1440
+aucNeer = 5
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1441
+aucNeer = 2
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1442
+aucNeer = 4
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1443
+aucNeer = 2
+aucVertID = 742
+aucVertGridInd.first =  18aucVertGrid.second  = 22
+circleTime = 1444
+aucNeer = 6
+aucVertID = 786
+aucVertGridInd.first =  19aucVertGrid.second  = 26
+circleTime = 1445
+aucNeer = 4
+aucVertID = 786
+aucVertGridInd.first =  19aucVertGrid.second  = 26
+circleTime = 1446
+aucNeer = 2
+aucVertID = 786
+aucVertGridInd.first =  19aucVertGrid.second  = 26
+circleTime = 1447
+aucNeer = 0
+aucVertID = 782
+aucVertGridInd.first =  19aucVertGrid.second  = 22
+circleTime = 1448
+aucNeer = 6
+aucVertID = 785
+aucVertGridInd.first =  19aucVertGrid.second  = 25
+circleTime = 1449
+aucNeer = 0
+aucVertID = 659
+aucVertGridInd.first =  16aucVertGrid.second  = 19
+circleTime = 1450
+aucNeer = 5
+aucVertID = 659
+aucVertGridInd.first =  16aucVertGrid.second  = 19
+circleTime = 1451
+aucNeer = 2
+aucVertID = 659
+aucVertGridInd.first =  16aucVertGrid.second  = 19
+circleTime = 1452
+aucNeer = 6
+aucVertID = 784
+aucVertGridInd.first =  19aucVertGrid.second  = 24
+circleTime = 1453
+aucNeer = 4
+aucVertID = 784
+aucVertGridInd.first =  19aucVertGrid.second  = 24
+circleTime = 1454
+aucNeer = 3
+aucVertID = 784
+aucVertGridInd.first =  19aucVertGrid.second  = 24
+circleTime = 1455
+aucNeer = 0
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1456
+aucNeer = 4
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1457
+aucNeer = 3
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1458
+aucNeer = 4
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1459
+aucNeer = 4
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1460
+aucNeer = 5
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1461
+aucNeer = 1
+aucVertID = 660
+aucVertGridInd.first =  16aucVertGrid.second  = 20
+circleTime = 1462
+aucNeer = 0
+aucVertID = 661
+aucVertGridInd.first =  16aucVertGrid.second  = 21
+circleTime = 1463
+aucNeer = 3
+aucVertID = 987
+aucVertGridInd.first =  24aucVertGrid.second  = 27
+circleTime = 1464
+aucNeer = 5
+aucVertID = 987
+aucVertGridInd.first =  24aucVertGrid.second  = 27
+circleTime = 1465
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1466
+aucNeer = 3
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1467
+aucNeer = 6
+aucVertID = 788
+aucVertGridInd.first =  19aucVertGrid.second  = 28
+circleTime = 1468
+aucNeer = 5
+aucVertID = 788
+aucVertGridInd.first =  19aucVertGrid.second  = 28
+circleTime = 1469
+aucNeer = 2
+aucVertID = 788
+aucVertGridInd.first =  19aucVertGrid.second  = 28
+circleTime = 1470
+aucNeer = 3
+aucVertID = 788
+aucVertGridInd.first =  19aucVertGrid.second  = 28
+circleTime = 1471
+aucNeer = 0
+aucVertID = 700
+aucVertGridInd.first =  17aucVertGrid.second  = 20
+circleTime = 1472
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1473
+aucNeer = 1
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1474
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1475
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1476
+aucNeer = 5
+aucVertID = 511
+aucVertGridInd.first =  12aucVertGrid.second  = 31
+circleTime = 1477
+aucNeer = 0
+aucVertID = 658
+aucVertGridInd.first =  16aucVertGrid.second  = 18
+circleTime = 1478
+aucNeer = 3
+aucVertID = 981
+aucVertGridInd.first =  24aucVertGrid.second  = 21
+circleTime = 1479
+aucNeer = 1
+aucVertID = 981
+aucVertGridInd.first =  24aucVertGrid.second  = 21
+circleTime = 1480
+aucNeer = 5
+aucVertID = 981
+aucVertGridInd.first =  24aucVertGrid.second  = 21
+circleTime = 1481
+aucNeer = 4
+aucVertID = 981
+aucVertGridInd.first =  24aucVertGrid.second  = 21
+circleTime = 1482
+aucNeer = 6
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1483
+aucNeer = 4
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1484
+aucNeer = 1
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1485
+aucNeer = 6
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1486
+aucNeer = 1
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1487
+aucNeer = 3
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1488
+aucNeer = 6
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1489
+aucNeer = 7
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1490
+aucNeer = 4
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1491
+aucNeer = 3
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1492
+aucNeer = 7
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1493
+aucNeer = 3
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1494
+aucNeer = 4
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1495
+aucNeer = 5
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1496
+aucNeer = 4
+aucVertID = 783
+aucVertGridInd.first =  19aucVertGrid.second  = 23
+circleTime = 1497
+aucNeer = 0
+aucVertID = 699
+aucVertGridInd.first =  17aucVertGrid.second  = 19
+circleTime = 1498
+aucNeer = 2
+aucVertID = 699
+aucVertGridInd.first =  17aucVertGrid.second  = 19
+circleTime = 1499
+aucNeer = 3
+aucVertID = 1026
+aucVertGridInd.first =  25aucVertGrid.second  = 26
+circleTime = 1500
+aucNeer = 4
+aucVertID = 1026
+aucVertGridInd.first =  25aucVertGrid.second  = 26
+circleTime = 1501
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1502
+aucNeer = 3
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1503
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1504
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1505
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1506
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1507
+aucNeer = 2
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1508
+aucNeer = 6
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1509
+aucNeer = 3
+aucVertID = 1026
+aucVertGridInd.first =  25aucVertGrid.second  = 26
+circleTime = 1510
+aucNeer = 0
+aucVertID = 740
+aucVertGridInd.first =  18aucVertGrid.second  = 20
+circleTime = 1511
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1512
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1513
+aucNeer = 2
+aucVertID = 1507
+aucVertGridInd.first =  37aucVertGrid.second  = 27
+circleTime = 1514
+aucNeer = 6
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1515
+aucNeer = 2
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1516
+aucNeer = 4
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1517
+aucNeer = 1
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1518
+aucNeer = 6
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1519
+aucNeer = 3
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1520
+aucNeer = 0
+aucVertID = 780
+aucVertGridInd.first =  19aucVertGrid.second  = 20
+circleTime = 1521
+aucNeer = 6
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1522
+aucNeer = 2
+aucVertID = 826
+aucVertGridInd.first =  20aucVertGrid.second  = 26
+circleTime = 1523
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1524
+aucNeer = 1
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1525
+aucNeer = 2
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1526
+aucNeer = 7
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1527
+aucNeer = 1
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1528
+aucNeer = 0
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1529
+aucNeer = 2
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1530
+aucNeer = 1
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1531
+aucNeer = 2
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1532
+aucNeer = 4
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+circleTime = 1533
+aucNeer = 6
+aucVertID = 698
+aucVertGridInd.first =  17aucVertGrid.second  = 18
+rob0	set size = 160
+rob1	set size = 159
+rob2	set size = 159
+rob3	set size = 159
+rob4	set size = 159
+rob5	set size = 160
+rob6	set size = 160
+rob7	set size = 160
+max  = 160 min = 159
+allNumSize = 1276
+robNum 8
+row0 0 1 1 2 3 3 4 4 4 4 5 5 5 6 6 6 6 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 10 10 10 10 10 10 10 10 10 10 11 11 11 11 11 11 11 11 11 12 12 12 12 12 12 13 13 13 13 13 13 13 14 14 14 14 14 14 14 14 14 14 14 14 15 15 15 15 15 15 15 15 15 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 17 17 17 17 17 17 17 17 17 17 18 18 18 18 18 18 18 18 18 19 19 19 19 19 19 19 19 20 20 20 20 20 21 21 21 22 22 22 22 22 23 23 23 23 24 24 24 24 24 24 24 25 26
+col0 39 38 39 39 37 39 36 37 38 39 37 38 39 31 32 37 39 30 31 36 37 39 31 32 33 34 35 36 38 39 30 31 32 33 34 36 38 39 29 30 31 32 34 35 36 37 38 39 30 31 32 33 34 35 37 38 39 32 33 34 37 38 39 31 32 34 35 37 38 39 17 18 19 20 21 22 23 31 32 33 38 39 17 19 22 23 24 25 33 34 39 17 18 19 20 21 23 24 25 26 31 32 33 34 35 17 19 20 22 23 24 26 27 28 31 34 35 20 22 23 24 25 28 29 31 33 20 22 29 30 31 32 33 34 21 22 23 24 25 24 25 26 24 25 26 27 28 25 26 28 29 21 22 23 24 25 27 28 25 25
+row1 13 13 14 14 15 15 16 16 17 17 18 18 18 19 19 19 20 20 20 20 20 20 21 21 21 21 21 22 22 22 22 22 22 22 22 22 22 23 23 23 23 23 23 23 23 23 24 24 24 24 24 24 24 24 24 24 24 24 25 25 25 25 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 26 26 27 27 27 27 27 27 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 31 31 31 32 32 32 32 33 33 34 34 34 34 35 35 35 36 37 37 38 38 39 39 39 39 39
+col1 0 1 0 1 0 1 0 1 0 1 0 1 2 1 15 16 0 1 2 14 15 16 0 2 3 15 18 1 2 3 4 5 15 16 17 18 19 0 2 5 6 12 13 14 15 18 0 1 2 3 4 5 6 7 12 16 17 18 1 2 3 4 5 7 8 9 11 12 17 18 0 1 3 4 5 6 9 11 18 0 1 2 3 4 5 6 7 8 10 11 12 13 0 1 2 3 4 5 6 7 8 9 11 0 1 2 3 4 5 6 7 8 9 10 11 12 0 1 2 3 6 7 8 10 12 13 0 2 6 7 8 9 10 11 12 13 0 1 2 8 0 1 0 1 2 3 0 1 2 1 0 1 0 1 0 1 2 3 4
+row2 24 24 25 26 26 26 26 27 27 27 27 28 28 28 28 28 28 28 29 29 29 29 29 30 30 30 30 30 31 31 31 31 31 31 31 32 32 32 32 32 32 32 32 32 33 33 33 33 33 33 33 33 33 33 33 33 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 34 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 37 37 37 37 37 37 37 37 37 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 39 39
+col2 13 14 13 13 14 15 16 14 15 16 17 12 13 14 15 16 17 25 14 15 17 25 26 5 14 15 16 26 4 5 14 15 16 25 26 4 5 6 10 11 13 14 16 26 3 4 5 6 9 11 13 15 16 17 18 26 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 26 3 4 5 6 8 9 10 12 13 14 15 16 18 19 21 24 25 26 2 3 4 5 7 8 9 10 11 12 13 15 16 17 18 19 20 21 22 24 25 26 4 5 6 7 8 10 12 13 14 16 18 20 21 22 25 26 27 2 3 4 5 6 8 11 12 14 15 16 17 19 20 21 22 23 24 25 26 5 6 7 8 9 10 11 12 13 14
+row3 21 21 22 22 22 22 23 23 23 23 23 23 23 24 24 24 24 24 24 25 25 25 25 25 25 25 25 25 25 25 25 25 25 26 26 26 26 26 26 26 26 26 26 26 26 27 27 27 27 27 27 27 27 27 27 27 27 27 27 27 28 28 28 28 28 28 28 28 28 28 28 28 28 28 29 29 29 29 29 29 29 29 29 29 29 30 30 30 30 30 30 30 30 30 30 31 31 31 31 31 31 31 31 31 31 31 32 32 32 32 32 32 32 32 32 32 33 33 33 33 33 33 33 33 33 33 34 34 34 34 34 34 34 34 34 35 35 35 35 35 35 36 36 36 36 36 36 37 37 37 37 37 37 37 37 37 38 38 38
+col3 21 22 20 21 22 31 20 21 22 30 31 32 33 19 20 29 30 31 33 20 21 22 23 24 26 27 28 29 30 31 32 33 34 20 21 22 24 26 27 28 29 31 32 33 34 19 20 21 22 23 24 25 26 27 28 29 30 31 33 34 18 19 21 22 23 24 26 27 28 29 30 31 32 33 18 21 22 23 27 28 29 30 31 32 33 18 19 20 23 24 27 29 30 32 33 18 19 20 21 22 23 27 28 29 30 31 18 19 20 21 22 23 27 28 30 31 19 21 23 24 27 28 29 30 31 32 20 21 22 23 28 29 30 31 33 23 27 28 29 31 33 27 29 30 31 33 38 28 29 31 32 33 35 36 37 38 33 34 35
+row4 0 0 0 0 0 0 0 0 1 1 1 1 1 1 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 6 6 6 6 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 10 10 10 10 10 10 10 10 10 11 11 11 11 11 11 12 12 12 12 12 12 12 13 13 13 13 13 14 14 14 14 14 14 14 14 15 15 15 15 15 15 15 15 15 15 16 16 16 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 21 21 21 21 21 22 22 22 22 22 22 22 23 23 23 23 23 24 24 25
+col4 0 1 2 3 4 5 6 7 0 1 2 3 4 5 2 4 5 0 1 2 3 4 0 1 2 3 4 0 2 3 0 1 3 4 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 9 1 2 3 4 5 6 7 8 0 1 2 3 4 5 6 7 8 0 2 3 4 6 7 0 2 3 4 6 7 8 2 4 6 7 8 2 3 4 5 6 7 8 10 2 3 4 5 7 8 9 10 11 12 2 3 4 8 12 2 3 4 5 11 3 5 6 8 10 11 3 4 5 6 7 8 9 10 4 5 6 7 8 10 4 5 6 8 9 10 11 12 13 6 7 8 9 10 12 13 7 8 9 10 11 8 10 10
+row5 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 8 8 9 9 9 9 9 9 9 10 10 10 10 10 10 10 10 10 11 11 11 11 11 11 11 11 11 12 12 12 12 12 12 12 12 12 12 12 13 13 13 13 13 13 13 13 13 13 13 13 13 13 14 14 14 14 14 14 14 14 15 15 15 15 15 15 16 16 16 16 16 17 18
+col5 25 27 28 29 30 32 33 34 35 36 21 22 25 26 29 30 31 32 33 34 35 36 20 21 22 25 26 27 28 29 31 32 20 21 22 23 24 25 26 27 29 30 32 35 20 21 24 25 26 27 28 29 31 32 33 34 35 22 23 24 25 26 28 33 34 35 22 23 24 25 26 27 28 29 34 35 23 25 26 27 34 35 17 18 19 23 25 26 27 16 17 18 19 24 25 26 14 15 16 17 18 19 24 26 27 15 16 17 18 19 20 21 26 27 15 17 18 19 20 21 22 27 29 30 31 14 15 16 17 18 19 20 21 22 23 24 26 27 30 16 24 25 26 27 28 29 30 16 26 27 28 29 30 15 16 27 29 30 30 30
+row6 11 12 13 14 14 15 15 15 16 16 16 17 17 17 17 18 18 18 18 19 19 19 19 19 19 19 19 19 19 20 20 20 20 20 20 20 20 20 20 20 20 20 21 21 21 21 21 21 21 21 21 21 21 21 22 22 22 22 22 22 23 23 23 23 24 24 24 24 24 25 25 25 25 26 26 26 26 27 27 27 27 27 28 28 28 28 29 29 29 29 29 29 30 30 30 30 30 31 31 31 32 32 32 32 32 33 33 33 33 33 34 34 34 34 34 35 35 35 35 35 35 36 36 36 36 36 37 38 38 38 38 38 38 38 38 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39 39
+col6 36 36 36 35 36 36 37 38 36 37 39 36 37 38 39 35 37 38 39 23 24 25 26 27 28 35 36 38 39 26 27 28 29 30 32 33 34 35 36 37 38 39 27 28 29 30 31 32 34 35 36 37 38 39 34 35 36 37 38 39 35 36 38 39 35 36 37 38 39 36 37 38 39 35 36 37 39 35 36 37 38 39 34 35 36 39 34 35 36 37 38 39 34 36 37 38 39 33 37 39 33 34 35 36 39 34 35 37 38 39 34 35 36 37 39 34 35 36 37 38 39 34 35 36 37 39 39 28 29 30 31 32 37 38 39 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+row7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 10 10 10 10 10 10 10 10 11 11 11 11 11 11 11 12 12 12 12 12 13 13 13 13 14 14 14 14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 19 19 20 20 20
+col7 8 9 10 11 12 13 14 15 16 17 19 20 21 22 23 6 8 10 11 12 14 15 16 17 19 20 23 24 6 7 8 10 11 12 13 14 16 17 19 5 6 8 9 11 13 14 15 16 17 18 19 5 7 8 9 10 12 13 15 16 17 18 19 5 7 9 10 11 12 15 16 19 5 6 7 8 9 11 12 14 15 17 18 19 20 10 11 12 13 14 15 17 18 20 21 10 11 12 14 15 20 9 10 11 13 15 20 21 22 23 9 10 11 12 13 21 22 23 9 11 12 13 23 24 25 9 11 13 14 25 9 10 11 12 11 12 13 14 14 13 14 12 13 14 15 18 12 14 15 16 17 18 12 13 14 17 18 12 13 17
+neiRow0 4 7 7 11 12 12 12 13 13 13 13 13 13 13 13 13 14 14 14 14 14 15 15 15 16 16 16 16 16 17 17 17 18 18 18 19 19 19 19 19 20 20 20 20 20 20 21 21 21 21 23 23 23 24 24 25 25 25 25 25 25 25 26 26 27
+neiCol0 35 34 35 36 30 31 36 17 18 19 20 21 22 23 30 36 16 24 25 30 35 16 26 38 16 27 30 36 39 18 30 36 17 30 35 23 24 25 28 35 26 29 30 32 33 34 21 22 27 28 21 22 30 20 29 21 22 23 24 26 27 28 24 26 25
+neiRow1 12 13 14 15 16 17 18 18 18 19 19 20 20 21 21 22 22 22 22 23 23 24 24 24 24 25 25 26 27 28 28 30 30 31 31 32 32 32 32 33 34 35 36 38 38 38 39
+neiCol1 0 2 2 2 2 2 3 15 16 14 17 13 17 4 5 6 12 13 20 7 11 8 13 14 19 10 13 13 14 12 13 5 14 5 14 6 10 11 13 3 4 3 2 2 3 4 5
+neiRow2 23 23 24 25 27 27 27 28 28 28 28 29 29 29 29 30 30 30 31 31 31 31 31 32 32 33 33 34 34 34 35 35 35 36 36 37 38 39 39 39 39 39 39 39 39 39 39 39 39 39 39
+neiCol2 13 14 12 12 12 13 25 11 18 24 26 5 12 18 27 6 13 27 6 10 11 13 27 18 27 19 27 3 20 21 2 23 27 1 27 28 1 2 3 4 15 16 17 19 20 21 22 23 24 25 26
+neiRow3 20 20 21 22 23 24 24 24 24 24 24 24 25 26 26 27 28 28 28 29 29 29 30 30 31 31 32 33 33 34 34 35 35 35 35 35 36 36 36 36 36 36 37 37 38 38 38 38 38 38 39 39 39
+neiCol3 21 22 31 19 29 18 21 22 23 24 27 28 25 25 35 35 17 25 34 17 26 34 26 34 26 33 26 18 26 19 34 21 24 26 34 38 26 34 35 36 37 39 27 39 28 29 31 32 37 38 33 34 35
+neiRow4 0 1 2 3 4 6 6 6 6 6 7 8 9 10 12 13 13 13 13 14 14 14 15 16 16 17 17 18 18 20 20 21 22 22 23 23 23 24 25 25 25
+neiCol4 8 6 6 5 5 5 6 7 8 9 10 10 9 9 9 0 1 9 10 1 11 12 1 1 13 1 12 2 12 12 13 3 4 5 6 12 13 7 8 9 11
+neiRow5 0 0 1 1 1 2 3 4 4 7 7 7 8 8 8 9 9 9 10 10 10 11 11 11 11 12 12 13 14 14 14 14 14 14 14 14 14 15 15 15 16 16 16 16 17 17 17 18 18 19
+neiCol5 21 22 20 23 24 19 19 19 36 17 18 36 20 34 35 15 20 23 13 21 23 24 25 30 31 14 32 31 14 17 18 19 20 21 22 23 31 17 24 25 14 17 26 31 15 27 31 29 31 30
+neiRow6 10 11 11 12 13 13 14 15 16 17 18 18 18 18 19 19 19 19 19 19 20 20 20 21 22 22 22 26 27 28 29 30 34 35 36 36 37 37 37 37 37 37 37 37 38 38 38 38 38 38 38 38 38 38 38 38 38 38 39
+neiCol6 36 35 37 37 35 37 38 39 35 35 23 24 25 28 22 29 30 32 33 34 23 24 25 26 27 28 31 34 34 33 33 33 33 33 33 38 28 29 31 32 35 36 37 38 15 16 17 19 20 21 22 23 24 25 26 33 34 35 14
+neiRow7 0 0 1 1 1 1 2 2 3 3 4 4 6 7 7 7 7 7 8 8 8 8 8 9 9 9 9 10 10 10 10 11 11 12 12 13 13 14 15 15 16 16 16 17 17 17 18 19 19 20 20 21 21
+neiCol7 6 7 5 21 22 25 5 20 4 20 4 20 4 5 6 7 8 9 9 17 18 19 23 8 16 19 24 8 14 15 24 21 26 8 15 8 14 10 11 12 12 15 18 11 17 19 11 15 16 14 16 12 13

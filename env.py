@@ -310,7 +310,7 @@ class Env:
         showticklabels = False)
         layout['font'] = dict(
             family='sans-serif',
-            sie=25,
+            size=25,
             color='#000'
         )
         layout['legend'] =   dict(font=dict(
@@ -810,7 +810,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst.append(robColLst)
         env.addRobotStartPnt(robLst)        
         env.drawPic('./png/env_'+cfgFileName+'JustPath',fileType)
-
+        
 if __name__ == '__main__':
 
     

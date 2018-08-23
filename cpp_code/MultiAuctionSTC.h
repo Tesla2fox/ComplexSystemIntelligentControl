@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Obmap.h"
 #include "Gwrite.hpp"
 #include "bgraph.h"
@@ -82,6 +82,9 @@ namespace pl
 		void generateRealPath();
 		void auctioneer(const size_t & robID);
 		void bidding(const size_t &robID);
+		
+		bool exchange2TreeSgs();
+		bool updateMap(size_t const&robID);
 
 
 		Obmap &_mainMap;
@@ -91,6 +94,8 @@ namespace pl
 		size_t randomSeed = 0;
 
 		//
+		shared_ptr<vector<map<size_t, size_t>>> _vRobMapPtr = nullptr;
+		shared_ptr<vector<set<size_t>>> _vRobSetBasePtr = nullptr;
 		shared_ptr<vector<double>> _vRobEstCostPtr = nullptr;
 		shared_ptr<vector<set<size_t>>> _vRobSetPtr = nullptr;
 		shared_ptr<vector<vector<GridIndex>>> _vRobGridPtr = nullptr;
@@ -98,6 +103,12 @@ namespace pl
 		shared_ptr<vector<bool>> _vRobSleepPtr = nullptr;
 		map<bex::VertexDescriptor, int> _GridMap;
 		//shared_ptr<vector<set<size_t>>>_vRobNghSetPtr = nullptr;
+		shared_ptr<vector<vector<STCEdge>>> _vRobEdgePtr = nullptr;
+		// the first means in the robot graph
+		// the second means out of the robot graph
+		shared_ptr<vector<vector<pair<bex::VertexDescriptor, bex::VertexDescriptor>>>> _vRobNeiEdgePtr = nullptr;
+
+//		shared_ptr<vector<bool>> _vRobSleepPtr = nullptr;
 
 	
 		//shared_ptr<vector<set<size_t>>> _vRob
@@ -109,6 +120,8 @@ namespace pl
 		vector<bex::Graph> _m_vGraph;
 		vector<map<size_t, size_t>> _vT2local;
 		vector<map<size_t, size_t>> _vlocal2T;
+		vector<map<size_t, size_t>> _vSlocal2T;
+		vector<map<size_t, size_t>> _vT2Slocal;
 
 		vector<bex::DLineString> _vpath;
 		vector<vector<bex::VertexDescriptor>> _vpathIndex;
@@ -150,6 +163,7 @@ namespace pl
 		bool updateNeiGraph(size_t const &succBidID, bex::VertexDescriptor const & vd);
 		bool updateNeiGraphWithErase(size_t const &loseID, bex::VertexDescriptor const & vd);
 		// auction function end
+		bool calMakeSpan();
 	};
 	
 }
