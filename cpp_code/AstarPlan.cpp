@@ -133,7 +133,10 @@ namespace pl {
 		{
 			std::vector<int> vdirIndex;
 			auto aIndex = m_openList.front().vertPnt.PntIndex;
+#ifdef _DEBUG
 			cout << "aIndex.first = " << aIndex.first << " aIndex.second" << aIndex.second << endl;
+#endif // _DEBUG
+
 			auto PreDir = m_openList.front().direction;
 			double currDis = m_openList.front().disG;
 
@@ -153,9 +156,13 @@ namespace pl {
 			/// the direction vector
 			/// vdirIndex
 			searchTimes++;
+
+#ifdef _DEBUG
 			if (searchTimes == 3)
 				cout << ":" << endl;
 			cout << "searchTime = " << searchTimes << endl;
+#endif // _DEBUG
+
 			if (searchTimes > this->maxSearhTimes)
 			{
 				//qDebug()<<"over the maxSearchTimes";

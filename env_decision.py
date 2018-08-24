@@ -52,4 +52,5 @@ if __name__ =='__main__':
     figData.append(setTrace)
     fig = go.Figure(data = figData , layout = layout)
     plotly.offline.plot(fig,filename = 'name')
+    
 #    py.image.save_as(fig,filename = '0-0'+'.jpeg')

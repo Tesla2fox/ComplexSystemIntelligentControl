@@ -171,11 +171,11 @@ namespace pl
 		bt::prim_minimum_spanning_tree(g, &p[0]);
 
 		vector<double> sPntx, sPnty, tPntx, tPnty;
-		cout << "p size = " << p.size() << endl;
+		//cout << "p size = " << p.size() << endl;
 		for (std::size_t i = 0; i < p.size(); ++i)
 		{
-			cout << i << endl;
-			cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
+			//cout << i << endl;
+			//cout << i << " vvd[i]" << vvd[i] << " vvd[p[i]]" << vvd[p[i]] << endl;
 			//auto sg = bex::DSegment(_ob_sGraph[vvd[i]].pnt, _ob_sGraph[vvd[p[i]]].pnt);
 			//_vTreeSgs[robID].push_back(sg);
 
@@ -372,15 +372,16 @@ namespace pl
 		}
 		do
 		{
+			circleTime++;
 			size_t aucNeer = dis(eng);
 	//		size_t aucNeer = selectAuctioneer(circleTime++, 1);
 			bex::VertexDescriptor aucVertID;
 
-			if (circleTime >= 398/*maxcircleTime*/)
-			{
-				cout << "wtf" << endl;
-//				break;
-			}
+//			if (circleTime >= 398/*maxcircleTime*/)
+//			{
+//				//cout << "wtf" << endl;
+////				break;
+//			}
 
 			if (circleTime == 253)
 				c_deg << "";
@@ -443,8 +444,8 @@ namespace pl
 			}
 #ifdef _DEBUG
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
-#endif // _DEBUG
 			cout << "circleTime = " << circleTime << endl;
+#endif // _DEBUG
 			if ( circleTime >= 1000/*maxcircleTime*/)
 			{
 				break;
@@ -462,7 +463,8 @@ namespace pl
 		}
 		auto maxSize = *std::max_element(vSize.begin(), vSize.end());
 		auto minSize = *std::min_element(vSize.begin(), vSize.end());
-		
+		_estMakeSpan = maxSize;
+		c_deg << "EstMakespan " << maxSize << endl;
 		c_deg << "max  = " << maxSize << " min = " << minSize << endl;
 		c_deg << "allNumSize = " << allNumSize << endl;
 		cout << "safe" << endl;
@@ -486,7 +488,10 @@ namespace pl
 		auto &graph = _ob_sGraph;
 		for (size_t robID = 0; robID < _robNum; robID++)
 		{
+#ifdef _DEBUG
 			cout << "rob is = " << robID << endl;
+
+#endif // _DEBUG
 			//auto &graph = _mainMap.getGraph(graphType::span);
 			//const int num_nodes = bt::num_vertices(graph);
 			const int num_nodes = this->_vRobSetPtr->at(robID).size();
@@ -591,8 +596,6 @@ namespace pl
 				
 				//auto &it = robSet[i];
 				bex::VertexDescriptor svd = it;
-				if (svd == 180)
-					cout << "162" << endl;
 				// 此处添加..
 				vector<bex::VertexDescriptor> vvd;
 				if (_vNoLeafSTCSet[p].count(svd) == 0)
@@ -651,8 +654,7 @@ namespace pl
 			for (bex::VertexIterator vit = vi.first; vit != vi.second; vit++)
 			{
 				bex::VertexDescriptor vd = *vit;
-				if (vd == 193)
-					cout << "wtf" << endl;
+
 				if (local2T.count(vd) == 1)
 				{
 					/*			cout << "___" << endl;
@@ -793,8 +795,7 @@ namespace pl
 			//	cout << "i = " << i++ << endl;
 #endif // _DEBUG
 				cenVd = canVd;
-				if (cenVd == 152)
-					cout << "wtf" << endl;
+
 				cenDir = canDir;
 				//canDir = cenDir;
 				_pathIndex.push_back(cenVd);
@@ -972,11 +973,9 @@ namespace pl
 				{
 					nei_bool = false;
 				}
-				cout << "size = " << cmpWayPnt.size() << endl;
 		//		if (cmpWayPnt.size() == wayPntCount)
 		//			break;
 			}
-			cout << "stop" << endl;
 		}
 		cout << "generate real path" << endl;
 	}
@@ -1481,8 +1480,7 @@ namespace pl
 		auto &robWinnerSet = _vRobSetPtr->at(robWinner);
 		robWinnerSet.insert(aucVertID);
 		_vRobEdgePtr->at(robWinner).push_back(STCEdge(aucVertID, sVertID));
-		if (aucVertID == 216)
-			cout << "wtf" << endl;
+
 		_vRobMapPtr->at(robWinner)[sVertID] = _vRobMapPtr->at(robWinner)[sVertID] + 1;
 		_vRobMapPtr->at(robWinner)[aucVertID] = 1;
 		if (this->_ob_sGraph[aucVertID].Type == bex::vertType::DoubleSameOb)
@@ -1574,9 +1572,9 @@ namespace pl
 		robLoserSet.erase(vertID);
 		
 		auto &robCost = _vRobEstCostPtr->at(loserID);
+#ifdef _DEBUG
 		cout << "robCost = " << robCost << endl;
-		if (vertID == 256)
-			cout << "wtf" << endl;
+#endif // _DEBUG
 
 		auto &robMap = _vRobMapPtr->at(loserID);
 		//delete the loser node 
@@ -1590,14 +1588,14 @@ namespace pl
 				auto eraseCost = estEraseCost(loserID, robLoserEdgeSet[i].first, robLoserEdgeSet[i].second);
 				_vRobEstCostPtr->at(loserID) = _vRobEstCostPtr->at(loserID) - eraseCost;
 				robLoserSet.erase(vertID);
-				cout << "robMap[robLoserEdgeSet[i].first]  " << robMap[robLoserEdgeSet[i].first] << endl;
+				//cout << "robMap[robLoserEdgeSet[i].first]  " << robMap[robLoserEdgeSet[i].first] << endl;
 				//robMap[robLoserEdgeSet[i].first] = robMap[robLoserEdgeSet[i].first] - 1;
 				robMap[robLoserEdgeSet[i].first]--;
-				cout << "robMap[robLoserEdgeSet[i].first]  " << robMap[robLoserEdgeSet[i].first] << endl;
+				//cout << "robMap[robLoserEdgeSet[i].first]  " << robMap[robLoserEdgeSet[i].first] << endl;
 
-				cout << "robMap[robLoserEdgeSet[i].second]  " << robMap[robLoserEdgeSet[i].second] << endl;
+				//cout << "robMap[robLoserEdgeSet[i].second]  " << robMap[robLoserEdgeSet[i].second] << endl;
 				robMap[robLoserEdgeSet[i].second] = robMap[robLoserEdgeSet[i].second] - 1;
-				cout << "robMap[robLoserEdgeSet[i].second]  " << robMap[robLoserEdgeSet[i].second] << endl;
+				//cout << "robMap[robLoserEdgeSet[i].second]  " << robMap[robLoserEdgeSet[i].second] << endl;
 				break;
 			}
 		}
@@ -1618,7 +1616,7 @@ namespace pl
 			{
 				if (robLoserEdgeSet[i].second == cenID)
 				{
-					cout << "robLoserEdgeSet[i].first = " << robLoserEdgeSet[i].first << endl;
+					//cout << "robLoserEdgeSet[i].first = " << robLoserEdgeSet[i].first << endl;
 					//delInd.push_back(i);
 					reConInd.push_back(robLoserEdgeSet[i].first);
 					reCon.push(robLoserEdgeSet[i].first);
@@ -1691,7 +1689,7 @@ namespace pl
 				{
 					updateWinner(loserID, reConInd[i], svert, cost);
 					vDelInd.push_back(reConInd[i]);
-					cout << "add id" << reConInd[i] << endl;
+					//cout << "add id" << reConInd[i] << endl;
 				}
 			}
 			for (size_t i = 0; i < vDelInd.size(); i++)
@@ -1712,7 +1710,7 @@ namespace pl
 
 		
 		updateNeiGraph(loserID);
-		cout << "robCost = " << robCost << endl;
+		//cout << "robCost = " << robCost << endl;
 		updateMap(loserID);
 		return false;
 	}
@@ -1758,8 +1756,7 @@ namespace pl
 				auto &sInd = robEdges[i].first;
 				auto &tInd = robEdges[i].second;
 				auto &gridInd = _ob_graphVd2GridInd[sInd].first;
-				if (sInd == 216)
-					cout << "wtf" << endl;
+
 				if (_mainMap.vitualVertSet.count(gridInd) == 1)
 				{
 					if (_vRobMapPtr->at(p)[sInd] ==1)

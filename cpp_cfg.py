@@ -134,25 +134,11 @@ if __name__ =='__main__':
 # zero means the obstacle pnt
 # one means the way pnt
 
-    robNum = 5
-    random.seed(10)
+    robNum = 11
+    random.seed(100)
     
-    obNum = 301
+    obNum = 300
     
-    robRowLst = []
-    robColLst = []
-    while len(robRowLst)<robNum:
-        robRow = random.randint(0,row - 1)
-        robCol = random.randint(0,col - 1)
-        reasonable = True
-        for i in range(len(robRowLst)):
-            if robRow == robRowLst[i] and robCol == robColLst[i]:
-                reasonable = False
-                break
-        if reasonable:
-            robRowLst.append(robRow)
-            robColLst.append(robCol)
-            
     obRowLst = []
     obColLst = []
     while len(obRowLst)<obNum :
@@ -167,6 +153,26 @@ if __name__ =='__main__':
             mat[obRow][obCol] = 0
             obRowLst.append(obRow)
             obColLst.append(obCol)
+            
+    robRowLst = []
+    robColLst = []
+    while len(robRowLst)<robNum:
+        robRow = random.randint(0,row - 1)
+        robCol = random.randint(0,col - 1)
+        reasonable = True
+        for i in range(len(robRowLst)):
+            if robRow == robRowLst[i] and robCol == robColLst[i]:
+                reasonable = False
+                break
+        for i in range(len(obRowLst)):
+            if robRow == obRowLst[i] and robCol == obColLst[i]:
+                reasonable = False
+                break
+        if reasonable:
+            robRowLst.append(robRow)
+            robColLst.append(robCol)
+            
+
     
 #    testNei = getNeighbor(envMat =mat,lst = [0,0],row =row,col=col)
 #    print(testNei)
@@ -218,7 +224,7 @@ if __name__ =='__main__':
 
                 
     
-    conFileDir = './/data//'
+    conFileDir = './/data//est//'
     conFileCfg = conFileDir + str(robNum)+'_'+str(row)+'_'+str(col)+'_'+str(obNum)+'_Outdoor_Cfg.txt'
     f_con = open(conFileCfg , 'w')
     
@@ -236,6 +242,7 @@ if __name__ =='__main__':
     writeConf(f_con,'robReachRowLst',robReachRowLst)
     writeConf(f_con,'robReachColLst',robReachColLst)
 
+    print(len(robReachRowLst))
     robUnReachRowLst = []
     robUnReachColLst = []
     for unit in unReachCompLst:

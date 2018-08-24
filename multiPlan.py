@@ -14,13 +14,13 @@ from env import *
 if __name__ == '__main__':
     org_exe_name = 'D:\\pyCode\\ComplexSystemIntelligentControl\\bin\\exc\\Debug\\MultiCover.exe'    
     conFileDir = './/data//'
-    fileCfgName =  'cfg2.txt'
+    fileCfgName =  '10_40_40_301_Outdoor_Cfg.txt'
     degNameCfg = conFileDir + fileCfgName
 #    proOrgStatic = subprocess.Popen([org_exe_name,degNameCfg],stdin =subprocess.PIPE,stdout = subprocess.PIPE)
 #    for line in proOrgStatic.stdout:
 #        print(line)
 #    drawPic(fileCfgName,10,'testNothing',False)
-    drawPic(fileCfgName,12,'testNothing',False)
+    drawPic(fileCfgName,1,'testNothing',True)
 #    drawPic(fileCfgName,12,'testNothing',True)
         
 #    drawPic(fileCfgName,10,'testNothing',True)

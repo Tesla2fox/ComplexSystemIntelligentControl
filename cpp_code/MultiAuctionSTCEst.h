@@ -26,7 +26,8 @@ namespace pl
 			string prefix(ob_map._m_name.begin(), ob_map._m_name.end()-4);
 			cout << prefix << endl;
 			//str_deg += "\\GAComp\\";
-			//str_deg += prefix;
+			//str_deg += "\\est\\";
+			str_deg += prefix;
 			str_deg += "auctionSTCEstDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);			
 		};
@@ -45,6 +46,7 @@ namespace pl
 		void setRandomSeed(const size_t &val) { randomSeed = val; }
 
 		size_t _makeSpan = 0;
+		size_t _estMakeSpan = 0;
 	private:
 		//write txt
 		std::ofstream c_deg;
