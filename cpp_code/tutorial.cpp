@@ -58,8 +58,9 @@ int main(int argc, char * argv[])
 //		e_deg << "makeSpan ";
 		vEstMakespan.clear();
 		vMakespan.clear();
-		for (size_t i = 0; i < 20; i++)
+		for (size_t i = 0; i < 200; i++)
 		{
+			cout << "i =" << i << endl;
 			pl::MultiAuctionSTCEst multi_aucSTC(obmap, startPnt);
 			multi_aucSTC.setRandomSeed(i);
 			multi_aucSTC.process();
