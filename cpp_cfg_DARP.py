@@ -140,8 +140,8 @@ def stc2base(lst = (0,0)):
 if __name__ =='__main__':
     
     
-    stc_row = 8
-    stc_col = 8
+    stc_row = 32
+    stc_col = 32
     
     stc_mat = zeros((stc_row,stc_col),dtype=int)
     for i in range(stc_row):
@@ -153,10 +153,10 @@ if __name__ =='__main__':
 # zero means the obstacle pnt
 # one means the way pnt
 
-    robNum = 5
+    robNum = 20
     random.seed(100)
     
-    obNum = 5
+    obNum = 300
     
     
     robRowLst = []
@@ -246,7 +246,7 @@ if __name__ =='__main__':
 
                 
     
-    conFileDir = './/DARP_data//'
+    conFileDir = './data//DARP_data//'
     conFileCfg = conFileDir + str(robNum)+'_'+str(base_row)+'_'+str(base_col)+'_'+str(obNum)+'_Outdoor_Cfg.txt'
     f_con = open(conFileCfg , 'w')
     
@@ -295,7 +295,7 @@ if __name__ =='__main__':
     writeConf(f_con,'robUnReachColLst',ur_baseColLst)
     
     b_obRowLst = ur_baseRowLst
-    b_obColLst = ur_baseRowLst
+    b_obColLst = ur_baseColLst
      
 #==============================================================================
 #   test the edge add function 
@@ -326,20 +326,25 @@ if __name__ =='__main__':
     
     b_obNum = len(b_obRowLst)
     b_rNum = len(r_baseRowLst)
+    
     b_gridNum = base_row *base_col
-    print(b_obNum)
-    print(b_rNum)
+    print('obNum',b_obNum)
+    print('b_rNum',b_rNum)
     print(b_gridNum)
-    lowBound = math.ceil(b_rNum/robNum)
+    lowBound = b_rNum/robNum 
     writeConf(f_con,'lowBound',[lowBound])
-    print(lowBound)
+    print('lowBound',lowBound)
     
     
+    print(conFileCfg)
+
     f_con.close()
     
-    conFileDir = './/DARP_data//'
+    conFileDir = './data//DARP_data//'
     
-    conFileCfg = conFileDir + '_java_'+str(robNum)+'_'+str(stc_row)+'_'+str(stc_row)+'_'+str(obNum)+'CPP_Cfg.txt'
+    conFileCfg = conFileDir + '_java_'+str(robNum)+'_'+str(stc_row)+'_'+str(stc_col)+'_'+str(obNum)+'CPP_Cfg.txt'
+    
+    print(conFileCfg)
     f_ja = open(conFileCfg , 'w')
     
     for i in range(len(robRowLst)):

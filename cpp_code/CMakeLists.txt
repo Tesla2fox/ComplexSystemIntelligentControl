@@ -42,6 +42,43 @@ set(file_list
 	AstarPlan.cpp
 )
 
+
+
+set(dll_file_list 
+	stadfx.h
+	Obmap.h
+	Obmap.cpp
+	bgeometry.h
+	bgeometry.cpp
+	bgraph.h
+	bgraph.cpp
+	ReadConfig.h
+	ReadConfig.cpp
+	ssconfig.hpp
+	#
+	simple_svg.hpp
+	Gwrite.hpp
+	Gwrite.cpp
+	#
+	STCPlan.h
+	STCPlan.cpp
+	GroupVert.h
+	GroupVert.cpp
+	MultiAuction.h
+	MultiAuction.cpp
+	#
+	MultiAuctionSTC.h
+	MultiAuctionSTC.cpp
+	#EST
+	MultiAuctionSTCEst.h
+	MultiAuctionSTCEst.cpp
+	AstarPlan.h
+	AstarPlan.cpp
+	#head
+	SearchPathPlanning.h
+	SearchPathPlanning.cpp	
+)
+
 set(DARP_file_list tutorial_DARP.cpp
 	stadfx.h
 	Obmap.h
@@ -69,13 +106,13 @@ set(DARP_file_list tutorial_DARP.cpp
 
 
 IF(WIN32)
-#set(BOOST_ROOT "D:/boost/boost_1_65_0_64")
-set(BOOST_ROOT "D:/boost_1_64_0/boost_1_64_0_64")
+set(BOOST_ROOT "D:/boost/boost_1_65_0_64")
+#set(BOOST_ROOT "D:/boost_1_64_0/boost_1_64_0_64")
 ENDIF()
 include_directories(../include)
-#find_package(Boost 1.65.0)
+find_package(Boost 1.65.0)
 
-find_package(Boost 1.64.0)
+#find_package(Boost 1.64.0)
 
 if(Boost_FOUND)
 
@@ -101,7 +138,11 @@ add_executable(svgTest tutorial_svg.cpp simple_svg.hpp)
 add_executable(componentTest component.cpp)
 #add_executable(test_pathplan  ${PROJECT_LIB_DIR}/${file_list})
 
-#add_library(coveragePathPlan  SHARED ${file_list})
+add_library(SearchPathPlanning  SHARED ${dll_file_list})
+
+add_executable(dllTest tutorial_dll.cpp SearchPathPlanning)
+
+#set_target_properties(MultiCoverPathPlan PROPERTIES OUTPUT_NAME "MultiCover")
 
 #链接外部DLL
 #target_link_libraries(libPathPlanning libGPS)
@@ -114,6 +155,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/exc)
 #设置输出名称
 set_target_properties(MultiCoverPathPlan PROPERTIES OUTPUT_NAME "MultiCover")
 
+
+target_link_libraries(dllTest SearchPathPlanning)
 
 # SHARE or STATIC
 #add_library(pathplan SHARED  ${file_list})

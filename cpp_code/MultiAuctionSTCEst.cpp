@@ -17,7 +17,6 @@ namespace pl
 		size_t gridNum = boost::num_vertices(_ob_sGraph);
 		for (size_t i = 0; i < gridNum; i++)
 			_GridMap.insert(pair<bex::VertexDescriptor, int>(i, -1));
-
 		formSpanningTree();
 		wirteGlobalSTCGraph();
 		auction();
@@ -354,6 +353,9 @@ namespace pl
 		std::default_random_engine eng;
 		eng.seed(randomSeed);
 		std::uniform_int_distribution<int> dis(0, _robNum - 1);
+		
+		double start, stop;
+		start = clock();
 		for (size_t i = 0; i < _robNum; i++)
 		{
 			//_vRobGridPtr->at(i).push_back(_vStartPnt[i]);
@@ -373,8 +375,8 @@ namespace pl
 		do
 		{
 			circleTime++;
-			size_t aucNeer = dis(eng);
-	//		size_t aucNeer = selectAuctioneer(circleTime++, 1);
+//			size_t aucNeer = dis(eng);
+			size_t aucNeer = selectAuctioneer(circleTime, 1);
 			bex::VertexDescriptor aucVertID;
 
 //			if (circleTime >= 398/*maxcircleTime*/)
@@ -446,17 +448,22 @@ namespace pl
 			_vRobGridPtr->at(robWinner).push_back(_ob_sgraph2map[aucVertID]);
 			cout << "circleTime = " << circleTime << endl;
 #endif // _DEBUG
-			if ( circleTime >= 1000/*maxcircleTime*/)
+			if ( circleTime >= (_mainMap.getGridNum()/4 *1.5)/*maxcircleTime*/)
 			{
 				break;
 			}
 		} while (!aucCompleted(*_vRobSleepPtr));
+		stop = clock();
+
+		auto    durationTime = ((double)(stop - start)) / CLK_TCK;
+
+		cout << "durTime" << durationTime << endl;
 
 		vector<size_t> vSize;
 		size_t allNumSize = 0;
 		for (size_t i = 0; i < _robNum; i++)
 		{
-			c_deg << "rob" << i << "	set size = " << _vRobEstCostPtr->at(i)<< endl;
+			cout << "rob" << i << "	set size = " << _vRobEstCostPtr->at(i)<< endl;
 			//c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
 			vSize.push_back(_vRobEstCostPtr->at(i));
 			allNumSize += _vRobSetPtr->at(i).size();
@@ -464,9 +471,9 @@ namespace pl
 		auto maxSize = *std::max_element(vSize.begin(), vSize.end());
 		auto minSize = *std::min_element(vSize.begin(), vSize.end());
 		_estMakeSpan = maxSize;
-		c_deg << "EstMakespan " << maxSize << endl;
+		cout << "EstMakespan " << maxSize << endl;
 		c_deg << "max  = " << maxSize << " min = " << minSize << endl;
-		c_deg << "allNumSize = " << allNumSize << endl;
+		cout << "allNumSize = " << allNumSize << endl;
 		cout << "safe" << endl;
 	}
 

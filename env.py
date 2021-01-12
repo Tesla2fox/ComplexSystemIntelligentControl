@@ -15,6 +15,7 @@ import copy
 from read_cfg import Read_Cfg
 from IPython.display import HTML,display 
 import colorlover as cl
+import plotly.io as pio
 
 #import read_cfg 
 
@@ -113,7 +114,7 @@ class Env:
                 rect = Rect(pnt,1,1)
                 rectDic = rect.rect2dict()
                 rectDic['line']['color'] = g_color
-                rectDic['line']['width'] = 0.5
+                rectDic['line']['width'] = 0.1
 #                rectDic['opacity'] =  1/(int(self.mat[i][j])+1)                
 #                rectDic['fillcolor'] = colorLst[int(self.mat[i][j])]
                 if(int(self.mat[i][j])==1):
@@ -192,8 +193,8 @@ class Env:
                 mark_y.append(pnt1.y)
                 line = Line(pnt0,pnt1)
                 lineDic = line.line2dict()
-                lineDic['line']['color'] = 'red'
-                lineDic['line']['width'] = 4
+                lineDic['line']['color'] = 'black'
+                lineDic['line']['width'] = 0.4
                 self.shapeLst.append(copy.deepcopy(lineDic))
             markTrace = go.Scatter(mode ='markers',
                                        x= mark_x,
@@ -215,7 +216,7 @@ class Env:
                 rectDic['line']['color'] = g_color
                 rectDic['line']['width'] = 0.5
                 rectDic['fillcolor'] = bupu[i]
-                rectDic['opacity'] = 0.3
+                rectDic['opacity'] = 1
                 if(False):
                     if(txtType):
                         self.annotations.append(dict(showarrow = False,
@@ -226,7 +227,7 @@ class Env:
                                              x = pnt.x + 0.5 ,y = pnt.y + 0.5,
                                              text = str(pnt.x)+'-'+str(pnt.y)))
                 self.shapeLst.append(copy.deepcopy(rectDic))
-    def addPath(self,robNum = 0, lst  = [],txtType = True):
+    def addPath(self,robNum = 0, lst  = [],txtType = False):
         for i in range(robNum):
             x = lst[2*i]
             y = lst[2*i+1]
@@ -296,7 +297,7 @@ class Env:
         showgrid=False,
         zeroline=False,
         showline=False,
-        autotick=True,
+#        autotick=True,
         ticks='',
         showticklabels = False)
         layout['yaxis'] = dict(
@@ -305,7 +306,7 @@ class Env:
         showgrid=False,
         zeroline=False,
         showline=False,
-        autotick=True,
+#        autotick=True,
         ticks='',
         showticklabels = False)
         layout['font'] = dict(
@@ -323,12 +324,15 @@ class Env:
         layout['width']= 1000
         layout['annotations'] = self.annotations
 #        print(layout)
+        layout['margin'] = dict(t = 15, l= 15,r = 20,b = 0)
+        layout['showlegend'] = False
         fig = dict(data = self.drawData ,layout = layout)
         if(fileType):
             plotly.offline.plot(fig,filename = name + '.html',validate=False)
         else:
-            py.image.save_as(fig,filename = name+'.jpeg')
-    
+            pio.write_image(fig, name+ '.pdf')
+#            py.image.save_as(fig,filename = name+'.jpeg')
+            
         
 def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             fileName = 'nothing',
@@ -597,7 +601,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         robLst.append(robRowLst)
         robLst.append(robColLst)
         env.addRobotStartPnt(robLst)
-        pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
+        pathNameCfg = conFileDir +'auctionSTCEstDegend.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
         
@@ -640,8 +644,8 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
 #        print(STCUnit)
         STCData.append(copy.deepcopy(STCUnit))        
 #        env.addgrid()
-        env.addSTCVert(STCData)
-        env.addEdgeInPnt(edgeData)
+#        env.addSTCVert(STCData)
+#        env.addEdgeInPnt(edgeData)
         
         pathData = []
         for i in range(robNum):
@@ -651,7 +655,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
             path_y = []
             pathCfg.get('path_y'+str(i),path_y)
             pathData.append(copy.deepcopy(path_y))
-        env.addPath(robNum = robNum, lst = pathData,txtType = False)
+#        env.addPath(robNum = robNum, lst = pathData,txtType = False)
 #            graphData.append(copy.deepcopy(graphUnit))
         
         env.drawPic('./png/env_'+cfgFileName+'path',fileType)
@@ -723,6 +727,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env.addgrid()
         robLst = []
         pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
+        pathNameCfg = conFileDir +'CfgDeg2.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
         
@@ -745,6 +750,7 @@ def drawPic(cfgFileName = '5_20_20_80_Outdoor_Cfg.txt',drawType = 1,
         env = Env(mat)
         spanningData = []
         pathNameCfg = conFileDir +'auctionSTCEstDeg.txt'
+        pathNameCfg = conFileDir +'CfgDeg2.txt'
         pathCfg = Read_Cfg(pathNameCfg)
         robNum = int(pathCfg.getSingleVal('robNum'))
         for i in range(robNum):

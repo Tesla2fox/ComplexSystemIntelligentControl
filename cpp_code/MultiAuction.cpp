@@ -147,7 +147,7 @@ namespace pl
 		size_t allNumSize = 0;
 		for (size_t i = 0; i < _robNum; i++)
 		{
-			c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
+			cout << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
 			//c_deg << "rob" << i << "	set size = " << _vRobSetPtr->at(i).size() << endl;
 			vSize.push_back(_vRobSetPtr->at(i).size());
 			allNumSize += _vRobSetPtr->at(i).size();
@@ -155,7 +155,7 @@ namespace pl
 		auto maxSize = *std::max_element(vSize.begin(), vSize.end());
 		auto minSize = *std::min_element(vSize.begin(), vSize.end());
 
-		c_deg << "max  = " << maxSize << " min = " << minSize << endl;
+		cout << "max  = " << maxSize << " min = " << minSize << endl;
 		c_deg << "allNumSize = " << allNumSize << endl;
 
 	}

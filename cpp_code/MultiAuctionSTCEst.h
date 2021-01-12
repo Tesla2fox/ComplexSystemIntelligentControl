@@ -26,8 +26,9 @@ namespace pl
 			string prefix(ob_map._m_name.begin(), ob_map._m_name.end()-4);
 			cout << prefix << endl;
 			//str_deg += "\\GAComp\\";
-			//str_deg += "\\est\\";
-			str_deg += prefix;
+	//			str_deg += "\\est\\";
+			str_deg += "\\DARP_data\\";
+			//str_deg += prefix;
 			str_deg += "auctionSTCEstDeg.txt";
 			c_deg.open(str_deg, std::ios::trunc);			
 		};
@@ -44,6 +45,8 @@ namespace pl
 		void writeRobGraph();
 
 		void setRandomSeed(const size_t &val) { randomSeed = val; }
+
+		vector<bex::DLineString> _vpath;
 
 		size_t _makeSpan = 0;
 		size_t _estMakeSpan = 0;
@@ -129,7 +132,6 @@ namespace pl
 		vector<map<size_t, size_t>> _vSlocal2T;
 		vector<map<size_t, size_t>> _vT2Slocal;
 
-		vector<bex::DLineString> _vpath;
 		vector<vector<bex::VertexDescriptor>> _vpathIndex;
 		vector<vector<size_t>> _vLeafSet;
 		vector<set<size_t>> _vLeafSTCSet;
